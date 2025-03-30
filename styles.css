@@ -1,0 +1,47 @@
+/* Import the "Poppins" font */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1f1f1f;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+h1 {
+  color: #00ff00; /* Neon green for a "techy" vibe */
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #1f1f1f;
+  color: white;
+}
