@@ -8,20 +8,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="logo">
       <img src="logo.jpg" alt="Gabe Mods Logo" class="logo-image">
     </div>
-    <!-- Hamburger Menu Button -->
-    <div class="menu-icon" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+    <!-- Hamburger Menu Icon -->
+    <div class="menu-icon" id="menu-icon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </div>
   </header>
 
-  <!-- Sidebar Menu -->
-  <nav class="menu hidden">
+  <!-- Navigation Menu -->
+  <nav class="menu" id="menu">
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#mods">Mods</a></li>
@@ -31,6 +32,7 @@
     </ul>
   </nav>
 
+  <!-- Main Content -->
   <section id="home">
     <h1>Welcome to Gabe Mods</h1>
     <p>Your hub for mods, games, and more!</p>
@@ -40,12 +42,15 @@
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
   </footer>
 
+  <!-- JavaScript -->
   <script>
-    // JavaScript to toggle the menu visibility
-    function toggleMenu() {
-      const menu = document.querySelector('.menu');
-      menu.classList.toggle('hidden');
-    }
+    // JavaScript to handle the menu toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+
+    menuIcon.addEventListener('click', () => {
+      menu.classList.toggle('visible'); // Adds/removes the 'visible' class
+    });
   </script>
 </body>
 </html>
