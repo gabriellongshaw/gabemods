@@ -1,23 +1,26 @@
-/* Import the "Poppins" font */
+/* General Styling */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #121212;
-  color: white;
+  background-color: #000000; /* AMOLED true black */
+  color: #ffffff; /* White text for contrast */
 }
 
+/* Header Styling */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #1f1f1f;
+  background-color: #000000; /* True black */
+  border-bottom: 1px solid #3498db; /* Blue underline for subtle flair */
 }
 
 .logo {
   font-size: 24px;
   font-weight: 600;
+  color: #3498db; /* Modern blue for the logo */
 }
 
 nav ul {
@@ -28,20 +31,37 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
+  transition: color 0.3s;
 }
 
+nav a:hover {
+  color: #3498db; /* Vibrant blue hover effect */
+}
+
+/* Section Styling */
 section {
   padding: 40px 20px;
+  background-color: #111111; /* Slightly lighter black for contrast */
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
 }
 
 h1 {
-  color: #00ff00; /* Neon green for a "techy" vibe */
+  color: #3498db; /* Blue headings for emphasis */
 }
 
+p {
+  color: #b0b0b0; /* Gray text for secondary content */
+}
+
+/* Footer Styling */
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #1f1f1f;
-  color: white;
+  background-color: #000000; /* AMOLED true black */
+  color: #ffffff;
+  font-size: 14px;
+  border-top: 1px solid #3498db; /* Blue top border for a polished look */
 }
