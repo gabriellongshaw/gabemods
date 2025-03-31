@@ -1,0 +1,121 @@
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0a0f24 url('blue-code-background.jpg') no-repeat center center fixed;
+  background-size: cover; /* Blue programming text as the background */
+  color: #ffffff;
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  height: 4px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+/* Navigation Menu */
+.menu {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.menu.visible {
+  display: block;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  margin: 10px 0;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+  color: #3498db;
+}
+
+/* Mods Section */
+#mods {
+  padding: 20px;
+  text-align: center;
+}
+
+#mods h1 {
+  font-size: 36px;
+  color: #ffffff;
+}
+
+#mods p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #c0c0c0;
+}
+
+#mods h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+#mods ul {
+  list-style: none;
+  padding: 0;
+}
+
+#mods ul li {
+  font-size: 18px;
+  color: #00aced;
+  margin: 5px 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  font-size: 14px;
+}
