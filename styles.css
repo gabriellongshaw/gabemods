@@ -18,9 +18,15 @@ header {
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 600;
-  color: #3498db; /* Modern blue for the logo */
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 100px; /* Adjust size as needed */
+  height: 100px;
+  border-radius: 50%; /* Makes the image circular */
+  border: 2px solid #3498db; /* Adds a blue border for styling */
 }
 
 nav ul {
