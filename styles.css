@@ -4,71 +4,61 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000000; /* AMOLED true black */
-  color: #ffffff; /* White text for contrast */
+  color: #ffffff; /* White text */
 }
 
-/* Header Styling */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #111111; /* Smoked black */
   padding: 20px;
-  background-color: #000000; /* True black */
-  border-bottom: 1px solid #3498db; /* Blue underline for subtle flair */
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo-image {
-  width: 60px; /* Smaller logo dimensions */
-  height: 60px;
-  border-radius: 50%; /* Makes the logo circular */
-  border: 2px solid #3498db; /* Blue border */
-  object-fit: cover; /* Ensures the image fits nicely inside the circle */
-}
-
-nav ul {
+.sidebar ul {
   list-style-type: none;
-  display: flex;
-  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-nav a {
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
   text-decoration: none;
-  color: #ffffff;
-  transition: color 0.3s;
+  color: #b0b0b0; /* Gray text */
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-nav a:hover {
-  color: #3498db; /* Vibrant blue hover effect */
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+  background-color: #3498db; /* Vibrant blue for active or hover */
+  color: #ffffff; /* White text */
 }
 
-/* Section Styling */
+/* Content Styling */
 section {
-  padding: 40px 20px;
-  background-color: #111111; /* Slightly lighter black for contrast */
-  border-radius: 10px;
-  margin: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+  margin-left: 220px; /* Leaves space for the sidebar */
+  padding: 20px;
 }
 
 h1 {
-  color: #3498db; /* Blue headings for emphasis */
+  color: #3498db; /* Blue headings */
 }
 
-p {
-  color: #b0b0b0; /* Gray text for secondary content */
-}
-
-/* Footer Styling */
 footer {
   text-align: center;
   padding: 10px;
   background-color: #000000; /* AMOLED true black */
   color: #ffffff;
   font-size: 14px;
-  border-top: 1px solid #3498db; /* Blue top border for a polished look */
 }
