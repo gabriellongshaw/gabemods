@@ -3,7 +3,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000000; /* AMOLED true black */
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -13,9 +13,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #000000; /* True black */
+  background-color: #000000;
   border-bottom: 1px solid #3498db;
-  position: relative;
 }
 
 .logo {
@@ -48,31 +47,37 @@ header {
   border-radius: 2px;
 }
 
-/* Sidebar Menu Styling */
+/* Navigation Menu */
 .menu {
-  position: absolute;
-  top: 70px;
-  right: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
   background-color: #111111;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  display: none; /* Menu is hidden by default */
+}
+
+.menu.visible {
+  display: block; /* Menu is displayed when toggled */
 }
 
 .menu ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .menu ul li {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .menu ul li a {
   text-decoration: none;
   color: #b0b0b0;
-  font-size: 16px;
+  font-size: 18px;
   transition: color 0.3s ease;
 }
 
@@ -80,21 +85,15 @@ header {
   color: #3498db;
 }
 
-/* Hidden Class for Toggling Menu */
-.hidden {
-  display: none;
-}
-
 /* Responsive Adjustments */
 @media (min-width: 768px) {
   .menu {
     position: static;
-    display: flex !important; /* Keeps menu visible on larger screens */
+    display: flex !important;
     flex-direction: row;
     gap: 20px;
-    box-shadow: none;
     background-color: transparent;
-    padding: 0;
+    box-shadow: none;
   }
 
   .menu ul li {
@@ -102,10 +101,10 @@ header {
   }
 
   .menu ul li a {
-    color: #ffffff; /* White text on larger screens */
+    color: #ffffff;
   }
 
   .menu-icon {
-    display: none; /* Hides the hamburger menu on larger screens */
+    display: none; /* Hide hamburger menu on larger screens */
   }
 }
