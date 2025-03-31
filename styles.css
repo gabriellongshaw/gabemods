@@ -23,10 +23,11 @@ header {
 }
 
 .logo-image {
-  width: 50px; /* Adjust size as needed */
-  height: 50px;
+  width: 60px; /* Smaller width */
+  height: 60px; /* Smaller height to match */
   border-radius: 50%; /* Makes the image circular */
   border: 2px solid #3498db; /* Adds a blue border for styling */
+  object-fit: cover; /* Ensures the image fits nicely inside the circle */
 }
 
 nav ul {
