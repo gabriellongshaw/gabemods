@@ -10,13 +10,20 @@
 <body>
   <header>
     <div class="logo">
-      <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+      <img src="logo.jpg" alt="Gabe Mods Logo" class="logo-image">
+    </div>
+    <!-- Hamburger Menu Button -->
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
   </header>
 
-  <nav class="sidebar">
+  <!-- Sidebar Menu -->
+  <nav class="menu hidden">
     <ul>
-      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#mods">Mods</a></li>
       <li><a href="#games">Games</a></li>
       <li><a href="#settings">Settings</a></li>
@@ -28,29 +35,17 @@
     <h1>Welcome to Gabe Mods</h1>
     <p>Your hub for mods, games, and more!</p>
   </section>
-  
-  <section id="mods">
-    <h1>Mods Library</h1>
-    <p>Explore the latest mods for your favorite games and apps.</p>
-  </section>
 
-  <section id="games">
-    <h1>Games</h1>
-    <p>Find new games and updates here.</p>
-  </section>
-
-  <section id="settings">
-    <h1>Settings</h1>
-    <p>Adjust preferences and personalize your experience.</p>
-  </section>
-
-  <section id="more">
-    <h1>More</h1>
-    <p>Discover additional features and resources.</p>
-  </section>
-  
   <footer>
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
   </footer>
+
+  <script>
+    // JavaScript to toggle the menu visibility
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
