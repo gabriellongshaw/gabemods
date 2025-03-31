@@ -42,5 +42,30 @@
   <footer>
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
   </footer>
+  <script>
+  // JavaScript to handle the menu toggle
+  const menuIcon = document.getElementById('menu-icon');
+  const menu = document.getElementById('menu');
+  const menuLinks = document.querySelectorAll('.menu ul li a'); // Select all menu links
+
+  // Toggle the menu when the icon is clicked
+  menuIcon.addEventListener('click', () => {
+    menu.classList.toggle('visible'); // Adds/removes the 'visible' class
+  });
+
+  // Close the menu when clicking a link inside the menu
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('visible'); // Ensures the menu is closed
+    });
+  });
+
+  // Optional: Close menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+      menu.classList.remove('visible'); // Close if click is outside menu or icon
+    }
+  });
+ </script>
 </body>
 </html>
