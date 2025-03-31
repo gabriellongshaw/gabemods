@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header Section -->
   <header>
     <div class="logo">
       <img src="logo.jpg" alt="Gabe Mods Logo" class="logo-image">
     </div>
     <!-- Hamburger Menu Icon -->
-    <div class="menu-icon" onclick="toggleMenu()">
+    <div class="menu-icon" id="menu-icon">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -22,10 +22,35 @@
   </header>
 
   <!-- Navigation Menu -->
-  <nav class="menu">
+  <nav class="menu" id="menu">
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#mods">Mods</a></li>
       <li><a href="#games">Games</a></li>
       <li><a href="#settings">Settings</a></li>
-      <li><a href="#more">
+      <li><a href="#more">More</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <section id="home">
+    <h1>Welcome to Gabe Mods</h1>
+    <p>Your hub for mods, games, and more!</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // JavaScript to handle the menu toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+
+    menuIcon.addEventListener('click', () => {
+      menu.classList.toggle('visible'); // Adds/removes the 'visible' class
+    });
+  </script>
+</body>
+</html>
