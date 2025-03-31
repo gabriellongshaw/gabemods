@@ -51,13 +51,20 @@ header {
 .menu {
   position: fixed;
   top: 0;
-  right: -300px; /* Menu starts off-screen */
+  right: 0;
   width: 250px;
   height: 100%;
   background-color: #111111;
   padding: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
-  transition: right 0.5s ease; /* Smooth sliding effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  display: none; /* Menu is hidden by default */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Smooth fade effect */
+}
+
+.menu.visible {
+  display: block; /* Menu becomes visible */
+  opacity: 1; /* Fully visible with fade-in effect */
 }
 
 .menu ul {
@@ -81,28 +88,16 @@ header {
   color: #3498db; /* Hover effect */
 }
 
-/* Open Menu State */
-.menu.open {
-  right: 0; /* Slide into view */
-}
-
 /* Responsive Adjustments */
 @media (min-width: 768px) {
   .menu {
     position: static;
-    width: auto;
-    height: auto;
-    right: 0;
-    display: flex;
+    display: flex !important;
     flex-direction: row;
     gap: 20px;
     background-color: transparent;
     box-shadow: none;
     transition: none;
-  }
-
-  .menu ul {
-    display: flex;
   }
 
   .menu ul li {
