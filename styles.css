@@ -84,7 +84,7 @@ header {
 
 /* Active Menu Class */
 .menu.active {
-  right: 0; /* Slides menu into view */
+  right: 0; /* Slides the menu into view */
 }
 
 /* Hidden Class */
