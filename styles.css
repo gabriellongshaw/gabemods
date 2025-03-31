@@ -23,8 +23,8 @@ header {
 }
 
 .logo-image {
-  width: 30px; /* Adjust size as needed */
-  height: 30px;
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
   border-radius: 50%; /* Makes the image circular */
   border: 2px solid #3498db; /* Adds a blue border for styling */
 }
