@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,9 +10,9 @@
 <body>
   <header>
     <div class="logo">
-      <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+      <img src="logo.jpg" alt="Gabe Mods Logo" class="logo-image">
     </div>
-    <!-- Hamburger Menu Button -->
+    <!-- Hamburger Menu Icon -->
     <div class="menu-icon" onclick="toggleMenu()">
       <div class="bar"></div>
       <div class="bar"></div>
@@ -41,16 +41,11 @@
   </footer>
 
   <script>
-    // JavaScript to toggle the menu visibility
+    // JavaScript for toggle animation
     function toggleMenu() {
       const menu = document.querySelector('.menu');
-      menu.classList.toggle('hidden');
+      menu.classList.toggle('active'); // Adds or removes the 'active' class for animation
     }
-  <script>
-  function toggleMenu() {
-    const menu = document.querySelector('.menu');
-    menu.classList.toggle('active'); // Adds or removes the 'active' class
-  }
-</script>
+  </script>
 </body>
 </html>
