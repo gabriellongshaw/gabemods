@@ -63,15 +63,15 @@ header {
     color: black;
 }
 
-/* Light Mode Hamburger Menu */
+/* Light Mode Hamburger Menu (Now #FAF9FA) */
 .light-mode .menu {
-    background: rgba(255, 255, 255, 0.9); /* White menu */
+    background: #FAF9FA; /* Slightly off-white */
     backdrop-filter: blur(12px);
 }
 
-/* Light Mode Hamburger Menu Text */
+/* Light Mode Menu Text */
 .light-mode .menu a {
-    color: black !important; /* Forces text to be black */
+    color: black !important; /* Keeps text readable */
 }
 
 /* Light Mode Menu Icon */
@@ -88,6 +88,7 @@ header {
 .light-mode .theme-btn:hover {
     background-color: #333;
 }
+
 /* Remove blue highlight and underline from menu links */
 .menu a {
     text-decoration: none; /* No underline */
