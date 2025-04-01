@@ -41,7 +41,7 @@
     
     <!-- Theme Toggle -->
     <p>Switch between Light and Dark themes:</p>
-    <button id="theme-toggle" class="theme-btn">Toggle Theme</button>
+    <button id="theme-toggle" class="theme-btn">Light Theme</button>
 
     <!-- Animation Selection -->
     <p>Select your preferred menu animation:</p>
@@ -63,93 +63,3 @@
   <!-- JavaScript -->
   <script>
     // Hamburger Menu Toggle
-    const menuIcon = document.getElementById('menu-icon');
-    const menu = document.querySelector('.menu');
-    const menuLinks = document.querySelectorAll('.menu ul li a');
-
-    menuIcon.addEventListener('click', () => {
-        menu.classList.toggle('visible');
-        menuIcon.classList.toggle('active');
-    });
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('visible');
-            menuIcon.classList.remove('active');
-        });
-    });
-
-    document.addEventListener('click', (event) => {
-        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-            menu.classList.remove('visible');
-            menuIcon.classList.remove('active');
-        }
-    });
-
-    // Animation Selection Logic
-    const animationSelect = document.getElementById('animation-select');
-
-    animationSelect.addEventListener('change', (event) => {
-        const selectedAnimation = event.target.value;
-
-        if (selectedAnimation === 'sliding') {
-            menu.classList.add('sliding-menu');
-            menu.classList.remove('ios-menu');
-        } else if (selectedAnimation === 'ios-style') {
-            menu.classList.add('ios-menu');
-            menu.classList.remove('sliding-menu');
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const defaultAnimation = animationSelect.value;
-        if (defaultAnimation === 'sliding') {
-            menu.classList.add('sliding-menu');
-        } else if (defaultAnimation === 'ios-style') {
-            menu.classList.add('ios-menu');
-        }
-    });
-
-    // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
-
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-    });
-
-    // Save Preferences Logic
-    const savePreferencesBtn = document.getElementById('save-preferences');
-
-    savePreferencesBtn.addEventListener('click', () => {
-        const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-        const selectedAnimation = animationSelect.value;
-
-        // Save preferences to localStorage
-        localStorage.setItem('theme', currentTheme);
-        localStorage.setItem('menuAnimation', selectedAnimation);
-
-        alert('Preferences saved!');
-    });
-
-    // Apply saved preferences on page load
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-    }
-
-    const savedAnimation = localStorage.getItem('menuAnimation');
-    if (savedAnimation === 'sliding') {
-        menu.classList.add('sliding-menu');
-    } else if (savedAnimation === 'ios-style') {
-        menu.classList.add('ios-menu');
-    }
-  </script>
-
-  <script>
-  // Apply saved theme on page load
-  if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light-mode');
-  }
-</script>
-  
-</body>
-</html>
