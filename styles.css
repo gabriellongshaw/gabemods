@@ -27,8 +27,27 @@ header {
     display: block;
 }
 
-/* Hamburger Menu */
-.menu {
+/* Sliding Animation for Hamburger Menu */
+.sliding-menu {
+    position: fixed;
+    top: 60px;
+    right: -250px; /* Initially off-screen */
+    width: 220px;
+    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent */
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 15px;
+    transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out; /* Sliding animation */
+    opacity: 0; /* Initially hidden */
+}
+
+.sliding-menu.visible {
+    right: 20px; /* Slides in */
+    opacity: 1; /* Fades in */
+}
+
+/* iOS-Style Animation for Hamburger Menu */
+.ios-menu {
     position: fixed;
     top: 60px;
     right: 20px; /* Keeps it positioned like iOS menu */
@@ -42,8 +61,7 @@ header {
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth animation */
 }
 
-/* Show menu with iOS-like effect */
-.menu.visible {
+.ios-menu.visible {
     transform: scale(1); /* Enlarges to normal size */
     opacity: 1; /* Fades in */
 }
@@ -67,7 +85,7 @@ header {
 /* Light Mode Hamburger Menu (Translucent #FAF9FA) */
 .light-mode .menu {
     background: rgba(250, 249, 250, 0.8); /* Translucent off-white */
-    backdrop-filter: blur(12px); /* Blur effect */
+    backdrop-filter: blur(12px);
 }
 
 .light-mode .menu a {
