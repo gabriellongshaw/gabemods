@@ -73,5 +73,28 @@
         }
     });
   </script>
+
+  <script>
+    const toggleThemeBtn = document.getElementById('toggle-theme');
+
+    // Apply saved theme on page load
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+        toggleThemeBtn.textContent = "Switch to Dark Mode";
+    }
+
+    // Toggle Theme and Save Preference
+    toggleThemeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+
+        if (document.body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+            toggleThemeBtn.textContent = "Switch to Dark Mode";
+        } else {
+            localStorage.setItem('theme', 'dark');
+            toggleThemeBtn.textContent = "Switch to Light Mode";
+        }
+    });
+</script>
 </body>
 </html>
