@@ -24,23 +24,6 @@ header {
   object-fit: cover;
 }
 
-/* Hamburger Menu Icon */
-.menu-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 25px;
-  cursor: pointer;
-}
-
-.menu-icon .bar {
-  height: 4px;
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 2px;
-}
-
 /* Navigation Menu */
 .menu {
   position: fixed;
@@ -57,27 +40,6 @@ header {
 
 .menu.visible {
   display: block;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu ul li {
-  margin: 10px 0;
-}
-
-.menu ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.menu ul li a:hover {
-  color: #3498db;
 }
 
 /* Settings Page Layout */
@@ -107,23 +69,4 @@ button {
 .light-theme {
   background-color: #ffffff;
   color: #000000;
-}
-
-#dark-mode {
-  background-color: #333;
-  color: #fff;
-}
-
-#light-mode {
-  background-color: #f4f4f4;
-  color: #000;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #ffffff;
-  font-size: 14px;
 }
