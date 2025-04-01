@@ -25,22 +25,26 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="mods.html">Mods</a></li>
-      <li><a href="games.html">Games</a></li> <!-- ✅ Added Games page -->
+      <li><a href="games.html">Games</a></li>
       <li><a href="settings.html">Settings</a></li>
     </ul>
-</nav>
+  </nav>
 
   <!-- Main Content -->
   <section id="home">
     <h1>Welcome to Gabe Mods</h1>
     <p>Please note that this website is currently under development and it is a long way from complete.</p>
 
+    <!-- ✅ Added Mission Statement Below -->
+    <p>Here at Gabe Mods, our aim is to provide our users with free, high-quality, malware-free mods for lots of popular apps and games.  
+    Our "Learn to Code" page will eventually have tutorials teaching people how to code for themselves.</p>
+
     <!-- Feature Suggestions & Feedback -->
     <p><strong>If you have any feature suggestions or feedback, please email</strong>  
-  <a href="mailto:gabemods.website@gmail.com" style="text-decoration: underline;">gabemods.website@gmail.com</a>  
-  <br><strong>or message me on</strong>  
-  <a href="https://t.me/Gabriel_Mods_Chat" target="_blank" style="text-decoration: underline;">Telegram Chat</a>.
-</p>
+      <a href="mailto:gabemods.website@gmail.com" style="text-decoration: underline;">gabemods.website@gmail.com</a>  
+      <br><strong>or message me on</strong>  
+      <a href="https://t.me/Gabriel_Mods_Chat" target="_blank" style="text-decoration: underline;">Telegram Chat</a>.
+    </p>
   </section>
 
   <!-- Footer -->
@@ -50,14 +54,14 @@
 
   <!-- JavaScript -->
   <script>
-    // JavaScript for menu toggle (consistent across pages)
+    // JavaScript for menu toggle (Ensuring animation works correctly)
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.menu ul li a');
 
     menuIcon.addEventListener('click', () => {
         menu.classList.toggle('visible');
-        menuIcon.classList.toggle('active'); // Animate bars
+        menuIcon.classList.toggle('active'); // Fix: Animates menu icon
     });
 
     menuLinks.forEach(link => {
@@ -73,29 +77,11 @@
             menuIcon.classList.remove('active');
         }
     });
-  </script>
-
-  <script>
-    const toggleThemeBtn = document.getElementById('toggle-theme');
 
     // Apply saved theme on page load
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
-        toggleThemeBtn.textContent = "Switch to Dark Mode";
     }
-
-    // Toggle Theme and Save Preference
-    toggleThemeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-
-        if (document.body.classList.contains('light-mode')) {
-            localStorage.setItem('theme', 'light');
-            toggleThemeBtn.textContent = "Switch to Dark Mode";
-        } else {
-            localStorage.setItem('theme', 'dark');
-            toggleThemeBtn.textContent = "Switch to Light Mode";
-        }
-    });
 </script>
 </body>
 </html>
