@@ -35,10 +35,10 @@
     <p>Adjust your preferences below.</p>
 
     <!-- Theme Toggle -->
-<div class="theme-toggle">
-  <label>Choose Theme:</label>
-  <button id="toggle-theme" class="theme-btn">Switch to Light Mode</button>
-</div>
+    <div class="theme-toggle">
+      <label>Choose Theme:</label>
+      <button id="toggle-theme" class="theme-btn">Switch to Light Mode</button>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -48,34 +48,28 @@
 
   <!-- JavaScript -->
   <script>
-    // Theme Toggle Functionality (Ensuring It Works)
     const toggleThemeBtn = document.getElementById('toggle-theme');
-    
-    toggleThemeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
 
-        if (document.body.classList.contains('light-mode')) {
-            toggleThemeBtn.textContent = "Switch to Dark Mode";
-        } else {
-            toggleThemeBtn.textContent = "Switch to Light Mode";
-        }
-    });
-
-    // Ensure Theme Persists (Even After Page Refresh)
+    // Apply saved theme on page load
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
         toggleThemeBtn.textContent = "Switch to Dark Mode";
     }
 
+    // Toggle Theme and Save Preference
     toggleThemeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+
         if (document.body.classList.contains('light-mode')) {
             localStorage.setItem('theme', 'light');
+            toggleThemeBtn.textContent = "Switch to Dark Mode";
         } else {
             localStorage.setItem('theme', 'dark');
+            toggleThemeBtn.textContent = "Switch to Light Mode";
         }
     });
 
-    // Hamburger Menu Toggle (Keeping it Consistent)
+    // Hamburger Menu Toggle (Consistent Across Pages)
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.menu ul li a');
@@ -98,6 +92,6 @@
             menuIcon.classList.remove('active');
         }
     });
-</script>
+  </script>
 </body>
 </html>
