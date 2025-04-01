@@ -18,13 +18,13 @@ header {
 }
 
 .logo-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #3498db; /* Restored blue circle */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db; /* Blue border */
+    display: block; /* Ensures it's visible */
 }
-
 /* Hamburger Menu Icon */
 .menu-icon {
   display: flex;
