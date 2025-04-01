@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gabe Mods</title>
+  <title>Gabe Mods - High-Quality Mods</title>
+  <meta name="description" content="Gabe Mods offers high-quality mods for Android, Windows, and iOS. Stay updated on safe and verified downloads!">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+      <img src="assets/IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
     </div>
     <!-- Hamburger Menu Icon -->
     <div class="menu-icon" id="menu-icon">
@@ -21,11 +22,11 @@
     </div>
   </header>
 
-  <!-- iOS-style Navigation Menu -->
+  <!-- Navigation Menu -->
   <nav class="menu" id="menu">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="mods.html">Mods</a></li>
+      <li><a href="pages/mods.html">Mods</a></li> <!-- Now links to separate Mods page -->
       <li><a href="#games">Games</a></li>
       <li><a href="#settings">Settings</a></li>
       <li><a href="#more">More</a></li>
@@ -42,30 +43,32 @@
   <footer>
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
   </footer>
+
+  <!-- JavaScript -->
   <script>
-  // JavaScript to handle the menu toggle
-  const menuIcon = document.getElementById('menu-icon');
-  const menu = document.getElementById('menu');
-  const menuLinks = document.querySelectorAll('.menu ul li a'); // Select all menu links
+    // JavaScript to handle the menu toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+    const menuLinks = document.querySelectorAll('.menu ul li a'); // Select all menu links
 
-  // Toggle the menu when the icon is clicked
-  menuIcon.addEventListener('click', () => {
-    menu.classList.toggle('visible'); // Adds/removes the 'visible' class
-  });
-
-  // Close the menu when clicking a link inside the menu
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('visible'); // Ensures the menu is closed
+    // Toggle the menu when the icon is clicked
+    menuIcon.addEventListener('click', () => {
+      menu.classList.toggle('visible'); // Adds/removes the 'visible' class
     });
-  });
 
-  // Optional: Close menu when clicking outside
-  document.addEventListener('click', (event) => {
-    if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-      menu.classList.remove('visible'); // Close if click is outside menu or icon
-    }
-  });
- </script>
+    // Close the menu when clicking a link inside the menu
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('visible'); // Ensures the menu is closed
+      });
+    });
+
+    // Optional: Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+        menu.classList.remove('visible'); // Close if click is outside menu or icon
+      }
+    });
+  </script>
 </body>
 </html>
