@@ -63,3 +63,25 @@
   <!-- JavaScript -->
   <script>
     // Hamburger Menu Toggle
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+
+    // Function to update button text dynamically
+    const updateThemeButtonText = () => {
+        const isLightMode = document.body.classList.contains('light-mode');
+        themeToggle.textContent = isLightMode ? 'Dark Theme' : 'Light Theme';
+    };
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        updateThemeButtonText();
+    });
+
+    // Apply saved theme on page load and update button text
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+    }
+    updateThemeButtonText();
+</script>
