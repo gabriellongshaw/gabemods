@@ -67,3 +67,17 @@ footer {
   color: #ffffff;
   font-size: 14px;
 }
+
+/* Mods Page Styling */
+#mods {
+  text-align: center;
+  padding: 40px; /* Matches Home Page */
+}
+
+.mods-list {
+  list-style-type: square;
+  text-align: left;
+  display: inline-block;
+  padding: 20px; /* Added padding for better spacing */
+  font-size: 18px; /* Slightly larger font for readability */
+}
