@@ -25,13 +25,20 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="mods.html">Mods</a></li>
-      <li><a href="settings.html">Settings</a></li> <!-- Removed duplicate & fixed tag -->
+      <li><a href="settings.html">Settings</a></li>
     </ul>
-</nav>
+  </nav>
+
   <!-- Main Content -->
-  <section id="home">
-    <h1>Settings</h1> <!-- Updated title -->
-    <p>Please note that this website is currently under development and it is a long way from complete.</p>
+  <section id="settings">
+    <h1>Settings</h1>
+    <p>Adjust your preferences below.</p>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <label>Choose Theme:</label>
+      <button id="toggle-theme">Switch to Light Mode</button>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -41,25 +48,41 @@
 
   <!-- JavaScript -->
   <script>
-    // JavaScript for menu toggle
+    // Theme Toggle Functionality
+    const toggleThemeBtn = document.getElementById('toggle-theme');
+    
+    toggleThemeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+
+        if (document.body.classList.contains('light-mode')) {
+            toggleThemeBtn.textContent = "Switch to Dark Mode";
+        } else {
+            toggleThemeBtn.textContent = "Switch to Light Mode";
+        }
+    });
+
+    // Hamburger Menu Toggle
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.menu ul li a');
 
     menuIcon.addEventListener('click', () => {
-      menu.classList.toggle('visible');
+        menu.classList.toggle('visible');
+        menuIcon.classList.toggle('active');
     });
 
     menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('visible');
-      });
+        link.addEventListener('click', () => {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        });
     });
 
     document.addEventListener('click', (event) => {
-      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-        menu.classList.remove('visible');
-      }
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        }
     });
   </script>
 </body>
