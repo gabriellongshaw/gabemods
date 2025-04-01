@@ -29,12 +29,14 @@
     </ul>
   </nav>
 
-  <!-- Settings Content -->
-  <section id="theme-settings">
-    <h1>Theme Settings</h1>
+  <!-- Main Content: Theme Settings -->
+  <section id="settings">
+    <h1>Settings</h1>
     <p>Select your preferred theme:</p>
-    <button id="dark-mode">Dark Mode</button>
-    <button id="light-mode">Light Mode</button>
+    <div class="theme-buttons">
+      <button id="dark-mode">Dark Mode</button>
+      <button id="light-mode">Light Mode</button>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -44,19 +46,41 @@
 
   <!-- JavaScript -->
   <script>
+    // JavaScript for menu toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+    const menuLinks = document.querySelectorAll('.menu ul li a');
+
+    menuIcon.addEventListener('click', () => {
+      menu.classList.toggle('visible');
+    });
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('visible');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+        menu.classList.remove('visible');
+      }
+    });
+
+    // Theme Switching Logic
     const darkModeBtn = document.getElementById('dark-mode');
     const lightModeBtn = document.getElementById('light-mode');
 
     darkModeBtn.addEventListener('click', () => {
       document.body.classList.add('dark-theme');
       document.body.classList.remove('light-theme');
-      localStorage.setItem('theme', 'dark'); // Save theme preference
+      localStorage.setItem('theme', 'dark');
     });
 
     lightModeBtn.addEventListener('click', () => {
       document.body.classList.add('light-theme');
       document.body.classList.remove('dark-theme');
-      localStorage.setItem('theme', 'light'); // Save theme preference
+      localStorage.setItem('theme', 'light');
     });
 
     // Load saved theme on page reload
