@@ -31,20 +31,21 @@ header {
 .menu {
     position: fixed;
     top: 60px;
-    right: -250px;
+    right: 20px; /* Keeps it positioned like iOS menu */
     width: 220px;
     background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent */
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px); /* Blur effect */
     padding: 20px;
     border-radius: 15px;
-    transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out;
-    opacity: 0;
+    transform: scale(0.8); /* Initial scaling for iOS-like animation */
+    opacity: 0; /* Initially hidden */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth animation */
 }
 
-/* Show menu when toggled */
+/* Show menu with iOS-like effect */
 .menu.visible {
-    right: 20px;
-    opacity: 1;
+    transform: scale(1); /* Enlarges to normal size */
+    opacity: 1; /* Fades in */
 }
 
 /* Light Mode Styles */
@@ -66,7 +67,7 @@ header {
 /* Light Mode Hamburger Menu (Translucent #FAF9FA) */
 .light-mode .menu {
     background: rgba(250, 249, 250, 0.8); /* Translucent off-white */
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px); /* Blur effect */
 }
 
 .light-mode .menu a {
