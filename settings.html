@@ -35,10 +35,10 @@
     <p>Adjust your preferences below.</p>
 
     <!-- Theme Toggle -->
-    <div class="theme-toggle">
-      <label>Choose Theme:</label>
-      <button id="toggle-theme">Switch to Light Mode</button>
-    </div>
+<div class="theme-toggle">
+  <label>Choose Theme:</label>
+  <button id="toggle-theme" class="theme-btn">Switch to Light Mode</button>
+</div>
   </section>
 
   <!-- Footer -->
@@ -48,7 +48,7 @@
 
   <!-- JavaScript -->
   <script>
-    // Theme Toggle Functionality
+    // Theme Toggle Functionality (Ensuring It Works)
     const toggleThemeBtn = document.getElementById('toggle-theme');
     
     toggleThemeBtn.addEventListener('click', () => {
@@ -61,7 +61,21 @@
         }
     });
 
-    // Hamburger Menu Toggle
+    // Ensure Theme Persists (Even After Page Refresh)
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+        toggleThemeBtn.textContent = "Switch to Dark Mode";
+    }
+
+    toggleThemeBtn.addEventListener('click', () => {
+        if (document.body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+        } else {
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // Hamburger Menu Toggle (Keeping it Consistent)
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.menu ul li a');
@@ -84,6 +98,6 @@
             menuIcon.classList.remove('active');
         }
     });
-  </script>
+</script>
 </body>
 </html>
