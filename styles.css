@@ -154,3 +154,13 @@ footer {
 .light-mode .theme-btn:hover {
     background-color: #333;
 }
+
+/* Light Mode Hamburger Menu */
+.light-mode .menu {
+    background: rgba(0, 0, 0, 0.9); /* Black background in Light Mode */
+    backdrop-filter: blur(12px);
+}
+
+.light-mode .menu a {
+    color: white; /* Keep text white for readability */
+}
