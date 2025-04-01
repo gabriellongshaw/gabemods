@@ -102,5 +102,69 @@
         document.body.classList.add('light-mode');
     }
   </script>
+
+ <script>
+    // Hamburger Menu Toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.querySelector('.menu');
+    const menuLinks = document.querySelectorAll('.menu ul li a');
+
+    menuIcon.addEventListener('click', () => {
+        menu.classList.toggle('visible');
+        menuIcon.classList.toggle('active');
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        }
+    });
+
+    // Animation Selection Logic
+    const animationSelect = document.getElementById('animation-select');
+
+    animationSelect.addEventListener('change', (event) => {
+        const selectedAnimation = event.target.value;
+
+        if (selectedAnimation === 'sliding') {
+            menu.classList.add('sliding-menu');
+            menu.classList.remove('ios-menu');
+        } else if (selectedAnimation === 'ios-style') {
+            menu.classList.add('ios-menu');
+            menu.classList.remove('sliding-menu');
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const defaultAnimation = animationSelect.value;
+        if (defaultAnimation === 'sliding') {
+            menu.classList.add('sliding-menu');
+        } else if (defaultAnimation === 'ios-style') {
+            menu.classList.add('ios-menu');
+        }
+    });
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+
+    // Apply saved theme on page load
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+    }
+</script>
+ 
 </body>
 </html>
