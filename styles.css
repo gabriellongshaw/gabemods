@@ -19,24 +19,22 @@ header {
 
 /* Logo Styling */
 .logo-image {
-    width: 50px; /* Properly scaled */
+    width: 50px; /* Correctly scaled */
     height: 50px;
-    max-width: 50px; /* Prevents oversized scaling */
-    max-height: 50px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #3498db; /* Blue border */
     display: block;
 }
 
-/* Hamburger Menu Animation */
+/* Hamburger Menu with Translucent Blur */
 .menu {
     position: fixed;
     top: 60px;
     right: -250px; /* Initially off-screen */
     width: 220px;
-    background: rgba(17, 17, 17, 0.9);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.8); /* Black translucent */
+    backdrop-filter: blur(10px); /* Adds blur effect */
     padding: 20px;
     border-radius: 15px;
     transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out;
@@ -47,6 +45,20 @@ header {
 .menu.visible {
     right: 20px; /* Slides in */
     opacity: 1;
+}
+
+/* Remove blue highlight and underline from menu links */
+.menu a {
+    text-decoration: none; /* No underline */
+    color: white; /* Keeps text white instead of blue */
+}
+
+.menu a:visited {
+    color: white; /* Prevents turning purple */
+}
+
+.menu a:hover {
+    color: #3498db; /* Optional hover effect */
 }
 
 /* Hamburger Icon Animation */
@@ -87,18 +99,4 @@ footer {
     background-color: rgba(0, 0, 0, 0.9);
     color: #ffffff;
     font-size: 14px;
-}
-
-/* Remove blue highlight and underline from menu links */
-.menu a {
-    text-decoration: none; /* No underline */
-    color: white; /* Keeps text white instead of blue */
-}
-
-.menu a:visited {
-    color: white; /* Prevents turning purple */
-}
-
-.menu a:hover {
-    color: #3498db; /* Optional hover effect (blue) */
 }
