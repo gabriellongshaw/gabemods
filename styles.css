@@ -17,17 +17,6 @@ header {
     border-bottom: 1px solid #3498db;
 }
 
-.logo-image {
-    width: 80px; /* Adjust size */
-    height: 80px;
-    max-width: 100px; /* Prevents oversized scaling */
-    max-height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #3498db; /* Blue border */
-    display: block;
-}
-
 /* Navigation Menu */
 .menu {
     position: fixed;
@@ -57,55 +46,4 @@ footer {
     background-color: rgba(0, 0, 0, 0.9);
     color: #ffffff;
     font-size: 14px;
-}
-
-/* Hamburger Menu Animation */
-.menu {
-    position: fixed;
-    top: 60px;
-    right: -250px; /* Initially off-screen */
-    width: 220px;
-    background: rgba(17, 17, 17, 0.9);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 15px;
-    transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out;
-    opacity: 0; /* Initially hidden */
-}
-
-/* Show menu when toggled */
-.menu.visible {
-    right: 20px; /* Slides in */
-    opacity: 1;
-}
-
-/* Hamburger Icon Animation */
-.menu-icon {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-}
-
-.menu-icon .bar {
-    height: 4px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Animate bars when menu opens */
-.menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0; /* Middle bar disappears */
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
 }
