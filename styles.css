@@ -80,6 +80,45 @@ header {
   color: #3498db;
 }
 
+/* Settings Page Layout */
+#settings {
+  text-align: center;
+  padding: 20px;
+}
+
+.theme-buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Dark Mode */
+.dark-theme {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Light Mode */
+.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+#light-mode {
+  background-color: #f4f4f4;
+  color: #000;
+}
+
 /* Footer */
 footer {
   text-align: center;
