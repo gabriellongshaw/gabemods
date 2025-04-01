@@ -88,6 +88,7 @@
 
     animationSelect.addEventListener('change', (event) => {
         const selectedAnimation = event.target.value;
+        localStorage.setItem('menuAnimation', selectedAnimation);
 
         if (selectedAnimation === 'sliding') {
             menu.classList.add('sliding-menu');
@@ -99,10 +100,10 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-        const defaultAnimation = animationSelect.value;
-        if (defaultAnimation === 'sliding') {
+        const savedAnimation = localStorage.getItem('menuAnimation');
+        if (savedAnimation === 'sliding') {
             menu.classList.add('sliding-menu');
-        } else if (defaultAnimation === 'ios-style') {
+        } else if (savedAnimation === 'ios-style') {
             menu.classList.add('ios-menu');
         }
     });
