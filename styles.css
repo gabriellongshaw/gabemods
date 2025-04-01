@@ -65,7 +65,7 @@ header {
 
 /* Light Mode Hamburger Menu */
 .light-mode .menu {
-    background: rgba(255, 255, 255, 0.9); /* White background */
+    background: rgba(255, 255, 255, 0.9); /* White menu */
     backdrop-filter: blur(12px);
 }
 
@@ -87,7 +87,6 @@ header {
 .light-mode .theme-btn:hover {
     background-color: #333;
 }
-
 /* Remove blue highlight and underline from menu links */
 .menu a {
     text-decoration: none; /* No underline */
