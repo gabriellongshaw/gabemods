@@ -24,6 +24,23 @@ header {
   object-fit: cover;
 }
 
+/* Hamburger Menu Icon */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  height: 4px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
 /* Navigation Menu */
 .menu {
   position: fixed;
@@ -42,31 +59,11 @@ header {
   display: block;
 }
 
-/* Settings Page Layout */
-#settings {
+/* Footer */
+footer {
   text-align: center;
-  padding: 20px;
-}
-
-.theme-buttons {
-  margin-top: 20px;
-}
-
-button {
-  padding: 10px 15px;
-  margin: 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Dark Mode */
-.dark-theme {
-  background-color: #000000;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
   color: #ffffff;
-}
-
-/* Light Mode */
-.light-theme {
-  background-color: #ffffff;
-  color: #000000;
+  font-size: 14px;
 }
