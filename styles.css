@@ -19,7 +19,7 @@ header {
 
 /* Logo Styling */
 .logo-image {
-    width: 50px; /* Properly scaled */
+    width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
@@ -63,8 +63,23 @@ header {
     color: black; /* Black text for readability */
 }
 
-.light-mode .menu a {
-    color: white; /* Keep text white for readability */
+/* Light Mode Menu Icon */
+.light-mode .menu-icon .bar {
+    background-color: black; /* Change to black in Light Mode */
+}
+
+/* Remove blue highlight and underline from menu links */
+.menu a {
+    text-decoration: none; /* No underline */
+    color: white; /* Keeps text white instead of blue */
+}
+
+.menu a:visited {
+    color: white; /* Prevents turning purple */
+}
+
+.menu a:hover {
+    color: #3498db; /* Optional hover effect */
 }
 
 /* Theme Button Styling */
@@ -83,6 +98,7 @@ header {
     background-color: #2980b9;
 }
 
+/* Light Mode Theme Button */
 .light-mode .theme-btn {
     background-color: #555;
     color: white;
