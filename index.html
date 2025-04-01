@@ -24,8 +24,8 @@
   <nav class="menu" id="menu">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="mods.html">Mods</a></li>
-      <li><a href="settings.html">Settings</a></li>
+     <li><a href="mods.html">Mods</a></li>
+      <li><a href="settings.html">Settings</a></li> <!-- Removed "More" -->
     </ul>
   </nav>
 
@@ -61,6 +61,12 @@
       if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
         menu.classList.remove('visible');
       }
+
+      <style>
+  img {
+    border: 5px solid red;
+  }
+</style>
     });
   </script>
 </body>
