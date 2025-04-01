@@ -81,3 +81,19 @@ footer {
   padding: 20px; /* Added padding for better spacing */
   font-size: 18px; /* Slightly larger font for readability */
 }
+
+/* Change all links to white */
+a {
+    color: white;
+    text-decoration: none; /* Removes the underline */
+}
+
+/* Ensure visited links stay white */
+a:visited {
+    color: white;
+}
+
+/* Highlight links on hover */
+a:hover {
+    color: #ccc; /* Light gray for better visibility */
+}
