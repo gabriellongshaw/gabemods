@@ -50,9 +50,6 @@
       <option value="sliding">Sliding Animation</option>
       <option value="ios-style">iOS-Style Animation</option>
     </select>
-
-    <!-- Save Preferences Button -->
-    <button id="save-preferences" class="save-btn">Save Preferences</button>
   </section>
 
   <!-- Footer -->
@@ -63,13 +60,58 @@
   <!-- JavaScript -->
   <script>
     // Hamburger Menu Toggle
-<script>
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.querySelector('.menu');
+    const menuLinks = document.querySelectorAll('.menu ul li a');
+
+    menuIcon.addEventListener('click', () => {
+        menu.classList.toggle('visible');
+        menuIcon.classList.toggle('active');
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        }
+    });
+
+    // Animation Selection Logic
+    const animationSelect = document.getElementById('animation-select');
+
+    animationSelect.addEventListener('change', (event) => {
+        const selectedAnimation = event.target.value;
+
+        if (selectedAnimation === 'sliding') {
+            menu.classList.add('sliding-menu');
+            menu.classList.remove('ios-menu');
+        } else if (selectedAnimation === 'ios-style') {
+            menu.classList.add('ios-menu');
+            menu.classList.remove('sliding-menu');
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const defaultAnimation = animationSelect.value;
+        if (defaultAnimation === 'sliding') {
+            menu.classList.add('sliding-menu');
+        } else if (defaultAnimation === 'ios-style') {
+            menu.classList.add('ios-menu');
+        }
+    });
+
+    // Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
 
-    // Function to update button text dynamically
     const updateThemeButtonText = () => {
-        const isLightMode = document.body.classList.contains('light-mode');
-        themeToggle.textContent = isLightMode ? 'Dark Theme' : 'Light Theme';
+        themeToggle.textContent = document.body.classList.contains('light-mode') ? 'Dark Theme' : 'Light Theme';
     };
 
     themeToggle.addEventListener('click', () => {
@@ -78,10 +120,12 @@
         updateThemeButtonText();
     });
 
-    // Apply saved theme on page load and update button text
+    // Apply saved theme on page load
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
     }
     updateThemeButtonText();
-</script>
+  </script>
+</body>
+</html>
