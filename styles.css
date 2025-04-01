@@ -17,6 +17,17 @@ header {
     border-bottom: 1px solid #3498db;
 }
 
+.logo-image {
+    width: 80px; /* Adjust size */
+    height: 80px;
+    max-width: 100px; /* Prevents oversized scaling */
+    max-height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db; /* Blue border */
+    display: block;
+}
+
 /* Navigation Menu */
 .menu {
     position: fixed;
