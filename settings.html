@@ -26,20 +26,20 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="mods.html">Mods</a></li>
       <li><a href="games.html">Games</a></li>
-      <li><a href="learn-to-code.html">Learn to Code</a></li> <!-- ✅ Added above Settings -->
+      <li><a href="learn-to-code.html">Learn to Code</a></li>
       <li><a href="settings.html">Settings</a></li>
     </ul>
-</nav>
+  </nav>
+
   <!-- Main Content -->
   <section id="settings">
     <h1>Settings</h1>
-    <p>Adjust your preferences below.</p>
-
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-      <label>Choose Theme:</label>
-      <button id="toggle-theme" class="theme-btn">Switch to Light Mode</button>
-    </div>
+    <p>Select your preferred menu animation:</p>
+    <label for="animation-select">Menu Animation:</label>
+    <select id="animation-select">
+      <option value="sliding">Sliding Animation</option>
+      <option value="ios-style">iOS-Style Animation</option>
+    </select>
   </section>
 
   <!-- Footer -->
@@ -49,30 +49,9 @@
 
   <!-- JavaScript -->
   <script>
-    const toggleThemeBtn = document.getElementById('toggle-theme');
-
-    // Apply saved theme on page load
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-        toggleThemeBtn.textContent = "Switch to Dark Mode";
-    }
-
-    // Toggle Theme and Save Preference
-    toggleThemeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-
-        if (document.body.classList.contains('light-mode')) {
-            localStorage.setItem('theme', 'light');
-            toggleThemeBtn.textContent = "Switch to Dark Mode";
-        } else {
-            localStorage.setItem('theme', 'dark');
-            toggleThemeBtn.textContent = "Switch to Light Mode";
-        }
-    });
-
-    // Hamburger Menu Toggle (Consistent Across Pages)
+    // Hamburger Menu Toggle
     const menuIcon = document.getElementById('menu-icon');
-    const menu = document.getElementById('menu');
+    const menu = document.querySelector('.menu');
     const menuLinks = document.querySelectorAll('.menu ul li a');
 
     menuIcon.addEventListener('click', () => {
@@ -93,6 +72,35 @@
             menuIcon.classList.remove('active');
         }
     });
+
+    // Animation Selection Logic
+    const animationSelect = document.getElementById('animation-select');
+
+    animationSelect.addEventListener('change', (event) => {
+        const selectedAnimation = event.target.value;
+
+        if (selectedAnimation === 'sliding') {
+            menu.classList.add('sliding-menu');
+            menu.classList.remove('ios-menu');
+        } else if (selectedAnimation === 'ios-style') {
+            menu.classList.add('ios-menu');
+            menu.classList.remove('sliding-menu');
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const defaultAnimation = animationSelect.value;
+        if (defaultAnimation === 'sliding') {
+            menu.classList.add('sliding-menu');
+        } else if (defaultAnimation === 'ios-style') {
+            menu.classList.add('ios-menu');
+        }
+    });
+
+    // Apply saved theme on page load
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+    }
   </script>
 </body>
 </html>
