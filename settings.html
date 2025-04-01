@@ -21,7 +21,7 @@
   </header>
 
   <!-- Navigation Menu -->
-  <nav class="menu" id="menu">
+  <nav class="menu sliding-menu" id="menu">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="mods.html">Mods</a></li>
@@ -34,12 +34,25 @@
   <!-- Main Content -->
   <section id="settings">
     <h1>Settings</h1>
+
+    <!-- Original Settings Content Preserved -->
+    <p>Manage your account preferences and customize your experience.</p>
+    <p>You can modify site settings below:</p>
+    
+    <!-- Theme Toggle -->
+    <p>Switch between Light and Dark themes:</p>
+    <button id="theme-toggle" class="theme-btn">Toggle Theme</button>
+
+    <!-- Animation Selection -->
     <p>Select your preferred menu animation:</p>
     <label for="animation-select">Menu Animation:</label>
-    <select id="animation-select">
+    <select id="animation-select" class="theme-btn">
       <option value="sliding">Sliding Animation</option>
       <option value="ios-style">iOS-Style Animation</option>
     </select>
+
+    <!-- Save Preferences Button -->
+    <button id="save-preferences" class="save-btn">Save Preferences</button>
   </section>
 
   <!-- Footer -->
@@ -97,74 +110,38 @@
         }
     });
 
-    // Apply saved theme on page load
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-    }
-  </script>
-
- <script>
-    // Hamburger Menu Toggle
-    const menuIcon = document.getElementById('menu-icon');
-    const menu = document.querySelector('.menu');
-    const menuLinks = document.querySelectorAll('.menu ul li a');
-
-    menuIcon.addEventListener('click', () => {
-        menu.classList.toggle('visible');
-        menuIcon.classList.toggle('active');
-    });
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('visible');
-            menuIcon.classList.remove('active');
-        });
-    });
-
-    document.addEventListener('click', (event) => {
-        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-            menu.classList.remove('visible');
-            menuIcon.classList.remove('active');
-        }
-    });
-
-    // Animation Selection Logic
-    const animationSelect = document.getElementById('animation-select');
-
-    animationSelect.addEventListener('change', (event) => {
-        const selectedAnimation = event.target.value;
-
-        if (selectedAnimation === 'sliding') {
-            menu.classList.add('sliding-menu');
-            menu.classList.remove('ios-menu');
-        } else if (selectedAnimation === 'ios-style') {
-            menu.classList.add('ios-menu');
-            menu.classList.remove('sliding-menu');
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const defaultAnimation = animationSelect.value;
-        if (defaultAnimation === 'sliding') {
-            menu.classList.add('sliding-menu');
-        } else if (defaultAnimation === 'ios-style') {
-            menu.classList.add('ios-menu');
-        }
-    });
-
     // Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
 
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('light-mode');
-        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
     });
 
-    // Apply saved theme on page load
+    // Save Preferences Logic
+    const savePreferencesBtn = document.getElementById('save-preferences');
+
+    savePreferencesBtn.addEventListener('click', () => {
+        const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+        const selectedAnimation = animationSelect.value;
+
+        // Save preferences to localStorage
+        localStorage.setItem('theme', currentTheme);
+        localStorage.setItem('menuAnimation', selectedAnimation);
+
+        alert('Preferences saved!');
+    });
+
+    // Apply saved preferences on page load
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
     }
-</script>
- 
+
+    const savedAnimation = localStorage.getItem('menuAnimation');
+    if (savedAnimation === 'sliding') {
+        menu.classList.add('sliding-menu');
+    } else if (savedAnimation === 'ios-style') {
+        menu.classList.add('ios-menu');
+    }
+  </script>
 </body>
 </html>
