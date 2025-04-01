@@ -2,7 +2,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 15px; /* Increased for better spacing */
+    padding: 15px;
     background-color: #000000;
     color: #ffffff;
 }
@@ -23,7 +23,7 @@ header {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #3498db; /* Blue border */
+    border: 3px solid #3498db;
     display: block;
 }
 
@@ -31,19 +31,19 @@ header {
 .menu {
     position: fixed;
     top: 60px;
-    right: -250px; /* Initially off-screen */
+    right: -250px;
     width: 220px;
-    background: rgba(0, 0, 0, 0.6); /* Dark Mode: More transparent */
-    backdrop-filter: blur(12px); /* Adds a blur effect */
+    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent */
+    backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
     transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out;
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
 }
 
 /* Show menu when toggled */
 .menu.visible {
-    right: 20px; /* Slides in */
+    right: 20px;
     opacity: 1;
 }
 
@@ -66,36 +66,55 @@ header {
 /* Light Mode Hamburger Menu (Translucent #FAF9FA) */
 .light-mode .menu {
     background: rgba(250, 249, 250, 0.8); /* Translucent off-white */
-    backdrop-filter: blur(12px); /* Keeps blur effect */
+    backdrop-filter: blur(12px);
 }
 
 .light-mode .menu a {
-    color: black !important; /* Keeps text readable */
+    color: black !important; /* Black text for readability */
 }
 
-/* White Backgrounds for Other Elements */
-.light-mode .logo {
-    background-color: white; /* Keeps logo container matching theme */
+/* Light Mode Menu Icon */
+.light-mode .menu-icon .bar {
+    background-color: black;
 }
 
-.light-mode #settings {
+/* Light Mode Theme Button */
+.light-mode .theme-btn {
+    background-color: black;
+    color: white;
+}
+
+.light-mode .theme-btn:hover {
+    background-color: #333;
+}
+
+/* Fix for White Backgrounds */
+.light-mode section {
     background-color: white;
     color: black;
 }
 
+.light-mode .logo {
+    background-color: white;
+}
 
-/* Remove blue highlight and underline from menu links */
+.light-mode header h1, 
+.light-mode footer p {
+    color: black;
+}
+
+/* Menu Links Styling */
 .menu a {
-    text-decoration: none; /* No underline */
-    color: white; /* Keeps text white instead of blue */
+    text-decoration: none;
+    color: white;
 }
 
 .menu a:visited {
-    color: white; /* Prevents turning purple */
+    color: white;
 }
 
 .menu a:hover {
-    color: #3498db; /* Optional hover effect */
+    color: #3498db;
 }
 
 /* Theme Button Styling */
@@ -147,71 +166,8 @@ footer {
 }
 
 .menu-icon.active .bar:nth-child(2) {
-    opacity: 0; /* Middle bar disappears */
+    opacity: 0;
 }
 
 .menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
-    color: white; /* Prevents turning purple */
-}
-
-.menu a:hover {
-    color: #3498db; /* Optional hover effect */
-}
-
-/* Theme Button Styling */
-.theme-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.theme-btn:hover {
-    background-color: #2980b9;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-    font-size: 14px;
-}
-
-/* Hamburger Icon Animation */
-.menu-icon {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-}
-
-.menu-icon .bar {
-    height: 4px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Animate bars when menu opens */
-.menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0; /* Middle bar disappears */
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
+    transform: translateY(-10px) rotate(-45deg;
