@@ -100,3 +100,31 @@ footer {
     color: #ffffff;
     font-size: 14px;
 }
+
+/* Default Dark Mode (already set) */
+
+/* Light Mode */
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+/* Adjust menu for Light Mode */
+.light-mode .menu {
+    background: rgba(255, 255, 255, 0.7); /* Light translucent */
+    backdrop-filter: blur(12px);
+}
+
+.light-mode .menu a {
+    color: black; /* Black text for visibility */
+}
+
+.light-mode header {
+    background-color: white;
+    border-bottom: 1px solid #000000; /* Black border */
+}
+
+.light-mode footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+}
