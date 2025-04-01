@@ -22,6 +22,7 @@ header {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid #3498db; /* Restored blue circle */
 }
 
 /* Hamburger Menu Icon */
@@ -51,12 +52,27 @@ header {
   backdrop-filter: blur(10px);
   padding: 15px;
   border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   display: none;
 }
 
 .menu.visible {
   display: block;
+}
+
+/* Change all links to white */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Ensure visited links stay white */
+a:visited {
+  color: white;
+}
+
+/* Highlight links on hover */
+a:hover {
+  color: #ccc;
 }
 
 /* Footer */
@@ -66,34 +82,4 @@ footer {
   background-color: rgba(0, 0, 0, 0.9);
   color: #ffffff;
   font-size: 14px;
-}
-
-/* Mods Page Styling */
-#mods {
-  text-align: center;
-  padding: 40px; /* Matches Home Page */
-}
-
-.mods-list {
-  list-style-type: square;
-  text-align: left;
-  display: inline-block;
-  padding: 20px; /* Added padding for better spacing */
-  font-size: 18px; /* Slightly larger font for readability */
-}
-
-/* Change all links to white */
-a {
-    color: white;
-    text-decoration: none; /* Removes the underline */
-}
-
-/* Ensure visited links stay white */
-a:visited {
-    color: white;
-}
-
-/* Highlight links on hover */
-a:hover {
-    color: #ccc; /* Light gray for better visibility */
 }
