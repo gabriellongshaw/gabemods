@@ -66,117 +66,29 @@ header {
     opacity: 1; /* Fades in */
 }
 
-/* Light Mode Styles */
-.light-mode {
-    background-color: white;
-    color: black;
-}
-
-/* Light Mode Header & Footer */
-.light-mode header {
-    background-color: white;
-}
-
-.light-mode footer {
-    background-color: white;
-    color: black;
-}
-
-/* Light Mode Hamburger Menu (Translucent #FAF9FA) */
-.light-mode .menu {
-    background: rgba(250, 249, 250, 0.8); /* Translucent off-white */
-    backdrop-filter: blur(12px);
-}
-
-.light-mode .menu a {
-    color: black !important; /* Black text for readability */
-}
-
-/* Light Mode Menu Icon */
-.light-mode .menu-icon .bar {
-    background-color: black;
-}
-
-/* Light Mode Theme Button */
-.light-mode .theme-btn {
-    background-color: black;
-    color: white;
-}
-
-.light-mode .theme-btn:hover {
-    background-color: #333;
-}
-
-/* Fix for White Backgrounds */
-.light-mode section {
-    background-color: white;
-    color: black;
-}
-
-.light-mode .logo {
-    background-color: white;
-}
-
-.light-mode header h1,
-.light-mode footer p {
-    color: black;
-}
-
-/* Menu Links Styling */
-.menu a {
-    text-decoration: none;
-    color: white;
-}
-
-.menu a:visited {
-    color: white;
-}
-
-.menu a:hover {
-    color: #3498db;
-}
-
-/* Dropdown Styling (Modern Button Look) */
+/* Unified Button Styling */
 .theme-btn, select#animation-select {
-    background-color: #3498db; /* Same color as the theme button */
-    color: white;
+    background-color: #3498db; /* Consistent blue color */
+    color: white; /* White text */
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
-select#animation-select:hover {
+.theme-btn:hover, select#animation-select:hover {
     background-color: #2980b9; /* Hover effect */
 }
 
-select#animation-select:focus {
-    outline: none;
-    box-shadow: 0 0 5px #3498db; /* Focus glow effect */
+.theme-btn.light-mode, select#animation-select.light-mode {
+    background-color: black; /* Black background in Light Mode */
+    color: white; /* White text */
 }
 
-/* Save Preferences Button Styling */
-.save-btn {
-    background-color: #2ecc71; /* Green color */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    margin-top: 15px; /* Spacing below the dropdown */
-}
-
-.save-btn:hover {
-    background-color: #27ae60; /* Darker green on hover */
-}
-
-.save-btn:focus {
-    outline: none;
-    box-shadow: 0 0 5px #2ecc71; /* Glow effect */
+.theme-btn.light-mode:hover, select#animation-select.light-mode:hover {
+    background-color: #333; /* Hover effect in Light Mode */
 }
 
 /* Footer */
@@ -186,35 +98,4 @@ footer {
     background-color: rgba(0, 0, 0, 0.9);
     color: #ffffff;
     font-size: 14px;
-}
-
-/* Hamburger Icon */
-.menu-icon {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-}
-
-/* Restored and Fixed Original Animation for Hamburger Icon */
-.menu-icon .bar {
-    height: 4px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.menu-icon.active .bar:nth-child(1) {
-    transform: translate(0, 10px) rotate(45deg); /* Fixed for perfect alignment */
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0; /* Middle bar disappears */
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: translate(0, -10px) rotate(-45deg); /* Fixed for perfect alignment */
 }
