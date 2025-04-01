@@ -33,8 +33,8 @@ header {
     top: 60px;
     right: -250px; /* Initially off-screen */
     width: 220px;
-    background: rgba(0, 0, 0, 0.6); /* More transparent */
-    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.6); /* Dark Mode: More transparent */
+    backdrop-filter: blur(12px); /* Adds a blur effect */
     padding: 20px;
     border-radius: 15px;
     transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out;
@@ -53,23 +53,12 @@ header {
     color: black;
 }
 
-/* Light Mode Header & Footer */
-.light-mode header {
-    background-color: white;
-}
-
-.light-mode footer {
-    background-color: white;
-    color: black;
-}
-
-/* Light Mode Hamburger Menu (Now #FAF9FA) */
+/* Light Mode Hamburger Menu (Translucent #FAF9FA) */
 .light-mode .menu {
-    background: #FAF9FA; /* Slightly off-white */
-    backdrop-filter: blur(12px);
+    background: rgba(250, 249, 250, 0.8); /* Translucent off-white */
+    backdrop-filter: blur(12px); /* Keeps blur effect */
 }
 
-/* Light Mode Menu Text */
 .light-mode .menu a {
     color: black !important; /* Keeps text readable */
 }
@@ -96,6 +85,68 @@ header {
 }
 
 .menu a:visited {
+    color: white; /* Prevents turning purple */
+}
+
+.menu a:hover {
+    color: #3498db; /* Optional hover effect */
+}
+
+/* Theme Button Styling */
+.theme-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.theme-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Hamburger Icon Animation */
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+}
+
+.menu-icon .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animate bars when menu opens */
+.menu-icon.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-icon.active .bar:nth-child(2) {
+    opacity: 0; /* Middle bar disappears */
+}
+
+.menu-icon.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
     color: white; /* Prevents turning purple */
 }
 
