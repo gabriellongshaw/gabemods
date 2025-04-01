@@ -136,9 +136,9 @@ header {
     color: #3498db;
 }
 
-/* Theme Button Styling */
-.theme-btn {
-    background-color: #3498db;
+/* Dropdown Styling (Modern Button Look) */
+.theme-btn, select#animation-select {
+    background-color: #3498db; /* Same color as the theme button */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -148,8 +148,35 @@ header {
     transition: background 0.3s ease-in-out;
 }
 
-.theme-btn:hover {
-    background-color: #2980b9;
+select#animation-select:hover {
+    background-color: #2980b9; /* Hover effect */
+}
+
+select#animation-select:focus {
+    outline: none;
+    box-shadow: 0 0 5px #3498db; /* Focus glow effect */
+}
+
+/* Save Preferences Button Styling */
+.save-btn {
+    background-color: #2ecc71; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 15px; /* Spacing below the dropdown */
+}
+
+.save-btn:hover {
+    background-color: #27ae60; /* Darker green on hover */
+}
+
+.save-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px #2ecc71; /* Glow effect */
 }
 
 /* Footer */
@@ -190,25 +217,4 @@ footer {
 
 .menu-icon.active .bar:nth-child(3) {
     transform: translate(0, -10px) rotate(-45deg); /* Fixed for perfect alignment */
-}
-
-/* Dropdown Styling (Modern Button Look) */
-.theme-btn, select#animation-select {
-    background-color: #3498db; /* Same color as the theme button */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-select#animation-select:hover {
-    background-color: #2980b9; /* Hover effect */
-}
-
-select#animation-select:focus {
-    outline: none;
-    box-shadow: 0 0 5px #3498db; /* Focus glow effect */
 }
