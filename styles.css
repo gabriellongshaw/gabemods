@@ -69,8 +69,9 @@ header {
     backdrop-filter: blur(12px);
 }
 
+/* Light Mode Hamburger Menu Text */
 .light-mode .menu a {
-    color: black; /* Black text for readability */
+    color: black !important; /* Forces text to be black */
 }
 
 /* Light Mode Menu Icon */
