@@ -53,6 +53,16 @@ header {
     color: black;
 }
 
+/* Light Mode Header & Footer */
+.light-mode header {
+    background-color: white;
+}
+
+.light-mode footer {
+    background-color: white;
+    color: black;
+}
+
 /* Light Mode Hamburger Menu */
 .light-mode .menu {
     background: rgba(255, 255, 255, 0.9); /* White background */
@@ -66,6 +76,16 @@ header {
 /* Light Mode Menu Icon */
 .light-mode .menu-icon .bar {
     background-color: black; /* Change to black in Light Mode */
+}
+
+/* Light Mode Theme Button */
+.light-mode .theme-btn {
+    background-color: black;
+    color: white;
+}
+
+.light-mode .theme-btn:hover {
+    background-color: #333;
 }
 
 /* Remove blue highlight and underline from menu links */
@@ -96,16 +116,6 @@ header {
 
 .theme-btn:hover {
     background-color: #2980b9;
-}
-
-/* Light Mode Theme Button */
-.light-mode .theme-btn {
-    background-color: #555;
-    color: white;
-}
-
-.light-mode .theme-btn:hover {
-    background-color: #333;
 }
 
 /* Footer */
