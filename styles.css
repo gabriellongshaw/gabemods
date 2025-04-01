@@ -5,6 +5,7 @@ body {
   padding: 0;
   background-color: #000000;
   color: #ffffff;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 /* Header Styling */
@@ -17,16 +18,10 @@ header {
   border-bottom: 1px solid #3498db;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
 .logo-image {
-  width: 50px;
+  width: 50px; /* Updated size */
   height: 50px;
   border-radius: 50%;
-  border: 2px solid #3498db;
   object-fit: cover;
 }
 
@@ -47,22 +42,22 @@ header {
   border-radius: 2px;
 }
 
-/* iOS-style Compact Navigation Menu */
+/* Navigation Menu */
 .menu {
   position: fixed;
   top: 20px;
-  right: 20px; /* Positioned at the top-right corner */
-  width: 200px; /* Compact width */
-  background: rgba(17, 17, 17, 0.5); /* Dark translucent background */
+  right: 20px;
+  width: 200px;
+  background: rgba(17, 17, 17, 0.5);
   backdrop-filter: blur(10px); /* iOS-style blur effect */
   padding: 15px;
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-  display: none; /* Hidden by default */
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  display: none;
 }
 
 .menu.visible {
-  display: block; /* Visible when toggled */
+  display: block;
 }
 
 .menu ul {
@@ -77,40 +72,58 @@ header {
 
 .menu ul li a {
   text-decoration: none;
-  color: #ffffff; /* White text for better contrast */
-  font-size: 14px; /* Compact font size */
+  color: #ffffff;
+  font-size: 16px;
   transition: color 0.3s ease;
 }
 
 .menu ul li a:hover {
-  color: #3498db; /* Blue hover effect */
+  color: #3498db;
 }
 
-/* Responsive Adjustments */
-@media (min-width: 768px) {
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
   .menu {
-    position: static;
-    display: flex !important;
-    flex-direction: row;
-    gap: 15px;
-    background: transparent;
-    backdrop-filter: none;
-    box-shadow: none;
+    width: 180px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
   }
 
-  .menu ul {
-    display: flex;
-  }
-
-  .menu ul li {
-    margin: 0 10px;
-  }
-
-  .menu ul li a {
-    color: #ffffff; /* White text for larger screens */
+  .menu {
+    width: 150px;
+    padding: 8px;
   }
 
   .menu-icon {
-    display: none; /* Hide hamburger menu on larger screens */
+    width: 25px;
+    height: 20px;
   }
+
+  .menu-icon .bar {
+    height: 3px;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  font-size: 14px;
 }
