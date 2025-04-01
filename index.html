@@ -24,8 +24,8 @@
   <nav class="menu" id="menu">
     <ul>
       <li><a href="index.html">Home</a></li>
-     <li><a href="mods.html">Mods</a></li>
-      <li><a href="settings.html">Settings</a></li> <!-- Removed "More" -->
+      <li><a href="mods.html">Mods</a></li>
+      <li><a href="settings.html">Settings</a></li>
     </ul>
   </nav>
 
@@ -48,25 +48,19 @@
     const menuLinks = document.querySelectorAll('.menu ul li a');
 
     menuIcon.addEventListener('click', () => {
-      menu.classList.toggle('visible');
+        menu.classList.toggle('visible');
     });
 
     menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('visible');
-      });
+        link.addEventListener('click', () => {
+            menu.classList.remove('visible');
+        });
     });
 
     document.addEventListener('click', (event) => {
-      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-        menu.classList.remove('visible');
-      }
-
-      <style>
-  img {
-    border: 5px solid red;
-  }
-</style>
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove('visible');
+        }
     });
   </script>
 </body>
