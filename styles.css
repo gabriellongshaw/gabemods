@@ -19,10 +19,10 @@ header {
 
 /* Logo Styling */
 .logo-image {
-    width: 80px; /* Properly scaled */
-    height: 80px;
-    max-width: 80px; /* Prevents oversized scaling */
-    max-height: 80px;
+    width: 50px; /* Properly scaled */
+    height: 50px;
+    max-width: 50px; /* Prevents oversized scaling */
+    max-height: 50px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #3498db; /* Blue border */
@@ -87,4 +87,18 @@ footer {
     background-color: rgba(0, 0, 0, 0.9);
     color: #ffffff;
     font-size: 14px;
+}
+
+/* Remove blue highlight and underline from menu links */
+.menu a {
+    text-decoration: none; /* No underline */
+    color: white; /* Keeps text white instead of blue */
+}
+
+.menu a:visited {
+    color: white; /* Prevents turning purple */
+}
+
+.menu a:hover {
+    color: #3498db; /* Optional hover effect (blue) */
 }
