@@ -11,9 +11,8 @@
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+      <img src="assets/logo.jpg" alt="Gabe Mods Logo" class="logo-image">
     </div>
-    <!-- Hamburger Menu Icon -->
     <div class="menu-icon" id="menu-icon">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -25,9 +24,7 @@
   <nav class="menu" id="menu">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="mods.html">Mods</a></li>
-      <li><a href="#games">Games</a></li>
-      <li><a href="#more">More</a></li>
+      <li><a href="pages/settings.html">Settings</a></li> <!-- Removed "More" -->
     </ul>
   </nav>
 
@@ -44,27 +41,24 @@
 
   <!-- JavaScript -->
   <script>
-    // JavaScript to handle the menu toggle
+    // JavaScript for menu toggle
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
-    const menuLinks = document.querySelectorAll('.menu ul li a'); // Select all menu links
+    const menuLinks = document.querySelectorAll('.menu ul li a');
 
-    // Toggle the menu when the icon is clicked
     menuIcon.addEventListener('click', () => {
-      menu.classList.toggle('visible'); // Adds/removes the 'visible' class
+      menu.classList.toggle('visible');
     });
 
-    // Close the menu when clicking a link inside the menu
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
-        menu.classList.remove('visible'); // Ensures the menu is closed
+        menu.classList.remove('visible');
       });
     });
 
-    // Optional: Close menu when clicking outside
     document.addEventListener('click', (event) => {
       if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-        menu.classList.remove('visible'); // Close if click is outside menu or icon
+        menu.classList.remove('visible');
       }
     });
   </script>
