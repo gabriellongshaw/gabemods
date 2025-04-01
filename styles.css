@@ -55,8 +55,12 @@ header {
 
 /* Light Mode Hamburger Menu */
 .light-mode .menu {
-    background: rgba(0, 0, 0, 0.9); /* Black background in Light Mode */
+    background: rgba(255, 255, 255, 0.9); /* White background */
     backdrop-filter: blur(12px);
+}
+
+.light-mode .menu a {
+    color: black; /* Black text for readability */
 }
 
 .light-mode .menu a {
