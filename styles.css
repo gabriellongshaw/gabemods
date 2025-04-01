@@ -152,7 +152,7 @@ footer {
     height: 25px;
 }
 
-/* Perfectly Symmetrical Animation for Hamburger Icon */
+/* Restored and Fixed Original Animation for Hamburger Icon */
 .menu-icon .bar {
     height: 4px;
     width: 100%;
@@ -162,7 +162,7 @@ footer {
 }
 
 .menu-icon.active .bar:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px); /* Adjusted for symmetry */
+    transform: translate(0, 10px) rotate(45deg); /* Fixed for perfect alignment */
 }
 
 .menu-icon.active .bar:nth-child(2) {
@@ -170,5 +170,5 @@ footer {
 }
 
 .menu-icon.active .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px); /* Adjusted for symmetry */
+    transform: translate(0, -10px) rotate(-45deg); /* Fixed for perfect alignment */
 }
