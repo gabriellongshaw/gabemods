@@ -66,6 +66,12 @@ header {
     opacity: 1; /* Fades in */
 }
 
+/* Light Mode Hamburger Menu */
+.light-mode .menu {
+    background: rgba(250, 249, 250, 0.8); /* Translucent Light Mode */
+    backdrop-filter: blur(12px); /* Same blur effect as Dark Mode */
+}
+
 /* Unified Button Styling */
 .theme-btn, select#animation-select {
     background-color: #3498db; /* Consistent blue color */
