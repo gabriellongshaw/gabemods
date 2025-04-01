@@ -56,29 +56,30 @@
 
   <!-- JavaScript -->
   <script>
-    // JavaScript for menu toggle
+    // JavaScript for menu toggle (Fixing animation)
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.menu ul li a');
 
     menuIcon.addEventListener('click', () => {
-      menu.classList.toggle('visible');
+        menu.classList.toggle('visible');
+        menuIcon.classList.toggle('active'); // Fix: Animates menu icon
     });
 
     menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('visible');
-      });
+        link.addEventListener('click', () => {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        });
     });
 
     document.addEventListener('click', (event) => {
-      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-        menu.classList.remove('visible');
-      }
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        }
     });
-  </script>
 
-  <script>
     // Apply saved theme on page load
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
