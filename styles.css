@@ -27,14 +27,14 @@ header {
     display: block;
 }
 
-/* Hamburger Menu with Translucent Blur */
+/* Hamburger Menu with Increased Transparency */
 .menu {
     position: fixed;
     top: 60px;
     right: -250px; /* Initially off-screen */
     width: 220px;
-    background: rgba(0, 0, 0, 0.8); /* Black translucent */
-    backdrop-filter: blur(10px); /* Adds blur effect */
+    background: rgba(0, 0, 0, 0.6); /* More transparent */
+    backdrop-filter: blur(12px); /* Slightly stronger blur */
     padding: 20px;
     border-radius: 15px;
     transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out;
