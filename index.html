@@ -49,26 +49,31 @@
 
   <!-- JavaScript -->
   <script>
-    // JavaScript for menu toggle
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.menu ul li a');
 
+    // Toggle menu visibility with animation
     menuIcon.addEventListener('click', () => {
         menu.classList.toggle('visible');
+        menuIcon.classList.toggle('active'); // Animate bars
     });
 
+    // Close menu when clicking a link inside it
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
         });
     });
 
+    // Close menu when clicking outside of it
     document.addEventListener('click', (event) => {
         if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
             menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
         }
     });
-  </script>
+</script>
 </body>
 </html>
