@@ -143,5 +143,13 @@
         menu.classList.add('ios-menu');
     }
   </script>
+
+  <script>
+  // Apply saved theme on page load
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-mode');
+  }
+</script>
+  
 </body>
 </html>
