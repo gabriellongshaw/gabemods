@@ -92,5 +92,22 @@
   }
 </script>
 
+  <script>
+  const menu = document.querySelector('.menu');
+
+  // Apply saved animation preference on page load
+  const savedAnimation = localStorage.getItem('menuAnimation');
+  if (savedAnimation === 'sliding') {
+    menu.classList.add('sliding-menu');
+  } else if (savedAnimation === 'ios-style') {
+    menu.classList.add('ios-menu');
+  }
+
+  // Apply saved theme on page load
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-mode');
+  }
+</script>
+
 </body>
 </html>
