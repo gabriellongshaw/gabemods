@@ -217,3 +217,18 @@ footer {
     border-radius: 50%; /* Makes the icons circular */
     margin-right: 8px; /* Space between logo & text */
 }
+
+/* ✅ New Red & Black Theme */
+.red-black {
+    background-color: black;
+    color: red;
+}
+
+/* ✅ Adjust links for Red & Black theme */
+.red-black a {
+    color: red;
+}
+
+.red-black a:hover {
+    color: darkred;
+}
