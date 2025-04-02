@@ -35,7 +35,6 @@
   <section id="settings">
     <h1>Settings</h1>
 
-    <!-- Original Settings Content -->
     <p>Switch between Light and Dark themes:</p>
     <button id="theme-toggle" class="theme-btn">Light Theme</button>
   </section>
@@ -49,19 +48,11 @@
   <script>
     // Hamburger Menu Toggle
     const menuIcon = document.getElementById('menu-icon');
-    const menu = document.querySelector('.menu');
-    const menuLinks = document.querySelectorAll('.menu ul li a');
+    const menu = document.getElementById('menu');
 
     menuIcon.addEventListener('click', () => {
         menu.classList.toggle('visible');
         menuIcon.classList.toggle('active');
-    });
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('visible');
-            menuIcon.classList.remove('active');
-        });
     });
 
     document.addEventListener('click', (event) => {
