@@ -22,10 +22,10 @@ body {
     color: #000000;
 }
 
-/* Light Mode Menu: Translucent Effect */
+/* Light Mode Menu: Translucent Effect on All Devices */
 .light-mode .menu {
     background: rgba(255, 255, 255, 0.75); /* Keeps the white color but adds translucency */
-    backdrop-filter: blur(12px); /* Maintains the blur effect */
+    backdrop-filter: blur(15px); /* Ensures consistency across all screens */
 }
 
 .light-mode .menu a {
@@ -56,18 +56,18 @@ header {
     display: block;
 }
 
-/* Fixed Navigation Menu Placement */
+/* Fixed Navigation Menu Placement (Translucent for All Devices) */
 .menu {
     position: fixed;
     top: 60px;
     right: -300px; /* Start off-screen */
     width: 220px;
     background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent menu */
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(15px); /* Ensures it works across all screens */
     padding: 20px;
     border-radius: 15px;
-    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth slide-in animation */
-    opacity: 0; /* Initially hidden */
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
     display: block; /* Ensure menu is contained */
 }
 
