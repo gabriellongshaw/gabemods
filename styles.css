@@ -241,3 +241,8 @@ footer {
 .red-black a:hover {
     color: darkred;
 }
+
+/* ✅ Add spacing between blue buttons */
+.blue-button {
+    margin-bottom: 10px; /* Adjust spacing as needed */
+}
