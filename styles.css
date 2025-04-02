@@ -217,3 +217,21 @@ footer {
     border-radius: 50%; /* Makes the icons circular */
     margin-right: 8px; /* Space between logo & text */
 }
+
+/* ✅ AltStore Button (Enhanced Blue-to-Green Gradient) */
+.altstore-btn {
+    background: linear-gradient(90deg, #00A2FF, #00FF7F); /* More vibrant blue & green */
+}
+
+.altstore-btn:hover {
+    background: linear-gradient(90deg, #008CFF, #00D973); /* Slightly darker hover gradient */
+}
+
+/* ✅ SideStore Button (Enhanced Purple-to-#0703FC Gradient) */
+.sidestore-btn {
+    background: linear-gradient(90deg, #8000FF, #0703FC); /* Stronger purple & deep blue */
+}
+
+.sidestore-btn:hover {
+    background: linear-gradient(90deg, #6A00E0, #0502D3); /* Slightly darker hover gradient */
+}
