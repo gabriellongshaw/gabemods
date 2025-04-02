@@ -3,8 +3,8 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 15px;
-    background-color: #000000; /* Dark Mode background */
-    color: #ffffff; /* Dark Mode text */
+    background-color: #000000; /* Default Dark Mode background */
+    color: #ffffff; /* Default Dark Mode text */
 }
 
 /* Light Mode Styling */
@@ -28,11 +28,11 @@ body {
 }
 
 .light-mode .menu a {
-    color: #000000; /* Black text in Light Mode */
+    color: black; /* Black text for Light Mode */
 }
 
 .light-mode .menu a:hover {
-    color: #3498db; /* Blue on hover */
+    color: #3498db;
 }
 
 /* Header Styling */
@@ -55,27 +55,47 @@ header {
     display: block;
 }
 
-/* iOS-Style Animation for Hamburger Menu */
-.ios-menu {
+/* Fixed Navigation Menu Placement */
+.menu {
     position: fixed;
     top: 60px;
-    right: 20px;
+    right: -300px; /* Start off-screen */
     width: 220px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent menu */
     backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
-    transform: scale(0.8);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth slide-in animation */
+    opacity: 0; /* Initially hidden */
+    display: block; /* Ensure menu is contained */
 }
 
-.ios-menu.visible {
-    transform: scale(1);
-    opacity: 1;
+.menu.visible {
+    right: 20px; /* Slide in */
+    opacity: 1; /* Fade in */
 }
 
-/* Modern Theme Button Styling */
+/* Menu Links Styling */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: block;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.light-mode .menu a {
+    color: black;
+}
+
+/* Theme Button Styling */
 .theme-btn {
     background-color: #3498db;
     color: white;
@@ -95,12 +115,12 @@ header {
 }
 
 .light-mode .theme-btn {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: black;
+    color: white;
 }
 
 .light-mode .theme-btn:hover {
-    background-color: #555555;
+    background-color: #333;
 }
 
 /* Hamburger Icon Animations */
@@ -137,16 +157,6 @@ header {
 
 .menu-icon.active .bar:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
-}
-
-/* Remove default link styling */
-.menu a {
-    color: inherit; /* Inherits the text color from the surrounding element */
-    text-decoration: none; /* Removes underline */
-}
-
-.menu a:visited {
-    color: inherit; /* Ensures visited links match normal text */
 }
 
 /* Footer Styling */
