@@ -1,261 +1,28 @@
-/* General Styling */
+/* ✅ General Styling */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 15px;
-    background-color: #000000; /* Default Dark Mode background */
-    color: #ffffff; /* Default Dark Mode text */
-}
-
-/* Light Mode Styling */
-.light-mode {
-    background-color: #ffffff; /* Light Mode background */
-    color: #000000; /* Light Mode text */
-}
-
-.light-mode header {
-    background-color: #ffffff;
-}
-
-.light-mode footer {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Light Mode Menu: Translucent Effect on All Devices */
-.light-mode .menu {
-    background: rgba(255, 255, 255, 0.75); /* Keeps the white color but adds translucency */
-    backdrop-filter: blur(15px); /* Ensures consistency across all screens */
-}
-
-.light-mode .menu a {
-    color: black; /* Black text for Light Mode */
-}
-
-.light-mode .menu a:hover {
-    color: #3498db;
-}
-
-/* Header Styling */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #000000;
-    border-bottom: 1px solid #3498db;
-}
-
-/* Logo Styling */
-.logo-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #3498db;
-    display: block;
-}
-
-/* Fixed Navigation Menu Placement (Translucent for All Devices) */
-.menu {
-    position: fixed;
-    top: 60px;
-    right: -300px; /* Start off-screen */
-    width: 220px;
-    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent menu */
-    backdrop-filter: blur(15px); /* Ensures it works across all screens */
-    padding: 20px;
-    border-radius: 15px;
-    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    opacity: 0;
-    display: block; /* Ensure menu is contained */
-}
-
-.menu.visible {
-    right: 20px; /* Slide in */
-    opacity: 1; /* Fade in */
-}
-
-/* Menu Links Styling */
-.menu ul {
-    list-style: none;
     padding: 0;
-    margin: 0;
-}
-
-.menu ul li {
-    display: block;
-}
-
-.menu a {
-    text-decoration: none;
-    color: white;
-}
-
-.light-mode .menu a {
+    background-color: white;
     color: black;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* Theme Button Styling */
+/* ✅ Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* ✅ Theme Buttons - Restored Original Sizing */
 .theme-btn {
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.theme-btn:hover {
-    background-color: #1d7bc0;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
-
-.light-mode .theme-btn {
-    background-color: black;
-    color: white;
-}
-
-.light-mode .theme-btn:hover {
-    background-color: #333;
-}
-
-/* Hamburger Icon Animations */
-.menu-icon {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    position: relative;
-    z-index: 100;
-}
-
-.menu-icon .bar {
-    height: 4px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.light-mode .menu-icon .bar {
-    background-color: black;
-}
-
-.menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
+    padding: 8px 16px;
     font-size: 14px;
-}
-
-/* iOS Mod Buttons Styling */
-.ios-mod-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.altstore-btn, .sidestore-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Space between logo & text */
-    width: 220px;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    justify-content: left; /* Align content to the left */
-    transition: background-color 0.3s ease-in-out;
-}
-
-/* ✅ Updated AltStore Button (Brighter Blue-to-Green Gradient) */
-.altstore-btn {
-    background: linear-gradient(90deg, #2196F3, #43A047); /* Brighter Blue & Green */
-}
-
-.altstore-btn:hover {
-    background: linear-gradient(90deg, #1E88E5, #2E7D32); /* Slightly darker hover gradient */
-}
-
-/* ✅ Updated SideStore Button (Purple to #3434EB Blue Gradient) */
-.sidestore-btn {
-    background: linear-gradient(90deg, #6A0DAD, #3434EB); /* Purple to Blue */
-}
-
-.sidestore-btn:hover {
-    background: linear-gradient(90deg, #4B0082, #2626D1); /* Slightly darker hover gradient */
-}
-
-/* ✅ Modern Theme Button Styling */
-.theme-btn {
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: #ff0000; /* Red */
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.theme-btn:hover {
-    background-color: #cc0000; /* Darker Red */
-}
-
-/* ✅ New Red & Black Theme */
-.red-black {
-    background-color: black;
-    color: red;
-}
-
-/* ✅ Adjust links for Red & Black theme */
-.red-black a {
-    color: red;
-}
-
-.red-black a:hover {
-    color: darkred;
-}
-
-/* ✅ Add spacing between blue buttons */
-.blue-button {
-    margin-bottom: 10px; /* Adjust spacing as needed */
-}
-
-/* ✅ Ensure theme buttons stay blue in dark mode */
-.theme-btn {
-    padding: 12px 20px;
-    font-size: 16px;
     font-weight: bold;
     color: white;
     background-color: #2196F3; /* Blue */
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
@@ -277,4 +44,40 @@ footer {
 
 .red-black a:hover {
     color: darkred;
+}
+
+/* ✅ Navigation Menu */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.menu a:hover {
+    color: #ffcc00;
+}
+
+/* ✅ Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: white;
+}
+
+/* ✅ Spacing Between Blue Buttons */
+.theme-btn + .theme-btn {
+    margin-top: 10px; /* Ensures spacing between theme buttons */
 }
