@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn to Code</title> <!-- ✅ Updated title -->
+  <title>Learn to Code</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Barba.js & GSAP -->
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -21,21 +25,28 @@
   </header>
 
   <!-- Navigation Menu -->
-<nav class="menu sliding-menu" id="menu">
+  <nav class="menu sliding-menu" id="menu">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="mods.html">Mods</a></li>
-      <li><a href="games.html">Games</a></li>
-      <li><a href="learn-to-code.html">Learn to Code</a></li>
-      <li><a href="settings.html">Settings</a></li>
+      <li><a href="index.html" data-barba="transition">Home</a></li>
+      <li><a href="mods.html" data-barba="transition">Mods</a></li>
+      <li><a href="games.html" data-barba="transition">Games</a></li>
+      <li><a href="learn-to-code.html" data-barba="transition">Learn to Code</a></li>
+      <li><a href="settings.html" data-barba="transition">Settings</a></li>
     </ul>
-</nav>
-
+  </nav>
 
   <!-- Main Content -->
-  <section id="learn">
-    <h1>Learn to Code</h1> <!-- ✅ Added title -->
-    <p>Once the website is complete, this page will have tutorials that teach people to code.</p> <!-- ✅ Added description -->
+  <section id="home">
+    <h1>Learn to Code</h1>
+    <p>Our goal is to help people learn programming with free tutorials and guides.</p>
+
+    <h2>Upcoming Topics</h2>
+    <ul class="coding-topics">
+      <li>Introduction to Python</li>
+      <li>HTML & CSS Basics</li>
+      <li>JavaScript Essentials</li>
+      <li>How to Build a Website</li>
+    </ul>
   </section>
 
   <!-- Footer -->
@@ -43,16 +54,15 @@
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- Existing JavaScript -->
   <script>
-    // JavaScript for menu toggle (Ensuring animation works correctly)
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.menu ul li a');
 
     menuIcon.addEventListener('click', () => {
         menu.classList.toggle('visible');
-        menuIcon.classList.toggle('active'); // Fix: Animates menu icon
+        menuIcon.classList.toggle('active');
     });
 
     menuLinks.forEach(link => {
@@ -69,10 +79,24 @@
         }
     });
 
-    // Apply saved theme on page load
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
     }
-</script>
+  </script>
+
+  <!-- Add Barba.js JavaScript -->
+  <script>
+    barba.init({
+      transitions: [{
+        name: 'fade',
+        leave(data) {
+          return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
+        },
+        enter(data) {
+          return gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
+        }
+      }]
+    });
+  </script>
 </body>
 </html>
