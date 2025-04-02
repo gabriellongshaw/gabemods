@@ -21,7 +21,7 @@
   </header>
 
   <!-- Navigation Menu -->
-  <nav class="menu ios-menu" id="menu">
+  <nav class="menu" id="menu">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="mods.html">Mods</a></li>
@@ -34,9 +34,12 @@
   <!-- Main Content -->
   <section id="settings">
     <h1>Settings</h1>
-
-    <p>Switch between Light and Dark themes:</p>
-    <button id="theme-toggle" class="theme-btn">Light Theme</button>
+    <p>Select your preferred menu animation:</p>
+    <label for="animation-select">Menu Animation:</label>
+    <select id="animation-select">
+      <option value="sliding">Sliding Animation</option>
+      <option value="ios-style">iOS-Style Animation</option>
+    </select>
   </section>
 
   <!-- Footer -->
@@ -48,11 +51,19 @@
   <script>
     // Hamburger Menu Toggle
     const menuIcon = document.getElementById('menu-icon');
-    const menu = document.getElementById('menu');
+    const menu = document.querySelector('.menu');
+    const menuLinks = document.querySelectorAll('.menu ul li a');
 
     menuIcon.addEventListener('click', () => {
         menu.classList.toggle('visible');
         menuIcon.classList.toggle('active');
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        });
     });
 
     document.addEventListener('click', (event) => {
@@ -62,25 +73,34 @@
         }
     });
 
-    // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
+    // Animation Selection Logic
+    const animationSelect = document.getElementById('animation-select');
 
-    const updateThemeButtonText = () => {
-        themeToggle.textContent = document.body.classList.contains('light-mode') ? 'Dark Theme' : 'Light Theme';
-    };
+    animationSelect.addEventListener('change', (event) => {
+        const selectedAnimation = event.target.value;
 
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-        updateThemeButtonText();
+        if (selectedAnimation === 'sliding') {
+            menu.classList.add('sliding-menu');
+            menu.classList.remove('ios-menu');
+        } else if (selectedAnimation === 'ios-style') {
+            menu.classList.add('ios-menu');
+            menu.classList.remove('sliding-menu');
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const defaultAnimation = animationSelect.value;
+        if (defaultAnimation === 'sliding') {
+            menu.classList.add('sliding-menu');
+        } else if (defaultAnimation === 'ios-style') {
+            menu.classList.add('ios-menu');
+        }
     });
 
     // Apply saved theme on page load
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
+    if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
     }
-    updateThemeButtonText();
   </script>
 </body>
 </html>
