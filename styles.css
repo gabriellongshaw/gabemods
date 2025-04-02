@@ -22,9 +22,10 @@ body {
     color: #000000;
 }
 
+/* Light Mode Menu: Translucent Effect */
 .light-mode .menu {
-    background: rgba(255, 255, 255, 0.9); /* Translucent Light Mode menu */
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.75); /* Keeps the white color but adds translucency */
+    backdrop-filter: blur(12px); /* Maintains the blur effect */
 }
 
 .light-mode .menu a {
