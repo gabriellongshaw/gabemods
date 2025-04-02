@@ -47,29 +47,28 @@ header {
 }
 
 /* iOS-Style Animation for Hamburger Menu */
-.ios-menu {
-    position: fixed;
-    top: 60px;
-    right: 20px; /* Keeps it positioned like iOS menu */
-    width: 220px;
-    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent */
-    backdrop-filter: blur(12px); /* Blur effect */
-    padding: 20px;
-    border-radius: 15px;
-    transform: scale(0.8); /* Initial scaling for iOS-like animation */
-    opacity: 0; /* Initially hidden */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth animation */
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    visibility: visible; /* Ensure visibility */
+    z-index: 100; /* Ensure it is above other elements */
+    position: relative; /* Prevent overlap issues */
 }
 
-.ios-menu.visible {
-    transform: scale(1); /* Enlarges to normal size */
-    opacity: 1; /* Fades in */
+.menu-icon .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #ffffff; /* White for Dark Mode */
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-/* Light Mode Hamburger Menu */
-.light-mode .menu {
-    background: rgba(250, 249, 250, 0.8); /* Translucent Light Mode */
-    backdrop-filter: blur(12px); /* Same blur effect as Dark Mode */
+.light-mode .menu-icon .bar {
+    background-color: black; /* Black for Light Mode */
 }
 
 /* Unified Button Styling */
