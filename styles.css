@@ -27,38 +27,34 @@ header {
     display: block;
 }
 
-.menu {
+/* iOS-Style Animation for Hamburger Menu */
+.ios-menu {
     position: fixed;
     top: 60px;
-    right: -300px; /* Start off-screen */
+    right: 20px;
     width: 220px;
-    background: rgba(0, 0, 0, 0.6); /* Dark mode translucent menu */
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
-    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth slide-in animation */
-    opacity: 0; /* Initially hidden */
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.menu.visible {
-    right: 20px; /* Slide in */
-    opacity: 1; /* Fade in */
-}
-
-/* iOS-Style Animation for Light Mode */
-.light-mode .menu {
-    background: rgba(250, 249, 250, 0.8); /* Translucent Light Mode menu */
-    backdrop-filter: blur(12px);
+.ios-menu.visible {
+    transform: scale(1);
+    opacity: 1;
 }
 
 /* Menu Links Styling */
 .menu a {
     text-decoration: none;
-    color: white; /* Default text color for Dark Mode */
+    color: white;
 }
 
 .menu a:hover {
-    color: #3498db; /* Hover effect */
+    color: #3498db;
 }
 
 .light-mode .menu a {
@@ -85,12 +81,6 @@ header {
     background-color: #2980b9;
 }
 
-.modern-btn {
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 /* Light Mode Button */
 .light-mode .theme-btn {
     background-color: black;
@@ -110,7 +100,7 @@ header {
     width: 30px;
     height: 25px;
     position: relative;
-    z-index: 100;
+    z-index: 100; /* Ensure it's above everything else */
 }
 
 .menu-icon .bar {
@@ -122,7 +112,7 @@ header {
 }
 
 .menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg); /* Top bar transforms into part of the “X” */
+    transform: translateY(10px) rotate(45deg); /* Top bar becomes part of the "X" */
 }
 
 .menu-icon.active .bar:nth-child(2) {
@@ -130,7 +120,11 @@ header {
 }
 
 .menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg); /* Bottom bar transforms into part of the “X” */
+    transform: translateY(-10px) rotate(-45deg); /* Bottom bar becomes part of the "X" */
+}
+
+.light-mode .menu-icon .bar {
+    background-color: black; /* Black bars in Light Mode */
 }
 
 /* Footer Styling */
