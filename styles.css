@@ -27,34 +27,38 @@ header {
     display: block;
 }
 
-/* iOS-Style Animation for Hamburger Menu */
-.ios-menu {
+.menu {
     position: fixed;
     top: 60px;
-    right: 20px;
+    right: -300px; /* Start off-screen */
     width: 220px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6); /* Dark mode translucent menu */
     backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
-    transform: scale(0.8);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth slide-in animation */
+    opacity: 0; /* Initially hidden */
 }
 
-.ios-menu.visible {
-    transform: scale(1);
-    opacity: 1;
+.menu.visible {
+    right: 20px; /* Slide in */
+    opacity: 1; /* Fade in */
+}
+
+/* iOS-Style Animation for Light Mode */
+.light-mode .menu {
+    background: rgba(250, 249, 250, 0.8); /* Translucent Light Mode menu */
+    backdrop-filter: blur(12px);
 }
 
 /* Menu Links Styling */
 .menu a {
     text-decoration: none;
-    color: white;
+    color: white; /* Default text color for Dark Mode */
 }
 
 .menu a:hover {
-    color: #3498db;
+    color: #3498db; /* Hover effect */
 }
 
 .light-mode .menu a {
