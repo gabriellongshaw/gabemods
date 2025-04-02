@@ -247,6 +247,23 @@ footer {
     margin-bottom: 10px; /* Adjust spacing as needed */
 }
 
+/* ✅ Ensure theme buttons stay blue in dark mode */
+.theme-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #2196F3; /* Blue */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.theme-btn:hover {
+    background-color: #1565C0; /* Darker Blue */
+}
+
 /* ✅ New Red & Black Theme */
 .red-black {
     background-color: black;
