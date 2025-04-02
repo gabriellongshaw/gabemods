@@ -21,7 +21,7 @@
   </header>
 
   <!-- Navigation Menu -->
-  <nav class="menu sliding-menu" id="menu">
+  <nav class="menu" id="menu">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="mods.html">Mods</a></li>
@@ -35,21 +35,9 @@
   <section id="settings">
     <h1>Settings</h1>
 
-    <!-- Original Settings Content Preserved -->
-    <p>Manage your account preferences and customize your experience.</p>
-    <p>You can modify site settings below:</p>
-    
-    <!-- Theme Toggle -->
+    <!-- Original Settings Content -->
     <p>Switch between Light and Dark themes:</p>
     <button id="theme-toggle" class="theme-btn">Light Theme</button>
-
-    <!-- Animation Selection -->
-    <p>Select your preferred menu animation:</p>
-    <label for="animation-select">Menu Animation:</label>
-    <select id="animation-select" class="theme-btn">
-      <option value="sliding">Sliding Animation</option>
-      <option value="ios-style">iOS-Style Animation</option>
-    </select>
   </section>
 
   <!-- Footer -->
@@ -80,31 +68,6 @@
         if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
             menu.classList.remove('visible');
             menuIcon.classList.remove('active');
-        }
-    });
-
-    // Animation Selection Logic
-    const animationSelect = document.getElementById('animation-select');
-
-    animationSelect.addEventListener('change', (event) => {
-        const selectedAnimation = event.target.value;
-        localStorage.setItem('menuAnimation', selectedAnimation);
-
-        if (selectedAnimation === 'sliding') {
-            menu.classList.add('sliding-menu');
-            menu.classList.remove('ios-menu');
-        } else if (selectedAnimation === 'ios-style') {
-            menu.classList.add('ios-menu');
-            menu.classList.remove('sliding-menu');
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const savedAnimation = localStorage.getItem('menuAnimation');
-        if (savedAnimation === 'sliding') {
-            menu.classList.add('sliding-menu');
-        } else if (savedAnimation === 'ios-style') {
-            menu.classList.add('ios-menu');
         }
     });
 
