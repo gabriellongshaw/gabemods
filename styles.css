@@ -37,14 +37,22 @@ header {
     backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
-    transform: scale(0.8);
     opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .menu.visible {
-    transform: scale(1);
     opacity: 1;
+}
+
+/* Menu Links Styling */
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu a:hover {
+    color: #3498db;
 }
 
 /* Light Mode Styles */
@@ -80,7 +88,7 @@ header {
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .theme-btn:hover {
