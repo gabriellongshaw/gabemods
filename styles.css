@@ -177,18 +177,23 @@ footer {
     margin-top: 15px;
 }
 
-.altstore-btn {
-    display: block;
-    width: 200px;
-    text-align: center;
+.altstore-btn, .sidestore-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 220px;
     padding: 12px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     color: white;
-    background-color: #2e7d32; /* AltStore Green */
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
+    justify-content: center;
     transition: background-color 0.3s ease-in-out;
+}
+
+.altstore-btn {
+    background-color: #2e7d32; /* AltStore Green */
 }
 
 .altstore-btn:hover {
@@ -196,19 +201,15 @@ footer {
 }
 
 .sidestore-btn {
-    display: block;
-    width: 200px;
-    text-align: center;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
     background-color: #37474f; /* SideStore Dark Gray */
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
 }
 
 .sidestore-btn:hover {
     background-color: #263238; /* Darker Gray */
+}
+
+/* Button Logo Styling */
+.button-logo {
+    width: 24px;
+    height: 24px;
 }
