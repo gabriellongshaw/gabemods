@@ -27,24 +27,80 @@ header {
     display: block;
 }
 
-/* iOS-Style Animation for Hamburger Menu */
-.ios-menu {
+/* Hamburger Menu */
+.menu {
     position: fixed;
     top: 60px;
-    right: 20px;
+    right: -250px;
     width: 220px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent */
     backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
-    transform: scale(0.8);
+    transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out;
     opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.ios-menu.visible {
-    transform: scale(1);
+/* Show menu when toggled */
+.menu.visible {
+    right: 20px;
     opacity: 1;
+}
+
+/* Light Mode Styles */
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+/* Light Mode Header & Footer */
+.light-mode header {
+    background-color: white;
+}
+
+.light-mode footer {
+    background-color: white;
+    color: black;
+}
+
+/* Light Mode Hamburger Menu (Translucent #FAF9FA) */
+.light-mode .menu {
+    background: rgba(250, 249, 250, 0.8); /* Translucent off-white */
+    backdrop-filter: blur(12px);
+}
+
+.light-mode .menu a {
+    color: black !important; /* Black text for readability */
+}
+
+/* Light Mode Menu Icon */
+.light-mode .menu-icon .bar {
+    background-color: black;
+}
+
+/* Light Mode Theme Button */
+.light-mode .theme-btn {
+    background-color: black;
+    color: white;
+}
+
+.light-mode .theme-btn:hover {
+    background-color: #333;
+}
+
+/* Fix for White Backgrounds */
+.light-mode section {
+    background-color: white;
+    color: black;
+}
+
+.light-mode .logo {
+    background-color: white;
+}
+
+.light-mode header h1,
+.light-mode footer p {
+    color: black;
 }
 
 /* Menu Links Styling */
@@ -53,15 +109,11 @@ header {
     color: white;
 }
 
+.menu a:visited {
+    color: white;
+}
+
 .menu a:hover {
-    color: #3498db;
-}
-
-.light-mode .menu a {
-    color: black; /* Black text for Light Mode */
-}
-
-.light-mode .menu a:hover {
     color: #3498db;
 }
 
@@ -74,24 +126,23 @@ header {
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
 }
 
 .theme-btn:hover {
     background-color: #2980b9;
 }
 
-/* Light Mode Button */
-.light-mode .theme-btn {
-    background-color: black;
-    color: white;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    font-size: 14px;
 }
 
-.light-mode .theme-btn:hover {
-    background-color: #333;
-}
-
-/* Hamburger Icon Animations */
+/* Hamburger Icon */
 .menu-icon {
     cursor: pointer;
     display: flex;
@@ -99,10 +150,9 @@ header {
     justify-content: space-between;
     width: 30px;
     height: 25px;
-    position: relative;
-    z-index: 100; /* Ensure it's above everything else */
 }
 
+/* Restored and Fixed Original Animation for Hamburger Icon */
 .menu-icon .bar {
     height: 4px;
     width: 100%;
@@ -112,7 +162,7 @@ header {
 }
 
 .menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg); /* Top bar becomes part of the "X" */
+    transform: translate(0, 10px) rotate(45deg); /* Fixed for perfect alignment */
 }
 
 .menu-icon.active .bar:nth-child(2) {
@@ -120,18 +170,5 @@ header {
 }
 
 .menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg); /* Bottom bar becomes part of the "X" */
-}
-
-.light-mode .menu-icon .bar {
-    background-color: black; /* Black bars in Light Mode */
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-    font-size: 14px;
+    transform: translate(0, -10px) rotate(-45deg); /* Fixed for perfect alignment */
 }
