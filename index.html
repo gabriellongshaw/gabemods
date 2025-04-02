@@ -3,110 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gabe Mods</title>
+  <title>Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Barba.js & GSAP -->
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+  <div id="barba-wrapper">
+    <div class="barba-container">
+      <!-- Header -->
+      <header>
+        <div class="logo">
+          <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+        </div>
+        <div class="menu-icon" id="menu-icon">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </header>
+
+      <!-- Navigation Menu -->
+      <nav class="menu ios-menu" id="menu">
+        <ul>
+          <li><a href="index.html" data-barba="transition">• Home</a></li>
+          <li><a href="mods.html" data-barba="transition">• Mods</a></li>
+          <li><a href="games.html" data-barba="transition">• Games</a></li>
+          <li><a href="learn-to-mod.html" data-barba="transition">• Learn to Mod</a></li>
+          <li><a href="settings.html" data-barba="transition">• Settings</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <section>
+        <h1>Welcome to Gabe Mods</h1>
+        <p>Your go-to hub for modding and gaming tutorials.</p>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
+      </footer>
     </div>
-    <div class="menu-icon" id="menu-icon">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-  </header>
-
-  <!-- Navigation Menu -->
- <nav class="menu" id="menu">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="mods.html">Mods</a></li>
-        <li><a href="games.html">Games</a></li>
-        <li><a href="learn-to-code.html">Learn to Code</a></li>
-        <li><a href="settings.html">Settings</a></li>
-    </ul>
-</nav>
-  <!-- Main Content -->
-  <section id="home">
-    <h1>Welcome to Gabe Mods</h1>
-    <p>Please note that this website is currently under development and it is a long way from complete.</p>
-
-    <!-- ✅ Added Mission Statement Below -->
-    <p>Here at Gabe Mods, our aim is to provide our users with free, high-quality, malware-free mods for lots of popular apps and games.  
-    Our "Learn to Code" page will eventually have tutorials teaching people how to code for themselves.</p>
-
-    <!-- Feature Suggestions & Feedback -->
-    <p><strong>If you have any feature suggestions or feedback, please email</strong>  
-      <a href="mailto:gabemods.website@gmail.com" style="text-decoration: underline;">gabemods.website@gmail.com</a>  
-      <br><strong>or message me on</strong>  
-      <a href="https://t.me/Gabriel_Mods_Chat" target="_blank" style="text-decoration: underline;">Telegram Chat</a>.
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
-  </footer>
+  </div>
 
   <!-- JavaScript -->
   <script>
-    // JavaScript for menu toggle (Ensuring animation works correctly)
-    const menuIcon = document.getElementById('menu-icon');
-    const menu = document.getElementById('menu');
-    const menuLinks = document.querySelectorAll('.menu ul li a');
-
-    menuIcon.addEventListener('click', () => {
-        menu.classList.toggle('visible');
-        menuIcon.classList.toggle('active'); // Fix: Animates menu icon
-    });
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('visible');
-            menuIcon.classList.remove('active');
-        });
-    });
-
-    document.addEventListener('click', (event) => {
-        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-            menu.classList.remove('visible');
-            menuIcon.classList.remove('active');
+    barba.init({
+      transitions: [{
+        name: 'fade',
+        leave(data) {
+          return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
+        },
+        enter(data) {
+          return gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
         }
+      }]
     });
-
-    // Apply saved theme on page load
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-    }
-</script>
-
-  <script>
-  // Apply saved theme on page load
-  if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light-mode');
-  }
-</script>
-
-  <script>
-  const menu = document.querySelector('.menu');
-
-  // Apply saved animation preference on page load
-  const savedAnimation = localStorage.getItem('menuAnimation');
-  if (savedAnimation === 'sliding') {
-    menu.classList.add('sliding-menu');
-  } else if (savedAnimation === 'ios-style') {
-    menu.classList.add('ios-menu');
-  }
-
-  // Apply saved theme on page load
-  if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light-mode');
-  }
-</script>
-
+  </script>
 </body>
 </html>
