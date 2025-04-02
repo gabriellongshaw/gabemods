@@ -23,11 +23,11 @@
   <!-- Navigation Menu -->
   <nav class="menu ios-menu" id="menu">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="mods.html">Mods</a></li>
-      <li><a href="games.html">Games</a></li>
-      <li><a href="learn-to-code.html">Learn to Code</a></li>
-      <li><a href="settings.html">Settings</a></li>
+      <li><a href="index.html">• Home</a></li>
+      <li><a href="mods.html">• Mods</a></li>
+      <li><a href="games.html">• Games</a></li>
+      <li><a href="learn-to-code.html">• Learn to Code</a></li>
+      <li><a href="settings.html">• Settings</a></li>
     </ul>
   </nav>
 
@@ -46,7 +46,7 @@
 
   <!-- JavaScript -->
   <script>
-    // Hamburger Menu Toggle Logic
+    // Hamburger Menu Toggle Logic (Old Animation Restored)
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
 
@@ -82,22 +82,5 @@
     }
     updateThemeButtonText();
   </script>
-
-  <script>
-  const menuIcon = document.getElementById('menu-icon');
-  const menu = document.getElementById('menu');
-
-  menuIcon.addEventListener('click', () => {
-      menu.classList.toggle('visible');
-      menuIcon.classList.toggle('active');
-  });
-
-  document.addEventListener('click', (event) => {
-      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-          menu.classList.remove('visible');
-          menuIcon.classList.remove('active');
-      }
-  });
-</script>
 </body>
 </html>
