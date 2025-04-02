@@ -21,25 +21,22 @@
   </header>
 
   <!-- Navigation Menu -->
-  <nav class="menu" id="menu">
+  <nav class="menu ios-menu" id="menu">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="mods.html">Mods</a></li>
       <li><a href="games.html">Games</a></li>
-      <li><a href="learn-to-code.html">Learn to Code</a></li> <!-- ✅ Added above Settings -->
+      <li><a href="learn-to-code.html">Learn to Code</a></li>
       <li><a href="settings.html">Settings</a></li>
     </ul>
-</nav>
+  </nav>
+
   <!-- Main Content -->
   <section id="settings">
     <h1>Settings</h1>
-    <p>Adjust your preferences below.</p>
 
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-      <label>Choose Theme:</label>
-      <button id="toggle-theme" class="theme-btn">Switch to Light Mode</button>
-    </div>
+    <p>Switch between Light and Dark themes:</p>
+    <button id="theme-toggle" class="theme-btn modern-btn">Light Theme</button>
   </section>
 
   <!-- Footer -->
@@ -49,42 +46,13 @@
 
   <!-- JavaScript -->
   <script>
-    const toggleThemeBtn = document.getElementById('toggle-theme');
-
-    // Apply saved theme on page load
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-        toggleThemeBtn.textContent = "Switch to Dark Mode";
-    }
-
-    // Toggle Theme and Save Preference
-    toggleThemeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-
-        if (document.body.classList.contains('light-mode')) {
-            localStorage.setItem('theme', 'light');
-            toggleThemeBtn.textContent = "Switch to Dark Mode";
-        } else {
-            localStorage.setItem('theme', 'dark');
-            toggleThemeBtn.textContent = "Switch to Light Mode";
-        }
-    });
-
-    // Hamburger Menu Toggle (Consistent Across Pages)
+    // Hamburger Menu Toggle Logic
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
-    const menuLinks = document.querySelectorAll('.menu ul li a');
 
     menuIcon.addEventListener('click', () => {
         menu.classList.toggle('visible');
         menuIcon.classList.toggle('active');
-    });
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('visible');
-            menuIcon.classList.remove('active');
-        });
     });
 
     document.addEventListener('click', (event) => {
@@ -93,6 +61,26 @@
             menuIcon.classList.remove('active');
         }
     });
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+
+    const updateThemeButtonText = () => {
+        themeToggle.textContent = document.body.classList.contains('light-mode') ? 'Dark Theme' : 'Light Theme';
+    };
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        updateThemeButtonText();
+    });
+
+    // Apply saved theme on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+    }
+    updateThemeButtonText();
   </script>
 </body>
 </html>
