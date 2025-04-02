@@ -27,26 +27,76 @@ header {
     display: block;
 }
 
-/* Sliding Animation for Hamburger Menu */
-.sliding-menu {
+/* Hamburger Menu Styling */
+.menu {
     position: fixed;
     top: 60px;
-    right: -250px; /* Initially off-screen */
+    right: 20px;
     width: 220px;
-    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent */
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
-    transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out; /* Sliding animation */
-    opacity: 0; /* Initially hidden */
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.sliding-menu.visible {
-    right: 20px; /* Slides in */
-    opacity: 1; /* Fades in */
+.menu.visible {
+    transform: scale(1);
+    opacity: 1;
 }
 
-/* iOS-Style Animation for Hamburger Menu */
+/* Light Mode Styles */
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.light-mode header {
+    background-color: white;
+}
+
+.light-mode footer {
+    background-color: white;
+    color: black;
+}
+
+.light-mode .menu {
+    background: rgba(250, 249, 250, 0.8); /* Translucent Light Mode */
+    backdrop-filter: blur(12px);
+}
+
+.light-mode .menu-icon .bar {
+    background-color: black;
+}
+
+/* Theme Button Styling */
+.theme-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.theme-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Menu Icon Styling */
 .menu-icon {
     cursor: pointer;
     display: flex;
@@ -54,53 +104,14 @@ header {
     justify-content: space-between;
     width: 30px;
     height: 25px;
-    visibility: visible; /* Ensure visibility */
-    z-index: 100; /* Ensure it is above other elements */
-    position: relative; /* Prevent overlap issues */
+    position: relative;
+    z-index: 100;
 }
 
 .menu-icon .bar {
     height: 4px;
     width: 100%;
-    background-color: #ffffff; /* White for Dark Mode */
+    background-color: #ffffff;
     border-radius: 2px;
     transition: all 0.3s ease;
-}
-
-.light-mode .menu-icon .bar {
-    background-color: black; /* Black for Light Mode */
-}
-
-/* Unified Button Styling */
-.theme-btn, select#animation-select {
-    background-color: #3498db; /* Consistent blue color */
-    color: white; /* White text */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.theme-btn:hover, select#animation-select:hover {
-    background-color: #2980b9; /* Hover effect */
-}
-
-.theme-btn.light-mode, select#animation-select.light-mode {
-    background-color: black; /* Black background in Light Mode */
-    color: white; /* White text */
-}
-
-.theme-btn.light-mode:hover, select#animation-select.light-mode:hover {
-    background-color: #333; /* Hover effect in Light Mode */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-    font-size: 14px;
 }
