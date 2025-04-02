@@ -56,6 +56,58 @@ header {
     display: block;
 }
 
+/* ✅ AltStore Button Styling */
+.altstore-btn {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #00bfff, #32cd32); /* Blue to Green */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.altstore-btn:hover {
+    transform: scale(1.05);
+}
+
+.altstore-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px; /* Rounded Square */
+    margin-right: 10px;
+}
+
+/* ✅ SideStore Button Styling */
+.sidestore-btn {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #800080, #00008B); /* Purple to Dark Blue */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.sidestore-btn:hover {
+    transform: scale(1.05);
+}
+
+.sidestore-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px; /* Rounded Square */
+    margin-right: 10px;
+}
+
 /* Fixed Navigation Menu Placement */
 .menu {
     position: fixed;
@@ -71,93 +123,10 @@ header {
     display: block; /* Ensure menu is contained */
 }
 
-.menu.visible {
-    right: 20px; /* Slide in */
-    opacity: 1; /* Fade in */
-}
-
-/* Menu Links Styling */
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu ul li {
-    display: block;
-}
-
-.menu a {
-    text-decoration: none;
-    color: white;
-}
-
-.light-mode .menu a {
-    color: black;
-}
-
-/* Theme Button Styling */
-.theme-btn {
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.theme-btn:hover {
-    background-color: #1d7bc0;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
-
-.light-mode .theme-btn {
-    background-color: black;
-    color: white;
-}
-
-.light-mode .theme-btn:hover {
-    background-color: #333;
-}
-
-/* Hamburger Icon Animations */
-.menu-icon {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    position: relative;
-    z-index: 100;
-}
-
-.menu-icon .bar {
-    height: 4px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.light-mode .menu-icon .bar {
-    background-color: black;
-}
-
-.menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+/* ✅ Ensure Images Display Correctly */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Footer Styling */
