@@ -1,97 +1,35 @@
-/* General Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 15px;
-    background-color: #000000; /* Dark Mode background */
-    color: #ffffff; /* Dark Mode text */
-}
-
-/* Light Mode Styling */
-.light-mode {
-    background-color: #ffffff; /* Light Mode background */
-    color: #000000; /* Light Mode text */
-}
-
-.light-mode header {
-    background-color: #ffffff;
-}
-
-.light-mode footer {
-    background-color: #ffffff;
-    color: #000000; /* Footer text becomes black */
-}
-
-.light-mode .menu {
-    background: rgba(255, 255, 255, 0.9); /* Translucent Light Mode menu */
-    backdrop-filter: blur(12px);
-}
-
-.light-mode .menu a {
-    color: #000000; /* Black text in Light Mode */
-}
-
-.light-mode .menu a:hover {
-    color: #3498db; /* Blue on hover */
-}
-
-.light-mode .theme-btn {
-    background-color: #000000; /* Black button background */
-    color: #ffffff; /* White button text */
-}
-
-.light-mode .theme-btn:hover {
-    background-color: #333333; /* Darker hover for Light Mode button */
-}
-
-/* Header Styling */
-header {
+.menu-icon {
+    cursor: pointer;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #000000; /* Dark Mode header */
-    border-bottom: 1px solid #3498db;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 100; /* Make sure it's above other elements */
+    visibility: visible; /* Ensure visibility */
 }
 
-/* Logo Styling */
-.logo-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #3498db;
-    display: block;
-}
-
-/* Hamburger Menu Styling */
-.menu {
-    position: fixed;
-    top: 60px;
-    right: -300px; /* Start off-screen */
-    width: 220px;
-    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent menu */
-    backdrop-filter: blur(12px);
-    padding: 20px;
-    border-radius: 15px;
-    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth slide-in animation */
-    opacity: 0; /* Initially hidden */
-}
-
-.menu.visible {
-    right: 20px; /* Slide in */
-    opacity: 1; /* Fade in */
+.menu-icon .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #ffffff; /* Default color for Dark Mode */
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 .light-mode .menu-icon .bar {
-    background-color: black; /* Black bars in Light Mode */
+    background-color: black; /* Black for Light Mode */
 }
 
-/* Footer Styling */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.9); /* Default Dark Mode footer */
-    color: #ffffff;
-    font-size: 14px;
+.menu-icon.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg); /* Top bar turns into part of the "X" */
+}
+
+.menu-icon.active .bar:nth-child(2) {
+    opacity: 0; /* Middle bar disappears */
+}
+
+.menu-icon.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg); /* Bottom bar turns into part of the "X" */
 }
