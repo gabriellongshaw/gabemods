@@ -192,22 +192,22 @@ footer {
     transition: background-color 0.3s ease-in-out;
 }
 
-/* ✅ Updated AltStore Button (Blue-to-Green Gradient) */
+/* ✅ Updated AltStore Button (Brighter Blue-to-Green Gradient) */
 .altstore-btn {
-    background: linear-gradient(90deg, #1e88e5, #2e7d32); /* Blue to Green */
+    background: linear-gradient(90deg, #2196F3, #43A047); /* Brighter Blue & Green */
 }
 
 .altstore-btn:hover {
-    background: linear-gradient(90deg, #1565c0, #1b5e20); /* Darker Gradient */
+    background: linear-gradient(90deg, #1E88E5, #2E7D32); /* Slightly darker hover gradient */
 }
 
-/* ✅ Updated SideStore Button (Purple-to-Dark Blue Gradient) */
+/* ✅ Updated SideStore Button (Same Purple, Lighter Blue) */
 .sidestore-btn {
-    background: linear-gradient(90deg, #6A0DAD, #1E1E8E); /* Purple to Dark Blue */
+    background: linear-gradient(90deg, #6A0DAD, #3C3CB8); /* Purple to Lighter Blue */
 }
 
 .sidestore-btn:hover {
-    background: linear-gradient(90deg, #4B0082, #000066); /* Darker Gradient */
+    background: linear-gradient(90deg, #4B0082, #2E2EAA); /* Slightly darker hover gradient */
 }
 
 /* ✅ Rounded Button Icons */
@@ -215,5 +215,5 @@ footer {
     width: 24px; /* Slightly larger logo */
     height: 24px;
     border-radius: 50%; /* Makes the icons circular */
-    margin-right: 8px; /* Ensures spacing between logo & text */
+    margin-right: 8px; /* Space between logo & text */
 }
