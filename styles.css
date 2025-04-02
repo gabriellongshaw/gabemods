@@ -139,6 +139,16 @@ header {
     transform: translateY(-10px) rotate(-45deg);
 }
 
+/* Remove default link styling */
+.menu a {
+    color: inherit; /* Inherits the text color from the surrounding element */
+    text-decoration: none; /* Removes underline */
+}
+
+.menu a:visited {
+    color: inherit; /* Ensures visited links match normal text */
+}
+
 /* Footer Styling */
 footer {
     text-align: center;
