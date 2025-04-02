@@ -246,3 +246,18 @@ footer {
 .blue-button {
     margin-bottom: 10px; /* Adjust spacing as needed */
 }
+
+/* ✅ New Red & Black Theme */
+.red-black {
+    background-color: black;
+    color: red;
+}
+
+/* ✅ Adjust links for Red & Black theme */
+.red-black a {
+    color: red;
+}
+
+.red-black a:hover {
+    color: darkred;
+}
