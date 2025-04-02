@@ -2,9 +2,46 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 15px; /* Increased for better spacing */
-    background-color: #000000;
-    color: #ffffff;
+    padding: 15px;
+    background-color: #000000; /* Dark Mode background */
+    color: #ffffff; /* Dark Mode text */
+}
+
+/* Light Mode Styling */
+.light-mode {
+    background-color: #ffffff; /* Light Mode background */
+    color: #000000; /* Light Mode text */
+}
+
+.light-mode header {
+    background-color: #ffffff;
+}
+
+.light-mode footer {
+    background-color: #ffffff;
+    color: #000000; /* Footer text becomes black */
+}
+
+.light-mode .menu {
+    background: rgba(255, 255, 255, 0.9); /* Translucent Light Mode menu */
+    backdrop-filter: blur(12px);
+}
+
+.light-mode .menu a {
+    color: #000000; /* Black text in Light Mode */
+}
+
+.light-mode .menu a:hover {
+    color: #3498db; /* Blue on hover */
+}
+
+.light-mode .theme-btn {
+    background-color: #000000; /* Black button background */
+    color: #ffffff; /* White button text */
+}
+
+.light-mode .theme-btn:hover {
+    background-color: #333333; /* Darker hover for Light Mode button */
 }
 
 /* Header Styling */
@@ -13,7 +50,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #000000;
+    background-color: #000000; /* Dark Mode header */
     border-bottom: 1px solid #3498db;
 }
 
@@ -23,189 +60,38 @@ header {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #3498db; /* Blue border */
+    border: 3px solid #3498db;
     display: block;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu Styling */
 .menu {
     position: fixed;
     top: 60px;
-    right: -250px; /* Initially off-screen */
+    right: -300px; /* Start off-screen */
     width: 220px;
-    background: rgba(0, 0, 0, 0.6); /* Dark Mode: More transparent */
-    backdrop-filter: blur(12px); /* Adds a blur effect */
+    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent menu */
+    backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
-    transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth slide-in animation */
     opacity: 0; /* Initially hidden */
 }
 
-/* Show menu when toggled */
 .menu.visible {
-    right: 20px; /* Slides in */
-    opacity: 1;
+    right: 20px; /* Slide in */
+    opacity: 1; /* Fade in */
 }
 
-/* Light Mode Styles */
-.light-mode {
-    background-color: white;
-    color: black;
-}
-
-/* Light Mode Hamburger Menu (Translucent #FAF9FA) */
-.light-mode .menu {
-    background: rgba(250, 249, 250, 0.8); /* Translucent off-white */
-    backdrop-filter: blur(12px); /* Keeps blur effect */
-}
-
-.light-mode .menu a {
-    color: black !important; /* Keeps text readable */
-}
-
-/* Light Mode Menu Icon */
 .light-mode .menu-icon .bar {
-    background-color: black; /* Change to black in Light Mode */
+    background-color: black; /* Black bars in Light Mode */
 }
 
-/* Light Mode Theme Button */
-.light-mode .theme-btn {
-    background-color: black;
-    color: white;
-}
-
-.light-mode .theme-btn:hover {
-    background-color: #333;
-}
-
-/* Remove blue highlight and underline from menu links */
-.menu a {
-    text-decoration: none; /* No underline */
-    color: white; /* Keeps text white instead of blue */
-}
-
-.menu a:visited {
-    color: white; /* Prevents turning purple */
-}
-
-.menu a:hover {
-    color: #3498db; /* Optional hover effect */
-}
-
-/* Theme Button Styling */
-.theme-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.theme-btn:hover {
-    background-color: #2980b9;
-}
-
-/* Footer */
+/* Footer Styling */
 footer {
     text-align: center;
     padding: 15px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.9); /* Default Dark Mode footer */
     color: #ffffff;
     font-size: 14px;
-}
-
-/* Hamburger Icon Animation */
-.menu-icon {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-}
-
-.menu-icon .bar {
-    height: 4px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Animate bars when menu opens */
-.menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0; /* Middle bar disappears */
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
-    color: white; /* Prevents turning purple */
-}
-
-.menu a:hover {
-    color: #3498db; /* Optional hover effect */
-}
-
-/* Theme Button Styling */
-.theme-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.theme-btn:hover {
-    background-color: #2980b9;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-    font-size: 14px;
-}
-
-/* Hamburger Icon Animation */
-.menu-icon {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-}
-
-.menu-icon .bar {
-    height: 4px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Animate bars when menu opens */
-.menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0; /* Middle bar disappears */
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
 }
