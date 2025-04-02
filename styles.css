@@ -1,3 +1,109 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 15px;
+    background-color: #000000; /* Dark Mode background */
+    color: #ffffff; /* Dark Mode text */
+}
+
+/* Light Mode Styling */
+.light-mode {
+    background-color: #ffffff; /* Light Mode background */
+    color: #000000; /* Light Mode text */
+}
+
+.light-mode header {
+    background-color: #ffffff;
+}
+
+.light-mode footer {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.light-mode .menu {
+    background: rgba(255, 255, 255, 0.9); /* Translucent Light Mode menu */
+    backdrop-filter: blur(12px);
+}
+
+.light-mode .menu a {
+    color: #000000; /* Black text in Light Mode */
+}
+
+.light-mode .menu a:hover {
+    color: #3498db; /* Blue on hover */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    border-bottom: 1px solid #3498db;
+}
+
+/* Logo Styling */
+.logo-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db;
+    display: block;
+}
+
+/* iOS-Style Animation for Hamburger Menu */
+.ios-menu {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 220px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 15px;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.ios-menu.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Modern Theme Button Styling */
+.theme-btn {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.theme-btn:hover {
+    background-color: #1d7bc0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.light-mode .theme-btn {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.light-mode .theme-btn:hover {
+    background-color: #555555;
+}
+
+/* Hamburger Icon Animations */
 .menu-icon {
     cursor: pointer;
     display: flex;
@@ -6,30 +112,38 @@
     width: 30px;
     height: 25px;
     position: relative;
-    z-index: 100; /* Make sure it's above other elements */
-    visibility: visible; /* Ensure visibility */
+    z-index: 100;
 }
 
 .menu-icon .bar {
     height: 4px;
     width: 100%;
-    background-color: #ffffff; /* Default color for Dark Mode */
+    background-color: #ffffff;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
 .light-mode .menu-icon .bar {
-    background-color: black; /* Black for Light Mode */
+    background-color: black;
 }
 
 .menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg); /* Top bar turns into part of the "X" */
+    transform: translateY(10px) rotate(45deg);
 }
 
 .menu-icon.active .bar:nth-child(2) {
-    opacity: 0; /* Middle bar disappears */
+    opacity: 0;
 }
 
 .menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg); /* Bottom bar turns into part of the "X" */
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    font-size: 14px;
 }
