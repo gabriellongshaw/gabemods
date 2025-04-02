@@ -201,13 +201,13 @@ footer {
     background: linear-gradient(90deg, #1E88E5, #2E7D32); /* Slightly darker hover gradient */
 }
 
-/* ✅ Updated SideStore Button (Same Purple, Lighter Blue) */
+/* ✅ Updated SideStore Button (Purple to #3434EB Blue Gradient) */
 .sidestore-btn {
-    background: linear-gradient(90deg, #6A0DAD, #3C3CB8); /* Purple to Lighter Blue */
+    background: linear-gradient(90deg, #6A0DAD, #3434EB); /* Purple to Blue */
 }
 
 .sidestore-btn:hover {
-    background: linear-gradient(90deg, #4B0082, #2E2EAA); /* Slightly darker hover gradient */
+    background: linear-gradient(90deg, #4B0082, #2626D1); /* Slightly darker hover gradient */
 }
 
 /* ✅ Rounded Button Icons */
