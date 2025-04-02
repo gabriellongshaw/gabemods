@@ -61,3 +61,48 @@ footer {
     background-color: #222;
     color: white;
 }
+
+/* ✅ Images - Restore Original Size */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ✅ Spacing Between Theme Buttons */
+.theme-btn + .theme-btn {
+    margin-top: 10px;
+}
+
+/* ✅ Restore Sidebar Menu Styling */
+.sidebar {
+    background-color: #282828;
+    width: 250px;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    color: #ffcc00;
+}
+
+/* ✅ Ensure Main Content Displays Properly */
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+/* ✅ Fix Menu Layout */
+.menu.visible {
+    display: block;
+}
