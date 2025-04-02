@@ -210,12 +210,21 @@ footer {
     background: linear-gradient(90deg, #4B0082, #2626D1); /* Slightly darker hover gradient */
 }
 
-/* ✅ Rounded Button Icons */
-.button-logo {
-    width: 24px; /* Slightly larger logo */
-    height: 24px;
-    border-radius: 50%; /* Makes the icons circular */
-    margin-right: 8px; /* Space between logo & text */
+/* ✅ Modern Theme Button Styling */
+.theme-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff0000; /* Red */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.theme-btn:hover {
+    background-color: #cc0000; /* Darker Red */
 }
 
 /* ✅ New Red & Black Theme */
