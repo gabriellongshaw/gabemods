@@ -201,13 +201,13 @@ footer {
     background: linear-gradient(90deg, #1565c0, #1b5e20); /* Darker Gradient */
 }
 
-/* ✅ Updated SideStore Button (Purple) */
+/* ✅ Updated SideStore Button (Purple-to-Dark Blue Gradient) */
 .sidestore-btn {
-    background-color: #6A0DAD; /* Purple */
+    background: linear-gradient(90deg, #6A0DAD, #1E1E8E); /* Purple to Dark Blue */
 }
 
 .sidestore-btn:hover {
-    background-color: #4B0082; /* Darker Purple */
+    background: linear-gradient(90deg, #4B0082, #000066); /* Darker Gradient */
 }
 
 /* ✅ Rounded Button Icons */
@@ -215,5 +215,5 @@ footer {
     width: 24px; /* Slightly larger logo */
     height: 24px;
     border-radius: 50%; /* Makes the icons circular */
-    margin-right: 8px; /* Space between logo & text */
+    margin-right: 8px; /* Ensures spacing between logo & text */
 }
