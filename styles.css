@@ -3,14 +3,14 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 15px;
-    background-color: #000000; /* Default Dark Mode background */
-    color: #ffffff; /* Default Dark Mode text */
+    background-color: #000000;
+    color: #ffffff;
 }
 
 /* Light Mode Styling */
 .light-mode {
-    background-color: #ffffff; /* Light Mode background */
-    color: #000000; /* Light Mode text */
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .light-mode header {
@@ -22,14 +22,13 @@ body {
     color: #000000;
 }
 
-/* Light Mode Menu: Translucent Effect */
 .light-mode .menu {
-    background: rgba(255, 255, 255, 0.75); /* Keeps the white color but adds translucency */
-    backdrop-filter: blur(12px); /* Maintains the blur effect */
+    background: rgba(255, 255, 255, 0.75); /* White but translucent */
+    backdrop-filter: blur(12px);
 }
 
 .light-mode .menu a {
-    color: black; /* Black text for Light Mode */
+    color: black;
 }
 
 .light-mode .menu a:hover {
@@ -56,47 +55,29 @@ header {
     display: block;
 }
 
-/* Fixed Navigation Menu Placement */
+/* iOS-Style Sliding & Fade-in Menu */
 .menu {
     position: fixed;
     top: 60px;
-    right: -300px; /* Start off-screen */
+    right: 20px;
     width: 220px;
-    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent menu */
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
-    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth slide-in animation */
-    opacity: 0; /* Initially hidden */
-    display: block; /* Ensure menu is contained */
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    display: none;
 }
 
 .menu.visible {
-    right: 20px; /* Slide in */
-    opacity: 1; /* Fade in */
-}
-
-/* Menu Links Styling */
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu ul li {
+    transform: scale(1);
+    opacity: 1;
     display: block;
 }
 
-.menu a {
-    text-decoration: none;
-    color: white;
-}
-
-.light-mode .menu a {
-    color: black;
-}
-
-/* Theme Button Styling */
+/* Modern Theme Button Styling */
 .theme-btn {
     background-color: #3498db;
     color: white;
@@ -124,7 +105,7 @@ header {
     background-color: #333;
 }
 
-/* Hamburger Icon Animations */
+/* iOS-Style Hamburger Icon Animation */
 .menu-icon {
     cursor: pointer;
     display: flex;
@@ -134,6 +115,7 @@ header {
     height: 25px;
     position: relative;
     z-index: 100;
+    transition: transform 0.3s ease-in-out;
 }
 
 .menu-icon .bar {
@@ -141,7 +123,7 @@ header {
     width: 100%;
     background-color: #ffffff;
     border-radius: 2px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .light-mode .menu-icon .bar {
@@ -149,7 +131,7 @@ header {
 }
 
 .menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
 }
 
 .menu-icon.active .bar:nth-child(2) {
@@ -157,7 +139,7 @@ header {
 }
 
 .menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Footer Styling */
