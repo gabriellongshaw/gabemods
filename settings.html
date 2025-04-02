@@ -82,22 +82,5 @@
     }
     updateThemeButtonText();
   </script>
-
-  <script>
-  const menuIcon = document.getElementById('menu-icon');
-  const menu = document.getElementById('menu');
-
-  menuIcon.addEventListener('click', () => {
-      menu.classList.toggle('visible');
-      menuIcon.classList.toggle('active');
-  });
-
-  document.addEventListener('click', (event) => {
-      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-          menu.classList.remove('visible');
-          menuIcon.classList.remove('active');
-      }
-  });
-</script>
 </body>
 </html>
