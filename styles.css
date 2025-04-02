@@ -27,8 +27,8 @@ header {
     display: block;
 }
 
-/* Hamburger Menu Styling */
-.menu {
+/* iOS-Style Animation for Hamburger Menu */
+.ios-menu {
     position: fixed;
     top: 60px;
     right: 20px;
@@ -37,22 +37,14 @@ header {
     backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
+    transform: scale(0.8);
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.menu.visible {
+.ios-menu.visible {
+    transform: scale(1);
     opacity: 1;
-}
-
-/* Menu Links Styling */
-.menu a {
-    text-decoration: none;
-    color: white;
-}
-
-.menu a:hover {
-    color: #3498db;
 }
 
 /* Light Mode Styles */
@@ -70,38 +62,21 @@ header {
     color: black;
 }
 
-.light-mode .menu {
+.light-mode .ios-menu {
     background: rgba(250, 249, 250, 0.8); /* Translucent Light Mode */
     backdrop-filter: blur(12px);
 }
 
+.light-mode .menu a {
+    color: black; /* Black text in Light Mode */
+}
+
+.light-mode .menu a:hover {
+    color: #3498db;
+}
+
 .light-mode .menu-icon .bar {
     background-color: black;
-}
-
-/* Theme Button Styling */
-.theme-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.theme-btn:hover {
-    background-color: #2980b9;
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-    font-size: 14px;
 }
 
 /* Menu Icon Styling */
@@ -114,6 +89,12 @@ footer {
     height: 25px;
     position: relative;
     z-index: 100;
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon.active {
+    transform: scale(1);
 }
 
 .menu-icon .bar {
@@ -122,4 +103,13 @@ footer {
     background-color: #ffffff;
     border-radius: 2px;
     transition: all 0.3s ease;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    font-size: 14px;
 }
