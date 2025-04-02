@@ -180,15 +180,15 @@ footer {
 .altstore-btn, .sidestore-btn {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px; /* Adjust space between logo & text */
     width: 220px;
-    padding: 12px;
-    font-size: 18px;
+    padding: 10px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
-    border-radius: 12px;
+    border-radius: 10px;
     text-decoration: none;
-    justify-content: center;
+    justify-content: left; /* Align content to the left */
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -210,6 +210,6 @@ footer {
 
 /* Button Logo Styling */
 .button-logo {
-    width: 24px;
-    height: 24px;
+    width: 20px; /* Smaller logo */
+    height: 20px;
 }
