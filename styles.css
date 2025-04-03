@@ -210,11 +210,11 @@ footer {
     background: linear-gradient(90deg, #4B0082, #2626D1); /* Slightly darker hover gradient */
 }
 
-/* ✅ Rounded Button Icons */
+/* ✅ Rounded Square Button Icons */
 .button-logo {
-    width: 24px; /* Slightly larger logo */
+    width: 24px; /* Keeps the size unchanged */
     height: 24px;
-    border-radius: 50%; /* Makes the icons circular */
+    border-radius: 6px; /* Makes the icons rounded squares */
     margin-right: 8px; /* Space between logo & text */
 }
 
