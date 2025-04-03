@@ -1,1 +1,50 @@
-
+{
+  "splash_screen": {
+    "dark_mode": {
+      "background_color": "#121212",
+      "text_color": "#ffffff",
+      "animation": {
+        "type": "fade_in",
+        "duration": 2000,
+        "elements": [
+          {
+            "type": "logo",
+            "src": "logo-dark.png",
+            "size": "128x128",
+            "position": "center"
+          },
+          {
+            "type": "text",
+            "value": "Gabe Mods",
+            "font": "Poppins",
+            "size": 24,
+            "position": "center-bottom"
+          }
+        ]
+      }
+    },
+    "light_mode": {
+      "background_color": "#ffffff",
+      "text_color": "#000000",
+      "animation": {
+        "type": "fade_in",
+        "duration": 2000,
+        "elements": [
+          {
+            "type": "logo",
+            "src": "logo-light.png",
+            "size": "128x128",
+            "position": "center"
+          },
+          {
+            "type": "text",
+            "value": "Gabe Mods",
+            "font": "Poppins",
+            "size": 24,
+            "position": "center-bottom"
+          }
+        ]
+      }
+    }
+  }
+}
