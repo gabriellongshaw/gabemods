@@ -16,3 +16,6 @@ jobs:
         run: |
           ./gradlew assembleRelease
           mv app/build/outputs/apk/release/app-release.apk ${{ github.workspace }}/build
+
+- name: Setup Gradle  
+  run: ./gradlew clean
