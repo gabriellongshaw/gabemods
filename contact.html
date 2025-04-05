@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Barba.js & GSAP -->
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+    </div>
+    <div class="menu-icon" id="menu-icon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav class="menu sliding-menu" id="menu">
+    <ul>
+      <li><a href="index.html" data-barba="transition">• Home</a></li>
+      <li><a href="mods.html" data-barba="transition">• Mods</a></li>
+      <li><a href="games.html" data-barba="transition">• Games</a></li>
+      <li><a href="learn-to-code.html" data-barba="transition">• Learn to Code</a></li>
+      <li><a href="settings.html" data-barba="transition">• Settings</a></li>
+      <li><a href="contact.html" data-barba="transition">• Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <section id="contact">
+    <h1>Contact Us</h1>
+    <p>Get in touch with us through any of the platforms below:</p>
+    <ul>
+      <li><b>Email:</b> <a href="mailto:Gabemods_website@gmail">Gabemods_website@gmail</a></li>
+      <li><b>Telegram Channel:</b> <a href="https://t.me/Gabriel_Mods_Channel" target="_blank">Gabriel Mods Channel</a></li>
+      <li><b>Telegram Channel 2:</b> <a href="https://t.me/Gabriel_Mods_2" target="_blank">Gabriel Mods Channel 2</a></li>
+      <li><b>Telegram Group:</b> <a href="https://t.me/Gabriel_Mods_Chat" target="_blank">Gabriel Mods Chat</a></li>
+      <li><b>Snapchat:</b> <a href="https://www.snapchat.com/add/gabe_mods?share_id=DNAlGZYXcm8&locale=en-GB" target="_blank">Gabe Mods</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
+  </footer>
+
+  <!-- Existing JavaScript -->
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+    const menuLinks = document.querySelectorAll('.menu ul li a');
+
+    menuIcon.addEventListener('click', () => {
+        menu.classList.toggle('visible');
+        menuIcon.classList.toggle('active');
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        }
+    });
+
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+    }
+  </script>
+
+  <!-- Barba.js for Smooth Page Transitions -->
+  <script>
+    barba.init({
+      transitions: [{
+        name: 'fade',
+        leave(data) {
+          return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
+        },
+        enter(data) {
+          return gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
+        }
+      }]
+    });
+  </script>
+</body>
+</html>
