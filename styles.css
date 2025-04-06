@@ -243,19 +243,11 @@ footer {
     gap: 15px;
 }
 
-.contact-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 20px; /* Same padding as AltStore buttons */
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    width: 80%;
-    max-width: 400px;
-    color: #fff;
-    transition: background 0.3s ease;
+.contact-btn img {
+    width: auto; /* Maintain aspect ratio */
+    height: 40px; /* Keep consistent height */
+    max-width: 100%; /* Prevent stretching */
+    object-fit: contain; /* Ensure full logo is visible */
 }
 
 /* Adjust button colors */
