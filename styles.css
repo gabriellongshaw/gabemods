@@ -247,8 +247,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 18px;
-    border-radius: 8px;
+    padding: 15px 20px; /* Same padding as AltStore buttons */
+    border-radius: 10px;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
@@ -258,7 +258,15 @@ footer {
     transition: background 0.3s ease;
 }
 
-/* Button Colors */
-.snapchat-btn { background: #fffc00; color: #000; } /* Yellow for Snapchat */
-.email-btn { background: #4285F4; color: #fff; } /* Google Blue for Email */
-.telegram-btn { background: #ffffff; color: #0088cc; border: 2px solid #0088cc; } /* White for Telegram */
+/* Adjust button colors */
+.snapchat-btn { background: #fffc00; color: #000; }
+.email-btn { background: #4285F4; color: #fff; }
+.telegram-btn { background: #ffffff; color: #0088cc; border: 2px solid #0088cc; }
+
+/* Make logos the same size as AltStore/SideStore */
+.contact-btn img {
+    width: 40px;  /* Adjust to match the button icons */
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
