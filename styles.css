@@ -260,7 +260,7 @@ footer {
 
 /* Adjust button colors */
 .snapchat-btn { background: #fffc00; color: #000; }
-.email-btn { background: #D93025; color: #fff; }
+.email-btn { background: #fff; color: #000; }
 .telegram-btn { background: #ffffff; color: #0088cc; border: 2px solid #0088cc; }
 
 /* Make logos the same size as AltStore/SideStore */
