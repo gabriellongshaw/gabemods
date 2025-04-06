@@ -3,95 +3,88 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 15px;
-    background-color: #000000; /* Default Dark Mode */
-    color: #ffffff;
+    background-color: #000000; /* Default Dark Mode background */
+    color: #ffffff; /* Default Dark Mode text */
 }
 
 /* Light Mode Styling */
 .light-mode {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #ffffff; /* Light Mode background */
+    color: #000000; /* Light Mode text */
 }
 
-.light-mode header,
+.light-mode header {
+    background-color: #ffffff;
+}
+
 .light-mode footer {
     background-color: #ffffff;
     color: #000000;
 }
 
-/* Header */
+/* Light Mode Menu: Translucent Effect on All Devices */
+.light-mode .menu {
+    background: rgba(255, 255, 255, 0.75); /* Keeps the white color but adds translucency */
+    backdrop-filter: blur(15px); /* Ensures consistency across all screens */
+}
+
+.light-mode .menu a {
+    color: black; /* Black text for Light Mode */
+}
+
+.light-mode .menu a:hover {
+    color: #3498db;
+}
+
+/* Header Styling */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #000000;
-    border-bottom: 2px solid #3498db; /* Restored Blue Line */
+    border-bottom: 1px solid #3498db;
 }
 
-/* Logo */
+/* Logo Styling */
 .logo-image {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #3498db;
+    display: block;
 }
 
-/* Three-Dots Menu */
-.three-dots-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    font-size: 24px;
-    border: none;
-    background: transparent;
-    transition: transform 0.3s ease-in-out;
-}
-
-.three-dots-menu:hover {
-    transform: rotate(90deg);
-}
-
-.three-dots-menu::before {
-    content: '⋮';
-    color: white; /* Dark mode */
-}
-
-.light-mode .three-dots-menu::before {
-    color: black; /* Light mode */
-}
-
-/* Three-Dots Dropdown Menu */
+/* Fixed Navigation Menu Placement (Translucent for All Devices) */
 .menu {
-    position: absolute;
+    position: fixed;
     top: 60px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(15px);
-    padding: 10px;
-    border-radius: 10px;
-    display: none;
-}
-
-.light-mode .menu {
-    background: rgba(255, 255, 255, 0.75);
+    right: -300px; /* Start off-screen */
+    width: 220px;
+    background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent menu */
+    backdrop-filter: blur(15px); /* Ensures it works across all screens */
+    padding: 20px;
+    border-radius: 15px;
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    display: block; /* Ensure menu is contained */
 }
 
 .menu.visible {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+    right: 20px; /* Slide in */
+    opacity: 1; /* Fade in */
 }
 
+/* Menu Links Styling */
 .menu ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.menu li {
-    padding: 8px;
+.menu ul li {
+    display: block;
 }
 
 .menu a {
@@ -103,85 +96,182 @@ header {
     color: black;
 }
 
-/* Bottom Navigation Bar */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dark mode translucent */
-    backdrop-filter: blur(15px);
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    height: 60px;
-    z-index: 1000;
-}
-
-.light-mode .bottom-nav {
-    background: rgba(255, 255, 255, 0.75); /* Light mode translucent */
-}
-
-/* Text-Only Navigation Buttons */
-.bottom-nav a {
-    text-decoration: none;
-    font-size: 14px;
+/* Theme Button Styling */
+.theme-btn {
+    background-color: #3498db;
+    color: white;
     font-weight: bold;
-    color: white;
-}
-
-.light-mode .bottom-nav a {
-    color: black;
-}
-
-/* Fix: Mods Page Buttons */
-.mods-page-buttons {
-    display: flex;
-    justify-content: space-around;
-}
-
-.mods-page-buttons button {
-    font-size: 16px;
-    padding: 12px;
-    background: #3498db;
     border: none;
-    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 12px;
     cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.mods-page-buttons button:hover {
-    background: #1d7bc0;
+.theme-btn:hover {
+    background-color: #1d7bc0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Fix: Contact Page Buttons */
-.contact-page-buttons {
+.light-mode .theme-btn {
+    background-color: black;
+    color: white;
+}
+
+.light-mode .theme-btn:hover {
+    background-color: #333;
+}
+
+/* Hamburger Icon Animations */
+.menu-icon {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 100;
 }
 
-.contact-page-buttons button {
-    font-size: 16px;
-    padding: 12px;
-    background: #3498db;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.3s;
+.menu-icon .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-.contact-page-buttons button:hover {
-    background: #1d7bc0;
+.light-mode .menu-icon .bar {
+    background-color: black;
 }
 
-/* Footer */
+.menu-icon.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-icon.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Footer Styling */
 footer {
     text-align: center;
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.9);
     color: #ffffff;
     font-size: 14px;
+}
+
+/* iOS Mod Buttons Styling */
+.ios-mod-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.altstore-btn, .sidestore-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between logo & text */
+    width: 220px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    justify-content: left; /* Align content to the left */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* ✅ Updated AltStore Button (Brighter Blue-to-Green Gradient) */
+.altstore-btn {
+    background: linear-gradient(90deg, #2196F3, #43A047); /* Brighter Blue & Green */
+}
+
+.altstore-btn:hover {
+    background: linear-gradient(90deg, #1E88E5, #2E7D32); /* Slightly darker hover gradient */
+}
+
+/* ✅ Updated SideStore Button (Purple to #3434EB Blue Gradient) */
+.sidestore-btn {
+    background: linear-gradient(90deg, #6A0DAD, #3434EB); /* Purple to Blue */
+}
+
+.sidestore-btn:hover {
+    background: linear-gradient(90deg, #4B0082, #2626D1); /* Slightly darker hover gradient */
+}
+
+/* ✅ Rounded Square Button Icons */
+.button-logo {
+    width: 24px; /* Keeps the size unchanged */
+    height: 24px;
+    border-radius: 6px; /* Makes the icons rounded squares */
+    margin-right: 8px; /* Space between logo & text */
+}
+
+/* ✅ AltStore Button (Enhanced Blue-to-Green Gradient) */
+.altstore-btn {
+    background: linear-gradient(90deg, #00A2FF, #00FF7F); /* More vibrant blue & green */
+}
+
+.altstore-btn:hover {
+    background: linear-gradient(90deg, #008CFF, #00D973); /* Slightly darker hover gradient */
+}
+
+/* ✅ SideStore Button (Enhanced Purple-to-#0703FC Gradient) */
+.sidestore-btn {
+    background: linear-gradient(90deg, #8000FF, #0703FC); /* Stronger purple & deep blue */
+}
+
+.sidestore-btn:hover {
+    background: linear-gradient(90deg, #6A00E0, #0502D3); /* Slightly darker hover gradient */
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px; /* Same padding as AltStore buttons */
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    width: 80%;
+    max-width: 400px;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+/* Adjust button colors */
+.snapchat-btn { background: #fffc00; color: #000; }
+.email-btn { background: #fff; color: #000; }
+.telegram-btn { background: #ffffff; color: #0088cc; border: 2px solid #0088cc; }
+
+/* Make logos the same size as AltStore/SideStore */
+.contact-btn img {
+    width: 40px;  /* Adjust to match the button icons */
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.email-btn { 
+    background: #FFFFFF; /* Pure white */
+    color: #000; /* Black text for contrast */
 }
