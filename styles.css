@@ -2,7 +2,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 15px;
+    padding: 17px; /* Increased padding by 2% */
     background-color: #000000; /* Default Dark Mode background */
     color: #ffffff; /* Default Dark Mode text */
 }
@@ -41,9 +41,27 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: #000000;
     border-bottom: 1px solid #3498db;
+    position: fixed; /* Make header always visible */
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(10px); /* Adds smooth translucency */
+    z-index: 1000; /* Ensures it stays on top */
+}
+
+/* Dark Mode: Black Translucent */
+body.dark-mode header {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    color: #fff;
+}
+
+/* Light Mode: White Translucent */
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    color: #000;
 }
 
 /* Logo Styling */
@@ -61,7 +79,8 @@ header {
     position: fixed;
     top: 60px;
     right: -300px; /* Start off-screen */
-    width: 220px;
+    width: 80%; /* Reduced width by 20% */
+    max-width: 300px; /* Ensures it doesn’t stretch too far */
     background: rgba(0, 0, 0, 0.6); /* Dark Mode translucent menu */
     backdrop-filter: blur(15px); /* Ensures it works across all screens */
     padding: 20px;
@@ -96,55 +115,24 @@ header {
     color: black;
 }
 
-/* Theme Button Styling */
-.theme-btn {
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.theme-btn:hover {
-    background-color: #1d7bc0;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
-
-.light-mode .theme-btn {
-    background-color: black;
-    color: white;
-}
-
-.light-mode .theme-btn:hover {
-    background-color: #333;
-}
-
 /* Hamburger Icon Animations */
 .menu-icon {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    position: relative;
-    z-index: 100;
+    gap: 6px; /* Adjusted spacing for better visibility */
+    width: 35px; /* Ensures consistent size */
+    height: auto;
 }
 
-.menu-icon .bar {
+.menu-icon span {
+    width: 35px;
     height: 4px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+    background: #fff;
+    transition: 0.3s ease;
 }
 
-.light-mode .menu-icon .bar {
+.light-mode .menu-icon span {
     background-color: black;
 }
 
@@ -218,24 +206,7 @@ footer {
     margin-right: 8px; /* Space between logo & text */
 }
 
-/* ✅ AltStore Button (Enhanced Blue-to-Green Gradient) */
-.altstore-btn {
-    background: linear-gradient(90deg, #00A2FF, #00FF7F); /* More vibrant blue & green */
-}
-
-.altstore-btn:hover {
-    background: linear-gradient(90deg, #008CFF, #00D973); /* Slightly darker hover gradient */
-}
-
-/* ✅ SideStore Button (Enhanced Purple-to-#0703FC Gradient) */
-.sidestore-btn {
-    background: linear-gradient(90deg, #8000FF, #0703FC); /* Stronger purple & deep blue */
-}
-
-.sidestore-btn:hover {
-    background: linear-gradient(90deg, #6A00E0, #0502D3); /* Slightly darker hover gradient */
-}
-
+/* Contact Buttons Styling */
 .contact-buttons {
     display: flex;
     flex-direction: column;
@@ -269,39 +240,4 @@ footer {
     height: 40px;
     margin-right: 10px;
     border-radius: 5px;
-}
-
-.email-btn { 
-    background: #FFFFFF; /* Pure white */
-    color: #000; /* Black text for contrast */
-}
-
-/* Make Header Always Visible */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    backdrop-filter: blur(10px); /* Adds smooth translucency */
-    z-index: 1000; /* Ensures it stays on top */
-}
-
-/* Dark Mode: Black Translucent */
-body.dark-mode header {
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-    color: #fff;
-}
-
-/* Light Mode: White Translucent */
-body.light-mode header {
-    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
-    color: #000;
-}
-
-body {
-    padding-top: 60px; /* Push content down so it doesn't hide under the header */
 }
