@@ -100,12 +100,16 @@ header {
 }
 
 .menu-icon {
-    width: 30px;
-    height: 22px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    /* Removed margin-right */
+    margin-left: 10px; /* Moves it to the left a bit */
+    z-index: 1001;
 }
 
 .menu-icon span {
