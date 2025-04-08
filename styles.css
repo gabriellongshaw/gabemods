@@ -275,3 +275,33 @@ footer {
     background: #FFFFFF; /* Pure white */
     color: #000; /* Black text for contrast */
 }
+
+/* Make Header Always Visible */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px); /* Adds smooth translucency */
+    z-index: 1000; /* Ensures it stays on top */
+}
+
+/* Dark Mode: Black Translucent */
+body.dark-mode header {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    color: #fff;
+}
+
+/* Light Mode: White Translucent */
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    color: #000;
+}
+
+body {
+    padding-top: 60px; /* Push content down so it doesn't hide under the header */
+}
