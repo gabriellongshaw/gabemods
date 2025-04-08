@@ -107,8 +107,9 @@ header {
     width: 30px;
     height: 25px;
     position: relative;
-    /* Removed margin-right */
-    margin-left: 10px; /* Moves it to the left a bit */
+    margin-left: auto;
+    margin-right: 0;
+    padding-right: 10px; /* add breathing room inside the header */
     z-index: 1001;
 }
 
