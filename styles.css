@@ -99,6 +99,23 @@ header {
     color: white;
 }
 
+.menu-icon {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    width: 100%;
+    display: block;
+}
+
 .light-mode .menu a {
     color: black;
 }
