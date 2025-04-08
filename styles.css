@@ -5,6 +5,7 @@ body {
     padding: 15px;
     background-color: #000000; /* Default Dark Mode background */
     color: #ffffff; /* Default Dark Mode text */
+    padding-top: 60px; /* Push content down so it doesn't hide under the header */
 }
 
 /* Light Mode Styling */
@@ -14,7 +15,8 @@ body {
 }
 
 .light-mode header {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #000;
 }
 
 .light-mode footer {
@@ -22,7 +24,6 @@ body {
     color: #000000;
 }
 
-/* Light Mode Menu: Translucent Effect on All Devices */
 .light-mode .menu {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(15px);
@@ -38,11 +39,18 @@ body {
 
 /* Header Styling */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #000000;
+    justify-content: space-between;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
     border-bottom: 1px solid #3498db;
 }
 
@@ -56,20 +64,19 @@ header {
     display: block;
 }
 
-/* Fixed Navigation Menu Placement (Updated Width & Padding) */
+/* Fixed Navigation Menu */
 .menu {
     position: fixed;
     top: 60px;
     right: -300px;
-    width: 176px; /* 20% smaller than 220px */
+    width: 176px; /* 20% smaller than original 220px */
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(15px);
-    padding: 22px; /* Increased by ~2px (~2%) */
+    padding: 22px; /* Slightly increased padding (~2%) */
     border-radius: 15px;
     transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
     opacity: 0;
     display: block;
-    box-sizing: border-box;
 }
 
 .menu.visible {
@@ -77,7 +84,6 @@ header {
     opacity: 1;
 }
 
-/* Menu Links Styling */
 .menu ul {
     list-style: none;
     padding: 0;
@@ -125,7 +131,7 @@ header {
     background-color: #333;
 }
 
-/* Hamburger Icon Animations */
+/* Hamburger Icon */
 .menu-icon {
     cursor: pointer;
     display: flex;
@@ -134,7 +140,8 @@ header {
     width: 30px;
     height: 25px;
     position: relative;
-    z-index: 100; /* Ensures it appears on top */
+    margin-right: 10px;
+    z-index: 1001;
 }
 
 .menu-icon .bar {
@@ -170,7 +177,7 @@ footer {
     font-size: 14px;
 }
 
-/* iOS Mod Buttons Styling */
+/* iOS Mod Buttons */
 .ios-mod-buttons {
     display: flex;
     flex-direction: column;
@@ -193,7 +200,7 @@ footer {
     transition: background-color 0.3s ease-in-out;
 }
 
-/* ✅ Updated AltStore Button */
+/* AltStore Button */
 .altstore-btn {
     background: linear-gradient(90deg, #00A2FF, #00FF7F);
 }
@@ -202,7 +209,7 @@ footer {
     background: linear-gradient(90deg, #008CFF, #00D973);
 }
 
-/* ✅ Updated SideStore Button */
+/* SideStore Button */
 .sidestore-btn {
     background: linear-gradient(90deg, #8000FF, #0703FC);
 }
@@ -211,7 +218,7 @@ footer {
     background: linear-gradient(90deg, #6A00E0, #0502D3);
 }
 
-/* ✅ Rounded Square Button Icons */
+/* Button Logos */
 .button-logo {
     width: 24px;
     height: 24px;
@@ -219,6 +226,7 @@ footer {
     margin-right: 8px;
 }
 
+/* Contact Buttons */
 .contact-buttons {
     display: flex;
     flex-direction: column;
@@ -241,15 +249,9 @@ footer {
     transition: background 0.3s ease;
 }
 
-.snapchat-btn { background: #fffc00; color: #000; }
-.email-btn { background: #fff; color: #000; }
-.telegram-btn { background: #ffffff; color: #0088cc; border: 2px solid #0088cc; }
-
-.contact-btn img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    border-radius: 5px;
+.snapchat-btn {
+    background: #fffc00;
+    color: #000;
 }
 
 .email-btn {
@@ -257,32 +259,15 @@ footer {
     color: #000;
 }
 
-/* Make Header Always Visible */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+.telegram-btn {
+    background: #ffffff;
+    color: #0088cc;
+    border: 2px solid #0088cc;
 }
 
-/* Dark Mode: Black Translucent */
-body.dark-mode header {
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-}
-
-/* Light Mode: White Translucent */
-body.light-mode header {
-    background: rgba(255, 255, 255, 0.6);
-    color: #000;
-}
-
-body {
-    padding-top: 60px;
+.contact-btn img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
 }
