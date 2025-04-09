@@ -107,8 +107,8 @@ header {
     width: 30px;
     height: 25px;
     position: absolute;
-    top: 10px;     /* Moved up from 25px */
-    right: 20px;   /* Keep this as-is to maintain the horizontal spacing */
+    top: 5px;     /* Was 10px, now slightly higher */
+    right: 20px;  /* Keep this the same */
     z-index: 1001;
 }
 
