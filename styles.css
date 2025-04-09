@@ -107,7 +107,7 @@ header {
     width: 30px;
     height: 25px;
     position: relative;
-    margin-right: 20px; /* Match left-side padding */
+    margin-right: 40px; /* Was 20px, now increased for a more centered look */
     z-index: 1001;
 }
 
