@@ -106,8 +106,9 @@ header {
     justify-content: space-between;
     width: 30px;
     height: 25px;
-    position: relative;
-    margin-right: 40px; /* Was 20px, now increased for a more centered look */
+    position: absolute;
+    top: 25px;     /* adjust vertically as needed */
+    right: 20px;   /* change this to control the horizontal position */
     z-index: 1001;
 }
 
