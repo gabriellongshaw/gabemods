@@ -319,9 +319,10 @@ footer {
     font-weight: bold;
     color: white;
     position: absolute;
-    left: 50%;
+    left: calc(50% - 2em); /* Moves title slightly left */
     transform: translateX(-50%);
-    padding-top: 10px; /* Adds space above the title */
+    padding-top: 12px; /* Adds space above the title */
+    padding-bottom: 10px; /* Adds space below the title */
 }
 
 /* Light Mode Styling */
