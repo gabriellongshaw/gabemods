@@ -136,5 +136,20 @@
       }]
     });
   </script>
+
+  <script>
+  const moreInfo = document.getElementById('gd-more-info');
+  const gdInfo = document.getElementById('gd-info');
+
+  moreInfo.addEventListener('click', () => {
+    if (gdInfo.style.display === 'none') {
+      gdInfo.style.display = 'inline';
+      moreInfo.textContent = 'Hide info';
+    } else {
+      gdInfo.style.display = 'none';
+      moreInfo.textContent = 'More info...';
+    }
+  });
+  </script>
 </body>
 </html>
