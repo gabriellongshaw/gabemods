@@ -3,19 +3,19 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 15px;
-    background-color: #000000;
-    color: #ffffff;
-    padding-top: 60px;
+    background-color: #000000; /* Default Dark Mode background */
+    color: #ffffff; /* Default Dark Mode text */
+    padding-top: 60px; /* Push content down so it doesn't hide under the header */
 }
 
 /* Light Mode Styling */
 .light-mode {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #ffffff; /* Light Mode background */
+    color: #000000; /* Light Mode text */
 }
 
 .light-mode header {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2); /* more translucent */
     color: #000;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 .light-mode .menu {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2); /* more translucent */
     backdrop-filter: blur(15px);
 }
 
@@ -50,7 +50,7 @@ header {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2); /* more translucent */
     border-bottom: 1px solid #3498db;
 }
 
@@ -69,10 +69,10 @@ header {
     position: fixed;
     top: 60px;
     right: -300px;
-    width: 176px;
-    background: rgba(0, 0, 0, 0.3);
+    width: 176px; /* 20% smaller than original 220px */
+    background: rgba(0, 0, 0, 0.2); /* more translucent */
     backdrop-filter: blur(15px);
-    padding: 22px;
+    padding: 22px; /* Slightly increased padding (~2%) */
     border-radius: 15px;
     transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
     opacity: 0;
@@ -107,8 +107,8 @@ header {
     width: 30px;
     height: 25px;
     position: absolute;
-    top: 2px;
-    right: 20px;
+    top: 2px;     /* Was 10px, now slightly higher */
+    right: 20px;  /* Keep this the same */
     z-index: 1001;
 }
 
@@ -120,20 +120,8 @@ header {
     display: block;
 }
 
-.light-mode .menu-icon .bar {
-    background-color: black;
-}
-
-.menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+.light-mode .menu a {
+    color: black;
 }
 
 /* Theme Button Styling */
@@ -162,6 +150,43 @@ header {
 
 .light-mode .theme-btn:hover {
     background-color: #333;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    margin-right: 10px;
+    z-index: 1001;
+}
+
+.menu-icon .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.light-mode .menu-icon .bar {
+    background-color: black;
+}
+
+.menu-icon.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-icon.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Footer Styling */
@@ -196,6 +221,7 @@ footer {
     transition: background-color 0.3s ease-in-out;
 }
 
+/* AltStore Button */
 .altstore-btn {
     background: linear-gradient(90deg, #00A2FF, #00FF7F);
 }
@@ -204,6 +230,7 @@ footer {
     background: linear-gradient(90deg, #008CFF, #00D973);
 }
 
+/* SideStore Button */
 .sidestore-btn {
     background: linear-gradient(90deg, #8000FF, #0703FC);
 }
@@ -251,18 +278,12 @@ footer {
 .email-btn {
     background: #FFFFFF;
     color: #000;
-    border: 2px solid red;
 }
 
 .telegram-btn {
     background: #ffffff;
     color: #0088cc;
     border: 2px solid #0088cc;
-}
-
-.light-mode .telegram-btn {
-    background: #0088cc;
-    color: #ffffff;
 }
 
 .contact-btn img {
@@ -299,17 +320,18 @@ footer {
     font-weight: bold;
     color: white;
     position: absolute;
-    left: calc(50% - 1em + 1px);
+    left: calc(50% - 1em + 1px); /* Move title 1px to the right */
     transform: translateX(-50%);
-    padding-top: 12px;
-    padding-bottom: 10px;
+    padding-top: 12px; /* Adds space above the title */
+    padding-bottom: 10px; /* Adds space below the title */
 }
 
+/* Light Mode Styling */
 .light-mode .page-title {
     color: black;
 }
 
 /* Add padding below the blue line (for content spacing) */
 #home p, #community-mods p, #ios-mods p {
-  padding-top: 25px;
+  padding-top: 25px; /* Increased space between the blue line and text */
 }
