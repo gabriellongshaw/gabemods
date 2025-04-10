@@ -312,6 +312,7 @@ footer {
     content: '...';
 }
 
+/* Page Title Styling */
 .page-title {
     flex-grow: 1;
     text-align: center;
@@ -319,7 +320,7 @@ footer {
     font-weight: bold;
     color: white;
     position: absolute;
-    left: calc(50% - 1em); /* Moves title slightly left */
+    left: calc(50% - 1em + 1px); /* Move title 1px to the right */
     transform: translateX(-50%);
     padding-top: 12px; /* Adds space above the title */
     padding-bottom: 10px; /* Adds space below the title */
@@ -332,5 +333,5 @@ footer {
 
 /* Add padding below the blue line (for content spacing) */
 #home p, #community-mods p, #ios-mods p {
-  padding-top: 20px; /* Adds more space between the blue line and text */
+  padding-top: 25px; /* Increased space between the blue line and text */
 }
