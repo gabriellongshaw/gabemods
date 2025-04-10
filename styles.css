@@ -311,3 +311,16 @@ footer {
 .more-info-btn::after {
     content: '...';
 }
+
+.page-title {
+    flex-grow: 1; /* Ensures it expands in the middle */
+    text-align: center; /* Centers the title */
+    font-size: 20px; /* Adjust size as needed */
+    font-weight: bold;
+    color: white; /* Light mode color is handled separately */
+}
+
+/* Light Mode Styling */
+.light-mode .page-title {
+    color: black;
+}
