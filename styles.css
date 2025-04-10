@@ -292,3 +292,22 @@ footer {
     margin-right: 10px;
     border-radius: 5px;
 }
+
+.hidden {
+    display: none;
+}
+
+.more-info-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.more-info-btn:hover {
+    background: #1d7bc0;
+}
