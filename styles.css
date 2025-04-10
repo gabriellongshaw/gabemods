@@ -319,7 +319,7 @@ footer {
     font-weight: bold;
     color: white;
     position: absolute;
-    left: calc(50% - 2em); /* Moves title slightly left */
+    left: calc(50% - 1em); /* Moves title slightly left */
     transform: translateX(-50%);
     padding-top: 12px; /* Adds space above the title */
     padding-bottom: 10px; /* Adds space below the title */
@@ -328,4 +328,9 @@ footer {
 /* Light Mode Styling */
 .light-mode .page-title {
     color: black;
+}
+
+/* Add padding below the blue line (for content spacing) */
+#home p, #community-mods p, #ios-mods p {
+  padding-top: 20px; /* Adds more space between the blue line and text */
 }
