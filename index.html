@@ -17,6 +17,8 @@
     <div class="logo">
       <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
     </div>
+    <!-- Title moved into the header with class "page-title" so it picks up your CSS styling -->
+    <h1 class="page-title">Welcome to Gabe Mods</h1>
     <div class="menu-icon" id="menu-icon">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -25,25 +27,27 @@
   </header>
 
   <!-- Navigation Menu -->
-<nav class="menu sliding-menu" id="menu">
-  <ul>
-    <li><a href="index.html" data-barba="transition">• Home</a></li>
-    <li><a href="mods.html" data-barba="transition">• Mods</a></li>
-    <li><a href="games.html" data-barba="transition">• Games</a></li>
-    <li><a href="learn-to-code.html" data-barba="transition">• Learn to Code</a></li>
-    <li><a href="contact.html" data-barba="transition">• Contact</a></li>
-    <li><a href="settings.html" data-barba="transition">• Settings</a></li>
-  </ul>
-</nav>
+  <nav class="menu sliding-menu" id="menu">
+    <ul>
+      <li><a href="index.html" data-barba="transition">• Home</a></li>
+      <li><a href="mods.html" data-barba="transition">• Mods</a></li>
+      <li><a href="games.html" data-barba="transition">• Games</a></li>
+      <li><a href="learn-to-code.html" data-barba="transition">• Learn to Code</a></li>
+      <li><a href="contact.html" data-barba="transition">• Contact</a></li>
+      <li><a href="settings.html" data-barba="transition">• Settings</a></li>
+    </ul>
+  </nav>
 
   <!-- Main Content -->
   <section id="home">
-    <h1>Welcome to Gabe Mods</h1>
+    <!-- Optionally remove this title if you prefer to show it only in the header -->
+    <!-- <h1>Welcome to Gabe Mods</h1> -->
     <p>Please note that this website is currently under development and it is a long way from complete.</p>
     <p>Here at Gabe Mods, our aim is to provide our users with free, high-quality, malware-free mods for lots of popular apps and games. Our "Learn to Code" page will eventually have tutorials teaching people how to code for themselves.</p>
-    <p><strong>If you have any feature suggestions or feedback, please email</strong>  
+    <p>
+      <strong>If you have any feature suggestions or feedback, please email</strong>
       <a href="mailto:gabemods.website@gmail.com" style="text-decoration: underline;">gabemods.website@gmail.com</a>
-      <br><strong>or message me on</strong>  
+      <br><strong>or message me on</strong>
       <a href="https://t.me/Gabriel_Mods_Chat" target="_blank" style="text-decoration: underline;">Telegram Chat</a>.
     </p>
   </section>
@@ -83,7 +87,7 @@
     }
   </script>
 
-  <!-- Add Barba.js JavaScript -->
+  <!-- Barba.js JavaScript -->
   <script>
     barba.init({
       transitions: [{
