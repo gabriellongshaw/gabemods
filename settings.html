@@ -13,6 +13,8 @@
     <div class="logo">
       <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
     </div>
+    <!-- Title moved into the header -->
+    <h1 class="page-title">Settings</h1>
     <div class="menu-icon" id="menu-icon">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -21,21 +23,20 @@
   </header>
 
   <!-- Navigation Menu -->
-<nav class="menu sliding-menu" id="menu">
-  <ul>
-    <li><a href="index.html" data-barba="transition">• Home</a></li>
-    <li><a href="mods.html" data-barba="transition">• Mods</a></li>
-    <li><a href="games.html" data-barba="transition">• Games</a></li>
-    <li><a href="contact.html" data-barba="transition">• Contact</a></li>
-    <li><a href="learn-to-code.html" data-barba="transition">• Learn to Code</a></li>
-    <li><a href="settings.html" data-barba="transition">• Settings</a></li>
-  </ul>
-</nav>
+  <nav class="menu sliding-menu" id="menu">
+    <ul>
+      <li><a href="index.html" data-barba="transition">• Home</a></li>
+      <li><a href="mods.html" data-barba="transition">• Mods</a></li>
+      <li><a href="games.html" data-barba="transition">• Games</a></li>
+      <li><a href="contact.html" data-barba="transition">• Contact</a></li>
+      <li><a href="learn-to-code.html" data-barba="transition">• Learn to Code</a></li>
+      <li><a href="settings.html" data-barba="transition">• Settings</a></li>
+    </ul>
+  </nav>
 
   <!-- Main Content -->
   <section id="settings">
-    <h1>Settings</h1>
-
+    <!-- Removed duplicate title here -->
     <p>Switch between Light and Dark themes:</p>
     <button id="theme-toggle" class="theme-btn modern-btn">Light Theme</button>
   </section>
@@ -83,22 +84,5 @@
     }
     updateThemeButtonText();
   </script>
-
-  <script>
-  const menuIcon = document.getElementById('menu-icon');
-  const menu = document.getElementById('menu');
-
-  menuIcon.addEventListener('click', () => {
-      menu.classList.toggle('visible');
-      menuIcon.classList.toggle('active');
-  });
-
-  document.addEventListener('click', (event) => {
-      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-          menu.classList.remove('visible');
-          menuIcon.classList.remove('active');
-      }
-  });
-</script>
 </body>
 </html>
