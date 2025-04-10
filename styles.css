@@ -298,16 +298,16 @@ footer {
 }
 
 .more-info-btn {
-    background: #3498db;
-    color: white;
+    background: none;
     border: none;
-    padding: 5px 10px;
+    color: cyan;
     font-size: 14px;
-    border-radius: 5px;
+    padding: 0;
+    margin-left: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    text-decoration: underline;
 }
 
-.more-info-btn:hover {
-    background: #1d7bc0;
+.more-info-btn::after {
+    content: '...';
 }
