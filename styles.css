@@ -25,7 +25,7 @@ body {
 }
 
 .light-mode .menu {
-    background: rgba(255, 255, 255, 0.0); /* more translucent */
+    background: rgba(255, 255, 255, 0.2); /* more translucent */
     backdrop-filter: blur(15px);
 }
 
