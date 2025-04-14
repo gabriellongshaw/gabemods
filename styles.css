@@ -376,33 +376,47 @@ footer {
     background: linear-gradient(90deg, #006AE6, #0043B3);
 }
 
-/* Popup Styling */
 #download-popup {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.9); /* White background */
     padding: 20px;
     border-radius: 12px;
     text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* iOS-style shadow */
+}
+
+/* Download Button - iOS Look */
+#download-link {
+    font-size: 18px;
+    color: #007AFF; /* iOS Blue */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+}
+
+#download-link:hover {
+    text-decoration: underline; /* iOS-style hover */
+}
+
+#download-link:active {
+    background: none; /* Removes purple highlight */
 }
 
 /* Cancel Button */
 .cancel-btn {
-    background: red;
-    color: white;
-}
-
-.menu-button {
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
-}
-
-.menu-button span {
-    font-family: 'Material Icons';
-    font-size: 32px;
+    font-size: 18px;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
     display: inline-block;
+}
+
+.cancel-btn:hover {
+    text-decoration: underline; /* iOS-style hover */
 }
