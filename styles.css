@@ -420,3 +420,20 @@ footer {
 .cancel-btn:hover {
     text-decoration: underline; /* iOS-style hover */
 }
+
+.ios-download-link {
+    font-size: 18px;
+    color: #007AFF; /* iOS Blue */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+}
+
+.ios-download-link:hover {
+    text-decoration: underline; /* iOS-style hover */
+}
+
+.ios-download-link:active {
+    background: none; /* Removes purple highlight */
+}
