@@ -389,60 +389,47 @@ footer {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* iOS-style shadow */
 }
 
-/* Download Popup - Dark and Light Mode Support */
+/* Fixed Download Popup */
 #download-popup {
-    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #2c2c2e; /* Solid dark gray (iOS-style) */
     padding: 20px;
     border-radius: 16px;
     text-align: center;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 350px;
     z-index: 1002;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.light-mode #download-popup {
-    background: #e5e5ea; /* Solid light gray (iOS-style) */
+/* Dark Mode Popup */
+body:not(.light-mode) #download-popup {
+    background-color: #2c2c2e; /* iOS-style dark gray */
+    color: white;
 }
 
-#download-link:hover {
-    text-decoration: underline; /* iOS-style hover */
+/* Light Mode Popup */
+body.light-mode #download-popup {
+    background-color: #f2f2f7; /* iOS-style light gray */
+    color: black;
 }
 
-#download-link:active {
-    background: none; /* Removes purple highlight */
+/* Show Popup */
+#download-popup.show {
+    opacity: 1;
+    pointer-events: all;
 }
 
-/* Cancel Button */
-.cancel-btn {
-    font-size: 18px;
-    color: red;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-    display: inline-block;
-}
-
-.cancel-btn:hover {
-    text-decoration: underline; /* iOS-style hover */
-}
-
-.ios-download-link {
-    font-size: 18px;
-    color: #007AFF; /* iOS Blue */
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-    display: inline-block;
-}
-
-.ios-download-link:hover {
-    text-decoration: underline; /* iOS-style hover */
-}
-
-.ios-download-link:active {
-    background: none; /* Removes purple highlight */
+/* Menu icon position fix */
+.menu-icon {
+    right: 10px !important; /* Shifted left for alignment */
 }
