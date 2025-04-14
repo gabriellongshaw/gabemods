@@ -148,16 +148,18 @@
     });
   </script>
 
-  <script>
+ <script>
     function showDownloadPopup(downloadUrl) {
         let popup = document.getElementById("download-popup");
         let downloadLink = document.getElementById("download-link");
 
         if (popup && downloadLink) {
             downloadLink.href = downloadUrl;
-            popup.classList.remove("hide"); // ✅ Remove closing animation
-            popup.classList.add("show"); // ✅ Add opening animation
-            popup.style.display = "flex"; // ✅ Ensure it's visible
+            popup.style.display = "flex"; // ✅ Ensure it's visible BEFORE adding animation
+            setTimeout(() => {
+                popup.classList.remove("hide"); // ✅ Remove closing animation
+                popup.classList.add("show"); // ✅ Add opening animation
+            }, 10); // ✅ Tiny delay lets animation play
         } else {
             console.error("Popup or download link not found!");
         }
