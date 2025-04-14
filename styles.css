@@ -389,14 +389,23 @@ footer {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* iOS-style shadow */
 }
 
-/* Download Button - iOS Look */
-#download-link {
-    font-size: 18px;
-    color: #007AFF; /* iOS Blue */
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-    display: inline-block;
+/* Download Popup - Dark and Light Mode Support */
+#download-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2c2c2e; /* Solid dark gray (iOS-style) */
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 1002;
+}
+
+.light-mode #download-popup {
+    background: #e5e5ea; /* Solid light gray (iOS-style) */
 }
 
 #download-link:hover {
