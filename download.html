@@ -106,22 +106,39 @@
 
   <!-- Popup JS -->
  <script>
-    function showDownloadPopup(downloadUrl) {
+    function showDownloadPopup(downloadUrl, isIOS) {
         let popup = document.getElementById("download-popup");
         let downloadLink = document.getElementById("download-link");
+        let popupTitle = document.getElementById("popup-title"); // ✅ Target title text
 
-        if (popup && downloadLink) {
-            downloadLink.href = downloadUrl; // ✅ Correctly sets the dynamic link
-            popup.classList.add("show"); // ✅ Activates the popup
+        if (popup && downloadLink && popupTitle) {
+            // ✅ Dynamically change the pop-up title based on Android or iOS
+            popupTitle.textContent = isIOS 
+                ? "Download Gabe Mods IPA (Direct Download)"  
+                : "Download Gabe Mods APK (Direct Download)";
+            
+            downloadLink.href = downloadUrl; // ✅ Update download link dynamically
+
+            popup.style.display = "flex"; // ✅ Make pop-up visible
+            setTimeout(() => {
+                popup.classList.remove("hide");
+                popup.classList.add("show");
+            }, 10);
         } else {
-            console.error("Popup or download link not found!");
+            console.error("Popup elements not found!");
         }
     }
 
     function hidePopup() {
         let popup = document.getElementById("download-popup");
+
         if (popup) {
-            popup.classList.remove("show"); // ✅ Ensures hiding works
+            popup.classList.remove("show");
+            popup.classList.add("hide");
+
+            setTimeout(() => {
+                popup.style.display = "none";
+            }, 200);
         }
     }
 </script>
