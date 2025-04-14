@@ -381,29 +381,58 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 280px; /* ✅ Made smaller */
+    width: 250px; /* ✅ Made smaller */
     padding: 15px;
     border-radius: 12px;
     text-align: center;
     z-index: 1002;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px); /* ✅ Proper blur effect */
     opacity: 0;
     pointer-events: none;
     display: none;
 }
 
-/* Dark Mode - Almost Black & Translucent */
+/* Dark Mode - Nearly Black & Translucent */
 body:not(.light-mode) #download-popup {
-    background-color: rgba(15, 15, 15, 0.85); /* ✅ Nearly black but slightly transparent */
-    backdrop-filter: blur(10px); /* ✅ Smooth blur effect */
+    background-color: rgba(10, 10, 10, 0.7); /* ✅ True dark translucent */
+    backdrop-filter: blur(15px); /* ✅ Smooth blur effect */
     color: white;
 }
 
-/* Light Mode - Translucent Gray */
+/* Light Mode - Light Translucent Gray */
 body.light-mode #download-popup {
-    background-color: rgba(255, 255, 255, 0.7); /* ✅ Light, translucent background */
-    backdrop-filter: blur(10px); /* ✅ Soft blur effect */
+    background-color: rgba(255, 255, 255, 0.6); /* ✅ Soft light translucent */
+    backdrop-filter: blur(15px); /* ✅ Smooth blur effect */
     color: black;
+}
+
+/* Center Buttons Inside Popup */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ✅ Centers buttons */
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Center & Style Download Button */
+#download-link {
+    display: block;
+    width: 180px; /* ✅ Adjusted size */
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    background: linear-gradient(90deg, #007AFF, #0051CC); /* ✅ iOS-style */
+    text-decoration: none;
+}
+
+#download-link:hover {
+    background: linear-gradient(90deg, #006AE6, #0043B3); /* ✅ Hover effect */
 }
 
 /* Fix "Cancel" Button */
@@ -415,6 +444,7 @@ body.light-mode #download-popup {
     font-weight: bold;
     padding: 8px;
     cursor: pointer;
+    text-align: center;
 }
 
 .cancel-btn:hover {
