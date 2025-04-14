@@ -340,7 +340,7 @@ footer {
     display: flex;
     flex-direction: column; /* ✅ Stack buttons vertically */
     align-items: center; /* ✅ Center them */
-    gap: 15px; /* ✅ Add space between them */
+    gap: 20px; /* ✅ Add space between them */
     margin-top: 20px;
 }
 
