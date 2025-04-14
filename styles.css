@@ -356,6 +356,18 @@ footer {
     transition: background 0.3s ease-in-out;
 }
 
+.android-btn, .ios-btn {
+    display: block;
+    width: 220px; /* ✅ Restore original button width */
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease-out, background 0.3s ease-in-out; /* ✅ Smooth animation */
+}
+
 /* Android Button */
 .android-btn {
     background: linear-gradient(90deg, #3DDC84, #00A656);
@@ -363,7 +375,12 @@ footer {
 }
 
 .android-btn:hover {
+    transform: scale(1.05); /* ✅ Slight zoom on hover */
     background: linear-gradient(90deg, #36C374, #008F49);
+}
+
+.android-btn:active {
+    transform: scale(0.95); /* ✅ Press-down effect */
 }
 
 /* iOS Button */
@@ -373,9 +390,13 @@ footer {
 }
 
 .ios-btn:hover {
+    transform: scale(1.05); /* ✅ Slight zoom on hover */
     background: linear-gradient(90deg, #006AE6, #0043B3);
 }
 
+.ios-btn:active {
+    transform: scale(0.95); /* ✅ Press-down effect */
+}
 /* Fixed Download Popup */
 #download-popup {
     position: fixed;
