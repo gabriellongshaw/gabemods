@@ -102,7 +102,7 @@ header {
 .menu-icon {
     position: absolute;
     top: 2px;
-    right: 40px !important; /* ✅ Forces it to move 10px further left */
+    right: 30px !important; /* ✅ Forces it to move 10px further left */
     cursor: pointer;
     display: flex;
     flex-direction: column;
