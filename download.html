@@ -72,11 +72,10 @@
   <section id="download">
     <p>The easiest way to install and manage mods directly from your device.</p>
 
-   <!-- Android APK Button -->
-<a href="#" class="android-btn" onclick="showDownloadPopup('Gabe-Mods-v1.0.1.apk', false)">Download for Android</a>
-
-<!-- iOS IPA Button -->
-<a href="#" class="ios-btn" onclick="showDownloadPopup('iOS-App.txt', true)">Download for iOS</a>
+    <!-- Download Buttons -->
+    <div class="download-buttons">
+      <button class="mdc-button android-btn" onclick="showDownloadPopup('Gabe-Mods-v1.0.1.apk')">Download for Android</button>
+      <button class="mdc-button ios-btn" onclick="showDownloadPopup('iOS-App.txt')">Download for iOS</button>
     </div>
 
     <!-- Popup -->
@@ -106,39 +105,22 @@
 
   <!-- Popup JS -->
  <script>
-    function showDownloadPopup(downloadUrl, isIOS) {
+    function showDownloadPopup(downloadUrl) {
         let popup = document.getElementById("download-popup");
         let downloadLink = document.getElementById("download-link");
-        let popupTitle = document.getElementById("popup-title"); // ✅ Target title text
 
-        if (popup && downloadLink && popupTitle) {
-            // ✅ Dynamically change the pop-up title based on Android or iOS
-            popupTitle.textContent = isIOS 
-                ? "Download Gabe Mods IPA (Direct Download)"  
-                : "Download Gabe Mods APK (Direct Download)";
-            
-            downloadLink.href = downloadUrl; // ✅ Update download link dynamically
-
-            popup.style.display = "flex"; // ✅ Make pop-up visible
-            setTimeout(() => {
-                popup.classList.remove("hide");
-                popup.classList.add("show");
-            }, 10);
+        if (popup && downloadLink) {
+            downloadLink.href = downloadUrl; // ✅ Correctly sets the dynamic link
+            popup.classList.add("show"); // ✅ Activates the popup
         } else {
-            console.error("Popup elements not found!");
+            console.error("Popup or download link not found!");
         }
     }
 
     function hidePopup() {
         let popup = document.getElementById("download-popup");
-
         if (popup) {
-            popup.classList.remove("show");
-            popup.classList.add("hide");
-
-            setTimeout(() => {
-                popup.style.display = "none";
-            }, 200);
+            popup.classList.remove("show"); // ✅ Ensures hiding works
         }
     }
 </script>
