@@ -149,26 +149,19 @@
   </script>
 
  <script>
-    function showDownloadPopup(downloadUrl, isIOS) {
+    function showDownloadPopup(downloadUrl) {
         let popup = document.getElementById("download-popup");
         let downloadLink = document.getElementById("download-link");
-        let popupTitle = document.getElementById("popup-title"); // ✅ Target the title text
 
-        if (popup && downloadLink && popupTitle) {
-            if (isIOS) {
-                popupTitle.textContent = "Download Gabe Mods IPA (Direct Download)"; // ✅ Change title
-            } else {
-                popupTitle.textContent = "Download Gabe Mods APK (Direct Download)";
-            }
+        if (popup && downloadLink) {
             downloadLink.href = downloadUrl;
-
-            popup.style.display = "flex";
+            popup.style.display = "flex"; // ✅ Ensure it's visible BEFORE adding animation
             setTimeout(() => {
-                popup.classList.remove("hide");
-                popup.classList.add("show");
-            }, 10);
+                popup.classList.remove("hide"); // ✅ Remove closing animation
+                popup.classList.add("show"); // ✅ Add opening animation
+            }, 10); // ✅ Tiny delay lets animation play
         } else {
-            console.error("Popup elements not found!");
+            console.error("Popup or download link not found!");
         }
     }
 
@@ -176,12 +169,12 @@
         let popup = document.getElementById("download-popup");
 
         if (popup) {
-            popup.classList.remove("show");
-            popup.classList.add("hide");
+            popup.classList.remove("show"); // ✅ Remove opening animation
+            popup.classList.add("hide"); // ✅ Add closing animation
 
             setTimeout(() => {
-                popup.style.display = "none";
-            }, 200);
+                popup.style.display = "none"; // ✅ Ensures it hides after animation
+            }, 200); // ✅ Matches animation speed
         }
     }
 </script>
