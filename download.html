@@ -51,21 +51,19 @@
   <section id="download">
     <p>The easiest way to install and manage mods directly from your device.</p>
 
-    <!-- Download Buttons -->
-    <div class="download-buttons">
-      <button class="mdc-button android-btn" onclick="showDownloadPopup('Gabe-Mods-v1.0.1.apk')">Download for Android</button>
-      <button class="mdc-button ios-btn" onclick="showDownloadPopup('YOUR-IOS-LINK')">Download for iOS</button>
-    </div>
+   <!-- Android & iOS Buttons -->
+<a href="#" class="android-btn" onclick="showDownloadPopup('Gabe-Mods-v1.0.1.apk')">Download for Android</a>
+<a href="#" class="ios-btn" onclick="showDownloadPopup('iOS-App.txt')">Download for iOS</a>
 
     <!-- Popup -->
     <div id="download-popup" class="hidden">
-      <div class="popup-content">
-        <h3>Download Gabe Mods APK (Direct Download)</h3>
+    <div class="popup-content">
+        <h3>Download Gabe Mods App (Direct Download)</h3> <!-- ✅ No dynamic title changes -->
         <p>Click below to start your download.</p>
         <a id="download-link" href="#" class="mdc-button">Download Now</a>
         <button onclick="hidePopup()" class="mdc-button cancel-btn">Cancel</button>
-      </div>
     </div>
+</div>
 
     <!-- Guide -->
     <h2>Installation Guide</h2>
@@ -157,12 +155,8 @@
         let downloadLink = document.getElementById("download-link");
 
         if (popup && downloadLink) {
-            downloadLink.href = downloadUrl;
-            popup.style.display = "flex"; // ✅ Ensure it's visible BEFORE adding animation
-            setTimeout(() => {
-                popup.classList.remove("hide"); // ✅ Remove closing animation
-                popup.classList.add("show"); // ✅ Add opening animation
-            }, 10); // ✅ Tiny delay lets animation play
+            downloadLink.href = downloadUrl; // ✅ Correctly sets the dynamic link
+            popup.classList.add("show"); // ✅ Activates the popup
         } else {
             console.error("Popup or download link not found!");
         }
@@ -172,12 +166,7 @@
         let popup = document.getElementById("download-popup");
 
         if (popup) {
-            popup.classList.remove("show"); // ✅ Remove opening animation
-            popup.classList.add("hide"); // ✅ Add closing animation
-
-            setTimeout(() => {
-                popup.style.display = "none"; // ✅ Ensures it hides after animation
-            }, 200); // ✅ Matches animation speed
+            popup.classList.remove("show"); // ✅ Ensures hiding works
         }
     }
 </script>
