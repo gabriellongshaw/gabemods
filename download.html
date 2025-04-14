@@ -7,36 +7,14 @@
     <title>Gabe Mods App</title>
     <meta name="description" content="Download the Gabe Mods App – Your hub for high-quality, malware-free mods for Android and iOS.">
 
- <!-- SEO Meta Tags -->
-  <title>Gabe Mods</title>
-  <meta name="description" content="Gabe Mods provides high-quality, malware-free mods for Android and iOS including Geometry Dash, Subway Surfers, Grand Battle Royale and more.">
-  <meta name="keywords" content="Gabe Mods, Android mods, iOS mods, Geometry Dash mod, Spotify mod, APK downloads, game mods">
-  <meta name="author" content="Gabe Mods">
-  <meta property="og:title" content="Gabe Mods">
-  <meta property="og:description" content="High-quality Android and iOS mods. Safe, free, and easy to install.">
-  <meta property="og:image" content="https://gabemods.github.io/IMG_7790.png">
-<meta property="og:url" content="https://gabemods.github.io/">
-  <meta name="twitter:card" content="summary_large_image">
-<meta name="google-site-verification" content="HihCOsgH0UVQPbqo7pMEgDNXIXR16hIm907pXZPI3w8" />
-<meta name="msvalidate.01" content="D8E2192242F2093B4379471689E3082A" />
-  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/x-icon" sizes="32x32" href="favicon-32x32.ico">
-<link rel="icon" type="image/x-icon" sizes="16x16" href="favicon-16x16.ico">
-<link rel="manifest" href="/site.webmanifest">
-  
-    
     <!-- Styles & Material 3 -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@material/web@latest/dist/material.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@material/web@latest/dist/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
-
 </head>
 <body>
+
     <!-- Header -->
     <header>
         <div class="logo">
@@ -48,22 +26,45 @@
         </div>
     </header>
 
+    <!-- Navigation Menu -->
+    <nav class="menu sliding-menu" id="menu">
+        <ul>
+            <li><a href="index.html" data-barba="transition">• Home</a></li>
+            <li><a href="mods.html" data-barba="transition">• Mods</a></li>
+            <li><a href="games.html" data-barba="transition">• Games</a></li>
+            <li><a href="learn-to-code.html" data-barba="transition">• Learn to Code</a></li>
+            <li><a href="download.html" data-barba="transition">• Download App</a></li> <!-- ✅ Added here -->
+            <li><a href="contact.html" data-barba="transition">• Contact</a></li>
+            <li><a href="settings.html" data-barba="transition">• Settings</a></li>
+        </ul>
+    </nav>
+
     <!-- Main Content -->
     <section id="download">
         <h2>Download Gabe Mods App</h2>
         <p>The easiest way to install and manage mods directly from your device.</p>
-        
-        <!-- Download Buttons -->
+
+        <!-- Download Buttons with Popup Trigger -->
         <div class="download-buttons">
-            <a href="YOUR-ANDROID-APK-LINK" class="mdc-button">Download for Android</a>
-            <a href="YOUR-IOS-LINK" class="mdc-button">Download for iOS</a>
+            <button class="mdc-button" onclick="showDownloadPopup('YOUR-ANDROID-APK-LINK')">Download for Android</button>
+            <button class="mdc-button" onclick="showDownloadPopup('YOUR-IOS-LINK')">Download for iOS</button>
         </div>
-        
+
+        <!-- Download Popup -->
+        <div id="download-popup" class="hidden">
+            <div class="popup-content">
+                <h3>Download Gabe Mods App</h3>
+                <p>Click below to start your download.</p>
+                <a id="download-link" href="#" class="mdc-button">Download Now</a>
+                <button onclick="hidePopup()" class="mdc-button cancel-btn">Cancel</button>
+            </div>
+        </div>
+
         <h3>Installation Guide</h3>
         <p>Follow the steps below to install the app safely.</p>
         <ul>
-            <li>**Android:** Enable “Unknown Sources” in settings before installing the APK.</li>
-            <li>**iOS:** Use AltStore or SideStore for installation.</li>
+            <li><strong>Android:</strong> Enable “Unknown Sources” in settings before installing the APK.</li>
+            <li><strong>iOS:</strong> Use AltStore or SideStore for installation.</li>
         </ul>
     </section>
 
@@ -71,5 +72,18 @@
     <footer>
         <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
     </footer>
+
+    <!-- JavaScript for Popup -->
+    <script>
+        function showDownloadPopup(downloadUrl) {
+            document.getElementById("download-link").href = downloadUrl;
+            document.getElementById("download-popup").style.display = "flex";
+        }
+
+        function hidePopup() {
+            document.getElementById("download-popup").style.display = "none";
+        }
+    </script>
+
 </body>
 </html>
