@@ -22,7 +22,7 @@
         </div>
         <h1 class="page-title">Download App</h1>
         <div class="menu-button">
-            <span class="material-icons">more_vert</span> <!-- Three-dot menu icon -->
+            <span class="material-icons">menu</span> <!-- ✅ Fixed missing menu icon -->
         </div>
     </header>
 
@@ -46,8 +46,8 @@
 
         <!-- Download Buttons with Popup Trigger -->
         <div class="download-buttons">
-            <button class="mdc-button" onclick="showDownloadPopup('YOUR-ANDROID-APK-LINK')">Download for Android</button>
-            <button class="mdc-button" onclick="showDownloadPopup('YOUR-IOS-LINK')">Download for iOS</button>
+            <button class="mdc-button android-btn" onclick="showDownloadPopup('YOUR-ANDROID-APK-LINK')">Download for Android</button>
+            <button class="mdc-button ios-btn" onclick="showDownloadPopup('YOUR-IOS-LINK')">Download for iOS</button>
         </div>
 
         <!-- Download Popup -->
@@ -64,6 +64,7 @@
         <p>Follow the steps below to install the app safely.</p>
         <ul>
             <li><strong>Android:</strong> Enable “Unknown Sources” in settings before installing the APK.</li>
+            <br> <!-- ✅ Added break to separate iOS section -->
             <li><strong>iOS:</strong> Use AltStore or SideStore for installation.</li>
         </ul>
     </section>
