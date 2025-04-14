@@ -429,7 +429,12 @@ body.light-mode #download-popup {
     text-decoration: underline; /* ✅ iOS-style hover effect */
 }
 
-/* Add space below the blue line */
-.blue-line + p, .blue-line + h2 {
-    padding-top: 12px; /* ✅ Adjust the value if needed */
+/* Increase padding below the blue line ONLY for download.html */
+#download .blue-line {
+    margin-bottom: 15px; /* ✅ Adds extra space */
+}
+
+/* Add padding to the first paragraph or heading below */
+#download .blue-line + * {
+    padding-top: 12px; /* ✅ Adjust for more spacing */
 }
