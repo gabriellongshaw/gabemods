@@ -392,26 +392,18 @@ footer {
     display: none;
 }
 
-/* Dark Mode - Translucent Background */
+/* Dark Mode - Almost Black & Translucent */
 body:not(.light-mode) #download-popup {
-    background-color: rgba(44, 44, 46, 0.8); /* ✅ iOS-style dark translucent gray */
+    background-color: rgba(15, 15, 15, 0.85); /* ✅ Nearly black but slightly transparent */
+    backdrop-filter: blur(10px); /* ✅ Smooth blur effect */
     color: white;
 }
 
-/* Light Mode - Translucent Background */
+/* Light Mode - Translucent Gray */
 body.light-mode #download-popup {
-    background-color: rgba(242, 242, 247, 0.8); /* ✅ iOS-style light translucent gray */
+    background-color: rgba(255, 255, 255, 0.7); /* ✅ Light, translucent background */
+    backdrop-filter: blur(10px); /* ✅ Soft blur effect */
     color: black;
-}
-
-/* Show Popup */
-#download-popup.show {
-    opacity: 1;
-    pointer-events: all;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Fix "Cancel" Button */
@@ -427,4 +419,14 @@ body.light-mode #download-popup {
 
 .cancel-btn:hover {
     text-decoration: underline; /* ✅ iOS-style hover effect */
+}
+
+/* Show Popup */
+#download-popup.show {
+    opacity: 1;
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
