@@ -338,8 +338,9 @@ footer {
 /* Styled Download Buttons */
 .download-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column; /* ✅ Stack buttons vertically */
+    align-items: center; /* ✅ Center them */
+    gap: 15px; /* ✅ Add space between them */
     margin-top: 20px;
 }
 
@@ -449,27 +450,4 @@ body.light-mode #download-popup {
 
 .cancel-btn:hover {
     text-decoration: underline; /* ✅ iOS-style hover effect */
-}
-
-/* Show Popup */
-#download-popup.show {
-    opacity: 1;
-    pointer-events: all;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Show Popup Animation */
-#download-popup.show {
-    opacity: 1;
-    pointer-events: all;
-    transform: translate(-50%, -50%) scale(1); /* ✅ Zooms in quickly */
-}
-
-/* Hide Popup Animation */
-#download-popup.hide {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.85); /* ✅ Shrinks slightly before closing */
 }
