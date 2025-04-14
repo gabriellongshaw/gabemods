@@ -84,17 +84,16 @@
   </footer>
 
   <!-- Popup JS -->
-  <script>
+ <script>
     function showDownloadPopup(downloadUrl) {
-      document.getElementById("download-link").href = downloadUrl;  // Set the download link dynamically
-      document.getElementById("download-popup").style.display = "flex";  // Show the popup
+        document.getElementById("download-link").href = downloadUrl;  // Set download link
+        document.getElementById("download-popup").classList.add("active"); // Make popup visible
     }
 
     function hidePopup() {
-      document.getElementById("download-popup").style.display = "none";  // Hide the popup
+        document.getElementById("download-popup").classList.remove("active"); // Hide popup
     }
-  </script>
-
+</script>
   <!-- Menu JS -->
   <script>
     const menuIcon = document.getElementById('menu-icon');
