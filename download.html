@@ -21,8 +21,10 @@
             <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
         </div>
         <h1 class="page-title">Download App</h1>
-        <div class="menu-button">
-            <span class="material-icons">menu</span> <!-- ✅ Fixed missing menu icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
     </header>
 
@@ -33,7 +35,7 @@
             <li><a href="mods.html" data-barba="transition">• Mods</a></li>
             <li><a href="games.html" data-barba="transition">• Games</a></li>
             <li><a href="learn-to-code.html" data-barba="transition">• Learn to Code</a></li>
-            <li><a href="download.html" data-barba="transition">• Download App</a></li> <!-- ✅ Added here -->
+            <li><a href="download.html" data-barba="transition">• Download App</a></li>
             <li><a href="contact.html" data-barba="transition">• Contact</a></li>
             <li><a href="settings.html" data-barba="transition">• Settings</a></li>
         </ul>
@@ -52,19 +54,17 @@
 
         <!-- Download Popup -->
         <div id="download-popup" class="hidden">
-            <div class="popup-content">
-                <h3>Download Gabe Mods App</h3>
-                <p>Click below to start your download.</p>
-                <a id="download-link" href="#" class="mdc-button">Download Now</a>
-                <button onclick="hidePopup()" class="mdc-button cancel-btn">Cancel</button>
-            </div>
+            <h3>Download Gabe Mods App</h3>
+            <p>Click below to start your download.</p>
+            <a id="download-link" href="#" class="mdc-button">Download Now</a>
+            <button onclick="hidePopup()" class="mdc-button cancel-btn">Cancel</button>
         </div>
 
         <h3>Installation Guide</h3>
         <p>Follow the steps below to install the app safely.</p>
         <ul>
             <li><strong>Android:</strong> Enable “Unknown Sources” in settings before installing the APK.</li>
-            <br> <!-- ✅ Added break to separate iOS section -->
+            <br>
             <li><strong>iOS:</strong> Use AltStore or SideStore for installation.</li>
         </ul>
     </section>
@@ -74,17 +74,25 @@
         <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
     </footer>
 
-    <!-- JavaScript for Popup -->
+    <!-- JavaScript -->
     <script>
         function showDownloadPopup(downloadUrl) {
+            const popup = document.getElementById("download-popup");
             document.getElementById("download-link").href = downloadUrl;
-            document.getElementById("download-popup").style.display = "flex";
+            popup.classList.remove("hidden");
+            popup.classList.add("show");
         }
 
         function hidePopup() {
-            document.getElementById("download-popup").style.display = "none";
+            const popup = document.getElementById("download-popup");
+            popup.classList.remove("show");
+            popup.classList.add("hidden");
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("visible");
         }
     </script>
-
 </body>
 </html>
