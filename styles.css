@@ -100,30 +100,18 @@ header {
 }
 
 .menu-icon {
-    position: absolute;
-    top: 15px;
-    left: 20px; /* Moves it to the left */
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 25px;
+    position: absolute;
+    top: 2px;
+    right: 30px; /* Moved 10px left */
+    z-index: 1001;
 }
 
-/* Ensure bars are visible */
-.menu-icon .bar {
-    height: 4px;
-    width: 100%;
-    background-color: #C7C7CC; /* iOS-style gray */
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* Light Mode - Adjust Menu Icon */
-.light-mode .menu-icon .bar {
-    background-color: #8E8E93; /* iOS light gray */
-}
 .menu-icon span {
     height: 4px;
     background-color: white;
