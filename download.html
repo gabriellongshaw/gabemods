@@ -147,5 +147,34 @@
       }]
     });
   </script>
+
+  <script>
+    function showDownloadPopup(downloadUrl) {
+        let popup = document.getElementById("download-popup");
+        let downloadLink = document.getElementById("download-link");
+
+        if (popup && downloadLink) {
+            downloadLink.href = downloadUrl;
+            popup.classList.remove("hide"); // ✅ Remove closing animation
+            popup.classList.add("show"); // ✅ Add opening animation
+            popup.style.display = "flex"; // ✅ Ensure it's visible
+        } else {
+            console.error("Popup or download link not found!");
+        }
+    }
+
+    function hidePopup() {
+        let popup = document.getElementById("download-popup");
+
+        if (popup) {
+            popup.classList.remove("show"); // ✅ Remove opening animation
+            popup.classList.add("hide"); // ✅ Add closing animation
+
+            setTimeout(() => {
+                popup.style.display = "none"; // ✅ Ensures it hides after animation
+            }, 200); // ✅ Matches animation speed
+        }
+    }
+</script>
 </body>
 </html>
