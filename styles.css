@@ -335,3 +335,74 @@ footer {
 #home p, #community-mods p, #ios-mods p {
   padding-top: 25px; /* Increased space between the blue line and text */
 }
+
+/* Styled Download Buttons */
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.mdc-button {
+    display: block;
+    width: 220px;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Android Button */
+.android-btn {
+    background: linear-gradient(90deg, #3DDC84, #00A656);
+    color: white;
+}
+
+.android-btn:hover {
+    background: linear-gradient(90deg, #36C374, #008F49);
+}
+
+/* iOS Button */
+.ios-btn {
+    background: linear-gradient(90deg, #007AFF, #0051CC);
+    color: white;
+}
+
+.ios-btn:hover {
+    background: linear-gradient(90deg, #006AE6, #0043B3);
+}
+
+/* Popup Styling */
+#download-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Cancel Button */
+.cancel-btn {
+    background: red;
+    color: white;
+}
+
+.menu-button {
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+.menu-button span {
+    font-family: 'Material Icons';
+    font-size: 32px;
+    display: inline-block;
+}
