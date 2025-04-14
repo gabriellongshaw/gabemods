@@ -438,3 +438,13 @@ body.light-mode #download-popup {
 #download .blue-line + * {
     padding-top: 12px; /* ✅ Adjust for more spacing */
 }
+
+/* Ensure spacing below the blue line (Contact Us page only) */
+#contact .blue-line {
+    margin-bottom: 15px; /* ✅ Creates space */
+}
+
+/* Add padding between blue line and first element */
+#contact .blue-line + * {
+    padding-top: 12px; /* ✅ Adjustable spacing */
+}
