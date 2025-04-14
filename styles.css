@@ -376,19 +376,6 @@ footer {
     background: linear-gradient(90deg, #006AE6, #0043B3);
 }
 
-#download-popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.9); /* White background */
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* iOS-style shadow */
-}
-
 /* Fixed Download Popup */
 #download-popup {
     position: fixed;
