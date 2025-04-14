@@ -100,18 +100,17 @@ header {
 }
 
 .menu-icon {
+    position: absolute;
+    top: 15px;
+    left: 20px; /* ✅ Moves it to the left */
     cursor: pointer;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    position: absolute;
-    top: 2px;
-    right: 10px; /* Moved 10px left */
-    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
 }
-
 .menu-icon span {
     height: 4px;
     background-color: white;
