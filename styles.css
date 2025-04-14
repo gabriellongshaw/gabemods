@@ -339,20 +339,20 @@ footer {
 .download-buttons {
     display: flex;
     flex-direction: column;
-    align-items: center; /* ✅ Ensures center alignment */
-    justify-content: center;
     gap: 15px;
-    margin-top: 15px;
-    width: 100%; /* ✅ Ensures full-width centering */
+    margin-top: 20px;
 }
 
 .mdc-button {
-    width: 180px; /* ✅ Adjusted to ensure consistency */
+    display: block;
+    width: 220px;
     padding: 12px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     border-radius: 12px;
     text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
 }
 
 /* Android Button */
