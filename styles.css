@@ -102,14 +102,27 @@ header {
 .menu-icon {
     position: absolute;
     top: 15px;
-    left: 20px; /* ✅ Moves it to the left */
+    left: 20px; /* Moves it to the left */
     cursor: pointer;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+}
+
+/* Ensure bars are visible */
+.menu-icon .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #C7C7CC; /* iOS-style gray */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Light Mode - Adjust Menu Icon */
+.light-mode .menu-icon .bar {
+    background-color: #8E8E93; /* iOS light gray */
 }
 .menu-icon span {
     height: 4px;
