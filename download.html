@@ -19,6 +19,15 @@
   <!-- Barba.js & GSAP -->
   <script src="https://unpkg.com/@barba/core"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <style>
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -51,19 +60,21 @@
   <section id="download">
     <p>The easiest way to install and manage mods directly from your device.</p>
 
-   <!-- Android & iOS Buttons -->
-<a href="#" class="android-btn" onclick="showDownloadPopup('Gabe-Mods-v1.0.1.apk')">Download for Android</a>
-<a href="#" class="ios-btn" onclick="showDownloadPopup('iOS-App.txt')">Download for iOS</a>
+    <!-- Android & iOS Buttons -->
+    <div class="button-group">
+      <a href="#" class="android-btn" onclick="showDownloadPopup('Gabe-Mods-v1.0.1.apk')">Download for Android</a>
+      <a href="#" class="ios-btn" onclick="showDownloadPopup('iOS-App.txt')">Download for iOS</a>
+    </div>
 
     <!-- Popup -->
     <div id="download-popup" class="hidden">
-    <div class="popup-content">
-        <h3>Download Gabe Mods App (Direct Download)</h3> <!-- ✅ No dynamic title changes -->
+      <div class="popup-content">
+        <h3>Download Gabe Mods App (Direct Download)</h3>
         <p>Click below to start your download.</p>
         <a id="download-link" href="#" class="mdc-button">Download Now</a>
         <button onclick="hidePopup()" class="mdc-button cancel-btn">Cancel</button>
+      </div>
     </div>
-</div>
 
     <!-- Guide -->
     <h2>Installation Guide</h2>
@@ -81,20 +92,15 @@
   </footer>
 
   <!-- Popup JS -->
-<script>
-    function showDownloadPopup(downloadUrl, isIOS) {
+  <script>
+    function showDownloadPopup(downloadUrl) {
         let popup = document.getElementById("download-popup");
         let downloadLink = document.getElementById("download-link");
-        let popupTitle = document.getElementById("popup-title"); 
 
-        if (popup && downloadLink && popupTitle) {
-            popupTitle.textContent = isIOS 
-                ? "Download Gabe Mods IPA (Direct Download)"  
-                : "Download Gabe Mods APK (Direct Download)";
-            
+        if (popup && downloadLink) {
             downloadLink.href = downloadUrl;
-            
-            popup.style.display = "flex"; 
+
+            popup.style.display = "flex";
             setTimeout(() => {
                 popup.classList.remove("hide");
                 popup.classList.add("show");
@@ -103,7 +109,21 @@
             console.error("Popup elements not found!");
         }
     }
-</script>
+
+    function hidePopup() {
+        let popup = document.getElementById("download-popup");
+
+        if (popup) {
+            popup.classList.remove("show");
+            popup.classList.add("hide");
+
+            setTimeout(() => {
+                popup.style.display = "none";
+            }, 300);
+        }
+    }
+  </script>
+
   <!-- Menu JS -->
   <script>
     const menuIcon = document.getElementById('menu-icon');
@@ -148,37 +168,5 @@
       }]
     });
   </script>
-
-<script>
-    function showDownloadPopup(downloadUrl) {
-        let popup = document.getElementById("download-popup");
-        let downloadLink = document.getElementById("download-link");
-
-        if (popup && downloadLink) {
-            downloadLink.href = downloadUrl;
-
-            popup.style.display = "flex"; // ✅ Ensure visibility before animation
-            setTimeout(() => {
-                popup.classList.remove("hide"); 
-                popup.classList.add("show"); // ✅ Trigger animation
-            }, 10);
-        } else {
-            console.error("Popup elements not found!");
-        }
-    }
-
-    function hidePopup() {
-        let popup = document.getElementById("download-popup");
-
-        if (popup) {
-            popup.classList.remove("show");
-            popup.classList.add("hide");
-
-            setTimeout(() => {
-                popup.style.display = "none"; // ✅ Wait for animation to finish before hiding
-            }, 300);
-        }
-    }
-</script>
 </body>
 </html>
