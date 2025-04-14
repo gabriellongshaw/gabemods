@@ -86,12 +86,12 @@
   <!-- Popup JS -->
   <script>
     function showDownloadPopup(downloadUrl) {
-      document.getElementById("download-link").href = downloadUrl;
-      document.getElementById("download-popup").style.display = "flex";
+      document.getElementById("download-link").href = downloadUrl;  // Set the download link dynamically
+      document.getElementById("download-popup").style.display = "flex";  // Show the popup
     }
 
     function hidePopup() {
-      document.getElementById("download-popup").style.display = "none";
+      document.getElementById("download-popup").style.display = "none";  // Hide the popup
     }
   </script>
 
@@ -139,77 +139,5 @@
       }]
     });
   </script>
-
-  <script>
-  const menuIcon = document.getElementById('menu-icon');
-  const menu = document.getElementById('menu');
-  const menuLinks = document.querySelectorAll('.menu ul li a');
-
-  let isMenuOpen = false;
-
-  menuIcon.addEventListener('click', () => {
-    isMenuOpen = !isMenuOpen;
-    menuIcon.classList.toggle('active');
-
-    if (isMenuOpen) {
-      menu.classList.add('visible');
-      gsap.fromTo(menu, {
-        scale: 0.8,
-        opacity: 0
-      }, {
-        scale: 1,
-        opacity: 1,
-        duration: 0.3,
-        ease: 'power2.out'
-      });
-    } else {
-      gsap.to(menu, {
-        scale: 0.8,
-        opacity: 0,
-        duration: 0.25,
-        ease: 'power2.in',
-        onComplete: () => menu.classList.remove('visible')
-      });
-    }
-  });
-
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (isMenuOpen) {
-        gsap.to(menu, {
-          scale: 0.8,
-          opacity: 0,
-          duration: 0.25,
-          ease: 'power2.in',
-          onComplete: () => {
-            menu.classList.remove('visible');
-            menuIcon.classList.remove('active');
-            isMenuOpen = false;
-          }
-        });
-      }
-    });
-  });
-
-  document.addEventListener('click', (event) => {
-    if (!menu.contains(event.target) && !menuIcon.contains(event.target) && isMenuOpen) {
-      gsap.to(menu, {
-        scale: 0.8,
-        opacity: 0,
-        duration: 0.25,
-        ease: 'power2.in',
-        onComplete: () => {
-          menu.classList.remove('visible');
-          menuIcon.classList.remove('active');
-          isMenuOpen = false;
-        }
-      });
-    }
-  });
-
-  if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light-mode');
-  }
-</script>
 </body>
 </html>
