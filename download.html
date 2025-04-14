@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Download App – Gabe Mods</title>
+  <title>Download Gabe Mods App</title>
   <meta name="description" content="Download the Gabe Mods App – Your hub for high-quality, malware-free mods for Android and iOS.">
 
-  <!-- Fonts and Styles -->
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
+
+  <!-- Material 3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@material/web@latest/dist/material.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@material/web@latest/dist/material.min.js"></script>
 
   <!-- Barba.js & GSAP -->
   <script src="https://unpkg.com/@barba/core"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body data-barba="wrapper">
+<body>
   <!-- Header -->
   <header>
     <div class="logo">
@@ -43,42 +48,54 @@
   </nav>
 
   <!-- Main Content -->
-  <main data-barba="container" data-barba-namespace="download">
-    <section id="download">
-      <h2>Download Gabe Mods App</h2>
-      <p>The easiest way to install and manage mods directly from your device.</p>
+  <section id="download">
+    <h2>Download Gabe Mods App</h2>
+    <p>The easiest way to install and manage mods directly from your device.</p>
 
-      <!-- Download Buttons -->
-      <div class="download-buttons">
-        <button class="download-btn" onclick="showDownloadPopup('YOUR-ANDROID-APK-LINK')">Download for Android</button>
-        <button class="download-btn" onclick="showDownloadPopup('YOUR-IOS-LINK')">Download for iOS</button>
+    <!-- Download Buttons -->
+    <div class="download-buttons">
+      <button class="mdc-button android-btn" onclick="showDownloadPopup('YOUR-ANDROID-APK-LINK')">Download for Android</button>
+      <button class="mdc-button ios-btn" onclick="showDownloadPopup('YOUR-IOS-LINK')">Download for iOS</button>
+    </div>
+
+    <!-- Popup -->
+    <div id="download-popup" class="hidden">
+      <div class="popup-content">
+        <h3>Download Gabe Mods App</h3>
+        <p>Click below to start your download.</p>
+        <a id="download-link" href="#" class="mdc-button">Download Now</a>
+        <button onclick="hidePopup()" class="mdc-button cancel-btn">Cancel</button>
       </div>
+    </div>
 
-      <!-- Download Popup -->
-      <div id="download-popup" class="hidden">
-        <div class="popup-content">
-          <h3>Download Gabe Mods App</h3>
-          <p>Click below to start your download.</p>
-          <a id="download-link" href="#" class="download-now-btn">Download Now</a>
-          <button onclick="hidePopup()" class="cancel-btn">Cancel</button>
-        </div>
-      </div>
-
-      <h3>Installation Guide</h3>
-      <ul>
-        <li><strong>Android:</strong> Enable “Unknown Sources” in settings before installing the APK.</li>
-        <br>
-        <li><strong>iOS:</strong> Use AltStore or SideStore for installation.</li>
-      </ul>
-    </section>
-  </main>
+    <!-- Guide -->
+    <h3>Installation Guide</h3>
+    <p>Follow the steps below to install the app safely.</p>
+    <ul>
+      <li><strong>Android:</strong> Enable “Unknown Sources” in settings before installing the APK.</li>
+      <br>
+      <li><strong>iOS:</strong> Use AltStore or SideStore for installation.</li>
+    </ul>
+  </section>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
   </footer>
 
-  <!-- JavaScript for Menu & Popup -->
+  <!-- Popup JS -->
+  <script>
+    function showDownloadPopup(downloadUrl) {
+      document.getElementById("download-link").href = downloadUrl;
+      document.getElementById("download-popup").style.display = "flex";
+    }
+
+    function hidePopup() {
+      document.getElementById("download-popup").style.display = "none";
+    }
+  </script>
+
+  <!-- Menu JS -->
   <script>
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
@@ -103,21 +120,12 @@
       }
     });
 
-    function showDownloadPopup(downloadUrl) {
-      document.getElementById("download-link").href = downloadUrl;
-      document.getElementById("download-popup").style.display = "flex";
-    }
-
-    function hidePopup() {
-      document.getElementById("download-popup").style.display = "none";
-    }
-
     if (localStorage.getItem('theme') === 'light') {
       document.body.classList.add('light-mode');
     }
   </script>
 
-  <!-- Barba.js Page Transition -->
+  <!-- Barba Transition -->
   <script>
     barba.init({
       transitions: [{
