@@ -428,3 +428,8 @@ body.light-mode #download-popup {
 .cancel-btn:hover {
     text-decoration: underline; /* ✅ iOS-style hover effect */
 }
+
+/* Add space below the blue line */
+.blue-line + p, .blue-line + h2 {
+    padding-top: 12px; /* ✅ Adjust the value if needed */
+}
