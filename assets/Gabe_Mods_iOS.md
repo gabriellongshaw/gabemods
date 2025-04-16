@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="markdown-style.css">
+<link rel="stylesheet" href="markdown-styles.css">
 
 # Gabe Mods App iOS
 
