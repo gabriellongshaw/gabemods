@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gabe Mods iOS Info</title>
+  <link rel="stylesheet" href="markdown-style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="markdown-wrapper">
+    <div id="content" class="markdown-box"></div>
+  </div>
+
+  <script>
+    fetch('Gabe_Mods_iOS.md')
+      .then(res => res.text())
+      .then(md => {
+        document.getElementById('content').innerHTML = marked.parse(md);
+      });
+  </script>
+</body>
+</html>
