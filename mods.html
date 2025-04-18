@@ -172,5 +172,25 @@
     }
   });
   </script>
+
+  <script>
+  const altstoreBtn = document.querySelector('.altstore-btn');
+  const sidestoreBtn = document.querySelector('.sidestore-btn');
+
+  function animateClick(button) {
+    gsap.fromTo(button, 
+      { scale: 1 }, 
+      { scale: 0.9, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.inOut" }
+    );
+  }
+
+  altstoreBtn.addEventListener('click', (e) => {
+    animateClick(altstoreBtn);
+  });
+
+  sidestoreBtn.addEventListener('click', (e) => {
+    animateClick(sidestoreBtn);
+  });
+</script>
 </body>
 </html>
