@@ -551,5 +551,5 @@ body.light-mode #download-popup {
 .more-links.show {
   max-height: 100px;
   opacity: 1;
-  transform: transalteY(0);
+  transform: translateY(0);
 }
