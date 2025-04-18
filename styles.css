@@ -94,6 +94,14 @@ header {
     display: block;
 }
 
+.menu ul li {
+  margin-bottom: 10px;
+}
+
+.menu ul li:last-child {
+  margin-bottom: 0;
+}
+
 .menu a {
     text-decoration: none;
     color: white;
