@@ -77,6 +77,14 @@
     </p>
   </section>
 
+<section class="get-the-app">
+  <button id="get-app-btn">Get the App</button>
+  <p class="app-description">
+    Download the Gabe Mods App. The most recent version is <strong>v1.0.1</strong>.
+    Whenever there is an update to the app, you can get it here on the official website.
+  </p>
+</section>
+  
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
@@ -135,6 +143,15 @@
   moreButton.addEventListener('click', () => {
     moreLinks.classList.toggle('show');
     arrow.classList.toggle('rotated');
+  });
+</script>
+
+  <script>
+  document.getElementById('get-app-btn').addEventListener('click', function () {
+    this.style.transform = 'scale(1.1)';
+    setTimeout(() => {
+      window.location.href = 'download.html';
+    }, 150); // slight delay to show animation
   });
 </script>
 </body>
