@@ -124,5 +124,15 @@
       }]
     });
   </script>
+
+  <script>
+  const moreButton = document.getElementById('more-button');
+  const moreLinks = document.getElementById('more-links');
+
+  moreButton.addEventListener('click', () => {
+    moreLinks.classList.toggle('show');
+    moreButton.classList.toggle('rotated');
+  });
+</script>
 </body>
 </html>
