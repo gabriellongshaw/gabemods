@@ -517,7 +517,13 @@ body.light-mode #download-popup {
   transition: transform 0.3s ease;
 }
 
-#more-button.rotated {
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-right: 6px;
+}
+
+.arrow.rotated {
   transform: rotate(180deg);
 }
 
