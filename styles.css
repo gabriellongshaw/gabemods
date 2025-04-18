@@ -503,3 +503,45 @@ body.light-mode #download-popup {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.85); /* ✅ Shrinks slightly before closing */
 }
+
+.more-toggle {
+  position: relative;
+}
+
+#more-button {
+  display: block;
+  cursor: pointer;
+  color: inherit;
+  padding: 10px 0;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+#more-button.rotated {
+  transform: rotate(180deg);
+}
+
+.more-links {
+  list-style: none;
+  padding-left: 0;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.more-links li {
+  padding-left: 0;
+}
+
+.more-links a {
+  font-size: 16px;
+  color: inherit;
+  display: block;
+  padding: 8px 0;
+}
+
+.more-links.show {
+  max-height: 100px;
+  opacity: 1;
+}
