@@ -505,29 +505,45 @@ body.light-mode #download-popup {
 }
 
 .dropdown-btn {
+    width: 100%;
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 18px; /* ✅ Match menu font size */
+    font-family: 'Poppins', sans-serif; /* ✅ Ensure same font */
     color: white;
     cursor: pointer;
+    padding: 10px; /* ✅ Match menu spacing */
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 5px;
 }
 
 .arrow {
-    transition: transform 0.3s ease-in-out; /* ✅ Smooth rotation */
+    transition: transform 0.3s ease-in-out;
 }
 
 .dropdown-content {
     display: none;
+    padding-top: 5px;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 8px;
-    min-width: 150px;
     opacity: 0;
     transform: translateY(-10px);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* ✅ Smooth drop-down */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.dropdown-content a {
+    font-size: 18px; /* ✅ Match menu font size */
+    font-family: 'Poppins', sans-serif; /* ✅ Same font */
+    color: white;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Show dropdown animation */
@@ -539,5 +555,5 @@ body.light-mode #download-popup {
 
 /* Rotate arrow */
 .dropdown.show .arrow {
-    transform: rotate(180deg); /* ✅ Flips upside-down V to regular V */
+    transform: rotate(180deg);
 }
