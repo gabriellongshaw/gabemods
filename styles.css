@@ -503,3 +503,41 @@ body.light-mode #download-popup {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.85); /* ✅ Shrinks slightly before closing */
 }
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.arrow {
+    transition: transform 0.3s ease-in-out; /* ✅ Smooth rotation */
+}
+
+.dropdown-content {
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    min-width: 150px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* ✅ Smooth drop-down */
+}
+
+/* Show dropdown animation */
+.dropdown.show .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rotate arrow */
+.dropdown.show .arrow {
+    transform: rotate(180deg); /* ✅ Flips upside-down V to regular V */
+}
