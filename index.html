@@ -126,8 +126,11 @@
 
   <script>
     function toggleDropdown() {
-        let dropdown = document.querySelector(".dropdown");
+        let dropdown = document.querySelector(".dropdown-content");
+        let arrow = document.querySelector(".arrow");
+
         dropdown.classList.toggle("show");
+        arrow.classList.toggle("rotated");
     }
 </script>
 </body>
