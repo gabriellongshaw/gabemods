@@ -48,16 +48,20 @@
   <!-- Navigation Menu -->
   <nav class="menu sliding-menu" id="menu">
     <ul>
-      <li><a href="index.html" data-barba="transition">• Home</a></li>
-      <li><a href="mods.html" data-barba="transition">• Mods</a></li>
-      <li><a href="games.html" data-barba="transition">• Games</a></li>
-      <li><a href="learn-to-code.html" data-barba="transition">• Learn to Code</a></li>
-      <li><a href="contact.html" data-barba="transition">• Contact</a></li>
-      <li><a href="download.html" data-barba="transition">• Download App</a></li>
-      <li><a href="settings.html" data-barba="transition">• Settings</a></li>
+        <li><a href="index.html" data-barba="transition">• Home</a></li>
+        <li><a href="mods.html" data-barba="transition">• Mods</a></li>
+        <li>
+            <button class="dropdown-btn" onclick="toggleDropdown()">• More <span class="arrow">▼</span></button>
+            <div class="dropdown-content">
+                <a href="games.html" data-barba="transition">Games</a>
+                <a href="learn-to-code.html" data-barba="transition">Learn to Code</a>
+            </div>
+        </li>
+        <li><a href="contact.html" data-barba="transition">• Contact</a></li>
+        <li><a href="download.html" data-barba="transition">• Download App</a></li>
+        <li><a href="settings.html" data-barba="transition">• Settings</a></li>
     </ul>
-  </nav>
-
+</nav>
   <!-- Main Content -->
   <section id="home">
     <p>Please note that this website is currently under development and it is a long way from complete.</p>
