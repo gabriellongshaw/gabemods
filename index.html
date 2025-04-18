@@ -33,7 +33,7 @@
   <!-- Header -->
   <header>
     <div class="logo">
-  <a href="https://gabemods.github.io">
+  <a href="https://gabemods.github.io/Gabe-Mods-Website">
     <img src="IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
   </a>
 </div>
@@ -48,20 +48,16 @@
   <!-- Navigation Menu -->
   <nav class="menu sliding-menu" id="menu">
     <ul>
-        <li><a href="index.html" data-barba="transition">• Home</a></li>
-        <li><a href="mods.html" data-barba="transition">• Mods</a></li>
-        <li><a href="contact.html" data-barba="transition">• Contact</a></li>
-        <li><a href="download.html" data-barba="transition">• Download App</a></li>
-        <li><a href="settings.html" data-barba="transition">• Settings</a></li>
-        <li>
-            <button class="dropdown-btn" onclick="toggleDropdown()">• More <span class="arrow">▼</span></button>
-            <div class="dropdown-content">
-                <a href="games.html" data-barba="transition">Games</a>
-                <a href="learn-to-code.html" data-barba="transition">Learn to Code</a>
-            </div>
-        </li>
+      <li><a href="index.html" data-barba="transition">• Home</a></li>
+      <li><a href="mods.html" data-barba="transition">• Mods</a></li>
+      <li><a href="games.html" data-barba="transition">• Games</a></li>
+      <li><a href="learn-to-code.html" data-barba="transition">• Learn to Code</a></li>
+      <li><a href="contact.html" data-barba="transition">• Contact</a></li>
+      <li><a href="download.html" data-barba="transition">• Download App</a></li>
+      <li><a href="settings.html" data-barba="transition">• Settings</a></li>
     </ul>
-</nav>
+  </nav>
+
   <!-- Main Content -->
   <section id="home">
     <p>Please note that this website is currently under development and it is a long way from complete.</p>
@@ -123,15 +119,5 @@
       }]
     });
   </script>
-
-  <script>
-    function toggleDropdown() {
-        let dropdown = document.querySelector(".dropdown-content");
-        let arrow = document.querySelector(".arrow");
-
-        dropdown.classList.toggle("show");
-        arrow.classList.toggle("rotated");
-    }
-</script>
 </body>
 </html>
