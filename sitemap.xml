@@ -23,6 +23,11 @@
   </url>
 
   <url>
+    <loc>https://gabemods.github.io/download.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
     <loc>https://gabemods.github.io/contact.html</loc>
     <priority>0.70</priority>
   </url>
