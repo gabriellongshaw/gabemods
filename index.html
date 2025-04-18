@@ -54,7 +54,9 @@
       <li><a href="download.html" data-barba="transition">• Download App</a></li>
       <li><a href="settings.html" data-barba="transition">• Settings</a></li>
       <li class="more-toggle">
-  <span id="more-button">˅ More</span>
+  <span id="more-button">
+    <span class="arrow" id="arrow">˅</span> More
+  </span>
   <ul id="more-links" class="more-links">
     <li><a href="games.html" data-barba="transition">• Games</a></li>
     <li><a href="learn-to-code.html" data-barba="transition">• Learn to Code</a></li>
@@ -128,10 +130,11 @@
   <script>
   const moreButton = document.getElementById('more-button');
   const moreLinks = document.getElementById('more-links');
+  const arrow = document.getElementById('arrow');
 
   moreButton.addEventListener('click', () => {
     moreLinks.classList.toggle('show');
-    moreButton.classList.toggle('rotated');
+    arrow.classList.toggle('rotated');
   });
 </script>
 </body>
