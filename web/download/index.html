@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gabe Mods - App Download</title>
+  <meta name="description" content="Download the Gabe Mods App – Your hub for high-quality, malware-free mods for Android and iOS.">
+
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
+
+  <!-- Material 3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@material/web@latest/dist/material.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@material/web@latest/dist/material.min.js"></script>
+
+  <!-- Barba.js & GSAP -->
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="../assets/images/favicon-32x32.ico">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="../assets/images/favicon-16x16.ico">
+  <link rel="manifest" href="../assets/site.webmanifest">
+  
+  <style>
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="../assets/images/IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+    </div>
+    <h1 class="page-title">Download App</h1>
+    <div class="menu-icon" id="menu-icon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav class="menu sliding-menu" id="menu">
+    <ul>
+      <li>
+        <a href="../index.html" data-barba="transition">• Home</a>
+      </li>
+      
+      <li>
+        <a href="../mods/" data-barba="transition">• Mods</a>
+      </li>
+
+      <li>
+        <a href="../contact/" data-barba="transition">• Contact</a>
+      </li>
+
+      <li>
+        <a href="../settings/" data-barba="transition">• Settings</a>
+      </li>
+
+      <li class="more-toggle">
+        <span id="more-button"><span class="arrow" id="arrow">▾</span> More</span>
+        <ul id="more-links" class="more-links">
+          <li>
+            <a href="../games/" data-barba="transition">• Games</a>
+          </li>
+
+          <li>
+            <a href="../learn-to-code/" data-barba="transition">• Learn to Code</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  <!-- Main Content -->
+  <section id="download">
+    <p>The easiest way to install and manage mods directly from your device.</p>
+
+    <!-- Android & iOS Buttons -->
+    <div class="button-group">
+      <a href="#" class="android-btn" onclick="showDownloadPopup('')">Download for Android</a>
+      <a href="#" class="ios-btn" onclick="showDownloadPopup('../gabe-mods-ios/')">Download for iOS</a>
+    </div>
+
+    <!-- Popup -->
+    <div id="download-popup" class="hidden">
+      <div class="popup-content">
+        <h3>Download Gabe Mods App (Direct Download)</h3>
+        <p>Click below to start your download.</p>
+        <a id="download-link" href="" class="mdc-button">Download Now</a>
+        <button onclick="hidePopup()" class="mdc-button cancel-btn">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Guide -->
+    <h2>Installation Guide</h2>
+    <p>Follow the steps below to install the app safely.</p>
+    <ul>
+      <li><strong>Android:</strong> Enable “Unknown Sources” in settings before installing the APK.</li>
+      <br>
+      <li><strong>iOS:</strong> Use AltStore or SideStore for installation.</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
+  </footer>
+
+  <!-- Popup JS -->
+  <script>
+    function showDownloadPopup(downloadUrl) {
+        let popup = document.getElementById("download-popup");
+        let downloadLink = document.getElementById("download-link");
+
+        if (popup && downloadLink) {
+            downloadLink.href = downloadUrl;
+
+            popup.style.display = "flex";
+            setTimeout(() => {
+                popup.classList.remove("hide");
+                popup.classList.add("show");
+            }, 10);
+        } else {
+            console.error("Popup elements not found!");
+        }
+    }
+
+    function hidePopup() {
+        let popup = document.getElementById("download-popup");
+
+        if (popup) {
+            popup.classList.remove("show");
+            popup.classList.add("hide");
+
+            setTimeout(() => {
+                popup.style.display = "none";
+            }, 300);
+        }
+    }
+  </script>
+
+  <!-- Menu JS -->
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+    const menuLinks = document.querySelectorAll('.menu ul li a');
+
+    menuIcon.addEventListener('click', () => {
+      menu.classList.toggle('visible');
+      menuIcon.classList.toggle('active');
+    });
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('visible');
+        menuIcon.classList.remove('active');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+        menu.classList.remove('visible');
+        menuIcon.classList.remove('active');
+      }
+    });
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+
+  <!-- Barba Transition -->
+  <script>
+    barba.init({
+      transitions: [{
+        name: 'fade',
+        leave(data) {
+          return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
+        },
+        enter(data) {
+          return gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
+        }
+      }]
+    });
+  </script>
+
+  <script>
+  const moreButton = document.getElementById('more-button');
+  const moreLinks = document.getElementById('more-links');
+  const arrow = document.getElementById('arrow');
+
+  moreButton.addEventListener('click', () => {
+    moreLinks.classList.toggle('show');
+    arrow.classList.toggle('rotated');
+  });
+</script>
+</body>
+</html>

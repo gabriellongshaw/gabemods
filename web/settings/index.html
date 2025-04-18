@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabe Mods - Settings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="../assets/images/favicon-32x32.ico">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="../assets/images/favicon-16x16.ico">
+  <link rel="manifest" href="../assets/site.webmanifest">
+  <style>
+    /* Add padding between the blue line and the text for the settings page */
+    #settings p {
+      padding-top: 25px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="../assets/images/IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+    </div>
+    <!-- Title moved into the header -->
+    <h1 class="page-title">Settings</h1>
+    <div class="menu-icon" id="menu-icon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav class="menu sliding-menu" id="menu">
+    <ul>
+      <li>
+        <a href="../index.html" data-barba="transition">• Home</a>
+      </li>
+      
+      <li>
+        <a href="../mods/" data-barba="transition">• Mods</a>
+      </li>
+
+      <li>
+        <a href="../contact/" data-barba="transition">• Contact</a>
+      </li>
+
+      <li>
+        <a href="../settings/" data-barba="transition">• Settings</a>
+      </li>
+
+      <li class="more-toggle">
+        <span id="more-button"><span class="arrow" id="arrow">▾</span> More</span>
+        <ul id="more-links" class="more-links">
+          <li>
+            <a href="../games/" data-barba="transition">• Games</a>
+          </li>
+
+          <li>
+            <a href="../learn-to-code/" data-barba="transition">• Learn to Code</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <!-- Main Content -->
+  <section id="settings">
+    <!-- Duplicate title removed -->
+    <p>Switch between Light and Dark themes:</p>
+    <button id="theme-toggle" class="theme-btn modern-btn">Light Theme</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Hamburger Menu Toggle Logic
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+
+    menuIcon.addEventListener('click', () => {
+        menu.classList.toggle('visible');
+        menuIcon.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        }
+    });
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+
+    const updateThemeButtonText = () => {
+        themeToggle.textContent = document.body.classList.contains('light-mode') ? 'Dark Theme' : 'Light Theme';
+    };
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        updateThemeButtonText();
+    });
+
+    // Apply saved theme on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+    }
+    updateThemeButtonText();
+  </script>
+
+  <script>
+  const moreButton = document.getElementById('more-button');
+  const moreLinks = document.getElementById('more-links');
+  const arrow = document.getElementById('arrow');
+
+  moreButton.addEventListener('click', () => {
+    moreLinks.classList.toggle('show');
+    arrow.classList.toggle('rotated');
+  });
+</script>
+</body>
+</html>

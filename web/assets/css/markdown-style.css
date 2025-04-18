@@ -1,0 +1,90 @@
+/* markdown-style.css */
+
+/* Background image */
+body {
+  margin: 0;
+  padding: 0;
+  background: url('IMG_7787') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container for markdown content */
+#markdown-content {
+  background: rgba(0, 0, 0, 0.6); /* translucent black */
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 3rem auto;
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Headings */
+#markdown-content h1,
+#markdown-content h2,
+#markdown-content h3,
+#markdown-content h4,
+#markdown-content h5,
+#markdown-content h6 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #ffffff;
+}
+
+/* Paragraphs */
+#markdown-content p {
+  margin: 1em 0;
+}
+
+/* Lists */
+#markdown-content ul,
+#markdown-content ol {
+  padding-left: 1.5rem;
+  margin: 1em 0;
+}
+
+#markdown-content ul {
+  list-style-type: disc;
+}
+
+#markdown-content ol {
+  list-style-type: decimal;
+}
+
+/* Links */
+#markdown-content a {
+  color: #0aa7ff;
+  text-decoration: underline;
+}
+
+/* Inline code */
+#markdown-content code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95em;
+}
+
+/* Code blocks */
+#markdown-content pre {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+}
+
+/* Blockquotes */
+#markdown-content blockquote {
+  border-left: 4px solid #0aa7ff;
+  padding-left: 1em;
+  color: #ccc;
+  margin: 1em 0;
+  font-style: italic;
+}
