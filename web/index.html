@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Gabe Mods</title>
+  <meta name="description" content="Gabe Mods provides high-quality, malware-free mods for Android and iOS including Geometry Dash, Subway Surfers, Grand Battle Royale and more.">
+  <meta name="keywords" content="Gabe Mods, Android mods, iOS mods, Geometry Dash mod, Spotify mod, APK downloads, game mods">
+  <meta name="author" content="Gabe Mods">
+  <meta property="og:title" content="Gabe Mods">
+  <meta property="og:description" content="High-quality Android and iOS mods. Safe, free, and easy to install.">
+  <meta property="og:image" content="https://gabemods.github.io/Gabe-Mods-Website/assets/images/IMG_7790.jpeg">
+  <meta property="og:url" content="https://gabemods.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="google-site-verification" content="HihCOsgH0UVQPbqo7pMEgDNXIXR16hIm907pXZPI3w8"/>
+  <meta name="msvalidate.01" content="D8E2192242F2093B4379471689E3082A"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="assets/images/favicon-32x32.ico">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/images/favicon-16x16.ico">
+  <link rel="manifest" href="assets/site.webmanifest">
+  
+  <!-- Barba.js & GSAP -->
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="https://gabemods.github.io/Gabe-Mods-Website">
+        <img src="assets/images/IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+      </a>
+    </div>
+    
+    <h1 class="page-title">Gabe Mods</h1>
+    
+    <div class="menu-icon" id="menu-icon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav class="menu sliding-menu" id="menu">
+    <ul>
+      <li>
+        <a href="index.html" data-barba="transition">• Home</a>
+      </li>
+      
+      <li>
+        <a href="mods/" data-barba="transition">• Mods</a>
+      </li>
+
+      <li>
+        <a href="contact/" data-barba="transition">• Contact</a>
+      </li>
+
+      <li>
+        <a href="settings/" data-barba="transition">• Settings</a>
+      </li>
+
+      <li class="more-toggle">
+        <span id="more-button"><span class="arrow" id="arrow">▾</span> More</span>
+        <ul id="more-links" class="more-links">
+          <li>
+            <a href="games/" data-barba="transition">• Games</a>
+          </li>
+
+          <li>
+            <a href="learn-to-code/" data-barba="transition">• Learn to Code</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <section id="home">
+    <p>Please note that this website is currently under development and it is a long way from complete.</p>
+    <p>Here at Gabe Mods, our aim is to provide our users with free, high-quality, malware-free mods for lots of popular apps and games. Our "Learn to Code" page will eventually have tutorials teaching people how to code for themselves.</p>
+    <p>
+      <strong>If you have any feature suggestions or feedback, please email</strong>
+      <a href="mailto:gabemods.website@gmail.com" style="text-decoration: underline;">gabemods.website@gmail.com</a>
+      <br><strong>or message me on</strong>
+      <a href="https://t.me/Gabriel_Mods_Chat" target="_blank" style="text-decoration: underline;">Telegram Chat</a>.
+    </p>
+  </section>
+
+  <section class="get-the-app">
+    <button id="get-app-btn">Get the App</button>
+    <p class="app-description">
+      Download the Gabe Mods App. The most recent version is <strong>v1.0.1</strong>.
+      Whenever there is an update to the app, you can get it here on the official website.
+    </p>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
+  </footer>
+
+  <!-- Existing JavaScript -->
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+    const menuLinks = document.querySelectorAll('.menu ul li a');
+
+    menuIcon.addEventListener('click', () => {
+        menu.classList.toggle('visible');
+        menuIcon.classList.toggle('active');
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove('visible');
+            menuIcon.classList.remove('active');
+        }
+    });
+
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+    }
+  </script>
+
+  <!-- Barba.js JavaScript -->
+  <script>
+    barba.init({
+      transitions: [{
+        name: 'fade',
+        leave(data) {
+          return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
+        },
+        enter(data) {
+          return gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
+        }
+      }]
+    });
+  </script>
+
+  <script>
+  const moreButton = document.getElementById('more-button');
+  const moreLinks = document.getElementById('more-links');
+  const arrow = document.getElementById('arrow');
+
+  moreButton.addEventListener('click', () => {
+    moreLinks.classList.toggle('show');
+    arrow.classList.toggle('rotated');
+  });
+  </script>
+
+  <script>
+  document.getElementById('get-app-btn').addEventListener('click', function () {
+    this.style.transform = 'scale(1.1)';
+    setTimeout(() => {
+      window.location.href = 'download/';
+    }, 150); // slight delay to show animation
+  });
+  </script>
+</body>
+</html>
