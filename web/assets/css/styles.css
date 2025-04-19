@@ -565,7 +565,7 @@ body.light-mode #download-popup {
 .get-the-app {
     text-align: left;
     margin-top: 40px;
-    padding-left: 8px;
+    padding-left: 0;
 }
 
 #get-app-btn {
