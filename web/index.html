@@ -162,11 +162,20 @@
 
   <script>
   document.getElementById('get-app-btn').addEventListener('click', function () {
-    this.style.transform = 'scale(1.1)';
-    setTimeout(() => {
-      window.location.href = 'download/';
-    }, 150); // slight delay to show animation
-  });
+  const button = this;
+  button.style.transition = 'transform 0.2s ease';
+  button.style.transform = 'scale(1.1)';
+
+  // Reset the scale after a short time
+  setTimeout(() => {
+    button.style.transform = 'scale(1)';
+  }, 150);
+
+  // Navigate slightly after the reset
+  setTimeout(() => {
+    window.location.href = 'download/';
+  }, 300);
+});
   </script>
 </body>
 </html>
