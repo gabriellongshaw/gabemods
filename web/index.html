@@ -137,16 +137,26 @@
   <!-- Barba.js JavaScript -->
   <script>
     barba.init({
-      transitions: [{
-        name: 'fade',
-        leave(data) {
-          return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
-        },
-        enter(data) {
-          return gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
-        }
-      }]
-    });
+  transitions: [{
+    name: 'slide',
+    leave(data) {
+      return gsap.to(data.current.container, {
+        x: '-100%',
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power2.inOut'
+      });
+    },
+    enter(data) {
+      return gsap.from(data.next.container, {
+        x: '100%',
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power2.inOut'
+      });
+    }
+  }]
+});
   </script>
 
   <script>
