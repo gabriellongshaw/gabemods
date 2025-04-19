@@ -110,7 +110,7 @@ header {
 .menu-icon {
     position: absolute;
     top: 2px;
-    right: 30px !important; /* ✅ Forces it to move 10px further left */
+    right: 30px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -563,7 +563,7 @@ body.light-mode #download-popup {
 }
 
 .get-the-app {
-    text-align: center;
+    text-align: left;
     margin-top: 40px;
     padding: 20px;
 }
@@ -594,7 +594,7 @@ body.light-mode #download-popup {
     margin-top: 15px;
     font-size: 16px;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     color: inherit;
 }
