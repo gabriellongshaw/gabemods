@@ -28,6 +28,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
+ <div id="transition-overlay"></div>
   <!-- Header -->
   <header>
     <div class="logo">
@@ -136,28 +137,29 @@
 
   <!-- Barba.js JavaScript -->
   <script>
-    barba.init({
-  transitions: [{
-    name: 'slide',
-    leave(data) {
-      return gsap.to(data.current.container, {
-        x: '-100%',
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power2.inOut'
-      });
-    },
-    enter(data) {
-      return gsap.from(data.next.container, {
-        x: '100%',
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power2.inOut'
-      });
-    }
-  }]
-});
-  </script>
+  barba.init({
+    transitions: [{
+      name: 'overlay-slide',
+      async leave(data) {
+        const overlay = document.getElementById('transition-overlay');
+        await gsap.to(overlay, {
+          y: '0%',
+          duration: 0.5,
+          ease: 'power2.inOut'
+        });
+        data.current.container.remove();
+      },
+      enter(data) {
+        const overlay = document.getElementById('transition-overlay');
+        return gsap.to(overlay, {
+          y: '100%',
+          duration: 0.5,
+          ease: 'power2.inOut'
+        });
+      }
+    }]
+  });
+</script>
 
   <script>
   const moreButton = document.getElementById('more-button');
@@ -187,6 +189,5 @@
   }, 300);
 });
   </script>
-  <div id="transition-overlay"></div>
 </body>
 </html>
