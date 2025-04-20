@@ -601,3 +601,10 @@ body.light-mode #download-popup {
     margin-right: 0;
     color: inherit;
 }
+
+#menu {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  z-index: 1000; /* Ensure it stays on top */
+}
