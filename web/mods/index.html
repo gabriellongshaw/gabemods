@@ -171,14 +171,23 @@
   moreInfo.addEventListener('click', () => {
     if (gdInfo.style.display === 'none') {
       gdInfo.style.display = 'inline';
+      gsap.fromTo(gdInfo, 
+        { opacity: 0 }, 
+        { opacity: 1, duration: 0.3 }
+      );
       moreInfo.textContent = 'Hide info';
     } else {
-      gdInfo.style.display = 'none';
-      moreInfo.textContent = 'More info...';
+      gsap.to(gdInfo, {
+        opacity: 0,
+        duration: 0.3,
+        onComplete: () => {
+          gdInfo.style.display = 'none';
+          moreInfo.textContent = 'More info...';
+        }
+      });
     }
   });
-  </script>
-
+</script>
   <script>
   const altstoreBtn = document.querySelector('.altstore-btn');
   const sidestoreBtn = document.querySelector('.sidestore-btn');
