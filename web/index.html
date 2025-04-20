@@ -155,42 +155,25 @@
   barba.init({
     transitions: [{
       name: 'fade-transition',
-      async leave(data) {
-        const content = data.current.container.querySelector('section');  // Only target content (not header or menu)
-        
-        // Fade out only the content section (main text and buttons)
-        await gsap.to(content, {
+      leave(data) {
+        return gsap.to(data.current.container, {
           opacity: 0,
-          y: 30,
-          duration: 0.6,
-          ease: 'power2.inOut'
+          duration: 0.4,
+          ease: 'power1.out'
         });
-
-        data.current.container.remove();  // Remove the old content
       },
-      async enter(data) {
-        const content = data.next.container.querySelector('section');  // Only target content section for fade-in
-        
-        // Ensure menu and header are not affected
-        gsap.set(content, { opacity: 0, y: 30 });  // Set the content to initial position
-        
-        // Fade in the content without affecting header/menu
-        gsap.to(content, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: 'power2.out'
+      enter(data) {
+        return gsap.from(data.next.container, {
+          opacity: 0,
+          duration: 0.4,
+          ease: 'power1.out'
         });
       },
       once(data) {
-        const content = data.next.container.querySelector('section');  // Fade in on initial load
-        
-        // Initial fade-in for content (text and buttons)
-        gsap.from(content, {
+        gsap.from(data.next.container, {
           opacity: 0,
-          y: 30,
-          duration: 0.6,
-          ease: 'power2.out'
+          duration: 0.4,
+          ease: 'power1.out'
         });
       }
     }]
