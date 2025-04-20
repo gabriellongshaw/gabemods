@@ -240,7 +240,7 @@
     <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  const animatedEls = document.querySelectorAll("section p, section h2, section li, section a:not(.menu a)");
+  const animatedEls = document.querySelectorAll("section p, section h2, section ul li, section a");
 
   animatedEls.forEach(el => {
     gsap.fromTo(el,
