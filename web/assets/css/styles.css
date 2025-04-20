@@ -606,7 +606,7 @@ body.light-mode #download-popup {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8); /* or any color you prefer */
-  z-index: 1000;
+  z-index: 1100;
   transform: translateY(-100%); /* Start offscreen */
   pointer-events: none; /* Prevent the overlay from blocking clicks */
 }
