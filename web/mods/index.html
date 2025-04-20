@@ -240,20 +240,24 @@
     <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.utils.toArray("section p, section h2, section li, section a").forEach((el) => {
+  // Only animate these elements inside <section> tags
+  const animatedEls = document.querySelectorAll("section p, section h2, section li, section a:not(nav a)");
+
+  animatedEls.forEach(el => {
     gsap.fromTo(el,
       { opacity: 0, y: 20 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.5,
+        duration: 0.4,
         ease: "power1.out",
         scrollTrigger: {
           trigger: el,
-          start: "top 90%",
-          end: "top 60%",
-          toggleActions: "play reverse play reverse",
-          once: false
+          start: "top 95%",
+          end: "bottom 5%",
+          toggleActions: "play none none reverse",
+          once: false,
+          markers: false
         }
       }
     );
