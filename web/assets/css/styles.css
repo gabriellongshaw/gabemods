@@ -614,14 +614,15 @@ body.light-mode #download-popup {
 }
 
 #install-guide li {
-  margin-bottom: 1.8rem; /* spacing between steps */
+  margin-bottom: 2rem; /* gap between steps */
 }
 
 #install-guide li > strong {
   display: block;
-  margin-bottom: 0.2rem; /* smaller gap between step and its text */
+  margin-bottom: 0.1rem; /* small gap between the step name and the description */
+  font-weight: 600;
 }
 
 #install-guide li p {
-  margin: 0; /* remove default spacing */
+  margin: 0;
 }
