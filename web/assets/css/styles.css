@@ -606,5 +606,5 @@ body.light-mode #download-popup {
   opacity: 1 !important;
   transform: none !important;
   pointer-events: auto !important;
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 8000; /* Ensure it stays on top */
 }
