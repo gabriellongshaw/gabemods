@@ -27,8 +27,12 @@
   <script src="https://unpkg.com/@barba/core"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head> 
-  <body>
-  <div id="transition-overlay"></div>
+  <body> data-barba="wrapper">
+    <div id="transition-overlay"></div>
+    
+<!-- Barba Container -->
+  <div class="barba-container" data-barba="container">
+    
     <!-- Header -->
   <header>
     <div class="logo">
@@ -164,22 +168,40 @@
   <script>
   barba.init({
     transitions: [{
-      name: 'overlay-slide',
+      name: 'fade-transition',
       async leave(data) {
-        const overlay = document.getElementById('transition-overlay');
-        await gsap.to(overlay, {
-          y: '0%',
-          duration: 0.5,
+        const mainContent = data.current.container.querySelector('section');
+        
+        // Fade out the main content (excluding title, logo, and menu)
+        await gsap.to(mainContent, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
           ease: 'power2.inOut'
         });
+        
         data.current.container.remove();
       },
-      enter(data) {
-        const overlay = document.getElementById('transition-overlay');
-        return gsap.to(overlay, {
-          y: '100%',
-          duration: 0.5,
-          ease: 'power2.inOut'
+      async enter(data) {
+        const mainContent = data.next.container.querySelector('section');
+
+        // Fade in the new main content
+        gsap.from(mainContent, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: 'power2.out'
+        });
+      },
+      once(data) {
+        const mainContent = data.next.container.querySelector('section');
+
+        // Fade in initial content
+        gsap.from(mainContent, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: 'power2.out'
         });
       }
     }]
