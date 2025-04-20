@@ -125,31 +125,6 @@
   </script>
 
   <script>
-    barba.init({
-      transitions: [{
-        name: 'overlay-slide',
-        async leave(data) {
-          const overlay = document.getElementById('transition-overlay');
-          await gsap.to(overlay, {
-            y: '0%',
-            duration: 2,
-            ease: 'power2.inOut'
-          });
-          data.current.container.remove();
-        },
-        enter(data) {
-          const overlay = document.getElementById('transition-overlay');
-          return gsap.to(overlay, {
-            y: '100%',
-            duration: 0.5,
-            ease: 'power2.inOut'
-          });
-        }
-      }]
-    });
-  </script>
-
-  <script>
     const moreButton = document.getElementById('more-button');
     const moreLinks = document.getElementById('more-links');
     const arrow = document.getElementById('arrow');
