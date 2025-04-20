@@ -150,5 +150,48 @@
       }, 300);
     });
   </script>
+
+  <script>
+  barba.init({
+    transitions: [{
+      name: 'fade-transition',
+      async leave(data) {
+        const mainContent = data.current.container.querySelector('section');
+        
+        // Fade out the main content (excluding title, logo, and menu)
+        await gsap.to(mainContent, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: 'power2.inOut'
+        });
+        
+        data.current.container.remove();
+      },
+      async enter(data) {
+        const mainContent = data.next.container.querySelector('section');
+
+        // Fade in the new main content
+        gsap.from(mainContent, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: 'power2.out'
+        });
+      },
+      once(data) {
+        const mainContent = data.next.container.querySelector('section');
+
+        // Fade in initial content
+        gsap.from(mainContent, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: 'power2.out'
+        });
+      }
+    }]
+  });
+</script>
 </body>
 </html>
