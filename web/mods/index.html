@@ -164,44 +164,6 @@
     }
   </script>
 
-<!-- Barba.js for Smooth Page Transitions -->
-<script>
-  barba.init({
-    transitions: [{
-      name: 'fade-transition',
-      async leave(data) {
-        const sections = data.current.container.querySelectorAll('section');
-        await gsap.to(sections, {
-          opacity: 0,
-          y: 30,
-          duration: 0.5,
-          stagger: 0.05,
-          ease: 'power2.inOut'
-        });
-      },
-      async enter(data) {
-        const sections = data.next.container.querySelectorAll('section');
-        gsap.from(sections, {
-          opacity: 0,
-          y: 30,
-          duration: 0.5,
-          stagger: 0.05,
-          ease: 'power2.out'
-        });
-      },
-      once(data) {
-        const sections = data.next.container.querySelectorAll('section');
-        gsap.from(sections, {
-          opacity: 0,
-          y: 30,
-          duration: 0.5,
-          stagger: 0.05,
-          ease: 'power2.out'
-        });
-      }
-    }]
-  });
-</script>
   <script>
   const moreInfo = document.getElementById('gd-more-info');
   const gdInfo = document.getElementById('gd-info');
