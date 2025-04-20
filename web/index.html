@@ -27,85 +27,74 @@
   <script src="https://unpkg.com/@barba/core"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body> data-barba="wrapper">
- <div id="transition-overlay"></div>
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <a href="https://gabemods.github.io/Gabe-Mods-Website">
-        <img src="assets/images/IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
-      </a>
-    </div>
-    
-    <h1 class="page-title">Gabe Mods</h1>
-    
-    <div class="menu-icon" id="menu-icon">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-  </header>
+<body data-barba="wrapper">
+  <div id="transition-overlay"></div>
 
-  <!-- Navigation Menu -->
-  <nav class="menu sliding-menu" id="menu">
-    <ul>
-      <li>
-        <a href="index.html" data-barba="transition">• Home</a>
-      </li>
+  <!-- Barba Container -->
+  <div class="barba-container" data-barba="container">
+
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <a href="https://gabemods.github.io/Gabe-Mods-Website">
+          <img src="assets/images/IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+        </a>
+      </div>
       
-      <li>
-        <a href="mods/" data-barba="transition">• Mods</a>
-      </li>
+      <h1 class="page-title">Gabe Mods</h1>
+      
+      <div class="menu-icon" id="menu-icon">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </header>
 
-      <li>
-        <a href="contact/" data-barba="transition">• Contact</a>
-      </li>
+    <!-- Navigation Menu -->
+    <nav class="menu sliding-menu" id="menu">
+      <ul>
+        <li><a href="index.html" data-barba="transition">• Home</a></li>
+        <li><a href="mods/" data-barba="transition">• Mods</a></li>
+        <li><a href="contact/" data-barba="transition">• Contact</a></li>
+        <li><a href="settings/" data-barba="transition">• Settings</a></li>
+        <li class="more-toggle">
+          <span id="more-button"><span class="arrow" id="arrow">▾</span> More</span>
+          <ul id="more-links" class="more-links">
+            <li><a href="games/" data-barba="transition">• Games</a></li>
+            <li><a href="learn-to-code/" data-barba="transition">• Learn to Code</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
-      <li>
-        <a href="settings/" data-barba="transition">• Settings</a>
-      </li>
+    <!-- Main Content -->
+    <section id="home">
+      <p>Welcome to my website! Here you can find mods for popular games and apps. To get started, tap the hamburger menu (the three lines) in the top right — from there, you can access pages like Mods, Learn to Code, Contact, and more.</p>
+      <p>Here at Gabe Mods, our aim is to provide our users with free, high-quality, malware-free mods for lots of popular apps and games. Our "Learn to Code" page will eventually have tutorials teaching people how to code for themselves.</p>
+      <p>
+        <strong>If you have any feature suggestions or feedback, please email</strong>
+        <a href="mailto:gabemods.website@gmail.com" style="text-decoration: underline;">gabemods.website@gmail.com</a>
+        <br><strong>or message me on</strong>
+        <a href="https://t.me/Gabriel_Mods_Chat" target="_blank" style="text-decoration: underline;">Telegram Chat</a>.
+      </p>
+    </section>
 
-      <li class="more-toggle">
-        <span id="more-button"><span class="arrow" id="arrow">▾</span> More</span>
-        <ul id="more-links" class="more-links">
-          <li>
-            <a href="games/" data-barba="transition">• Games</a>
-          </li>
+    <section class="get-the-app">
+      <button id="get-app-btn">Get the App</button>
+      <p class="app-description">
+        Download the Gabe Mods App. The most recent version is <strong>v1.0.1</strong>.
+        Whenever there is an update to the app, you can get it here on the official website.
+      </p>
+    </section>
 
-          <li>
-            <a href="learn-to-code/" data-barba="transition">• Learn to Code</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
+    </footer>
 
-  <!-- Main Content -->
-  <section id="home">
-    <p>Welcome to my website! Here you can find mods for popular games and apps. To get started, tap the hamburger menu (the three lines) in the top right — from there, you can access pages like Mods, Learn to Code, Contact, and more.</p>
-    <p>Here at Gabe Mods, our aim is to provide our users with free, high-quality, malware-free mods for lots of popular apps and games. Our "Learn to Code" page will eventually have tutorials teaching people how to code for themselves.</p>
-    <p>
-      <strong>If you have any feature suggestions or feedback, please email</strong>
-      <a href="mailto:gabemods.website@gmail.com" style="text-decoration: underline;">gabemods.website@gmail.com</a>
-      <br><strong>or message me on</strong>
-      <a href="https://t.me/Gabriel_Mods_Chat" target="_blank" style="text-decoration: underline;">Telegram Chat</a>.
-    </p>
-  </section>
+  </div> <!-- End of Barba Container -->
 
-  <section class="get-the-app">
-    <button id="get-app-btn">Get the App</button>
-    <p class="app-description">
-      Download the Gabe Mods App. The most recent version is <strong>v1.0.1</strong>.
-      Whenever there is an update to the app, you can get it here on the official website.
-    </p>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
-  </footer>
-
-  <!-- Existing JavaScript -->
+  <!-- Scripts -->
   <script>
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
@@ -135,59 +124,56 @@
     }
   </script>
 
-  <!-- Barba.js JavaScript -->
   <script>
-  barba.init({
-    transitions: [{
-      name: 'overlay-slide',
-      async leave(data) {
-        const overlay = document.getElementById('transition-overlay');
-        await gsap.to(overlay, {
-          y: '0%',
-          duration: 0.5,
-          ease: 'power2.inOut'
-        });
-        data.current.container.remove();
-      },
-      enter(data) {
-        const overlay = document.getElementById('transition-overlay');
-        return gsap.to(overlay, {
-          y: '100%',
-          duration: 0.5,
-          ease: 'power2.inOut'
-        });
-      }
-    }]
-  });
-</script>
-
-  <script>
-  const moreButton = document.getElementById('more-button');
-  const moreLinks = document.getElementById('more-links');
-  const arrow = document.getElementById('arrow');
-
-  moreButton.addEventListener('click', () => {
-    moreLinks.classList.toggle('show');
-    arrow.classList.toggle('rotated');
-  });
+    barba.init({
+      transitions: [{
+        name: 'overlay-slide',
+        async leave(data) {
+          const overlay = document.getElementById('transition-overlay');
+          await gsap.to(overlay, {
+            y: '0%',
+            duration: 0.5,
+            ease: 'power2.inOut'
+          });
+          data.current.container.remove();
+        },
+        enter(data) {
+          const overlay = document.getElementById('transition-overlay');
+          return gsap.to(overlay, {
+            y: '100%',
+            duration: 0.5,
+            ease: 'power2.inOut'
+          });
+        }
+      }]
+    });
   </script>
 
   <script>
-  document.getElementById('get-app-btn').addEventListener('click', function () {
-  const button = this;
-  button.style.transition = 'transform 0.2s ease';
-  button.style.transform = 'scale(1.1)';
+    const moreButton = document.getElementById('more-button');
+    const moreLinks = document.getElementById('more-links');
+    const arrow = document.getElementById('arrow');
 
-  // Reset the scale after a short time
-  setTimeout(() => {
-    button.style.transform = 'scale(1)';
-  }, 150);
+    moreButton.addEventListener('click', () => {
+      moreLinks.classList.toggle('show');
+      arrow.classList.toggle('rotated');
+    });
+  </script>
 
-  // Navigate slightly after the reset
-  setTimeout(() => {
-    window.location.href = 'download/';
-  }, 300);
-});
+  <script>
+    document.getElementById('get-app-btn').addEventListener('click', function () {
+      const button = this;
+      button.style.transition = 'transform 0.2s ease';
+      button.style.transform = 'scale(1.1)';
+
+      setTimeout(() => {
+        button.style.transform = 'scale(1)';
+      }, 150);
+
+      setTimeout(() => {
+        window.location.href = 'download/';
+      }, 300);
+    });
   </script>
 </body>
 </html>
