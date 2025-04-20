@@ -26,6 +26,7 @@
   <!-- Barba.js & GSAP -->
   <script src="https://unpkg.com/@barba/core"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body data-barba="wrapper">
   <div id="transition-overlay"></div>
@@ -150,5 +151,30 @@
       }, 300);
     });
   </script>
+
+  <script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const animatedEls = document.querySelectorAll("section p, section h2, section ul li, section a");
+
+  animatedEls.forEach(el => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+          end: "bottom 10%",
+          toggleActions: "play none none reverse",
+          once: false
+        }
+      }
+    );
+  });
+</script>
 </body>
 </html>
