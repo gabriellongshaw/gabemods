@@ -49,7 +49,7 @@ header {
     justify-content: space-between;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    z-index: 9000;
+    z-index: 7000;
     background: rgba(0, 0, 0, 0.0); /* more translucent */
     border-bottom: 1px solid #3498db;
 }
