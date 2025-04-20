@@ -319,6 +319,9 @@ footer {
     content: '...';
 }
 
+#gd-info {
+  transition: opacity 0.3s ease;
+}
 /* Page Title Styling */
 .page-title {
     flex-grow: 1;
