@@ -175,14 +175,31 @@
         { opacity: 0 }, 
         { opacity: 1, duration: 0.3 }
       );
-      moreInfo.textContent = 'Hide info';
+
+      gsap.to(moreInfo, {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: () => {
+          moreInfo.textContent = 'Hide info';
+          gsap.to(moreInfo, { opacity: 1, duration: 0.2 });
+        }
+      });
+
     } else {
       gsap.to(gdInfo, {
         opacity: 0,
         duration: 0.3,
         onComplete: () => {
           gdInfo.style.display = 'none';
+        }
+      });
+
+      gsap.to(moreInfo, {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: () => {
           moreInfo.textContent = 'More info...';
+          gsap.to(moreInfo, { opacity: 1, duration: 0.2 });
         }
       });
     }
