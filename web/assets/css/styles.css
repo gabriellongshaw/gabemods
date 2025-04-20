@@ -608,3 +608,20 @@ body.light-mode #download-popup {
   pointer-events: auto !important;
   z-index: 8000; /* Ensure it stays on top */
 }
+
+#install-guide ol {
+  padding-left: 1.2rem;
+}
+
+#install-guide li {
+  margin-bottom: 1.8rem; /* spacing between steps */
+}
+
+#install-guide li > strong {
+  display: block;
+  margin-bottom: 0.2rem; /* smaller gap between step and its text */
+}
+
+#install-guide li p {
+  margin: 0; /* remove default spacing */
+}
