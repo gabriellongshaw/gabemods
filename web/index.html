@@ -150,5 +150,52 @@
       }, 300);
     });
   </script>
+
+  <script>
+  barba.init({
+    transitions: [{
+      name: 'overlay-transition',
+      async leave(data) {
+        const overlay = document.getElementById('transition-overlay');
+        await gsap.to(overlay, {
+          y: '100%',
+          duration: 0.8,
+          ease: 'power2.inOut'
+        });
+        data.current.container.remove();
+      },
+      async enter(data) {
+        const overlay = document.getElementById('transition-overlay');
+
+        // Move overlay back up
+        await gsap.to(overlay, {
+          y: '-100%',
+          duration: 0.8,
+          ease: 'power2.inOut'
+        });
+
+        // Fade in the new content
+        gsap.from(data.next.container, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: 'power2.out'
+        });
+      },
+      once(data) {
+        const overlay = document.getElementById('transition-overlay');
+        gsap.set(overlay, { y: '-100%' });
+
+        // Fade in initial content
+        gsap.from(data.next.container, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: 'power2.out'
+        });
+      }
+    }]
+  });
+</script>
 </body>
 </html>
