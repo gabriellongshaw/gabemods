@@ -605,8 +605,8 @@ body.light-mode #download-popup {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--overlay-color, black); /* You can change this */
+  background: black; /* or any color */
   z-index: 9999;
-  opacity: 0;
+  transform: translateY(-100%); /* Start hidden above */
   pointer-events: none;
 }
