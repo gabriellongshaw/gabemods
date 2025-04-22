@@ -180,32 +180,26 @@
   <script>
   barba.init({
     transitions: [{
-      name: 'fade',
+      name: 'title-only',
       leave(data) {
-        return gsap.to(data.current.container, {
-          opacity: 0,
-          duration: 0.5
-        });
+        // No fade-out needed for the page, keep everything else as-is
+        return Promise.resolve();
       },
       enter(data) {
-        const tl = gsap.timeline();
-        tl.from(data.next.container, {
-          opacity: 0,
-          duration: 0.5
-        });
-
-        // Animate the page title after container loads
         const title = data.next.container.querySelector('.page-title');
         if (title) {
-          tl.from(title, {
-            opacity: 0,
-            y: -30,
+          // Reset title before animating
+          gsap.set(title, { opacity: 0, y: -20 });
+
+          // Animate title
+          return gsap.to(title, {
+            opacity: 1,
+            y: 0,
             duration: 0.6,
             ease: 'power2.out'
-          }, "-=0.3"); // overlap a bit with the container fade
+          });
         }
-
-        return tl;
+        return Promise.resolve();
       }
     }]
   });
