@@ -640,5 +640,5 @@ body.light-mode #download-popup {
 
 .page-title {
     animation: titleFadeZoom 0.6s ease-in-out;
-    position: relative; /* ✅ Prevent movement */
+    position: static; /* ✅ Prevent movement */
 }
