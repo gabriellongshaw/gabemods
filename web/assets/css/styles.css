@@ -638,6 +638,6 @@ body.light-mode #download-popup {
     }
 }
 
-.title-animation {
+.page-title {
     animation: titleFadeZoom 0.6s ease-in-out;
 }
