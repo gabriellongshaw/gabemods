@@ -176,27 +176,5 @@
     );
   });
 </script>
-
-  <script>
-    barba.init({
-        transitions: [{
-            name: 'titleFade',
-            leave(data) {
-                return gsap.to(data.current.container.querySelector(".page-title"), {
-                    opacity: 0,
-                    scale: 0.8, /* ✅ Zoom out effect */
-                    duration: 0.5
-                });
-            },
-            enter(data) {
-                return gsap.from(data.next.container.querySelector(".page-title"), {
-                    opacity: 0,
-                    scale: 0.8, /* ✅ Zoom in effect */
-                    duration: 0.6
-                });
-            }
-        }]
-    });
-</script>
 </body>
 </html>
