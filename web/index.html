@@ -42,7 +42,7 @@
         </a>
       </div>
       
-      <h1 class="page-title">Gabe Mods</h1>
+      <h1 class="page-title title-animation">Gabe Mods</h1>
       
       <div class="menu-icon" id="menu-icon">
         <span class="bar"></span>
@@ -175,6 +175,27 @@
       }
     );
   });
+</script>
+
+  <script>
+    barba.init({
+        transitions: [{
+            name: 'fade',
+            leave(data) {
+                return gsap.to(data.current.container, {
+                    opacity: 0,
+                    duration: 0.5
+                });
+            },
+            enter(data) {
+                return gsap.from(data.next.container.querySelector(".page-title"), {
+                    opacity: 0,
+                    scale: 0.8, /* ✅ Zoom effect */
+                    duration: 0.6
+                });
+            }
+        }]
+    });
 </script>
 </body>
 </html>
