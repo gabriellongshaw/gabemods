@@ -234,5 +234,27 @@
     arrow.classList.toggle('rotated');
   });
 </script>
+
+  <script>
+  function animatePageTitle(container = document) {
+    const title = container.querySelector('.page-title');
+    if (title) {
+      gsap.fromTo(title,
+        { opacity: 0, scale: 0.9 },
+        { opacity: 1, scale: 1, duration: 0.5, ease: 'power2.out' }
+      );
+    }
+  }
+
+  // Animate title on first load
+  window.addEventListener('DOMContentLoaded', () => {
+    animatePageTitle();
+  });
+
+  // Animate title on Barba page transition
+  barba.hooks.afterEnter((data) => {
+    animatePageTitle(data.next.container);
+  });
+</script>
 </body>
 </html>
