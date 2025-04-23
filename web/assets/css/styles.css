@@ -3,14 +3,14 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 15px;
-    background: linear-gradient(to bottom right, #001f3f 0%, #000000 100%); /* Dark blue to black */
+    background: linear-gradient(to bottom right, #0720fa 0%, #000000 100%); /* Dark blue to black */
     color: #ffffff;
     padding-top: 60px;
 }
 
 /* Light Mode Styling */
 .light-mode {
-    background: linear-gradient(to bottom right, #cce6ff 0%, #ffffff 100%); /* Soft blue to white */
+    background: linear-gradient(to bottom right, #0720fa 0%, #ffffff 100%); /* Soft blue to white */
     color: #000000;
 }
 
