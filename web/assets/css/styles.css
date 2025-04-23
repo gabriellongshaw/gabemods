@@ -3,15 +3,15 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 15px;
-    background: radial-gradient(circle at top left, #0720fa 10%, #000 40%); /* Blue to black */
-    color: #ffffff;
-    padding-top: 60px;
+    background-color: #000000; /* Default Dark Mode background */
+    color: #ffffff; /* Default Dark Mode text */
+    padding-top: 60px; /* Push content down so it doesn't hide under the header */
 }
 
 /* Light Mode Styling */
 .light-mode {
-    background: radial-gradient(circle at top left, #cce6ff 10%, #fff 40%); /* Soft blue to white */
-    color: #000000;
+    background-color: #ffffff; /* Light Mode background */
+    color: #000000; /* Light Mode text */
 }
 
 .light-mode header {
