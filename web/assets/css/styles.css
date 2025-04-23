@@ -626,3 +626,13 @@ body.light-mode #download-popup {
 #install-guide li p {
   margin: 0;
 }
+
+/* Remove blue tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove focus outlines unless using keyboard navigation */
+*:focus {
+  outline: none;
+}
