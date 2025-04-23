@@ -3,15 +3,15 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 15px;
-    background-color: #000000; /* Default Dark Mode background */
-    color: #ffffff; /* Default Dark Mode text */
-    padding-top: 60px; /* Push content down so it doesn't hide under the header */
+    background: linear-gradient(to bottom right, #001f3f 0%, #000000 100%); /* Dark blue to black */
+    color: #ffffff;
+    padding-top: 60px;
 }
 
 /* Light Mode Styling */
 .light-mode {
-    background-color: #ffffff; /* Light Mode background */
-    color: #000000; /* Light Mode text */
+    background: linear-gradient(to bottom right, #cce6ff 0%, #ffffff 100%); /* Soft blue to white */
+    color: #000000;
 }
 
 .light-mode header {
