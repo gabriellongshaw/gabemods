@@ -55,6 +55,31 @@ body.light-mode {
     color: #000000;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 122, 255, 0.6) 0%,
+        rgba(0, 0, 0, 1) 25%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+.light-mode::before {
+    background: linear-gradient(
+        135deg,
+        rgba(0, 122, 255, 0.3) 0%,
+        rgba(255, 255, 255, 1) 25%,
+        rgba(255, 255, 255, 1) 100%
+    );
+}
+
 /* Header Styling */
 header {
     position: fixed;
