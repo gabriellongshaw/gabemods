@@ -98,6 +98,7 @@ header {
     height: 50px;
     object-fit: cover;
     display: block;
+    border-radius: 50%; /* Ensures the logo stays round */
 }
 
 /* Fixed Navigation Menu */
