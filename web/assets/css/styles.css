@@ -1,3 +1,30 @@
+:root {
+  --bg-start-color: #80bfff; /* light blue */
+  --bg-end-color: white;
+  --text-color: black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(to bottom right, var(--bg-start-color), var(--bg-end-color));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode overrides */
+body.dark-mode {
+  --bg-start-color: #336699; /* deep blue */
+  --bg-end-color: black;
+  --text-color: white;
+}
+
 /* General Styling */
 body {
     font-family: 'Poppins', sans-serif;
