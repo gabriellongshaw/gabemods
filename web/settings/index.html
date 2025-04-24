@@ -78,27 +78,6 @@
     <button id="theme-toggle" class="theme-btn modern-btn">Light Theme</button>
   </section>
 
-<!-- Add this near your other buttons -->
-<button id="settings-button" class="menu-button">Settings</button>
-
-<!-- Settings Popup Modal -->
-<div id="settings-modal" class="settings-modal hidden">
-  <div class="settings-content">
-    <h3>Menu Animation</h3>
-    <div class="option-group">
-      <label class="option-label">
-        <input type="radio" name="menu-animation" value="slide" checked>
-        <span class="option-text">Slide In</span>
-      </label>
-      <label class="option-label">
-        <input type="radio" name="menu-animation" value="scale">
-        <span class="option-text">Scale</span>
-      </label>
-    </div>
-    <button id="close-settings" class="close-button">Close</button>
-  </div>
-</div>
-  
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
@@ -106,55 +85,22 @@
 
   <!-- JavaScript -->
   <script>
+    // Hamburger Menu Toggle Logic
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
-    let isMenuOpen = false;
 
     menuIcon.addEventListener('click', () => {
-        const animation = localStorage.getItem('menuAnimation') || 'slide';
-
-        if (!isMenuOpen) {
-            // Opening animation
-            if (animation === 'scale') {
-                gsap.fromTo(menu, 
-                    { scale: 0.8, opacity: 0 }, 
-                    { scale: 1, opacity: 1, duration: 0.3, ease: "power2.out", display: 'block' }
-                );
-            } else {
-                gsap.fromTo(menu, 
-                    { x: '-100%', opacity: 0 }, 
-                    { x: '0%', opacity: 1, duration: 0.3, ease: "power2.out", display: 'block' }
-                );
-            }
-            menuIcon.classList.add('active');
-            isMenuOpen = true;
-        } else {
-            // Closing animation
-            gsap.to(menu, { opacity: 0, duration: 0.2, onComplete: () => {
-                menu.style.display = 'none';
-                if (animation === 'slide') menu.style.transform = 'translateX(-100%)';
-                if (animation === 'scale') menu.style.transform = 'scale(0.8)';
-            }});
-            menuIcon.classList.remove('active');
-            isMenuOpen = false;
-        }
+        menu.classList.toggle('visible');
+        menuIcon.classList.toggle('active');
     });
 
     document.addEventListener('click', (event) => {
-        if (isMenuOpen && !menu.contains(event.target) && !menuIcon.contains(event.target)) {
-            // Close menu if clicking outside
-            gsap.to(menu, { opacity: 0, duration: 0.2, onComplete: () => {
-                menu.style.display = 'none';
-                const animation = localStorage.getItem('menuAnimation') || 'slide';
-                if (animation === 'slide') menu.style.transform = 'translateX(-100%)';
-                if (animation === 'scale') menu.style.transform = 'scale(0.8)';
-            }});
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove('visible');
             menuIcon.classList.remove('active');
-            isMenuOpen = false;
         }
     });
-</script>
-</script>
+
     // Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
 
@@ -232,41 +178,6 @@
   barba.hooks.afterEnter((data) => {
     animatePageTitle(data.next.container);
   });
-</script>
-
-  <script>
-  const settingsBtn = document.getElementById('settings-button');
-  const settingsModal = document.getElementById('settings-modal');
-  const closeSettings = document.getElementById('close-settings');
-  const radioButtons = document.querySelectorAll('input[name="menu-animation"]');
-
-  // Detect platform (simple check)
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-  // Apply iOS or Android style
-  document.documentElement.style.setProperty('--popup-bg', isIOS ? '#f9f9f9' : '#ffffff');
-  document.documentElement.style.setProperty('--popup-color', isIOS ? '#000000' : '#000000');
-  document.documentElement.style.setProperty('--accent-color', isIOS ? '#007aff' : '#3498db');
-
-  settingsBtn.addEventListener('click', () => {
-    settingsModal.classList.remove('hidden');
-  });
-
-  closeSettings.addEventListener('click', () => {
-    settingsModal.classList.add('hidden');
-  });
-
-  // Store selected animation type
-  radioButtons.forEach(radio => {
-    radio.addEventListener('change', () => {
-      const selected = document.querySelector('input[name="menu-animation"]:checked').value;
-      localStorage.setItem('menuAnimation', selected);
-    });
-  });
-
-  // Apply stored animation on load
-  const savedAnimation = localStorage.getItem('menuAnimation') || 'slide';
-  document.querySelector(`input[value="${savedAnimation}"]`).checked = true;
 </script>
 </body>
 </html>
