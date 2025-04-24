@@ -34,7 +34,7 @@ body {
 
 /* Dark Mode: Blue fades to black, fixed background */
 body:not(.light-mode) {
-    background: linear-gradient(135deg, #3498db 0%, #000000 25%, #000000 100%);
+    background: linear-gradient(135deg, #0D00FF 0%, #000000 25%, #000000 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -43,7 +43,7 @@ body:not(.light-mode) {
 
 /* Light Mode: Blue fades to white, fixed background */
 body.light-mode {
-    background: linear-gradient(135deg, #3498db 0%, #ffffff 25%, #ffffff 100%);
+    background: linear-gradient(135deg, #0D00FF 0%, #ffffff 25%, #ffffff 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -89,7 +89,7 @@ header {
     -webkit-backdrop-filter: blur(15px);
     z-index: 7000;
     background: rgba(0, 0, 0, 0.0); /* more translucent */
-    border-bottom: 2px solid #3498db;
+    border-bottom: 1px solid #0D00FF;
 }
 
 /* Logo Styling */
@@ -98,7 +98,7 @@ header {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #3498db;
+    border: 3px solid #0D00FF;
     display: block;
 }
 
