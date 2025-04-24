@@ -20,7 +20,7 @@ body {
 }
 
 .light-mode .menu {
-    background: rgba(255, 255, 255, 0.2); /* more translucent */
+    background: rgba(255, 255, 255, 0.0); /* more translucent */
     backdrop-filter: blur(15px);
 }
 
@@ -106,7 +106,7 @@ header {
     top: 60px;
     right: -300px;
     width: 176px; /* 20% smaller than original 220px */
-    background: rgba(0, 0, 0, 0.2); /* more translucent */
+    background: rgba(0, 0, 0, 0.0); /* more translucent */
     backdrop-filter: blur(15px);
     padding: 22px; /* Slightly increased padding (~2%) */
     border-radius: 15px;
