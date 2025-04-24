@@ -17,7 +17,7 @@ body {
     color: #000000;
 }
 
-.light-mode header, .light-mode footer {
+.light-mode footer {
     background: linear-gradient(135deg, #3498db 0%, #ffffff 100%); /* Gradient for header and footer */
 }
 
