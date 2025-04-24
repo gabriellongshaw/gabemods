@@ -1,49 +1,37 @@
-:root {
-  --bg-start-color: #80bfff; /* light blue */
-  --bg-end-color: white;
-  --text-color: black;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  font-family: system-ui, sans-serif;
-  background: linear-gradient(to bottom right, var(--bg-start-color), var(--bg-end-color));
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top left;
-  color: var(--text-color);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* Dark mode overrides */
-body.dark-mode {
-  --bg-start-color: #336699; /* deep blue */
-  --bg-end-color: black;
-  --text-color: white;
-}
-
 /* General Styling */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 15px;
-    background-color: #000000; /* Default Dark Mode background */
-    color: #ffffff; /* Default Dark Mode text */
-    padding-top: 60px; /* Push content down so it doesn't hide under the header */
+    background: linear-gradient(135deg, #3498db 0%, #000000 100%); /* Dark Mode Gradient */
+    color: #ffffff;
+    padding-top: 60px;
+    background-attachment: fixed; /* Ensures the background doesn't move when scrolling */
+    background-size: cover;
+    transition: background 0.3s ease-in-out; /* Smooth transition for background */
 }
 
 /* Light Mode Styling */
 .light-mode {
-    background-color: #ffffff; /* Light Mode background */
-    color: #000000; /* Light Mode text */
+    background: linear-gradient(135deg, #3498db 0%, #ffffff 100%); /* Light Mode Gradient */
+    color: #000000;
 }
 
-.light-mode header {
-    background-color: rgba(255, 255, 255, 0.0); /* more translucent */
-    color: #000;
+.light-mode header, .light-mode footer {
+    background: linear-gradient(135deg, #3498db 0%, #ffffff 100%); /* Gradient for header and footer */
+}
+
+/* Footer Styling */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #3498db 0%, #000000 100%); /* Gradient background */
+    color: #ffffff;
+    font-size: 14px;
 }
 
 .light-mode footer {
