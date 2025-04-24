@@ -19,11 +19,6 @@ body {
     color: #000;
 }
 
-.light-mode footer {
-    background-color: #ffffff;
-    color: #000000;
-}
-
 .light-mode .menu {
     background: rgba(255, 255, 255, 0.2); /* more translucent */
     backdrop-filter: blur(15px);
@@ -243,9 +238,14 @@ header {
 footer {
     text-align: center;
     padding: 15px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: transparent; /* Let gradient show through */
     color: #ffffff;
     font-size: 14px;
+}
+
+/* Light mode override */
+.light-mode footer {
+    color: #000000;
 }
 
 /* iOS Mod Buttons */
