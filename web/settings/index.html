@@ -78,6 +78,27 @@
     <button id="theme-toggle" class="theme-btn modern-btn">Light Theme</button>
   </section>
 
+<!-- Add this near your other buttons -->
+<button id="settings-button" class="menu-button">Settings</button>
+
+<!-- Settings Popup Modal -->
+<div id="settings-modal" class="settings-modal hidden">
+  <div class="settings-content">
+    <h3>Menu Animation</h3>
+    <div class="option-group">
+      <label class="option-label">
+        <input type="radio" name="menu-animation" value="slide" checked>
+        <span class="option-text">Slide In</span>
+      </label>
+      <label class="option-label">
+        <input type="radio" name="menu-animation" value="scale">
+        <span class="option-text">Scale</span>
+      </label>
+    </div>
+    <button id="close-settings" class="close-button">Close</button>
+  </div>
+</div>
+  
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
@@ -178,6 +199,41 @@
   barba.hooks.afterEnter((data) => {
     animatePageTitle(data.next.container);
   });
+</script>
+
+  <script>
+  const settingsBtn = document.getElementById('settings-button');
+  const settingsModal = document.getElementById('settings-modal');
+  const closeSettings = document.getElementById('close-settings');
+  const radioButtons = document.querySelectorAll('input[name="menu-animation"]');
+
+  // Detect platform (simple check)
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+  // Apply iOS or Android style
+  document.documentElement.style.setProperty('--popup-bg', isIOS ? '#f9f9f9' : '#ffffff');
+  document.documentElement.style.setProperty('--popup-color', isIOS ? '#000000' : '#000000');
+  document.documentElement.style.setProperty('--accent-color', isIOS ? '#007aff' : '#3498db');
+
+  settingsBtn.addEventListener('click', () => {
+    settingsModal.classList.remove('hidden');
+  });
+
+  closeSettings.addEventListener('click', () => {
+    settingsModal.classList.add('hidden');
+  });
+
+  // Store selected animation type
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', () => {
+      const selected = document.querySelector('input[name="menu-animation"]:checked').value;
+      localStorage.setItem('menuAnimation', selected);
+    });
+  });
+
+  // Apply stored animation on load
+  const savedAnimation = localStorage.getItem('menuAnimation') || 'slide';
+  document.querySelector(`input[value="${savedAnimation}"]`).checked = true;
 </script>
 </body>
 </html>
