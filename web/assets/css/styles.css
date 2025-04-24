@@ -65,7 +65,7 @@ body::before {
     background: linear-gradient(
         135deg,
         rgba(0, 122, 255, 0.6) 0%,
-        rgba(0, 0, 0, 1) 25%,
+        rgba(0, 0, 0, 1) 50%,
         rgba(0, 0, 0, 1) 100%
     );
     z-index: -1;
@@ -75,7 +75,7 @@ body::before {
     background: linear-gradient(
         135deg,
         rgba(0, 122, 255, 0.3) 0%,
-        rgba(255, 255, 255, 1) 25%,
+        rgba(255, 255, 255, 1) 50%,
         rgba(255, 255, 255, 1) 100%
     );
 }
