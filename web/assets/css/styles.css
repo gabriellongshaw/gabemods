@@ -3,17 +3,24 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 15px;
-    background: linear-gradient(135deg, #3498db 0%, #000000 100%); /* Dark Mode Gradient */
-    color: #ffffff;
-    padding-top: 60px;
-    background-attachment: fixed; /* Ensures the background doesn't move when scrolling */
-    background-size: cover;
-    transition: background 0.3s ease-in-out; /* Smooth transition for background */
+    background-color: #000000; /* Default Dark Mode background */
+    color: #ffffff; /* Default Dark Mode text */
+    padding-top: 60px; /* Push content down so it doesn't hide under the header */
 }
 
 /* Light Mode Styling */
 .light-mode {
-    background: linear-gradient(135deg, #3498db 0%, #ffffff 100%); /* Light Mode Gradient */
+    background-color: #ffffff; /* Light Mode background */
+    color: #000000; /* Light Mode text */
+}
+
+.light-mode header {
+    background-color: rgba(255, 255, 255, 0.0); /* more translucent */
+    color: #000;
+}
+
+.light-mode footer {
+    background-color: #ffffff;
     color: #000000;
 }
 
@@ -28,6 +35,24 @@ body {
 
 .light-mode .menu a:hover {
     color: #3498db;
+}
+
+/* Dark Mode: Blue fades to black, fixed background */
+body:not(.light-mode) {
+    background: linear-gradient(135deg, #3498db 0%, #000000 25%, #000000 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+
+/* Light Mode: Blue fades to white, fixed background */
+body.light-mode {
+    background: linear-gradient(135deg, #3498db 0%, #ffffff 25%, #ffffff 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000000;
 }
 
 /* Header Styling */
