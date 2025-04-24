@@ -17,28 +17,6 @@ body {
     color: #000000;
 }
 
-.light-mode footer {
-    background: linear-gradient(135deg, #3498db 0%, #ffffff 100%); /* Gradient for header and footer */
-}
-
-/* Footer Styling */
-footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 15px;
-    background: linear-gradient(135deg, #3498db 0%, #000000 100%); /* Gradient background */
-    color: #ffffff;
-    font-size: 14px;
-}
-
-.light-mode footer {
-    background-color: #ffffff;
-    color: #000000;
-}
-
 .light-mode .menu {
     background: rgba(255, 255, 255, 0.2); /* more translucent */
     backdrop-filter: blur(15px);
