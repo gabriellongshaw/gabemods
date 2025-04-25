@@ -6,12 +6,33 @@ body {
     background-color: #000000; /* Default Dark Mode background */
     color: #ffffff; /* Default Dark Mode text */
     padding-top: 60px; /* Push content down so it doesn't hide under the header */
+    transition: background-color 0.5s ease, color 0.5s ease, background 0.5s ease; /* Smooth transition */
 }
 
 /* Light Mode Styling */
 .light-mode {
     background-color: #ffffff; /* Light Mode background */
     color: #000000; /* Light Mode text */
+    transition: background-color 0.5s ease, color 0.5s ease, background 0.5s ease; /* Smooth transition */
+}
+
+body:not(.light-mode) {
+    background: linear-gradient(135deg, #0D00FF 0%, #000000 25%, #000000 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    transition: background 0.5s ease, color 0.5s ease; /* Smooth transition */
+}
+
+/* Light Mode: Blue fades to white, fixed background */
+body.light-mode {
+    background: linear-gradient(135deg, #0D00FF 0%, #ffffff 25%, #ffffff 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000000;
+    transition: background 0.5s ease, color 0.5s ease; /* Smooth transition */
 }
 
 .light-mode header {
@@ -30,24 +51,6 @@ body {
 
 .light-mode .menu a:hover {
     color: #3498db;
-}
-
-/* Dark Mode: Blue fades to black, fixed background */
-body:not(.light-mode) {
-    background: linear-gradient(135deg, #0D00FF 0%, #000000 25%, #000000 100%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #ffffff;
-}
-
-/* Light Mode: Blue fades to white, fixed background */
-body.light-mode {
-    background: linear-gradient(135deg, #0D00FF 0%, #ffffff 25%, #ffffff 100%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #000000;
 }
 
 body::before {
