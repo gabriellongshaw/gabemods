@@ -76,18 +76,8 @@
     <!-- Duplicate title removed -->
     <p>Switch between Light and Dark themes:</p>
     <button id="theme-toggle" class="theme-btn modern-btn">Light Theme</button>
-    <button id="menu-animation-toggle" class="theme-btn modern-btn">Toggle Menu Animation</button>
   </section>
 
-<!-- Add a rounded selection box for animation type -->
-<div class="animation-selector">
-  <p>Choose Menu Animation:</p>
-  <select id="animation-select" class="animation-dropdown">
-    <option value="slide-in">Slide In</option>
-    <option value="scale">Scale</option>
-  </select>
-</div>
-  
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
@@ -189,82 +179,5 @@
     animatePageTitle(data.next.container);
   });
 </script>
-
-<script>
-  const menuAnimationToggle = document.getElementById('menu-animation-toggle');
-let isZoomAnimation = true; // Flag to track the current animation style
-
-menuAnimationToggle.addEventListener('click', () => {
-    isZoomAnimation = !isZoomAnimation;
-    updateMenuAnimation();
-});
-
-function updateMenuAnimation() {
-    if (isZoomAnimation) {
-        // Zoom animation
-        gsap.to(menu, { scale: 1, duration: 0.5 });
-    } else {
-        // Slide animation
-        gsap.to(menu, { x: 0, duration: 0.5 });
-    }
-}
-</script>
-
-  <script>
-    // Get elements for the menu animation toggle
-const animationToggleBtn = document.getElementById('animation-toggle-btn');
-const animationPopup = document.getElementById('animation-popup');
-const slideInOption = document.getElementById('slide-in-option');
-const scaleOption = document.getElementById('scale-option');
-
-// Flag to track the current animation style (slide-in or scale)
-let isSlideIn = true; // Default to Slide-in animation
-
-// Open the pop-up menu when the button is clicked
-animationToggleBtn.addEventListener('click', () => {
-    animationPopup.classList.toggle('hidden');
-});
-
-// Close the pop-up when a selection is made
-slideInOption.addEventListener('click', () => {
-    isSlideIn = true;
-    updateMenuAnimation();
-    animationPopup.classList.add('hidden');
-});
-
-scaleOption.addEventListener('click', () => {
-    isSlideIn = false;
-    updateMenuAnimation();
-    animationPopup.classList.add('hidden');
-});
-
-// Function to update the menu animation
-function updateMenuAnimation() {
-    if (isSlideIn) {
-        // Slide-in and fade effect
-        gsap.to(menu, { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' });
-    } else {
-        // iOS scale effect
-        gsap.to(menu, { scale: 0.9, opacity: 1, duration: 0.5, ease: 'power2.out' });
-    }
-}
-
-// Hamburger Menu Toggle Logic
-const menuIcon = document.getElementById('menu-icon');
-const menu = document.getElementById('menu');
-
-menuIcon.addEventListener('click', () => {
-    menu.classList.toggle('visible');
-    menuIcon.classList.toggle('active');
-    updateMenuAnimation(); // Apply animation after the menu is toggled
-});
-
-document.addEventListener('click', (event) => {
-    if (!menu.contains(event.target) && !menuIcon.contains(event.target) && !animationToggleBtn.contains(event.target)) {
-        menu.classList.remove('visible');
-        menuIcon.classList.remove('active');
-    }
-});
-  </script>
 </body>
 </html>
