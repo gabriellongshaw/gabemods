@@ -779,3 +779,26 @@ body.light-mode #download-popup {
 .scale.visible {
   transform: scale(1);
 }
+
+html, body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.theme-toggle {
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.light .theme-toggle {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark .theme-toggle {
+  background-color: #fff;
+  color: #000;
+    }
