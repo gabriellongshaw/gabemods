@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gabemods.github.io/sitemap.xml
