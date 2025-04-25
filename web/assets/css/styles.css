@@ -77,19 +77,40 @@ body::before {
 
 /* Header Styling */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    z-index: 7000;
-    background: rgba(0, 0, 0, 0.0); /* more translucent */
-    border-bottom: 1px solid #3498db;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 7000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Light mode */
+body.light-mode header {
+  background: white;
+}
+
+/* Dark mode */
+body:not(.light-mode) header {
+  background: black;
+}
+
+/* Scrolled state */
+header.scrolled {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body:not(.light-mode) header.scrolled {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 link[rel="icon"] {
