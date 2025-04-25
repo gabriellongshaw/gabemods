@@ -76,8 +76,9 @@
     <!-- Duplicate title removed -->
     <p>Switch between Light and Dark themes:</p>
     <button id="theme-toggle" class="theme-btn modern-btn">Light Theme</button>
+    <button id="menu-animation-toggle" class="theme-btn modern-btn">Toggle Menu Animation</button>
   </section>
-
+  
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
@@ -178,6 +179,26 @@
   barba.hooks.afterEnter((data) => {
     animatePageTitle(data.next.container);
   });
+</script>
+
+<script>
+  const menuAnimationToggle = document.getElementById('menu-animation-toggle');
+let isZoomAnimation = true; // Flag to track the current animation style
+
+menuAnimationToggle.addEventListener('click', () => {
+    isZoomAnimation = !isZoomAnimation;
+    updateMenuAnimation();
+});
+
+function updateMenuAnimation() {
+    if (isZoomAnimation) {
+        // Zoom animation
+        gsap.to(menu, { scale: 1, duration: 0.5 });
+    } else {
+        // Slide animation
+        gsap.to(menu, { x: 0, duration: 0.5 });
+    }
+}
 </script>
 </body>
 </html>
