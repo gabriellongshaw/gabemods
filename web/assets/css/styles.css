@@ -92,6 +92,14 @@ header {
     border-bottom: 1px solid #3498db;
 }
 
+link[rel="icon"] {
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    width: 32px; /* Adjust size as needed */
+    height: 32px; /* Adjust size as needed */
+}
+
 /* Logo Styling */
 .logo-image {
     width: 50px;
