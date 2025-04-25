@@ -757,3 +757,25 @@ body.light-mode #download-popup {
   border-radius: 8px;
   cursor: pointer;
 }
+
+/* Slide-In animation effect */
+.slide-in {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-in.hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+/* Scale animation effect */
+.scale {
+  transition: transform 0.3s ease;
+  transform: scale(0);
+}
+
+.scale.visible {
+  transform: scale(1);
+}
