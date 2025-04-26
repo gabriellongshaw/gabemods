@@ -806,16 +806,29 @@ html, body {
   color: #000;
     }
 
+.card {
+    background: rgba(255, 255, 255, 0.2); /* Translucent effect */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 20px;
+    border-radius: 16px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Button container to center the button */
 .button-container {
     display: flex;
     justify-content: center; /* Center horizontally */
-    width: 100%; /* Make it full width */
+    width: 100%;
 }
 
+/* Updated Button Styles */
 .version-button {
-    width: 97%; /* Make the button wider */
-    max-width: 600px; /* Set a max width */
-    padding: 7px 10px; /* Keep padding */
+    width: 97%;
+    max-width: 600px;
+    padding: 7px 10px;
     background: linear-gradient(90deg, #0502D3, #0577F3);
     color: white;
     border: none;
