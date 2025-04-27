@@ -110,7 +110,7 @@ link[rel="icon"] {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #3498db;
+    box-shadow: 0 0 10px 2px rgba(52,152,219, 0.9);
     display: block;
 }
 
