@@ -76,8 +76,16 @@
         cursor: pointer;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         transition: background 0.3s ease;
-    }
+        color: white; /* Ensures text is white */
+        text-align: center;
+        text-decoration: none; /* Prevents underlining */
+     }
 
+       .back-button:hover, .back-button:focus, .back-button:active {
+    text-decoration: none; /* Ensures it never gets underlined */
+    color: white; /* Keeps text white at all times */
+}
+    
     .back-button img {
         width: 24px; /* Adjust size to fit */
         height: 24px;
