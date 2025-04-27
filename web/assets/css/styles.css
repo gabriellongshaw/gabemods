@@ -92,7 +92,8 @@ header {
     -webkit-backdrop-filter: blur(15px);
     z-index: 7000;
     background: rgba(0, 0, 0, 0.0); /* more translucent */
-    border-bottom: 1px solid #3498db;
+    box-shadow: 0 4px 8px rgba(52,152,219, 0.1);
+    
 }
 
 link[rel="icon"] {
