@@ -48,14 +48,14 @@
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px); /* For Safari */
-      border: 1px solid rgba(255, 255, 255, 0.1);
     }
+    
     .card img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       margin-bottom: 20px;
-      border: 2px solid #fff;
+      border: 2px (0,0,0,0.7);
     }
     .card h1 {
       font-size: 24px;
@@ -78,7 +78,7 @@
       object-fit: cover;
     }
 
-     .back-button {
+          .back-button {
         position: absolute;
         top: 20px;
         left: 20px;
@@ -87,29 +87,30 @@
         justify-content: center;
         width: 50px;
         height: 50px;
-        background-color: (0,0,0,0.0;
+        background-color: transparent; /* Set background to transparent if you don't want a background */
         border-radius: 50%;
         cursor: pointer;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         transition: background 0.3s ease;
-        color: white; /* Ensures text is white */
+        color: grey; /* Set the default text color to grey */
         text-align: center;
         text-decoration: none; /* Prevents underlining */
      }
 
        .back-button:hover, .back-button:focus, .back-button:active {
-    text-decoration: none; /* Ensures it never gets underlined */
-    color: white; /* Keeps text white at all times */
-}
-    
-    .back-button img {
-        width: 24px; /* Adjust size to fit */
-        height: 24px;
-    }
+            text-decoration: none; /* Ensures it never gets underlined */
+            color: grey; /* Keeps text grey on hover, focus, and active states */
+       }
 
-    .back-button:active {
-        background-color: rgba(128, 128, 128, 0.5); /* Semi-transparent grey effect */
-    }
+    a {
+  text-decoration: none; /* Removes the default underline */
+  color: initial;        /* Resets the text color to its inherited value */
+}
+
+a:visited {
+  color: initial;        /* Keeps the visited link the same color */
+}
+
   </style>
 </head>
 <body>
@@ -119,10 +120,10 @@
       Back
     </a>
 
-    <img src="../assets/images/IMG_7790.png" alt="Gabe Mods Logo" class="logo">
+    <img src="../assets/images/IMG_7790.jpeg" alt="Gabe Mods Logo" class="logo">
     <h1>iOS App</h1>
-    <p>The Gabe Mods app is not yet available for iOS (iPhone). In the future I hope to change that. Until then iOS users can use the website.</p>
-    <em>Anyone can use the website no matter what platform – e.g. Android, iOS, Windows</em>
+    <p>The Gabe Mods app is not yet available for iOS (iPhone). In the future I hope to release the app on iOS and Windows.</p>
+    <em>Android users can use the App and Website. All others platforms have to use the Website. </em>
   </div>
 </body>
 </html>
