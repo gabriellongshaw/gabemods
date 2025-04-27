@@ -62,10 +62,32 @@
       object-fit: cover;
       border: 2px solid white;
     }
+
+    .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background-color: black; /* Matches Samsung's dark theme */
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-button:before {
+        content: '\2190'; /* Unicode for left arrow */
+        font-size: 24px;
+        color: white;
+    }
   </style>
 </head>
 <body>
   <div class="card">
+    <div class= "back-button" onclick=window.history.back();"></div>
     <img src="../assets/images/IMG_7790.png" alt="Gabe Mods Logo" class="logo">
     <h1>Gabe Mods App iOS</h1>
     <p>The Gabe Mods app is not yet available for iOS (iPhone).</p>
