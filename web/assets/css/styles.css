@@ -809,7 +809,7 @@ html, body {
 /* Increase space between the header and the card */
 .card {
     margin-top: 40px; /* Adjust this to control spacing */
-    padding: 8px 16px; /* Reduce padding to remove extra space above text */
+    padding: 1px 20px 30px 30px; /* Reduce padding to remove extra space above text */
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 350px;
