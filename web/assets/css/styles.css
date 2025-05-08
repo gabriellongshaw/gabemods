@@ -879,3 +879,16 @@ body:not(.light-mode) .card {
 .version-button.clicked::after {
     left: 100%;
 }
+.container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+}
+@media (max-width: 768px) and (orientation: landscape) {
+  .container {
+    flex-direction: column; /* Adjust layout if needed */
+    padding: 20px; /* Prevent elements from hugging edges */
+  }
+}
