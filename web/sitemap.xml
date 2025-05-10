@@ -3,37 +3,37 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://gabemods.github.io/Gabe-Mods-Website/</loc>
+    <loc>https://gabemods.github.io/</loc>
     <priority>1.00</priority>
   </url>
 
   <url>
-    <loc>https://gabemods.github.io/Gabe-Mods-Website/mods/</loc>
+    <loc>https://gabemods.github.io/mods/</loc>
     <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://gabemods.github.io/Gabe-Mods-Website/games/</loc>
+    <loc>https://gabemods.github.io/games/</loc>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://gabemods.github.io/Gabe-Mods-Website/learn-to-code/</loc>
+    <loc>https://gabemods.github.io/learn-to-code/</loc>
     <priority>0.70</priority>
   </url>
 
   <url>
-    <loc>https://gabemods.github.io/Gabe-Mods-Website/download</loc>
+    <loc>https://gabemods.github.io/download</loc>
     <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://gabemods.github.io/Gabe-Mods-Website/contact/</loc>
+    <loc>https://gabemods.github.io/contact/</loc>
     <priority>0.50</priority>
   </url>
 
   <url>
-    <loc>https://gabemods.github.io/Gabe-Mods-Website/settings/</loc>
+    <loc>https://gabemods.github.io/settings/</loc>
     <priority>0.70</priority>
   </url>
 
