@@ -892,3 +892,22 @@ body:not(.light-mode) .card {
     padding: 20px; /* Prevent elements from hugging edges */
   }
 }
+ a.info-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px;
+  background-color: rgba(255, 255, 255, 0.3); /* translucent white */
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+a.info-button svg {
+  width: 20px;
+  height: 20px;
+}
