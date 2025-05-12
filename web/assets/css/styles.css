@@ -248,9 +248,10 @@ link[rel="icon"] {
 
 /* Footer Styling */
 footer {
+    margin-bottom: 10px;
     text-align: center;
     padding: 15px;
-    background-color: transparent; /* Let gradient show through */
+    background-color: transparent;
     color: #ffffff;
     font-size: 14px;
 }
@@ -837,15 +838,24 @@ body:not(.light-mode) .card {
 }
 
 
-/* Button container to center the button */
-.button-container {
+.container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    width: 100%;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 20px; /* Optional padding to prevent edge-hugging */
 }
 
-/* Updated Button Styles */
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .version-button {
+    position: relative; /* Required for the ::after splash */
     width: 97%;
     max-width: 600px;
     padding: 7px 10px;
@@ -858,12 +868,10 @@ body:not(.light-mode) .card {
     cursor: pointer;
 }
 
-/* Expansion when clicked */
 .version-button:active {
     transform: scale(1.10);
 }
 
-/* Splash effect */
 .version-button::after {
     content: "";
     position: absolute;
@@ -873,24 +881,18 @@ body:not(.light-mode) .card {
     height: 100%;
     background: linear-gradient(90deg, rgba(0,123,255,0.4) 0%, rgba(0,123,255,0) 80%);
     transition: left 0.5s ease;
+    border-radius: 30px;
 }
 
-/* Trigger splash on click */
 .version-button.clicked::after {
     left: 100%;
 }
-.container {
-  display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
-}
+
 @media (max-width: 768px) and (orientation: landscape) {
-  .container {
-    flex-direction: column; /* Adjust layout if needed */
-    padding: 20px; /* Prevent elements from hugging edges */
-  }
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
 }
  a.info-button {
   position: absolute;
