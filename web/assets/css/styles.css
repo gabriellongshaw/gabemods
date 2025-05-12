@@ -852,6 +852,8 @@ body:not(.light-mode) .card {
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative; /* or absolute */
+    transform: translateX(-50%);
 }
 
 .version-button {
