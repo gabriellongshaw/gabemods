@@ -893,21 +893,19 @@ body:not(.light-mode) .card {
   }
 }
  a.info-button {
-  position: absolute;
-  top: 20px;
-  right: 50px;
-  padding: 6px;
-  background-color: rgba(255, 255, 255, 0.3); /* translucent white */
-  border-radius: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  transition: transform 0.3s ease;
+      position: absolute;
+    top: 2px;
+    right: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    z-index: 1001;
 }
 
 a.info-button svg {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
