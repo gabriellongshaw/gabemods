@@ -894,14 +894,14 @@ body:not(.light-mode) .card {
 }
  a.info-button {
       position: absolute;
-    top: 23px;
-    right: 120px;
+    top: 20px;
+    right: 130px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     z-index: 1001;
     color: white;
 }
