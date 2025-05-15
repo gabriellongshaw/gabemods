@@ -895,7 +895,7 @@ body:not(.light-mode) .card {
  a.info-button {
       position: absolute;
     top: 20px;
-    right: 130px;
+    right: 110px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
