@@ -903,12 +903,14 @@ body:not(.light-mode) .card {
     width: 30px;
     height: 30px;
     z-index: 1001;
+    color: white;
 }
 
 a.info-button svg {
   width: 50px;
   height: 50px;
+  fill: currentColor;
 }
-.light-mode a.info-button svg {
+.light-mode a.info-button {
   color: black;
 }
