@@ -1,0 +1,13 @@
+Copyright (C) 2025 bocajthomas. All rights reserved.
+This software is licensed to the gabemods.github.io repository.
+
+This is a strict license agreement. By using or distributing this software, you agree to adhere to the following terms and conditions. Failure to adhere to any of these terms will constitute a breach of this license agreement:
+
+1.  **Developer Credits Preservation:**
+    The primary developer credits, located on the [About](app/src/main/assets/web/settings/about/index.html) page of the application, must not be removed or altered in any way.
+    Credit will only be granted to individuals who have directly contributed to the development of this application. Any such contributions, if acknowledged, must be listed below the primary developer credits on the About page.
+
+2.  **No Package Name Alteration:**
+    You are strictly prohibited from altering the application's package name.
+
+Any unauthorized use, reproduction, distribution, or modification of this software in violation of these terms is strictly prohibited and may result in termination of the app or Legal Action.
