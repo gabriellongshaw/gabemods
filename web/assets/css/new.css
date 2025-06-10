@@ -182,7 +182,7 @@ body, html {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -205,13 +205,13 @@ body, html {
 
 .social-button svg,
 .social-button img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
 }
 
 @media (max-width: 500px) {
   .social-buttons {
-    max-width: 250px;
+    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
   }
