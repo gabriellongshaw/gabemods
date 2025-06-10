@@ -21,7 +21,7 @@
 
 body, html {
   margin: 0;
-  padding: 15px;
+  padding: 10px;
   overflow-x: hidden;
   overflow-y: auto;
   font-family: 'Roboto';
@@ -109,7 +109,7 @@ body, html {
 .profile-pic {
   width: 70px;
   height: 70px;
-  border-radius: 30px;
+  border-radius: 50px;
   object-fit: cover;
   margin-right: 16px;
 }
