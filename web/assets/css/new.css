@@ -22,13 +22,12 @@
 body, html {
   margin: 0;
   padding: 15px;
-  height: 100%;
-  width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   font-family: 'Roboto';
   background-color: #212121;
   color: #ffffff;
+  padding-top: 50px;
   animation: fadeUp 0.8s ease forwards;
 }
 
@@ -297,10 +296,7 @@ body, html {
   .main-title {
     font-size: 2.4rem;
   }
-  .card {
-    padding: 12px 14px;
-    height: 68px;
-  }
+  
   .profile-pic {
     width: 50px;
     height: 50px;
@@ -314,10 +310,7 @@ body, html {
   .main-title {
     font-size: 2rem;
   }
-  .card {
-    height: auto;
-    padding: 10px 12px;
-  }
+
   .profile-pic {
     width: 45px;
     height: 45px;
