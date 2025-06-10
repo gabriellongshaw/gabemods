@@ -256,6 +256,12 @@ body, html {
 }
 
 @media screen and (min-width: 600px) {
+  .main-title {
+    text-align: center;
+
+    .subtitle {
+    text-align: center;
+  
   .social-buttons {
     justify-content: flex-start;
   }
@@ -271,7 +277,7 @@ body, html {
   }
   .social-buttons,
   .join-button-container {
-    justify-content: flex-start;
+    justify-content: center;
   }
   .card {
     height: 50px;
