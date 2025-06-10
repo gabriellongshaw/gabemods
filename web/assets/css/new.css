@@ -27,7 +27,6 @@ body, html {
   font-family: 'Roboto';
   background-color: #212121;
   color: #ffffff;
-  padding-top: 50px;
   animation: fadeUp 0.8s ease forwards;
 }
 
