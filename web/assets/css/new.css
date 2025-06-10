@@ -211,7 +211,7 @@ body, html {
 
 @media (max-width: 500px) {
   .social-buttons {
-    max-width: 220px; /* Adjust this to control how many buttons per line */
+    max-width: 250px;
     margin-left: auto;
     margin-right: auto;
   }
