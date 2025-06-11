@@ -83,7 +83,7 @@ body, html {
   border-radius: 20px;
   padding: 12px 16px;
   width: 90%;
-  height: 90px;
+  height: 60px;
   margin: 16px auto;
   box-shadow: 0 3px 15px rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
@@ -106,8 +106,8 @@ body, html {
 }
 
 .profile-pic {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50px;
   object-fit: cover;
   margin-right: 16px;
