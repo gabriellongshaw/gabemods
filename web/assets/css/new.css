@@ -74,10 +74,13 @@ body, html {
 }
 
 .header {
-  background-color: #e0e0e0; /* Light gray like Material 3 */
+  width: 100%;
+  background-color: #1e1e1e; /* Dark gray */
   padding: 15px;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1002;
 }
 
 /* Menu icon */
@@ -86,18 +89,18 @@ body, html {
   height: 25px;
   cursor: pointer;
   position: relative;
-  z-index: 1001;
+  z-index: 1003; /* Stay above side menu */
 }
 
 .menu-toggle span {
   display: block;
   height: 3px;
-  background: #B0C0D0; /* Set your own color later */
+  background: #fff; /* Light color for visibility */
   margin: 5px 0;
   transition: 0.4s;
 }
 
-/* Hamburger to X */
+/* Transform into X */
 .menu-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -118,10 +121,10 @@ body, html {
   width: 80%;
   max-width: 300px;
   height: 100%;
-  background-color: #2b2b2b; /* Dark gray */
+  background-color: #1e1e1e;
   padding: 80px 20px;
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: 1001;
   transition: left 0.4s ease;
 }
 
@@ -155,7 +158,7 @@ body, html {
   border-radius: 12px;
 }
 
-/* Dim overlay */
+/* Overlay: no padding, just dimming */
 .overlay {
   position: fixed;
   top: 0;
@@ -166,7 +169,7 @@ body, html {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .overlay.show {
@@ -177,7 +180,7 @@ body, html {
 /* Page content */
 .content {
   padding: 20px;
-
+}
 
 .card {
   transform: scale(1);
