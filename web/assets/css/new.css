@@ -73,6 +73,81 @@ body, html {
   text-align: left;
 }
 
+.header {
+  background-color: #ccc;
+  padding: 15px;
+  position: relative;
+}
+
+.menu-toggle {
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 80%;
+  max-width: 300px;
+  transition: 0.4s ease;
+  z-index: 1000;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.menu-background {
+  background-color: #007BFF;
+  height: 100%;
+  width: 100%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.menu-background ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-background li {
+  margin: 20px 0;
+}
+
+.menu-background a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
 .card {
   transform: scale(1);
   cursor: pointer;
