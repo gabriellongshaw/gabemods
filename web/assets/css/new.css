@@ -75,52 +75,58 @@ body, html {
 
 .header {
   width: 100%;
-  background-color: #1e1e1e; /* Dark gray */
+  height: 56px;
+  background-color: #1e1e1e;
   display: flex;
   align-items: center;
-  position: relative;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1002;
 }
 
-.header-logo {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  margin-left: 12px;
-  object-fit: cover;
-}
-
-/* Menu icon */
+/* MENU ICON */
 .menu-toggle {
   width: 30px;
-  height: 25px;
+  height: 24px;
+  margin-left: 16px;
   cursor: pointer;
   position: relative;
-  z-index: 1003; /* Stay above side menu */
+  z-index: 1003;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .menu-toggle span {
-  display: block;
   height: 3px;
-  background: #fff; /* Light color for visibility */
-  margin: 5px 0;
-  transition: 0.4s;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* Transform into X */
+/* X animation */
 .menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(10px) rotate(45deg);
 }
-
 .menu-toggle.open span:nth-child(2) {
   opacity: 0;
 }
-
 .menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
-/* Side Menu — stays fixed */
+/* LOGO */
+.header-logo {
+  width: 36px;
+  height: 36px;
+  margin-left: 12px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* SIDE MENU */
 .side-menu {
   position: fixed;
   top: 0;
@@ -160,20 +166,20 @@ body, html {
   transition: background 0.3s;
 }
 
-/* Active menu item */
+/* ACTIVE MENU ITEM */
 .side-menu .active a {
-  background-color: rgba(0, 123, 255, 0.3); /* Semi-transparent blue */
+  background-color: rgba(0, 123, 255, 0.3);
   border-radius: 12px;
 }
 
-/* Overlay: no padding, just dimming */
+/* OVERLAY (with dim color, no layout shift) */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 50, 0.3); /* Colored dim with reduced opacity */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
@@ -183,11 +189,6 @@ body, html {
 .overlay.show {
   opacity: 1;
   visibility: visible;
-}
-
-/* Page content */
-.content {
-  padding: 20px;
 }
 
 .card {
