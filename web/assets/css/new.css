@@ -74,11 +74,13 @@ body, html {
 }
 
 .header {
-  background-color: #ccc;
+  background-color: #e0e0e0; /* Light gray like Material 3 */
   padding: 15px;
-  position: relative;
+  display: flex;
+  align-items: center;
 }
 
+/* Menu icon */
 .menu-toggle {
   width: 30px;
   height: 25px;
@@ -90,11 +92,12 @@ body, html {
 .menu-toggle span {
   display: block;
   height: 3px;
-  background: #333;
+  background: #B0C0D0; /* Set your own color later */
   margin: 5px 0;
   transition: 0.4s;
 }
 
+/* Hamburger to X */
 .menu-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -107,46 +110,74 @@ body, html {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Side Menu */
 .side-menu {
   position: fixed;
   top: 0;
-  left: -100%;
-  height: 100%;
+  left: -80%;
   width: 80%;
   max-width: 300px;
-  transition: 0.4s ease;
+  height: 100%;
+  background-color: #2b2b2b; /* Dark gray */
+  padding: 80px 20px;
+  box-sizing: border-box;
   z-index: 1000;
+  transition: left 0.4s ease;
 }
 
 .side-menu.open {
   left: 0;
 }
 
-.menu-background {
-  background-color: #007BFF;
-  height: 100%;
-  width: 100%;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-  padding: 60px 20px;
-  box-sizing: border-box;
-}
-
-.menu-background ul {
+.side-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.menu-background li {
-  margin: 20px 0;
+.side-menu li {
+  margin-bottom: 20px;
 }
 
-.menu-background a {
-  color: white;
+.side-menu a {
   text-decoration: none;
+  color: white;
   font-size: 1.2em;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background 0.3s;
 }
+
+/* Active menu item */
+.side-menu .active a {
+  background-color: rgba(0, 123, 255, 0.3); /* Semi-transparent blue */
+  border-radius: 12px;
+}
+
+/* Dim overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Page content */
+.content {
+  padding: 20px;
+
 
 .card {
   transform: scale(1);
