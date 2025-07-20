@@ -1,10 +1,59 @@
 :root {
   --transition: all 0.2s ease;
   --md-icon-font: Material Symbols Rounded;
+
+  /* Light Mode Variables (Default) */
+  --bg-primary: #f0f2f5; /* Body background */
+  --text-primary: #333333; /* Main text color */
+  --text-secondary: #555555; /* Less prominent text, e.g., card p, role-title, button-intro-text */
+  --header-bg: #ffffff;
+  --header-text: #333333; /* Site title color in header */
+  --menu-bg: #ffffff;
+  --menu-text: #333333;
+  --menu-item-hover-bg: #f0f2f5; /* Menu item hover in light mode */
+  --menu-active-bg: rgba(0, 123, 255, 0.15); /* Active menu item background */
+  --menu-active-text: #007bff; /* Active menu item text */
+  --card-bg: rgba(255, 255, 255, 0.8); /* Card background in light mode */
+  --card-border: rgba(0, 0, 0, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --hamburger-color: #333333; /* Hamburger icon color in light mode */
+  --footer-text: #777777;
+  --footer-border: #e0e0e0;
+  --download-button-bg: #A9D3FB; /* Primary button background */
+  --download-button-text: #000; /* Primary button text */
+  --secondary-button-bg: rgba(173, 216, 230, 0.2); /* Secondary button background */
+  --secondary-button-text: #007bff; /* Secondary button text */
+  --overlay-bg: rgba(0, 0, 0, 0.5); /* Overlay background for menu */
+  --fade-overlay-color: rgba(255, 255, 255, 1); /* Content fade overlay */
+}
+
+body.dark {
+  /* Dark Mode Variables */
+  --bg-primary: #121212;
+  --text-primary: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --header-bg: #1e1e1e;
+  --header-text: #e0e0e0;
+  --menu-bg: #1e1e1e;
+  --menu-text: #e0e0e0;
+  --menu-item-hover-bg: #2a2a2a;
+  --menu-active-bg: rgba(144, 202, 249, 0.15);
+  --menu-active-text: #90caf9;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --hamburger-color: #B0C0D0;
+  --footer-text: rgba(255, 255, 255, 0.6);
+  --footer-border: rgba(255, 255, 255, 0.1);
+  --download-button-bg: #90caf9;
+  --download-button-text: #000;
+  --secondary-button-bg: rgba(144, 202, 249, 0.08);
+  --secondary-button-text: #90caf9;
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+  --fade-overlay-color: rgba(0, 0, 0, 1);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 body.font-system {
@@ -23,9 +72,10 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: var(--background-color-light);
-  color: var(--text-color-light);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
 }
 
 body.font-OneUISans {
@@ -68,17 +118,17 @@ body, html {
   padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  font-family: 'Roboto', sans-serif;
-  background-color: #212121;
-  color: #ffffff;
+  font-family: 'Roboto', sans-serif; /* This is a fallback, main font comes from body rule */
   animation: fadeUp 0.8s ease forwards;
 }
 
 .container {
-  padding-top: 66px;
-  max-width: 100%;
+  padding-top: 56px;
+  max-width: 900px;
   margin: 0 auto;
   box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .header,
@@ -91,32 +141,66 @@ body, html {
 .header {
   width: 100%;
   height: 56px;
-  background-color: #1e1e1e;
+  background-color: var(--header-bg);
   display: flex;
   align-items: center;
   padding: 0;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 1002;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add an inner div to your HTML header for proper centering */
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Padding for inner header content */
+  box-sizing: border-box;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.site-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--header-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .main-title {
   margin-left: 20px;
   font-weight: 500;
   font-size: 20px;
+  color: var(--text-primary);
 }
 
 .role-title {
   font-size: 1.3rem;
-  margin: 35px 20px 15px;
-  color: #bbb;
+  margin: 35px 0 15px;
+  color: var(--text-secondary);
   text-align: left;
 }
 
 .menu-toggle {
-  width: 26px; 
-  height: 20px; 
+  width: 26px;
+  height: 20px;
   margin-left: 16px;
   cursor: pointer;
   position: relative;
@@ -124,46 +208,52 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: none;
+  border: none;
+  outline: none;
 }
 
 .menu-toggle span {
   height: 3px;
-  background: #B0C0D0; 
+  background: var(--hamburger-color);
   border-radius: 2px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-origin: left center;
 }
 
 .menu-toggle.open span:nth-child(1) {
-  transform: translateY(8.5px) rotate(45deg); 
+  transform: translateY(8.5px) rotate(45deg);
 }
 .menu-toggle.open span:nth-child(2) {
-  transform: translateX(-100%); 
-  opacity: 0; 
+  transform: translateX(-100%);
+  opacity: 0;
 }
 .menu-toggle.open span:nth-child(3) {
-  transform: translateY(-8.5px) rotate(-45deg); 
+  transform: translateY(-8.5px) rotate(-45deg);
 }
 
 .side-menu {
-  position: fixed; 
+  position: fixed;
   top: 0;
-  left: -80%;
+  left: 0; /* Changed from -80% for transform usage */
   width: 80%;
   max-width: 300px;
   height: 100vh;
-  background-color: #1e1e1e;
+  transform: translateX(-100%); /* Start off-screen */
+  background-color: var(--menu-bg);
   padding: 80px 20px;
   box-sizing: border-box;
   z-index: 1001;
-  transition: left 0.4s ease;
-  overflow-y: auto; 
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother cubic-bezier transition */
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 2px 0 5px var(--card-shadow); /* Using card-shadow for consistent look */
 }
 
 .side-menu.open {
-  left: 0;
+  transform: translateX(0); /* Slide into view */
 }
 
 .side-menu ul {
@@ -178,31 +268,32 @@ body, html {
 
 .side-menu a {
   text-decoration: none;
-  color: white;
+  color: var(--menu-text);
   font-size: 1.2em;
   display: block;
   padding: 10px 15px;
   border-radius: 10px;
-  transition: background 0.2s ease; 
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.side-menu li.current-page a {
-  background-color: rgba(0, 123, 255, 0.3); 
+.side-menu li.active a {
+  background-color: var(--menu-active-bg);
   border-radius: 12px;
+  color: var(--menu-active-text);
 }
 
-.side-menu a:not(.current-page):hover {
-  background-color: rgba(255, 255, 255, 0.08); 
+.side-menu a:hover:not(.active) {
+  background-color: var(--menu-item-hover-bg);
 }
 
-.side-menu a:not(.current-page):active {
-  background-color: rgba(173, 216, 230, 0.15); 
-  transition: background 0.1s ease; 
+.side-menu a:active:not(.active) {
+  background-color: rgba(173, 216, 230, 0.15); /* Keep original touch feedback */
+  transition: background 0.1s ease;
 }
 
-.side-menu li.current-page a:hover,
-.side-menu li.current-page a:active {
-  background-color: rgba(0, 123, 255, 0.4); 
+.side-menu li.active a:hover,
+.side-menu li.active a:active {
+  background-color: rgba(0, 123, 255, 0.4);
 }
 
 .side-menu-settings {
@@ -226,13 +317,14 @@ md-icon-button {
   cursor: pointer;
   outline: none;
   transition: background-color var(--transition);
-  --md-sys-color-on-surface: white; 
+  --md-sys-color-on-surface: white;
 }
 
 md-icon-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Adjust md-icon color based on theme */
 md-icon {
   font-family: var(--md-icon-font);
   font-weight: normal;
@@ -249,15 +341,12 @@ md-icon {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'liga';
-  color: white;
-}
-
-body.dark md-icon {
-  color: white;
+  color: var(--menu-text); /* Use menu-text variable for icon color */
+  transition: color 0.3s ease;
 }
 
 .md-icon {
-  color: #444;
+  color: #444; /* This seems like a specific override, keep as is if intentional */
 }
 
 .overlay {
@@ -266,23 +355,23 @@ body.dark md-icon {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 50, 0.3);
+  background: var(--overlay-bg); /* Use overlay background variable */
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
+  pointer-events: none; /* Allows clicks to pass through when hidden */
+  transition: opacity 0.3s ease; /* Smooth fade for overlay */
   z-index: 1000;
 }
 
 .overlay.show {
   opacity: 1;
-  visibility: visible;
+  pointer-events: auto; /* Allows clicks to register when shown */
 }
 
 .button-intro-text {
     text-align: center;
-    margin: 20px 20px 0;
+    margin: 20px 0 0;
     font-size: 1em;
-    color: #bbb;
+    color: var(--text-secondary); /* Use text-secondary variable */
 }
 
 .card {
@@ -291,26 +380,31 @@ body.dark md-icon {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
   border-radius: 20px;
   padding: 12px 16px;
-  width: calc(100% - 40px);
+  width: calc(100% - 32px);
   max-width: 400px;
   height: 60px;
-  margin: 16px 10px;
-  box-shadow: 0 3px 15px rgba(255, 255, 255, 0.15);
+  margin: 16px auto;
+  box-shadow: 0 3px 15px var(--card-shadow);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background var(--transition), transform var(--transition);
+  border: 1px solid var(--card-border);
+  transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
   text-decoration: none;
-  color: inherit;
+  color: var(--text-primary); /* Card text color */
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.01);
+  background: rgba(255, 255, 255, 0.1); /* Keep original hover opacity for cards */
+  transform: scale(1.02);
+}
+
+.card:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.15); /* Keep original active opacity for cards */
 }
 
 .profile-pic {
@@ -335,7 +429,7 @@ body.dark md-icon {
 
 .card p {
   font-size: 15px;
-  color: rgba(173, 216, 230, 0.6);
+  color: var(--text-secondary);
   margin: 4px 0 0;
   opacity: 0.8;
   line-height: 1.3;
@@ -345,11 +439,12 @@ body.dark md-icon {
   width: 100%;
   text-align: center;
   padding: 20px 0;
-  font-size: 16px; 
-  color: rgba(255, 255, 255, 0.6);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 16px;
+  color: var(--footer-text);
+  border-top: 1px solid var(--footer-border);
   margin-top: 20px;
   box-sizing: border-box;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .social-footer {
@@ -384,7 +479,7 @@ body.dark md-icon {
 .download-button-wrapper {
   display: flex;
   justify-content: center;
-  padding: 5px 20px;
+  padding: 5px 0;
   box-sizing: border-box;
 }
 .download-button-wrapper {
@@ -405,18 +500,18 @@ body.dark md-icon {
   max-width: 400px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .download-button {
-  background-color: #A9D3FB;
-  color: #000;
+  background-color: var(--download-button-bg);
+  color: var(--download-button-text);
 }
 
 .button-2 {
   margin-top: 10px;
-  background-color: rgba(173, 216, 230, 0.08);
-  color: #fff;
+  background-color: var(--secondary-button-bg);
+  color: var(--secondary-button-text);
 }
 
 .download-button:active,
@@ -433,7 +528,7 @@ body.dark md-icon {
 @media (orientation: landscape) and (max-width: 767px) {
   .role-title {
     font-size: 1rem;
-    margin: 35px 20px 15px;
+    margin: 35px 0 15px;
   }
   .card {
     height: 50px;
@@ -478,10 +573,10 @@ body.dark md-icon {
   }
   .role-title {
     font-size: 1rem;
-    margin: 35px 20px 15px;
+    margin: 35px 0 15px;
   }
   .footer {
-    font-size: 14px; 
+    font-size: 14px;
   }
 }
 
@@ -520,16 +615,12 @@ body.dark md-icon {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--fade-overlay-color, rgba(255, 255, 255, 1));
+  background-color: var(--fade-overlay-color);
   z-index: 100000;
   opacity: 0;
   visibility: hidden;
   transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
   pointer-events: none;
-}
-
-body.dark {
-  --fade-overlay-color: rgba(0, 0, 0, 1);
 }
 
 #content-fade-overlay.fade-active {
