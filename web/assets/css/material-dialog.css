@@ -1,97 +1,72 @@
-/* 2025 Gabe Mods (https://gabemods.github.io/about), All Rights Reserved. */
+/* 2025 Gabe Mods (https://gabemods.github.io/about), All Rights Reserved. 
+*/
 
 :root {
   --md-icon-font: Material Symbols Rounded;
-  --transition: all 0.2s ease; /* Ensure this is 'all' for smooth transitions */
-
-  /* Light theme variables for dialogs */
-  --dialog-bg-light: white;
-  --dialog-text-light: black;
-  --dialog-select-bg-light: #f5f8ff;
-  --dialog-select-text-light: #1a73e8;
-  --dialog-select-border-light: #d0d0d0;
-  --dialog-select-active-bg-light: #e0ecff;
-  --dialog-select-active-border-light: #90caf9;
-  --dialog-button-text-light: #1a73e8;
-  --dialog-button-hover-bg-light: rgba(26, 115, 232, 0.08);
-
-  /* Dark theme variables for dialogs */
-  --dialog-bg-dark: #1e1e1e; /* Slightly lighter than #121212 for better contrast */
-  --dialog-text-dark: white;
-  --dialog-select-bg-dark: #2a2a2a;
-  --dialog-select-text-dark: #90caf9;
-  --dialog-select-border-dark: #444;
-  --dialog-select-active-bg-dark: #3a3a3a; /* Darker active for dark theme */
-  --dialog-select-active-border-dark: #90caf9;
-  --dialog-button-text-dark: #90caf9; /* Light blue for buttons */
-  --dialog-button-hover-bg-dark: rgba(144, 202, 249, 0.1); /* Subtle light blue hover */
-
-  /* Specific download dialog colors */
-  --download-dialog-bg-transparent-light: rgba(255, 255, 255, 0.5);
-  --download-dialog-bg-opaque-light: white;
-  --download-dialog-bg-transparent-dark: rgba(10, 10, 10, 0.5);
-  --download-dialog-bg-opaque-dark: #1e1e1e;
-  --download-dialog-text-light: black;
-  --download-dialog-text-dark: white;
+  --transition: 0.2s ease;
 }
 
-/* Base styles for all dialog elements using the native <dialog> tag */
-dialog {
-  border: none;
-  padding: 24px;
-  border-radius: 24px;
-  background-color: var(--dialog-bg-light);
-  color: var(--dialog-text-light);
-  font-family: 'Roboto', sans-serif;
-  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-              0px 3px 14px 2px rgba(0, 0, 0, 0.12),
-              0px 5px 5px -3px rgba(0, 0, 0, 0.2);
-  width: 90vw; /* Maximize width on smaller screens */
-  max-width: 400px; /* Constrain on larger screens */
-  max-height: 90vh; /* Prevent it from becoming too tall */
-  overflow: auto; /* Allow scrolling if content exceeds max-height */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-  /* Positioning and transition for open/close animation */
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.settings-dialog {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.92); /* Start slightly smaller */
+  inset: 0;
+  margin: auto;
+  width: 90vw;
+  max-width: 320px;
+  padding: 24px;
+  border: none;
+  border-radius: 24px;
+  background-color: white;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  z-index: 999;
   opacity: 0;
-  pointer-events: none; /* Initially not interactive */
+  transform: translateY(-20px) scale(0.9);
+  pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 999; /* Ensure dialog is above backdrop */
 }
 
-/* State for when the dialog is explicitly "open" or "showing" */
-dialog.open,
-dialog[open] { /* Use [open] for native dialog behavior */
+.settings-dialog.open {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translateY(0) scale(1);
   pointer-events: auto;
 }
 
-/* State for closing animation */
-dialog.closing {
+.settings-dialog.closing {
   opacity: 0;
-  transform: translate(-50%, -50%) scale(0.92);
+  transform: translateY(-20px) scale(0.9);
   pointer-events: none;
 }
 
-/* Dark mode for dialogs */
-body.dark dialog {
-  background-color: var(--dialog-bg-dark);
-  color: var(--dialog-text-dark);
-}
-
-/* Backdrop styles */
 .backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   opacity: 0;
-  z-index: 998; /* Below dialog, above content */
+  z-index: 998;
   transition: opacity 250ms ease;
-  pointer-events: none; /* Initially not interactive */
+  pointer-events: none;
 }
 
 .backdrop.show {
@@ -99,132 +74,128 @@ body.dark dialog {
   pointer-events: auto;
 }
 
-.backdrop.hidden { /* For immediate hiding without transition */
+.backdrop.hidden {
   display: none;
-  opacity: 0;
-  pointer-events: none;
 }
 
-/* Specific styles for select dropdowns within dialogs */
-dialog select {
+.settings-dialog select {
   width: 100%;
   padding: 14px;
   margin-top: 10px;
   border: none;
   border-radius: 30px;
-  background-color: var(--dialog-select-bg-light);
-  color: var(--dialog-select-text-light);
+  background-color: #f5f8ff;
+  color: #1a73e8;
   font-weight: bold;
   font-size: 16px;
-  appearance: none; /* Remove default dropdown arrow */
+  appearance: none;
   text-align: center;
-  box-shadow: inset 0 0 0 1px var(--dialog-select-border-light);
-  transition: background-color var(--transition), color var(--transition), box-shadow var(--transition);
+  box-shadow: inset 0 0 0 1px #d0d0d0;
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
-dialog select:active,
-dialog select:focus {
-  background-color: var(--dialog-select-active-bg-light);
-  box-shadow: inset 0 0 0 1px var(--dialog-select-active-border-light);
-  outline: none; /* Remove default focus outline */
+.settings-dialog select:active {
+  background-color: #e0ecff;
+  box-shadow: inset 0 0 0 1px #90caf9;
 }
 
-/* Dark mode for select dropdowns */
-body.dark dialog select {
-  background-color: var(--dialog-select-bg-dark);
-  color: var(--dialog-select-text-dark);
-  box-shadow: inset 0 0 0 1px var(--dialog-select-border-dark);
+.settings-dialog select:focus {
+  background-color: #e0ecff;
+  box-shadow: inset 0 0 0 1px #90caf9;
 }
 
-body.dark dialog select:active,
-body.dark dialog select:focus {
-  background-color: var(--dialog-select-active-bg-dark);
-  box-shadow: inset 0 0 0 2px var(--dialog-select-active-border-dark);
+body.dark .settings-dialog {
+  background-color: #121212;
+  color: white;
 }
 
-/* Dialog content headings */
-.modal-content h2,
-.material-dialog-content h3 {
+body.dark .settings-dialog select {
+  background-color: #1e1e1e;
+  color: #90caf9;
+  box-shadow: inset 0 0 0 1px #444;
+}
+
+body.dark .settings-dialog select:active,
+body.dark .settings-dialog select:focus {
+  background-color: #2a2a2a;
+  box-shadow: inset 0 0 0 2px #90caf9;
+}
+
+.settings-dialog .modal-content h2 {
   margin-top: 0;
   margin-bottom: 16px;
   font-weight: 500;
   font-size: 1.5rem;
-  color: inherit; /* Inherit color from dialog */
 }
 
-/* Dialog content paragraphs */
-.material-dialog-content p {
-    font-size: 1rem;
-    color: inherit; /* Inherit color from dialog */
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-
-/* Labels within dialogs */
-dialog label {
+.settings-dialog label[for="theme-select"] {
   font-size: 1.1rem;
   font-weight: 450;
   display: block;
-  margin-top: 15px; /* Add some spacing between settings */
   margin-bottom: 0px;
 }
-dialog label:first-of-type { /* No top margin for the very first label */
-    margin-top: 0;
+
+.settings-dialog label[for="font-select"] {
+  font-size: 1.1rem;
+  font-weight: 450;
+  display: block;
+  margin-bottom: 0px;
 }
 
+.settings-dialog label[for="background-select"] {
+  font-size: 1.1rem;
+  font-weight: 450;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
 
-/* Action buttons container */
-.modal-actions,
-.material-dialog-actions {
+.modal-actions {
   display: flex;
-  justify-content: flex-end; /* Align to the right */
+  justify-content: flex-end;
   margin-top: 12px;
-  gap: 8px; /* Spacing between buttons */
 }
 
-/* Base button styles for dialog actions */
-.close-button,
-.reset-button,
-.material-dialog-close-button {
+.close-button {
   background: none;
   border: none;
-  color: var(--dialog-button-text-light);
-  font-family: 'Open Sans', sans-serif; /* Use actual font family */
+  color: #1a73e8;
+  font: "Open Sans";
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
   padding: 8px 16px;
-  transition: background-color var(--transition), color var(--transition);
+  transition: color 0.2s ease;
   border-radius: 50px;
-  outline: none; /* Remove default focus outline */
 }
 
 .close-button:hover,
-.close-button:focus,
-.reset-button:hover,
+.close-button:focus {
+  color: #174ea6;
+  background-color: rgba(26, 115, 232, 0.08);
+  outline: none;
+}
+
+.reset-button {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  font: "Open Sans";
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color 0.2s ease;
+  border-radius: 50px;
+}
+
+.rese-button:hover,
 .reset-button:focus {
-  color: #174ea6; /* Darker blue on hover/focus for light theme */
-  background-color: var(--dialog-button-hover-bg-light);
+  color: #174ea6;
+  background-color: rgba(26, 115, 232, 0.08);
+  outline: none;
 }
 
-/* Dark mode for dialog buttons */
-body.dark .close-button,
-body.dark .reset-button,
-body.dark .material-dialog-close-button {
-  color: var(--dialog-button-text-dark);
-}
-
-body.dark .close-button:hover,
-body.dark .close-button:focus,
-body.dark .reset-button:hover,
-body.dark .reset-button:focus {
-  color: var(--dialog-button-text-dark); /* Keep same color */
-  background-color: var(--dialog-button-hover-bg-dark);
-}
-
-
-/* Toggle setting layout */
 .toggle-setting {
   display: flex;
   justify-content: space-between;
@@ -236,23 +207,15 @@ body.dark .reset-button:focus {
 
 .setting-label {
   font-size: 1rem;
-  font-weight: 500;
-  color: var(--dialog-text-light); /* Adjusted to dialog text color */
-  flex-grow: 1; /* Allow label to take available space */
+  color: var(--text-color);
 }
 
-body.dark .setting-label {
-    color: var(--dialog-text-dark);
-}
-
-/* Switch (toggle) component */
 .switch {
   position: relative;
   display: inline-block;
   width: 52px;
   height: 28px;
   touch-action: none;
-  flex-shrink: 0; /* Prevent switch from shrinking */
 }
 
 .switch input {
@@ -307,7 +270,114 @@ body.dark .slider:before {
   background-color: #e0e0e0;
 }
 
-/* Info button next to toggles */
+.setting-item .setting-label {
+    display: block; 
+    margin-bottom: 6px; 
+    font-weight: 500;
+    color: var(--text-light);
+    font-size: 1rem; 
+}
+
+body.dark .setting-item .setting-label {
+    color: var(--text-dark);
+}
+
+.background-image-controls {
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    gap: 8px; 
+    margin-bottom: 12px; 
+}
+
+.image-picker-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 5px; 
+    padding: 6px 10px; 
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px; 
+    background-color: var(--card-light);
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 0.9rem; 
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03); 
+    white-space: nowrap;
+    margin-top: 5px;
+}
+
+body.dark .image-picker-button {
+    border-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--card-dark);
+    color: var(--text-dark);
+}
+
+.image-picker-button:hover {
+    background-color: rgba(0, 0, 0, 0.04); 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+body.dark .image-picker-button:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.image-picker-button:active {
+    transform: translateY(0.5px); 
+    box-shadow: 0 0px 1px rgba(0, 0, 0, 0.05);
+}
+
+.image-picker-button md-icon {
+    font-size: 15px; 
+    color: inherit;
+}
+
+.image-picker-button.clear-button {
+    background-color: var(--card-light);
+color: var(--text-light);
+}
+
+body.dark .image-picker-button.clear-button {
+  color: white;
+}
+
+.image-picker-button.clear-button:hover {
+    background-color: #d33a3a;
+    border-color: #d33a3a;
+}
+
+.background-status {
+
+    margin-left: 5px; 
+    font-size: 1rem; 
+    color: #888;
+    text-align: left;
+    padding-left: 0; 
+}
+
+body.dark .background-status {
+    color: #999;
+}
+
+.settings-modal .setting-item {
+    margin-bottom: 16px; 
+}
+
+.toggle-setting {
+    display: flex; 
+    align-items: center; 
+
+}
+
+.setting-label {
+
+    flex-grow: 1;
+
+    order: 1;
+}
+
 .info-button {
     background: none;
     border: none;
@@ -318,9 +388,11 @@ body.dark .slider:before {
     align-items: center;
     justify-content: center;
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    margin-left: 8px; /* Spacing from label */
-    flex-shrink: 0; /* Prevent button from shrinking */
-    outline: none; /* Remove default focus outline */
+    margin-left: 0px; 
+    margin-right: 45px; 
+    order: 2; 
+    position: relative;
+    top: -2px; 
 }
 
 .info-button:hover {
@@ -337,36 +409,204 @@ body.dark .slider:before {
     height: 20px;
 }
 
-/* Download Dialog Specifics */
+.switch {
+    order: 3; 
+
+}
+
+.material-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+    background-color: #FFFBFE;
+    padding: 24px;
+    border-radius: 28px;
+    box-shadow: 0px 8px 10px 1px rgba(0,0,0,0.14),
+                0px 3px 14px 2px rgba(0,0,0,0.12),
+                0px 5px 5px -3px rgba(0,0,0,0.2);
+    max-width: 500px;
+    width: calc(100% - 48px);
+    text-align: left;
+    z-index: 1000;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.material-dialog.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+.material-dialog-content h3 {
+    font-size: 1.5rem;
+    color: #1c1b1f;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.material-dialog-content p {
+    font-size: 1rem;
+    color: #49454f;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.material-dialog-actions {
+    display: flex;
+    justify-content: right; 
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.material-dialog-close-button {
+    background-color: transparent;
+    color: #6750A4;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.material-dialog-close-button:hover {
+    background-color: #EADDFF;
+}
+
+.material-dialog-close-button:active {
+    background-color: #EADDFF;
+    color: #6750A4;
+}
+
+dialog:not([open]) {
+  display: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+dialog {
+  border: none;
+  padding: 0;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+dialog.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: all;
+}
+
+dialog.hide {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+  pointer-events: none;
+}
+
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0);
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease;
+}
+
+#backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#backdrop.hidden {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+dialog::backdrop {
+  background-color: transparent;
+  backdrop-filter: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .download-dialog {
-  background-color: var(--download-dialog-bg-transparent-light);
+  width: 320px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(15px);
-  color: var(--download-dialog-text-light);
-  text-align: center; /* Center content within this specific dialog */
+  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--text-color-light);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(-20px) scale(0.9);
+  margin: 0;
+  overflow: hidden;
+  max-height: 95vh;
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+.download-dialog.open {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.download-dialog.closing {
+  opacity: 0;
+  transform: translate(-50%, -50%) translateY(-20px) scale(0.9);
+  pointer-events: none;
 }
 
 body.dark .download-dialog {
-  background-color: var(--download-dialog-bg-transparent-dark);
-  color: var(--download-dialog-text-dark);
+  background-color: rgba(10, 10, 10, 0.5);
+  color: var(--text-color-dark);
 }
 
 .download-dialog.opaque {
   backdrop-filter: none;
-  background-color: var(--download-dialog-bg-opaque-light);
+  background-color: var(--opaque-dialog-bg-light);
 }
 
 body.dark .download-dialog.opaque {
-  background-color: var(--download-dialog-bg-opaque-dark);
+  background-color: var(--opaque-dialog-bg-dark);
 }
 
 .download-dialog .modal-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center items horizontally within its column */
+  align-items: center;
   justify-content: center;
   gap: 12px;
   width: 100%;
-  padding: 15px; /* Adjust padding if needed for internal spacing */
+  padding: 15px;
   box-sizing: border-box;
   overflow-y: auto;
 }
@@ -407,7 +647,7 @@ body.dark .download-dialog.opaque {
   text-decoration: none;
   transition: var(--transition);
   box-shadow: none;
-  min-height: auto; /* Override general button styles */
+  min-height: auto;
   text-transform: none;
   letter-spacing: normal;
 }
@@ -454,7 +694,7 @@ body.dark .download-dialog.opaque {
   border-radius: 20px;
   padding: 8px;
   cursor: pointer;
-  align-self: flex-end; /* Align this specific close button to the right */
+  align-self: flex-end;
   font-size: 16px;
   font-weight: 500;
   text-transform: capitalize;

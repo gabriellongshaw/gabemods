@@ -145,7 +145,7 @@ body, html {
 }
 
 .side-menu {
-  position: fixed;
+  position: fixed; /* Ensures it stays in place when scrolling */
   top: 0;
   left: -80%;
   width: 80%;
@@ -156,7 +156,7 @@ body, html {
   box-sizing: border-box;
   z-index: 1001;
   transition: left 0.4s ease;
-  overflow-y: hidden;
+  overflow-y: auto; /* Allow scrolling within the menu if content is too long */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -183,30 +183,29 @@ body, html {
   display: block;
   padding: 10px 15px;
   border-radius: 10px;
-  transition: background 0.3s ease; /* Default transition */
+  transition: background 0.2s ease; /* Quicker transition for interactions */
 }
 
-/* This is the key: Only apply the blue highlight to the active page */
-.side-menu li.active a {
+/* Style for the CURRENTLY SELECTED page */
+.side-menu li.current-page a {
   background-color: rgba(0, 123, 255, 0.3); /* Persistent highlight for the current page */
   border-radius: 12px;
-  transition: background 0.3s ease; /* Keep its own transition */
 }
 
-/* Apply hover effect ONLY to links that are NOT active */
-.side-menu a:not(.active):hover {
+/* Hover effect for NON-CURRENT links */
+.side-menu a:not(.current-page):hover {
   background-color: rgba(255, 255, 255, 0.08); /* Subtle light grey/blue hover */
 }
 
-/* Apply press (active) effect ONLY to links that are NOT active */
-.side-menu a:not(.active):active {
+/* Press (active) effect for NON-CURRENT links */
+.side-menu a:not(.current-page):active {
   background-color: rgba(173, 216, 230, 0.15); /* Slightly more prominent blue-grey on press */
   transition: background 0.1s ease; /* Quick transition for press */
 }
 
-/* Ensure the active page link still shows interaction on hover/press */
-.side-menu li.active a:hover,
-.side-menu li.active a:active {
+/* Ensure current page maintains its style on hover/press, maybe slightly darker */
+.side-menu li.current-page a:hover,
+.side-menu li.current-page a:active {
   background-color: rgba(0, 123, 255, 0.4); /* Active page remains distinctly highlighted, slightly darker on interaction */
 }
 
