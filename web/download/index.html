@@ -2,264 +2,178 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Gabe Mods - App Download</title>
-  <meta name="description" content="Download the Gabe Mods App – Your hub for high-quality, malware-free mods for Android and iOS.">
-
-  <!-- Fonts & Styles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Gabe Mods - Download</title>
+  <meta name="google-site-verification" content="HihCOsgH0UVQPbqo7pMEgDNXIXR16hIm907pXZPI3w8" />
+  <meta name="description" content="Gabe Mods provides high-quality, malware-free mods for Android and iOS including Geometry Dash, Subway Surfers, Grand Battle Royale and more.">
+  <meta name="keywords" content="Gabe Mods, Android mods, iOS mods, Geometry Dash mod, Spotify mod, APK downloads, game mods">
+  <meta name="author" content="Gabe Mods">
+  <meta property="og:title" content="Gabe Mods">
+  <meta property="og:description" content="High-quality Android and iOS mods. Safe, free, and easy to install.">
+  <meta property="og:image" content="assets/images/IMG_7790.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="google-site-verification" content="HihCOsgH0UVQPbqo7pMEgDNXIXR16hIm907pXZPI3w8"/>
+  <meta name="msvalidate.01" content="D8E2192242F2093B4379471689E3082A"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
-
-  <!-- Material 3 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@material/web@latest/dist/material.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/@material/web@latest/dist/material.min.js"></script>
-
-  <!-- Barba.js & GSAP -->
-  <script src="https://unpkg.com/@barba/core"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
-  <link rel="icon" type="image/x-icon" sizes="32x32" href="../assets/images/favicon-32x32.ico">
-  <link rel="icon" type="image/x-icon" sizes="16x16" href="../assets/images/favicon-16x16.ico">
-  <link rel="manifest" href="../assets/site.webmanifest">
-  
-  <style>
-    .button-group {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin: 1.5rem 0;
+   <link rel="stylesheet" href="../assets/css/material-dialog.css">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="assets/favicon/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
+  <script type="importmap">
+  {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
     }
-  </style>
+  </script>
+<script type="module">
+  import '@material/web/all.js';
+  import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+  
+  document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+</script>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <img src="../assets/images/IMG_7790.png" alt="Gabe Mods Logo" class="logo-image">
+  <div class="overlay" id="overlay"></div>
+
+  <header class="header">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <h1 class="page-title">Download App</h1>
-    <div class="menu-icon" id="menu-icon">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
+    <span class="main-title">Gabe Mods</span>
   </header>
 
-  <!-- Navigation Menu -->
-  <nav class="menu sliding-menu" id="menu">
+  <nav class="side-menu" id="side-menu">
     <ul>
-      <li>
-        <a href="../index.html" data-barba="transition">• Home</a>
-      </li>
-      
-      <li>
-        <a href="../mods/" data-barba="transition">• Mods</a>
-      </li>
-
-      <li>
-        <a href="../contact/" data-barba="transition">• Contact</a>
-      </li>
-
-      <li>
-        <a href="../settings/" data-barba="transition">• Settings</a>
-      </li>
-
-      <li class="more-toggle">
-        <span id="more-button"><span class="arrow" id="arrow">▾</span> More</span>
-        <ul id="more-links" class="more-links">
-          <li>
-            <a href="../games/" data-barba="transition">• Games</a>
-          </li>
-
-          <li>
-            <a href="../learn-to-code/" data-barba="transition">• Learn to Code</a>
-          </li>
-        </ul>
-      </li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="mods/">Mods</a></li>
+      <li class="active"><a href="download/">Download</a></li>
     </ul>
+    <div class="side-menu-settings">
+ <md-icon-button id="settings-button" aria-label="Settings">
+   <md-icon>settings</md-icon>
+ </md-icon-button>
+    </div>
   </nav>
-  
-  <!-- Main Content -->
-  <section id="download">
-    <p>The easiest way to install and manage mods directly from your device.</p>
 
-    <!-- Android & iOS Buttons -->
-    <div class="button-group">
-      <a href="#" class="android-btn" onclick="showDownloadPopup('../assets/Gabe-Mods-v1.0.1.apk')">Download for Android</a>
-      <a href="#" class="ios-btn" onclick="showDownloadPopup('../gabe-mods-ios/')">Download for iOS</a>
+  <div class="container">
+    <p class="button-intro-text">Click the buttons below to download the app or find out more about me</p>
+    <div class="download-button-wrapper">
+      <a href="Download-link" class="download-button">Download</a>
+    </div>
+    <div class="button-2-wrapper">
+      <a href="https://gabemods.github.io/about" class="button-2">About</a>
     </div>
 
-    <!-- Popup -->
-    <div id="download-popup" class="hidden">
-      <div class="popup-content">
-        <h3>Download Gabe Mods App (Direct Download)</h3>
-        <p>Click below to start your download.</p>
-        <a id="download-link" href="" class="mdc-button">Download Now</a>
-        <button onclick="hidePopup()" class="mdc-button cancel-btn">Cancel</button>
+    <h2 class="role-title">Credits</h2>
+    <a href="https://gabemods.github.io" target="_blank" class="card">
+      <img class="profile-pic" src="assets/images/IMG_7790.jpeg" alt="Gabe Mods" />
+      <div class="text-content">
+        <h1>Gabe Mods</h1>
+        <p>Founder, Owner and Main Creator.</p>
+      </div>
+    </a>
+
+    <a href="https://bocajthomas.github.io" target="_blank" class="card">
+      <img class="profile-pic" src="assets/images/bocajthomas.jpeg" alt="bocajthomas" />
+      <div class="text-content">
+        <h1>bocajthomas</h1>
+        <p>Web | Software Developer</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="footer">
+    © 2025 Gabe Mods. All rights reserved.
+
+    <div class="social-footer">
+      <a href="https://github.com/gabemods" class="footer-social-button" title="GitHub" target="_blank" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577v-2.257c-3.338.726-4.042-1.612-4.042-1.612-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.729.082-.729 1.205.086 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.235-3.221-.123-.303-.536-1.527.117-3.18 0 0 1.008-.322 3.3 1.23a11.517 11.517 0 0 1 3.003-.404 11.5 11.5 0 0 1 3.003.404c2.292-1.552 3.3-1.23 3.3-1.23.653 1.653.24 2.877.118 3.18.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.371.823 1.103.823 2.222v3.293c0 .32.192.694.8.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+
+      <a href="https://t.me/Gabriel_Mods_Channel" class="footer-social-button" title="Telegram" target="_blank" aria-label="Telegram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407 407" fill="currentColor">
+          <path d="M6.7 207.2 94.5 240l34 109.4c2.2 7 10.7 9.6 16.4 4.9l49-40a14.6 14.6 0 0 1 17.7-.4L300 378c6 4.4 14.7 1.1 16.2-6.2l64.7-311.3c1.6-8-6.2-14.7-13.9-11.8L6.6 187.8c-8.9 3.5-8.8 16 .1 19.4M123 222.5l171.6-105.7c3-2 6.3 2.2 3.6 4.7L156.6 253.2c-5 4.7-8.2 10.9-9 17.6l-5 35.8c-.6 4.8-7.3 5.2-8.6.6L115.5 242c-2.1-7.5 1-15.4 7.5-19.5"/>
+        </svg>
+      </a>
+
+      <a href="mailto:contact@gabemods.website@gmail.com" class="footer-social-button" title="Email" aria-label="Email">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  
+  <dialog id="settings-modal" class="settings-dialog">
+  <div class="modal-content">
+    <h2>Settings</h2>
+    <label for="theme-select">Theme</label>
+    <select id="theme-select">
+      <option value="system">System</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+    <div class="setting-row">
+      <div class="toggle-setting">
+        <span class="setting-label">Translucency</span>
+        <label class="switch">
+          <input type="checkbox" id="translucency-toggle">
+          <span class="slider"></span>
+        </label>
       </div>
     </div>
-
-    <!-- Guide -->
-    <section id="install-guide">
-      <h2>How to Install the APK on Android</h2>
-      <ol>
-        <li>
-          <strong>Download the APK:</strong>
-          <p>Tap the download button above to download the APK file to your Android device.</p>
-        </li>
-        <li>
-          <strong>Allow Unknown Sources:</strong>
-          <p>If you see a message that installing from unknown sources is blocked:</p>
-          <ul>
-            <li>Go to <em>Settings</em> > <em>Security</em> or <em>Privacy</em>.</li>
-            <li>Enable <em>Install unknown apps</em> for your browser or file manager.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Install the APK:</strong>
-          <p>Open your Downloads folder or notification, then tap the APK file. Confirm the installation when prompted.</p>
-        </li>
-        <li>
-          <strong>Done!</strong>
-          <p>Once installed, open the app from your home screen or app drawer.</p>
-        </li>
-      </ol>
-      <p><strong>Note:</strong> You may see a security warning. APKs from Gabe Mods are safe and malware-free.</p>
-    </section>
-  </section>
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Gabe Mods | All Rights Reserved</p>
-  </footer>
-
-  <!-- Popup JS -->
-  <script>
-    function showDownloadPopup(downloadUrl) {
-        let popup = document.getElementById("download-popup");
-        let downloadLink = document.getElementById("download-link");
-
-        if (popup && downloadLink) {
-            downloadLink.href = downloadUrl;
-
-            popup.style.display = "flex";
-            setTimeout(() => {
-                popup.classList.remove("hide");
-                popup.classList.add("show");
-            }, 10);
-        } else {
-            console.error("Popup elements not found!");
-        }
-    }
-
-    function hidePopup() {
-        let popup = document.getElementById("download-popup");
-
-        if (popup) {
-            popup.classList.remove("show");
-            popup.classList.add("hide");
-
-            setTimeout(() => {
-                popup.style.display = "none";
-            }, 300);
-        }
-    }
-  </script>
-
-  <!-- Menu JS -->
-  <script>
-    const menuIcon = document.getElementById('menu-icon');
-    const menu = document.getElementById('menu');
-    const menuLinks = document.querySelectorAll('.menu ul li a');
-
-    menuIcon.addEventListener('click', () => {
-      menu.classList.toggle('visible');
-      menuIcon.classList.toggle('active');
-    });
-
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('visible');
-        menuIcon.classList.remove('active');
-      });
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-        menu.classList.remove('visible');
-        menuIcon.classList.remove('active');
-      }
-    });
-
-    if (localStorage.getItem('theme') === 'light') {
-      document.body.classList.add('light-mode');
-    }
-  </script>
-
-  <!-- Barba Transition -->
-  <script>
-  gsap.registerPlugin(ScrollTrigger);
-
-  const animatedEls = document.querySelectorAll("section p, section h2, section ul li, section a");
-
-  animatedEls.forEach(el => {
-    gsap.fromTo(el,
-      { opacity: 0, y: 20 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 90%",
-          end: "bottom 10%",
-          toggleActions: "play none none reverse",
-          once: false
-        }
-      }
-    );
-  });
-</script>
-  <script>
-  const moreButton = document.getElementById('more-button');
-  const moreLinks = document.getElementById('more-links');
-  const arrow = document.getElementById('arrow');
-
-  moreButton.addEventListener('click', () => {
-    moreLinks.classList.toggle('show');
-    arrow.classList.toggle('rotated');
-  });
-</script>
-
-  <script>
-  function animatePageTitle(container = document) {
-    const title = container.querySelector('.page-title');
-    if (title) {
-      gsap.fromTo(title,
-        { opacity: 0, scale: 0.5 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: 'back.out(1.7)' // You can try 'elastic.out(1, 0.5)' for more bounce
-        }
-      );
-    }
-  }
-
-  // Animate title on first load
-  window.addEventListener('DOMContentLoaded', () => {
-    animatePageTitle();
-  });
-
-  // Animate title on Barba page transition
-  barba.hooks.afterEnter((data) => {
-    animatePageTitle(data.next.container);
-  });
-</script>
+    <div class="setting-row">
+      <label for="font-select">Font</label>
+      <select id="font-select">
+        <option value="system">System Default</option>
+        <option value="OneUISans">OneUISans</option>
+        <option value="Roboto">Roboto</option>
+        <option value="Open Sans">Open Sans</option>
+      </select>
+    </div>
+    <div class="setting-item">
+      <label for="background-select" class="setting-label">Background Image:</label>
+      <div class="background-image-controls">
+        <button id="choose-background-button" class="image-picker-button">
+          <md-icon>image</md-icon> Image picker
+        </button>
+        <button id="clear-background-button" class="image-picker-button clear-button">
+          <md-icon>close</md-icon> Clear
+        </button>
+        
+        <input type="file" id="image-upload-input" accept="image/*" style="display: none;">
+        
+        <span id="current-background-status" class="background-status">None selected</span>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button id="reset-settings-button" class="reset-button">Reset</button>
+      <button id="close-settings" class="close-button">Close</button>
+    </div>
+  </div>
+</dialog>
+  <div id="backdrop" class="backdrop hidden"></div>
+   <div id="content-fade-overlay"></div>
+ <script type="module" src="../assets/js/main.js"></script>
+ <script type="module" src="../assets/js/material-dialog.js"></script>
+ <script type="module" src="../assets/js/themes.js"></script>
+ <script type="module" src="../assets/js/fonts.js"></script>
+ <script type="module" src="../assets/js/download-dialog.js"></script>
 </body>
 </html>
