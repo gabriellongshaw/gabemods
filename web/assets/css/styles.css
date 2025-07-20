@@ -2,7 +2,6 @@
   --transition: all 0.2s ease;
   --md-icon-font: Material Symbols Rounded;
 
-  /* Original Light Mode (if defined later, otherwise default as is) */
   --background-color-light: #f0f2f5;
   --text-color-light: #333333;
 }
@@ -26,8 +25,8 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: var(--background-color-light); /* Ensure this uses a variable for light mode */
-  color: var(--text-color-light); /* Ensure this uses a variable for light mode */
+  background-color: var(--background-color-light); 
+  color: var(--text-color-light); 
   overflow-x: hidden;
 }
 
@@ -72,18 +71,18 @@ body, html {
   overflow-x: hidden;
   overflow-y: auto;
   font-family: 'Roboto', sans-serif;
-  background-color: #212121; /* This will be overridden by --background-color-light if that's defined for light mode */
-  color: #ffffff; /* This will be overridden by --text-color-light if that's defined for light mode */
+  background-color: #212121; 
+  color: #ffffff; 
   animation: fadeUp 0.8s ease forwards;
 }
 
 .container {
-  padding-top: 56px; /* Adjust padding-top to account for fixed header height (56px) */
-  max-width: 900px; /* Set a max-width for content to have equal spacing */
-  margin: 0 auto; /* Center the container */
+  padding-top: 56px; 
+  max-width: 900px; 
+  margin: 0 auto; 
   box-sizing: border-box;
-  padding-left: 20px; /* Add padding for left/right spacing */
-  padding-right: 20px; /* Add padding for left/right spacing */
+  padding-left: 20px; 
+  padding-right: 20px; 
 }
 
 .header,
@@ -100,21 +99,21 @@ body, html {
   display: flex;
   align-items: center;
   padding: 0;
-  position: sticky; /* Make header sticky */
-  top: 0; /* Stick to the top */
+  position: fixed; 
+  top: 0; 
   left: 0;
   z-index: 1002;
 }
 
 .main-title {
-  margin-left: 20px; /* Keep original margin-left for main-title */
+  margin-left: 20px; 
   font-weight: 500;
   font-size: 20px;
 }
 
 .role-title {
   font-size: 1.3rem;
-  margin: 35px 0 15px; /* Removed fixed left/right margin to allow container padding to manage */
+  margin: 35px 0 15px; 
   color: #bbb;
   text-align: left;
 }
@@ -191,6 +190,11 @@ body, html {
   transition: background 0.3s ease;
 }
 
+.side-menu li.current-page a {
+  background-color: rgba(0, 123, 255, 0.3);
+  border-radius: 12px;
+}
+
 .side-menu li.active a {
   background-color: rgba(0, 123, 255, 0.3);
   border-radius: 12px;
@@ -209,7 +213,6 @@ body, html {
 .side-menu li.active a:active {
   background-color: rgba(0, 123, 255, 0.4);
 }
-
 
 .side-menu-settings {
   position: absolute;
@@ -267,7 +270,7 @@ body.dark md-icon {
 
 .button-intro-text {
     text-align: center;
-    margin: 20px 0 0; /* Removed fixed left/right margin */
+    margin: 20px 0 0; 
     font-size: 1em;
     color: #bbb;
 }
@@ -281,15 +284,15 @@ body.dark md-icon {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 12px 16px;
-  width: calc(100% - 32px); /* Adjusted width to account for 16px padding on each side */
+  width: calc(100% - 32px); 
   max-width: 400px;
   height: 60px;
-  margin: 16px auto; /* Centered cards horizontally */
+  margin: 16px auto; 
   box-shadow: 0 3px 15px rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Slower, smoother transition */
+  transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
   text-align: left;
   text-decoration: none;
   color: inherit;
@@ -297,12 +300,12 @@ body.dark md-icon {
 
 .card:hover {
   background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.02); /* Slightly increased scale for a smoother feel */
+  transform: scale(1.02); 
 }
 
 .card:active {
-  transform: scale(0.98); /* Added an active state for a subtle press effect */
-  background: rgba(255, 255, 255, 0.15); /* Slightly darker on active */
+  transform: scale(0.98); 
+  background: rgba(255, 255, 255, 0.15); 
 }
 
 .profile-pic {
@@ -376,7 +379,7 @@ body.dark md-icon {
 .download-button-wrapper {
   display: flex;
   justify-content: center;
-  padding: 5px 0; /* Removed fixed left/right padding */
+  padding: 5px 0; 
   box-sizing: border-box;
 }
 .download-button-wrapper {
@@ -425,7 +428,7 @@ body.dark md-icon {
 @media (orientation: landscape) and (max-width: 767px) {
   .role-title {
     font-size: 1rem;
-    margin: 35px 0 15px; /* Adjust as per new container padding */
+    margin: 35px 0 15px; 
   }
   .card {
     height: 50px;
@@ -470,7 +473,7 @@ body.dark md-icon {
   }
   .role-title {
     font-size: 1rem;
-    margin: 35px 0 15px; /* Adjust as per new container padding */
+    margin: 35px 0 15px; 
   }
   .footer {
     font-size: 14px;
