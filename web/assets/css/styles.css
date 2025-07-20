@@ -5,7 +5,7 @@
   --background-color-light: #f0f2f5;
   --text-color-light: #333333;
 
-  /* Responsive font sizes using clamp for better control - Adjusted values */
+  /* Responsive font sizes using clamp for better control */
   --font-size-base: 1rem; /* Base for rem units, often 16px */
   --font-size-xs: clamp(0.75rem, 1.8vw, 0.9rem); /* Extra small text for details */
   --font-size-sm: clamp(0.9rem, 2.2vw, 1rem);   /* Small text that scales well */
@@ -18,7 +18,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
-/* Font declarations (kept as is, assuming these are handled correctly elsewhere) */
+/* Font declarations */
 body.font-system {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
@@ -56,7 +56,7 @@ body.font-Open-Sans {
   font-family: 'Open Sans', sans-serif;
 }
 
-/* Animations (kept as is, they are fine) */
+/* Animations */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -81,22 +81,20 @@ body, html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  height: 100%; /* Ensure full height for layout */
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   background-color: #212121;
   color: #ffffff;
   animation: fadeUp 0.8s ease forwards;
-  /* Default font-weight for body text for readability */
   font-weight: 400;
 }
 
 /* --- Container for main content --- */
 .container {
-  padding-top: clamp(56px, 10vh, 80px); /* Adapt to header height */
+  padding-top: clamp(56px, 10vh, 80px);
   max-width: 900px;
   margin: 0 auto;
   box-sizing: border-box;
-  /* Reduced horizontal padding for cards to be wider */
   padding-left: clamp(0.75rem, 4vw, 1.5rem);
   padding-right: clamp(0.75rem, 4vw, 1.5rem);
 }
@@ -111,7 +109,7 @@ body, html {
 /* --- Header --- */
 .header {
   width: 100%;
-  height: 56px; /* Keeping a fixed height for consistency */
+  height: 56px;
   background-color: #1e1e1e;
   display: flex;
   align-items: center;
@@ -123,28 +121,26 @@ body, html {
 }
 
 .main-title {
-  /* Adjusted margin and font size for better scaling - Smaller */
   margin-left: clamp(1rem, 4vw, 1.25rem);
-  font-weight: 500; /* Good font-weight for titles */
-  font-size: var(--font-size-lg); /* Using --font-size-lg for slightly smaller main title */
+  font-weight: 500;
+  font-size: var(--font-size-lg);
   flex-grow: 1;
   text-align: left;
 }
 
 .role-title {
-  /* Adjusted font size and vertical margin for readability */
   font-size: var(--font-size-lg);
   margin: clamp(2rem, 5vh, 2.5rem) 0 clamp(1rem, 2.5vh, 1.5rem);
   color: #bbb;
   text-align: left;
-  font-weight: 400; /* Standard font-weight for secondary titles */
+  font-weight: 400;
 }
 
 /* --- Menu Toggle (Hamburger) --- */
 .menu-toggle {
   width: 26px;
   height: 20px;
-  margin-left: clamp(1rem, 4vw, 1.25rem); /* Responsive margin */
+  margin-left: clamp(1rem, 4vw, 1.25rem);
   cursor: pointer;
   position: relative;
   z-index: 1003;
@@ -177,9 +173,8 @@ body, html {
   top: 0;
   left: -80vw;
   width: min(80vw, 300px);
-  height: 100vh; /* Ensures full viewport height */
+  height: 100vh;
   background-color: #1e1e1e;
-  /* Adjusted padding for more generous space */
   padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.5rem);
   box-sizing: border-box;
   z-index: 1001;
@@ -201,14 +196,14 @@ body, html {
 }
 
 .side-menu li {
-  margin-bottom: clamp(1rem, 2.5vh, 1.5rem); /* Responsive vertical spacing */
+  margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
 }
 
 .side-menu a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
-  font-size: var(--font-size-md); /* Consistent menu item size */
-  font-weight: 400; /* Good readability */
+  font-size: var(--font-size-md);
+  font-weight: 400;
   display: block;
   padding: clamp(0.75rem, 1.5vh, 1rem) clamp(1rem, 2.5vw, 1.25rem);
   border-radius: 10px;
@@ -219,7 +214,7 @@ body, html {
   color: #A4CDF3;
   background-color: #2C3644;
   border-radius: 12px;
-  font-weight: 500; /* Slightly bolder for current page */
+  font-weight: 500;
 }
 
 .side-menu li.active a {
@@ -285,7 +280,7 @@ md-icon {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh; /* Ensures full viewport height */
+  height: 100vh;
   background: rgba(0, 0, 50, 0.3);
   opacity: 0;
   visibility: hidden;
@@ -300,9 +295,9 @@ md-icon {
 
 /* --- Button Intro Text --- */
 .button-intro-text {
-  text-align: center;
+  text-align: center; /* Keeping default text alignment */
   margin: clamp(1.25rem, 3vh, 1.5rem) 0 0;
-  font-size: var(--font-size-sm); /* Using sm for intro text */
+  font-size: var(--font-size-sm);
   color: #bbb;
   font-weight: 400;
 }
@@ -313,23 +308,20 @@ md-icon {
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Ensure content inside card aligns left */
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  /* Adjusted padding for cards */
   padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.25rem);
-  /* CRITICAL FIX: Use max-width and `calc()` with `vw` to ensure it doesn't overflow */
-  /* Adjusted `calc()` for wider cards, less space from edge */
-  width: calc(min(100%, 400px) - clamp(1.5rem, 4vw, 2rem)); /* Reduced the subtracted value */
-  box-sizing: border-box; /* Ensures padding is included in width calculation */
-  min-height: 60px; /* Keep minimum height for consistent tap target */
-  margin: clamp(1rem, 2.5vh, 1.5rem) auto; /* Responsive vertical margin, auto for horizontal centering */
+  width: calc(100% - clamp(1.5rem, 4vw, 2rem)); /* Default width for smaller screens */
+  max-width: 400px; /* **NORMAL WIDTH: Set a max-width for cards** */
+  box-sizing: border-box;
+  min-height: 60px;
+  margin: clamp(1rem, 2.5vh, 1.5rem) auto; /* Auto margin centers cards by default */
   box-shadow: 0 3px 15px rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  text-align: left;
   text-decoration: none;
   color: inherit;
 }
@@ -345,7 +337,7 @@ md-icon {
 }
 
 .profile-pic {
-  width: clamp(3rem, 10vw, 4rem); /* More controlled scaling for profile pic */
+  width: clamp(3rem, 10vw, 4rem);
   height: clamp(3rem, 10vw, 4rem);
   border-radius: 50%;
   object-fit: cover;
@@ -353,9 +345,9 @@ md-icon {
 }
 
 .card h1 {
-  font-size: var(--font-size-md); /* Card title size */
+  font-size: var(--font-size-md);
   margin: 0;
-  font-weight: 500; /* Good visibility */
+  font-weight: 500;
 }
 
 .card .text-content {
@@ -365,30 +357,30 @@ md-icon {
 }
 
 .card p {
-  font-size: var(--font-size-xs); /* Card description, slightly smaller */
+  font-size: var(--font-size-xs);
   color: rgba(173, 216, 230, 0.6);
-  margin: clamp(0.1rem, 0.3vh, 0.15rem) 0 0; /* Reduced gap between h1 and p */
+  margin: clamp(0.1rem, 0.3vh, 0.15rem) 0 0;
   opacity: 0.8;
   line-height: 1.3;
-  font-weight: 400; /* Standard readability */
+  font-weight: 400;
 }
 
 /* --- Footer --- */
 .footer {
   width: 100%;
-  text-align: center;
+  text-align: center; /* **KEEPING COPYRIGHT CENTERED** */
   padding: clamp(1rem, 3vh, 1.25rem) 0;
-  font-size: 16px; /* Reverted credits font-size to fixed px as requested */
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.6);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: clamp(1.25rem, 3vh, 1.5rem);
   box-sizing: border-box;
-  font-weight: 400; /* Reverted credits font-weight to 400 */
+  font-weight: 400;
 }
 
 .social-footer {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Keeping centered by default */
   margin-top: clamp(0.5rem, 1.5vh, 0.75rem);
   gap: clamp(0.75rem, 2vw, 1rem);
 }
@@ -409,8 +401,8 @@ md-icon {
 }
 
 .footer-social-button svg {
-  width: clamp(1.2rem, 4.5vw, 1.6rem); /* Increased SVG size */
-  height: clamp(1.2rem, 4.5vw, 1.6rem); /* Increased SVG size */
+  width: clamp(1.2rem, 4.5vw, 1.6rem);
+  height: clamp(1.2rem, 4.5vw, 1.6rem);
   fill: white;
 }
 
@@ -418,22 +410,19 @@ md-icon {
 .button-2-wrapper,
 .download-button-wrapper {
   display: flex;
-  justify-content: center;
-  /* Further reduced vertical padding on button wrappers */
+  justify-content: center; /* Centered by default */
   padding: clamp(0.1rem, 0.5vh, 0.2rem) 0;
   box-sizing: border-box;
 }
 .download-button-wrapper {
-    /* Reduced top padding for download button, minimal gap */
     padding-top: clamp(0.75rem, 2vh, 1rem);
 }
 
 .download-button,
 .button-2 {
   font-family: "Roboto", sans-serif;
-  font-size: var(--font-size-lg); /* Slightly larger for buttons for tap targets */
-  font-weight: 500; /* Bolder for buttons */
-  /* Reduced horizontal and vertical padding for buttons */
+  font-size: var(--font-size-lg);
+  font-weight: 500;
   padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2rem);
   border: none;
   border-radius: 50px;
@@ -441,7 +430,7 @@ md-icon {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 400px;
-  text-align: center;
+  text-align: center; /* Text in button stays centered */
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -452,7 +441,7 @@ md-icon {
 }
 
 .button-2 {
-  margin-top: clamp(0.25rem, 1vh, 0.5rem); /* Significantly reduced margin between buttons */
+  margin-top: clamp(0.25rem, 1vh, 0.5rem);
   background-color: rgba(173, 216, 230, 0.08);
   color: #fff;
 }
@@ -462,31 +451,166 @@ md-icon {
   transform: scale(1.05);
 }
 
-/* --- Media Queries (Refined for better breakpoints and unit usage) --- */
+/* Adjustments for medium screens (tablets up to small desktops) */
+@media screen and (min-width: 600px) and (max-width: 991px) {
+  .main-title,
+  .role-title,
+  .button-intro-text {
+    text-align: left;
+  }
 
-@media screen and (min-width: 600px) {
-  .main-title {
-    text-align: center;
-    font-size: var(--font-size-xl); /* Adjusted main title size for wider screens, slightly smaller */
+  /* --- Cards for Tablet --- */
+  .card {
+    padding: clamp(1rem, 2.5vw, 1.25rem) clamp(1.25rem, 3.5vw, 1.5rem);
+    min-height: 70px;
+    margin: clamp(1.5rem, 3vh, 2rem) 0; /* **LEFT ALIGNMENT: Set horizontal margin to 0** */
+    justify-content: flex-start; /* Ensure card content starts from left */
+    width: calc(100% - clamp(2rem, 5vw, 3rem)); /* **NORMAL WIDTH: Adjusted for left margin** */
+    max-width: 400px; /* Explicitly ensure max-width is respected */
+  }
+  .profile-pic {
+    width: clamp(3.5rem, 12vw, 4.5rem);
+    height: clamp(3.5rem, 12vw, 4.5rem);
+    margin-right: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  /* --- Buttons for Tablet --- */
+  .button-2-wrapper,
+  .download-button-wrapper {
+    justify-content: flex-start; /* Align button wrappers to the left */
+  }
+  .download-button,
+  .button-2 {
+    max-width: 400px;
+    font-size: var(--font-size-md);
+    padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(1.2rem, 4vw, 1.8rem);
   }
 }
 
-/* Landscape orientation for smaller screens (phones/small tablets) */
+
+/* !!! Crucial: Highly Optimized Mobile Landscape Orientation (Phones/Small Tablets) !!! */
 @media (orientation: landscape) and (max-width: 767px) {
+  .container {
+    padding-top: clamp(40px, 7vh, 48px);
+    padding-left: clamp(0.4rem, 1.5vw, 0.6rem);
+    padding-right: clamp(0.4rem, 1.5vw, 0.6rem);
+    max-width: 100%;
+  }
+
+  .header {
+    height: 48px;
+  }
+  .main-title {
+    font-size: var(--font-size-sm);
+    margin-left: clamp(0.5rem, 2vw, 0.75rem);
+    text-align: left;
+  }
+  .menu-toggle {
+    margin-left: clamp(0.5rem, 2vw, 0.75rem);
+    width: 22px;
+    height: 16px;
+  }
+  .menu-toggle span {
+    height: 2px;
+  }
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
   .role-title {
-    /* Adjusted for better use of horizontal space */
     font-size: var(--font-size-md);
     margin: clamp(0.8rem, 2vh, 1.2rem) 0 clamp(0.4rem, 1vh, 0.7rem);
+    text-align: left;
   }
+  .button-intro-text {
+    font-size: var(--font-size-xs);
+    margin: clamp(0.8rem, 2vh, 1rem) 0 0;
+    text-align: left;
+  }
+
+  /* --- Cards for Mobile Landscape --- */
   .card {
-    /* Adjust card sizing for landscape to allow more cards per row if desired, or better fit */
-    min-height: 50px;
-    padding: clamp(0.5rem, 1.2vw, 0.7rem) clamp(0.8rem, 2vw, 1rem);
+    min-height: 40px;
+    padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem);
+    margin: clamp(0.5rem, 1.2vh, 0.8rem) 0; /* **LEFT ALIGNMENT: Set horizontal margin to 0** */
+    border-radius: 12px;
+    width: calc(100% - clamp(1rem, 4vw, 1.5rem)); /* Adjusted for new left margin */
+    max-width: 350px; /* **NORMAL WIDTH: Constrain max-width for landscape** */
+    justify-content: flex-start; /* Ensure card content is left-aligned */
   }
   .profile-pic {
-    width: clamp(2.2rem, 7vw, 3rem);
-    height: clamp(2.2rem, 7vw, 3rem);
-    margin-right: clamp(0.5rem, 1.2vw, 0.7rem);
+    width: clamp(1.8rem, 5vw, 2.2rem);
+    height: clamp(1.8rem, 5vw, 2.2rem);
+    margin-right: clamp(0.3rem, 1vw, 0.5rem);
+  }
+
+  /* --- Buttons for Mobile Landscape --- */
+  .button-2-wrapper,
+  .download-button-wrapper {
+      padding: clamp(0.05rem, 0.2vh, 0.1rem) 0;
+      justify-content: flex-start; /* Align button wrappers to the left */
+  }
+  .download-button-wrapper {
+      padding-top: clamp(0.3rem, 0.8vh, 0.5rem);
+  }
+  .download-button,
+  .button-2 {
+      font-size: var(--font-size-sm);
+      padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.8rem, 3vw, 1.2rem);
+      border-radius: 30px;
+      max-width: 300px; /* Ensure button doesn't get too wide */
+  }
+  .button-2 {
+      margin-top: clamp(0.4rem, 1.2vh, 0.6rem); /* **FIXED BUTTON GAP: Increased margin-top** */
+  }
+
+  .footer {
+    padding: clamp(0.5rem, 1.2vh, 0.7rem) 0;
+    font-size: 12px;
+    margin-top: clamp(0.6rem, 1.5vh, 0.9rem);
+    text-align: center; /* **KEEPING COPYRIGHT CENTERED** */
+  }
+  .social-footer {
+    margin-top: clamp(0.1rem, 0.5vh, 0.2rem);
+    gap: clamp(0.4rem, 1.2vw, 0.6rem);
+    justify-content: center; /* Explicitly left-aligned */
+  }
+  .footer-social-button {
+    padding: clamp(0.4rem, 1.2vw, 0.6rem);
+  }
+  .footer-social-button svg {
+    width: clamp(0.9rem, 3vw, 1.1rem);
+    height: clamp(0.9rem, 3vw, 1.1rem);
+  }
+}
+
+/* Adjustments for small screens (phones in portrait) */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: var(--font-size-lg);
+    margin-left: clamp(0.8rem, 3vw, 1rem);
+  }
+  .menu-toggle {
+    margin-left: clamp(0.8rem, 3vw, 1rem);
+  }
+  .container {
+    padding-left: clamp(0.5rem, 3vw, 1rem);
+    padding-right: clamp(0.5rem, 3vw, 1rem);
+  }
+  .role-title {
+    font-size: var(--font-size-lg);
+    margin: clamp(1.5rem, 3.5vh, 2rem) 0 clamp(0.75rem, 1.5vh, 1rem);
+  }
+  .card {
+    padding: clamp(0.6rem, 1.8vw, 0.9rem) clamp(0.8rem, 2.5vw, 1.1rem);
+    min-height: 55px;
+  }
+  .profile-pic {
+    width: clamp(2.5rem, 8vw, 3rem);
+    height: clamp(2.5rem, 8vw, 3rem);
+    margin-right: clamp(0.5rem, 1.5vw, 0.75rem);
   }
   .card h1 {
     font-size: var(--font-size-sm);
@@ -494,69 +618,136 @@ md-icon {
   .card p {
     font-size: var(--font-size-xs);
   }
-  .button-2-wrapper,
-  .download-button-wrapper {
-      /* Further reduce button wrapper padding in landscape */
-      padding: clamp(0.1rem, 0.4vh, 0.2rem) 0;
+  .download-button,
+  .button-2 {
+    font-size: var(--font-size-md);
+    padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(1.2rem, 4vw, 1.8rem);
   }
-  .download-button-wrapper {
-      padding-top: clamp(0.5rem, 1.5vh, 0.8rem);
+  .footer {
+    font-size: 14px;
+    padding: clamp(0.8rem, 2.5vh, 1rem) 0;
+  }
+  .social-footer {
+    gap: clamp(0.6rem, 1.8vw, 0.9rem);
+  }
+  .footer-social-button {
+    padding: clamp(0.6rem, 1.8vw, 0.9rem);
+  }
+  .footer-social-button svg {
+    width: clamp(1.1rem, 4vw, 1.5rem);
+    height: clamp(1.1rem, 4vw, 1.5rem);
+  }
+}
+
+/* Desktop adjustments */
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  .header {
+    height: 70px;
+  }
+  .main-title {
+    font-size: var(--font-size-xxl);
+    margin-left: 2rem;
+    text-align: left;
+  }
+  .role-title {
+    font-size: var(--font-size-xl);
+    margin: 4rem 0 2rem;
+    text-align: left;
+  }
+  .menu-toggle {
+    width: 30px;
+    height: 24px;
+    margin-left: 2rem;
+  }
+  .menu-toggle span {
+    height: 4px;
+  }
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  .side-menu {
+    width: 350px;
+    padding: 6rem 2rem;
+  }
+  .side-menu li {
+    margin-bottom: 2rem;
+  }
+  .side-menu a {
+    font-size: var(--font-size-lg);
+    padding: 1rem 1.5rem;
+  }
+  .side-menu-settings {
+    bottom: 2rem;
+    right: 2rem;
+  }
+  .button-intro-text {
+    margin: 2rem 0 0;
+    font-size: var(--font-size-md);
+    text-align: left;
+  }
+
+  /* --- Cards for Desktop --- */
+  .card {
+    max-width: 500px; /* **NORMAL WIDTH: Consistent max-width for desktop** */
+    padding: 1.25rem 1.5rem;
+    min-height: 80px;
+    margin: 2rem 0; /* **LEFT ALIGNMENT: Set horizontal margin to 0** */
+    justify-content: flex-start; /* Ensure card content is left-aligned */
+  }
+  .profile-pic {
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.5rem;
+  }
+
+  /* --- Buttons for Desktop --- */
+  .download-button-wrapper,
+  .button-2-wrapper {
+    justify-content: flex-start; /* Align button wrappers to the left */
   }
   .download-button,
   .button-2 {
-      /* Reduce button padding in landscape for a more compact look */
-      padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 4vw, 1.5rem);
+    font-size: var(--font-size-xl);
+    padding: 1.2rem 2.5rem;
+    max-width: 500px; /* Ensure button doesn't get too wide */
+  }
+  .download-button-wrapper {
+    padding-top: 1.5rem;
   }
   .button-2 {
-      margin-top: clamp(0.2rem, 0.8vh, 0.4rem); /* Very small gap in landscape */
-  }
-}
-
-/* Adjustments for medium screens (tablets) */
-@media (max-width: 768px) {
-  .main-title {
-    font-size: var(--font-size-lg);
+    margin-top: 0.75rem;
   }
 
-  .profile-pic {
-    width: clamp(3rem, 9vw, 3.5rem);
-    height: clamp(3rem, 9vw, 3.5rem);
-  }
-  .card h1 {
-    font-size: var(--font-size-md);
-  }
-  .card p {
-    font-size: var(--font-size-xs);
-  }
-}
-
-/* Adjustments for small screens (phones) */
-@media (max-width: 480px) {
-  .main-title {
-    font-size: var(--font-size-lg); /* Consistent main title size for phones */
-  }
-
-  .profile-pic {
-    width: clamp(2.5rem, 8vw, 3rem);
-    height: clamp(2.5rem, 8vw, 3rem);
-    margin-right: clamp(0.5rem, 1.5vw, 0.75rem);
-  }
-  .card h1 {
-    font-size: var(--font-size-sm); /* Ensure card titles are readable */
-  }
-  .card p {
-    font-size: var(--font-size-xs);
-  }
-  .role-title {
-    font-size: var(--font-size-lg); /* Keep role title a good size */
-    margin: clamp(1.5rem, 3.5vh, 2rem) 0 clamp(0.75rem, 1.5vh, 1rem);
-  }
   .footer {
-    font-size: 14px; /* Maintain fixed font size for footer on small screens if desired */
+    padding: 2rem 0;
+    font-size: 18px;
+    margin-top: 3rem;
+    text-align: center; /* **KEEPING COPYRIGHT CENTERED** */
+  }
+  .social-footer {
+    margin-top: 1rem;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+  .footer-social-button {
+    padding: 1rem;
+  }
+  .footer-social-button svg {
+    width: 2rem;
+    height: 2rem;
   }
 }
 
-/* --- Image Popup Overlay (kept as is, it's generally well-structured for full screen) --- */
+
+/* --- Image Popup Overlay --- */
 #img-popup-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -586,7 +777,7 @@ md-icon {
   cursor: pointer;
 }
 
-/* --- Content Fade Overlay (kept as is, using vw/vh for full screen) --- */
+/* --- Content Fade Overlay --- */
 #content-fade-overlay {
   position: fixed;
   top: 0;
