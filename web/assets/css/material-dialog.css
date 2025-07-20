@@ -1,10 +1,7 @@
-/* 2025 Gabe Mods (https://gabemods.github.io/about), All Rights Reserved. */
-
 :root {
   --md-icon-font: Material Symbols Rounded;
   --transition: all 0.2s ease;
 
-  /* Light theme variables for dialogs */
   --dialog-bg-light: white;
   --dialog-text-light: black;
   --dialog-select-bg-light: #f5f8ff;
@@ -15,8 +12,7 @@
   --dialog-button-text-light: #1a73e8;
   --dialog-button-hover-bg-light: rgba(26, 115, 232, 0.08);
 
-  /* Dark theme variables for dialogs */
-  --dialog-bg-dark: #121212; /* Keep original dark background */
+  --dialog-bg-dark: #121212;
   --dialog-text-dark: white;
   --dialog-select-bg-dark: #1e1e1e;
   --dialog-select-text-dark: #90caf9;
@@ -26,7 +22,6 @@
   --dialog-button-text-dark: #90caf9;
   --dialog-button-hover-bg-dark: rgba(144, 202, 249, 0.1);
 
-  /* Specific download dialog colors */
   --download-dialog-bg-transparent-light: rgba(255, 255, 255, 0.5);
   --download-dialog-bg-opaque-light: white;
   --download-dialog-bg-transparent-dark: rgba(10, 10, 10, 0.5);
@@ -35,27 +30,24 @@
   --download-dialog-text-dark: white;
 }
 
-/* Base dialog element for shared properties like transitions and backdrop */
 dialog {
-  /* Common transition for showing/hiding all dialogs */
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.92); /* Start slightly smaller */
+  transform: translate(-50%, -50%) scale(0.92); 
   opacity: 0;
-  pointer-events: none; /* Initially not interactive */
+  pointer-events: none; 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
-  border: none; /* Ensure no default dialog border */
-  padding: 0; /* Managed by specific dialog classes */
-  margin: 0; /* Managed by specific dialog classes */
-  max-width: 90vw; /* Overall max width for dialogs on smaller screens */
-  max-height: 90vh; /* Overall max height for dialogs */
-  overflow: auto; /* Allow scrolling for content */
+  border: none; 
+  padding: 0; 
+  margin: 0; 
+  max-height: 90vh; 
+  overflow: auto; 
 }
 
 dialog.open,
-dialog[open] {
+dialog[open] { 
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
   pointer-events: auto;
@@ -67,15 +59,14 @@ dialog.closing {
   pointer-events: none;
 }
 
-/* Backdrop styles (remains generic for all dialogs) */
 .backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   opacity: 0;
-  z-index: 998; /* Below dialog, above content */
+  z-index: 998; 
   transition: opacity 250ms ease;
-  pointer-events: none; /* Initially not interactive */
+  pointer-events: none; 
 }
 
 .backdrop.show {
@@ -89,14 +80,9 @@ dialog.closing {
   pointer-events: none;
 }
 
-/* ------------------------------------------- */
-/* --- Specific Dialog Styling Starts Here --- */
-/* ------------------------------------------- */
-
-/* Settings Dialog */
 .settings-dialog {
-  width: 90vw;
-  max-width: 320px; /* Specific max-width for settings dialog */
+  width: 90vw; 
+  max-width: 280px; 
   padding: 24px;
   border-radius: 24px;
   background-color: var(--dialog-bg-light);
@@ -119,7 +105,6 @@ body.dark .settings-dialog {
   font-size: 1.5rem;
 }
 
-/* Select dropdowns within settings dialog */
 .settings-dialog select {
   width: 100%;
   padding: 14px;
@@ -155,7 +140,6 @@ body.dark .settings-dialog select:focus {
   box-shadow: inset 0 0 0 2px var(--dialog-select-active-border-dark);
 }
 
-/* Labels within settings dialog */
 .settings-dialog label {
   font-size: 1.1rem;
   font-weight: 450;
@@ -167,15 +151,13 @@ body.dark .settings-dialog select:focus {
     margin-top: 0;
 }
 
-/* Action buttons container for settings dialog */
 .settings-dialog .modal-actions {
   display: flex;
-  justify-content: flex-end; /* Align to the right */
+  justify-content: flex-end; 
   margin-top: 12px;
   gap: 8px;
 }
 
-/* Buttons within settings dialog */
 .settings-dialog .close-button,
 .settings-dialog .reset-button {
   background: none;
@@ -212,7 +194,6 @@ body.dark .settings-dialog .reset-button:focus {
   background-color: var(--dialog-button-hover-bg-dark);
 }
 
-/* Toggle setting layout */
 .toggle-setting {
   display: flex;
   justify-content: space-between;
@@ -233,7 +214,6 @@ body.dark .setting-label {
     color: var(--dialog-text-dark);
 }
 
-/* Switch (toggle) component */
 .switch {
   position: relative;
   display: inline-block;
@@ -295,7 +275,6 @@ body.dark .slider:before {
   background-color: #e0e0e0;
 }
 
-/* Info button next to toggles */
 .info-button {
     background: none;
     border: none;
@@ -325,54 +304,48 @@ body.dark .slider:before {
     height: 20px;
 }
 
-/* ------------------------------------------- */
-/* --- Material Dialog (General purpose info/alert dialogs) --- */
-/* ------------------------------------------- */
 .material-dialog {
     width: 90vw;
-    max-width: 500px; /* Specific max-width for material dialog */
+    max-width: 500px; 
     padding: 24px;
     border-radius: 28px;
-    background-color: #FFFBFE; /* Specific light theme color for material dialog */
-    color: #1c1b1f; /* Specific light theme text color */
+    background-color: #FFFBFE; 
+    color: #1c1b1f; 
     box-shadow: 0px 8px 10px 1px rgba(0,0,0,0.14),
                 0px 3px 14px 2px rgba(0,0,0,0.12),
                 0px 5px 5px -3px rgba(0,0,0,0.2);
-    text-align: left; /* Align text left */
+    text-align: left; 
 }
 
 body.dark .material-dialog {
-    background-color: #1c1b1f; /* Dark theme color for material dialog */
-    color: #e6e1e5; /* Dark theme text color */
+    background-color: #1c1b1f; 
+    color: #e6e1e5; 
 }
-
 
 .material-dialog-content h3 {
     font-size: 1.5rem;
-    color: inherit; /* Inherit from material-dialog */
+    color: inherit; 
     margin-top: 0;
     margin-bottom: 16px;
 }
 
 .material-dialog-content p {
     font-size: 1rem;
-    color: inherit; /* Inherit from material-dialog */
+    color: inherit; 
     line-height: 1.5;
     margin-bottom: 20px;
 }
 
-/* Action buttons container for material dialog */
 .material-dialog-actions {
     display: flex;
-    justify-content: flex-end; /* Align to the right */
+    justify-content: flex-end; 
     gap: 8px;
     margin-top: 24px;
 }
 
-/* Buttons within material dialog */
 .material-dialog-close-button {
     background-color: transparent;
-    color: #6750A4; /* Specific color for material dialog buttons */
+    color: #6750A4; 
     border: none;
     padding: 10px 12px;
     border-radius: 20px;
@@ -393,7 +366,7 @@ body.dark .material-dialog {
 }
 
 body.dark .material-dialog-close-button {
-    color: #D0BCFF; /* Dark theme specific color for material dialog buttons */
+    color: #D0BCFF; 
 }
 
 body.dark .material-dialog-close-button:hover {
@@ -404,19 +377,14 @@ body.dark .material-dialog-close-button:active {
     background-color: rgba(208, 188, 255, 0.12);
 }
 
-
-/* ------------------------------------------- */
-/* --- Download Dialog Specifics --- */
-/* ------------------------------------------- */
 .download-dialog {
-  width: 320px; /* Fixed width as per original */
+  width: 320px;
   border-radius: 20px;
   text-align: center;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(15px);
   background-color: var(--download-dialog-bg-transparent-light);
   color: var(--download-dialog-text-light);
-  /* The position, transform, opacity, pointer-events and transition are inherited from the base `dialog` selector */
 }
 
 body.dark .download-dialog {
@@ -528,7 +496,7 @@ body.dark .download-dialog.opaque {
   border-radius: 20px;
   padding: 8px;
   cursor: pointer;
-  align-self: flex-end; /* Align this specific close button to the right */
+  align-self: flex-end;
   font-size: 16px;
   font-weight: 500;
   text-transform: capitalize;
