@@ -186,28 +186,28 @@ body, html {
   transition: background 0.3s ease; /* Default transition */
 }
 
-/* Specificity for the active page link */
+/* This is the key: Only apply the blue highlight to the active page */
 .side-menu li.active a {
   background-color: rgba(0, 123, 255, 0.3); /* Persistent highlight for the current page */
   border-radius: 12px;
   transition: background 0.3s ease; /* Keep its own transition */
 }
 
-/* Hover effect for non-active links */
+/* Apply hover effect ONLY to links that are NOT active */
 .side-menu a:not(.active):hover {
   background-color: rgba(255, 255, 255, 0.08); /* Subtle light grey/blue hover */
 }
 
-/* Press effect for non-active links */
+/* Apply press (active) effect ONLY to links that are NOT active */
 .side-menu a:not(.active):active {
   background-color: rgba(173, 216, 230, 0.15); /* Slightly more prominent blue-grey on press */
   transition: background 0.1s ease; /* Quick transition for press */
 }
 
-/* Ensure active page keeps its primary background on hover/press, maybe slightly darker */
+/* Ensure the active page link still shows interaction on hover/press */
 .side-menu li.active a:hover,
 .side-menu li.active a:active {
-  background-color: rgba(0, 123, 255, 0.4); /* Active page remains distinctly highlighted */
+  background-color: rgba(0, 123, 255, 0.4); /* Active page remains distinctly highlighted, slightly darker on interaction */
 }
 
 
