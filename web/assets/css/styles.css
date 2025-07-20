@@ -25,7 +25,6 @@ body {
   line-height: 1.6;
   background-color: var(--background-color-light);
   color: var(--text-color-light);
-  
   overflow-x: hidden;
 }
 
@@ -184,14 +183,32 @@ body, html {
   display: block;
   padding: 10px 15px;
   border-radius: 10px;
-  transition: background var(--transition);
+  transition: background 0.3s ease; /* Adjusted transition for press effect */
 }
 
-.side-menu li.active a,
-.side-menu a:hover {
-  background-color: rgba(0, 123, 255, 0.3); /* Highlighted background */
+/* Current page active background */
+.side-menu li.active a {
+  background-color: rgba(0, 123, 255, 0.3);
   border-radius: 12px;
 }
+
+/* Subtle hover, not affecting active page */
+.side-menu a:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.08); /* A very subtle light grey/blue */
+}
+
+/* Subtle on-press effect, not affecting active page */
+.side-menu a:active:not(.active) {
+  background-color: rgba(173, 216, 230, 0.15); /* Slightly more prominent blue-grey on press */
+  transition: background 0.1s ease; /* Quicker transition for press */
+}
+
+/* Ensure active page keeps its background on hover/press */
+.side-menu li.active a:hover,
+.side-menu li.active a:active {
+  background-color: rgba(0, 123, 255, 0.4); /* Slightly darker for active page on hover/press */
+}
+
 
 .side-menu-settings {
   position: absolute;
