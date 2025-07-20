@@ -5,20 +5,18 @@
   --background-color-light: #f0f2f5;
   --text-color-light: #333333;
 
-  /* Responsive font sizes using clamp for better control */
-  --font-size-base: 1rem; /* Base for rem units, often 16px */
-  --font-size-xs: clamp(0.75rem, 1.8vw, 0.9rem); /* Extra small text for details */
-  --font-size-sm: clamp(0.9rem, 2.2vw, 1rem);   /* Small text that scales well */
-  --font-size-md: clamp(1rem, 2.5vw, 1.15rem);  /* Medium text, general body copy */
-  --font-size-lg: clamp(1.15rem, 3vw, 1.35rem); /* Larger text, for subtitles */
-  --font-size-xl: clamp(1.4rem, 4vw, 1.8rem);   /* Extra large text, main titles on smaller screens */
-  --font-size-xxl: clamp(1.8rem, 5vw, 2.2rem);  /* Very large text, main titles on larger screens */
+  --font-size-base: 1rem; 
+  --font-size-xs: clamp(0.75rem, 1.8vw, 0.9rem); 
+  --font-size-sm: clamp(0.9rem, 2.2vw, 1rem);   
+  --font-size-md: clamp(1rem, 2.5vw, 1.15rem);  
+  --font-size-lg: clamp(1.15rem, 3vw, 1.35rem); 
+  --font-size-xl: clamp(1.4rem, 4vw, 1.8rem);   
+  --font-size-xxl: clamp(1.8rem, 5vw, 2.2rem);  
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
-/* Font declarations */
 body.font-system {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
@@ -56,7 +54,6 @@ body.font-Open-Sans {
   font-family: 'Open Sans', sans-serif;
 }
 
-/* Animations */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -76,7 +73,6 @@ body.font-Open-Sans {
   100% { transform: scale(1); }
 }
 
-/* --- Base Body and HTML Styling --- */
 body, html {
   margin: 0;
   padding: 0;
@@ -89,7 +85,6 @@ body, html {
   font-weight: 400;
 }
 
-/* --- Container for main content --- */
 .container {
   padding-top: clamp(56px, 10vh, 80px);
   max-width: 900px;
@@ -106,7 +101,6 @@ body, html {
   animation: fadeUp 0.8s ease forwards;
 }
 
-/* --- Header --- */
 .header {
   width: 100%;
   height: 56px;
@@ -136,7 +130,6 @@ body, html {
   font-weight: 400;
 }
 
-/* --- Menu Toggle (Hamburger) --- */
 .menu-toggle {
   width: 26px;
   height: 20px;
@@ -167,7 +160,6 @@ body, html {
   transform: translateY(-8.5px) rotate(-45deg);
 }
 
-/* --- Side Menu --- */
 .side-menu {
   position: fixed;
   top: 0;
@@ -274,7 +266,6 @@ md-icon {
   color: #fff;
 }
 
-/* --- Overlay --- */
 .overlay {
   position: fixed;
   top: 0;
@@ -293,31 +284,29 @@ md-icon {
   visibility: visible;
 }
 
-/* --- Button Intro Text --- */
 .button-intro-text {
-  text-align: center; /* Keeping default text alignment */
+  text-align: center;
   margin: clamp(1.25rem, 3vh, 1.5rem) 0 0;
   font-size: var(--font-size-sm);
   color: #bbb;
   font-weight: 400;
 }
 
-/* --- Card Components --- */
 .card {
   transform: scale(1);
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Ensure content inside card aligns left */
+  justify-content: flex-start;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.25rem);
-  width: calc(100% - clamp(1.5rem, 4vw, 2rem)); /* Default width for smaller screens */
-  max-width: 400px; /* **NORMAL WIDTH: Set a max-width for cards** */
+  width: calc(100% - clamp(1.5rem, 4vw, 2rem)); 
+  max-width: 400px; 
   box-sizing: border-box;
   min-height: 60px;
-  margin: clamp(1rem, 2.5vh, 1.5rem) auto; /* Auto margin centers cards by default */
-  box-shadow: 0 3px 15px rgba(255, 255, 255, 0.15);
+  margin: clamp(1rem, 2.5vh, 1.5rem) auto; 
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -365,10 +354,16 @@ md-icon {
   font-weight: 400;
 }
 
-/* --- Footer --- */
+.card-group-wrapper {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: clamp(1rem, 2.5vh, 1.5rem); 
+}
+
 .footer {
   width: 100%;
-  text-align: center; /* **KEEPING COPYRIGHT CENTERED** */
+  text-align: center; 
   padding: clamp(1rem, 3vh, 1.25rem) 0;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.6);
@@ -380,7 +375,7 @@ md-icon {
 
 .social-footer {
   display: flex;
-  justify-content: center; /* Keeping centered by default */
+  justify-content: center; 
   margin-top: clamp(0.5rem, 1.5vh, 0.75rem);
   gap: clamp(0.75rem, 2vw, 1rem);
 }
@@ -406,11 +401,10 @@ md-icon {
   fill: white;
 }
 
-/* --- Buttons --- */
 .button-2-wrapper,
 .download-button-wrapper {
   display: flex;
-  justify-content: center; /* Centered by default */
+  justify-content: center; 
   padding: clamp(0.1rem, 0.5vh, 0.2rem) 0;
   box-sizing: border-box;
 }
@@ -430,7 +424,7 @@ md-icon {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 400px;
-  text-align: center; /* Text in button stays centered */
+  text-align: center;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -441,7 +435,7 @@ md-icon {
 }
 
 .button-2 {
-  margin-top: clamp(0.25rem, 1vh, 0.5rem);
+  margin-top: clamp(0.25rem, 1vh, 0.5rem); 
   background-color: rgba(173, 216, 230, 0.08);
   color: #fff;
 }
@@ -451,7 +445,18 @@ md-icon {
   transform: scale(1.05);
 }
 
-/* Adjustments for medium screens (tablets up to small desktops) */
+.button-group-wrapper {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: clamp(0.25rem, 1vh, 0.5rem); 
+  margin-top: clamp(0.75rem, 2vh, 1rem); 
+  width: 100%;
+  max-width: 400px; 
+  margin-left: auto;
+  margin-right: auto; 
+}
+
 @media screen and (min-width: 600px) and (max-width: 991px) {
   .main-title,
   .role-title,
@@ -459,14 +464,21 @@ md-icon {
     text-align: left;
   }
 
-  /* --- Cards for Tablet --- */
+  .card-group-wrapper {
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    gap: clamp(1rem, 2.5vw, 1.5rem); 
+    margin-left: 0; 
+    margin-right: 0;
+  }
   .card {
     padding: clamp(1rem, 2.5vw, 1.25rem) clamp(1.25rem, 3.5vw, 1.5rem);
     min-height: 70px;
-    margin: clamp(1.5rem, 3vh, 2rem) 0; /* **LEFT ALIGNMENT: Set horizontal margin to 0** */
-    justify-content: flex-start; /* Ensure card content starts from left */
-    width: calc(100% - clamp(2rem, 5vw, 3rem)); /* **NORMAL WIDTH: Adjusted for left margin** */
-    max-width: 400px; /* Explicitly ensure max-width is respected */
+    margin: 0; 
+    flex: 1 1 calc(50% - clamp(0.5rem, 1.25vw, 0.75rem)); 
+    max-width: calc(50% - clamp(0.5rem, 1.25vw, 0.75rem)); 
+    box-sizing: border-box; 
   }
   .profile-pic {
     width: clamp(3.5rem, 12vw, 4.5rem);
@@ -474,21 +486,26 @@ md-icon {
     margin-right: clamp(1rem, 3vw, 1.25rem);
   }
 
-  /* --- Buttons for Tablet --- */
-  .button-2-wrapper,
-  .download-button-wrapper {
-    justify-content: flex-start; /* Align button wrappers to the left */
+  .button-group-wrapper {
+    flex-direction: row; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: clamp(0.8rem, 2vw, 1.2rem); 
+    margin-left: 0; 
+    margin-right: 0;
   }
   .download-button,
   .button-2 {
-    max-width: 400px;
     font-size: var(--font-size-md);
     padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(1.2rem, 4vw, 1.8rem);
+    margin-top: 0; 
+    width: auto; 
+    flex-grow: 0; 
+    flex-shrink: 1; 
+    max-width: 200px; 
   }
 }
 
-
-/* !!! Crucial: Highly Optimized Mobile Landscape Orientation (Phones/Small Tablets) !!! */
 @media (orientation: landscape) and (max-width: 767px) {
   .container {
     padding-top: clamp(40px, 7vh, 48px);
@@ -529,53 +546,15 @@ md-icon {
     margin: clamp(0.8rem, 2vh, 1rem) 0 0;
     text-align: left;
   }
-
-  /* --- Cards for Mobile Landscape --- */
-  .card {
-    min-height: 40px;
-    padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem);
-    margin: clamp(0.5rem, 1.2vh, 0.8rem) 0; /* **LEFT ALIGNMENT: Set horizontal margin to 0** */
-    border-radius: 12px;
-    width: calc(100% - clamp(1rem, 4vw, 1.5rem)); /* Adjusted for new left margin */
-    max-width: 350px; /* **NORMAL WIDTH: Constrain max-width for landscape** */
-    justify-content: flex-start; /* Ensure card content is left-aligned */
-  }
-  .profile-pic {
-    width: clamp(1.8rem, 5vw, 2.2rem);
-    height: clamp(1.8rem, 5vw, 2.2rem);
-    margin-right: clamp(0.3rem, 1vw, 0.5rem);
-  }
-
-  /* --- Buttons for Mobile Landscape --- */
-  .button-2-wrapper,
-  .download-button-wrapper {
-      padding: clamp(0.05rem, 0.2vh, 0.1rem) 0;
-      justify-content: flex-start; /* Align button wrappers to the left */
-  }
-  .download-button-wrapper {
-      padding-top: clamp(0.3rem, 0.8vh, 0.5rem);
-  }
-  .download-button,
-  .button-2 {
-      font-size: var(--font-size-sm);
-      padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.8rem, 3vw, 1.2rem);
-      border-radius: 30px;
-      max-width: 300px; /* Ensure button doesn't get too wide */
-  }
-  .button-2 {
-      margin-top: clamp(0.4rem, 1.2vh, 0.6rem); /* **FIXED BUTTON GAP: Increased margin-top** */
-  }
-
   .footer {
     padding: clamp(0.5rem, 1.2vh, 0.7rem) 0;
     font-size: 12px;
     margin-top: clamp(0.6rem, 1.5vh, 0.9rem);
-    text-align: center; /* **KEEPING COPYRIGHT CENTERED** */
+    text-align: center;
   }
   .social-footer {
     margin-top: clamp(0.1rem, 0.5vh, 0.2rem);
     gap: clamp(0.4rem, 1.2vw, 0.6rem);
-    justify-content: center; /* Explicitly left-aligned */
   }
   .footer-social-button {
     padding: clamp(0.4rem, 1.2vw, 0.6rem);
@@ -584,9 +563,52 @@ md-icon {
     width: clamp(0.9rem, 3vw, 1.1rem);
     height: clamp(0.9rem, 3vw, 1.1rem);
   }
+
+  .card-group-wrapper {
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    gap: clamp(0.8rem, 2vw, 1rem); 
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .card {
+    min-height: 40px;
+    padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem);
+    margin: 0; 
+    border-radius: 12px;
+    flex: 1 1 calc(50% - clamp(0.4rem, 1vw, 0.5rem)); 
+    max-width: calc(50% - clamp(0.4rem, 1vw, 0.5rem)); 
+    box-sizing: border-box;
+  }
+  .profile-pic {
+    width: clamp(1.8rem, 5vw, 2.2rem);
+    height: clamp(1.8rem, 5vw, 2.2rem);
+    margin-right: clamp(0.3rem, 1vw, 0.5rem);
+  }
+
+  .button-group-wrapper {
+    flex-direction: row; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+    gap: clamp(0.6rem, 1.8vw, 0.9rem); 
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: clamp(0.5rem, 1.2vh, 0.7rem); 
+  }
+  .download-button,
+  .button-2 {
+      font-size: var(--font-size-sm);
+      padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.8rem, 3vw, 1.2rem);
+      border-radius: 30px;
+      max-width: 150px; 
+      margin-top: 0; 
+      width: auto; 
+      flex-grow: 0;
+      flex-shrink: 1;
+  }
 }
 
-/* Adjustments for small screens (phones in portrait) */
 @media (max-width: 480px) {
   .main-title {
     font-size: var(--font-size-lg);
@@ -603,9 +625,20 @@ md-icon {
     font-size: var(--font-size-lg);
     margin: clamp(1.5rem, 3.5vh, 2rem) 0 clamp(0.75rem, 1.5vh, 1rem);
   }
+
+  .card-group-wrapper {
+    flex-direction: column; 
+    align-items: center; 
+    gap: clamp(1rem, 2.5vh, 1.5rem);
+    margin-left: auto; 
+    margin-right: auto;
+  }
   .card {
     padding: clamp(0.6rem, 1.8vw, 0.9rem) clamp(0.8rem, 2.5vw, 1.1rem);
     min-height: 55px;
+    width: calc(100% - clamp(1.5rem, 4vw, 2rem)); 
+    max-width: 400px; 
+    margin: 0; 
   }
   .profile-pic {
     width: clamp(2.5rem, 8vw, 3rem);
@@ -618,11 +651,23 @@ md-icon {
   .card p {
     font-size: var(--font-size-xs);
   }
+
+  .button-group-wrapper {
+    flex-direction: column; 
+    align-items: center; 
+    gap: clamp(0.25rem, 1vh, 0.5rem);
+    margin-left: auto; 
+    margin-right: auto;
+  }
   .download-button,
   .button-2 {
     font-size: var(--font-size-md);
     padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(1.2rem, 4vw, 1.8rem);
+    margin-top: 0; 
+    width: 90%; 
+    max-width: 400px;
   }
+
   .footer {
     font-size: 14px;
     padding: clamp(0.8rem, 2.5vh, 1rem) 0;
@@ -639,7 +684,6 @@ md-icon {
   }
 }
 
-/* Desktop adjustments */
 @media screen and (min-width: 992px) {
   .container {
     max-width: 1200px;
@@ -693,49 +737,15 @@ md-icon {
     font-size: var(--font-size-md);
     text-align: left;
   }
-
-  /* --- Cards for Desktop --- */
-  .card {
-    max-width: 500px; /* **NORMAL WIDTH: Consistent max-width for desktop** */
-    padding: 1.25rem 1.5rem;
-    min-height: 80px;
-    margin: 2rem 0; /* **LEFT ALIGNMENT: Set horizontal margin to 0** */
-    justify-content: flex-start; /* Ensure card content is left-aligned */
-  }
-  .profile-pic {
-    width: 5rem;
-    height: 5rem;
-    margin-right: 1.5rem;
-  }
-
-  /* --- Buttons for Desktop --- */
-  .download-button-wrapper,
-  .button-2-wrapper {
-    justify-content: flex-start; /* Align button wrappers to the left */
-  }
-  .download-button,
-  .button-2 {
-    font-size: var(--font-size-xl);
-    padding: 1.2rem 2.5rem;
-    max-width: 500px; /* Ensure button doesn't get too wide */
-  }
-  .download-button-wrapper {
-    padding-top: 1.5rem;
-  }
-  .button-2 {
-    margin-top: 0.75rem;
-  }
-
   .footer {
     padding: 2rem 0;
     font-size: 18px;
     margin-top: 3rem;
-    text-align: center; /* **KEEPING COPYRIGHT CENTERED** */
+    text-align: center;
   }
   .social-footer {
     margin-top: 1rem;
     gap: 1.5rem;
-    justify-content: flex-start;
   }
   .footer-social-button {
     padding: 1rem;
@@ -744,10 +754,51 @@ md-icon {
     width: 2rem;
     height: 2rem;
   }
+
+  .card-group-wrapper {
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    gap: clamp(1.5rem, 3vw, 2rem); 
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .card {
+    max-width: 500px; 
+    padding: 1.25rem 1.5rem;
+    min-height: 80px;
+    margin: 0; 
+    flex: 1 1 calc(50% - clamp(0.75rem, 1.5vw, 1rem)); 
+    max-width: calc(50% - clamp(0.75rem, 1.5vw, 1rem)); 
+    box-sizing: border-box;
+  }
+  .profile-pic {
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.5rem;
+  }
+
+  .button-group-wrapper {
+    flex-direction: row; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+    gap: clamp(1rem, 2vw, 1.5rem); 
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1.5rem; 
+  }
+  .download-button,
+  .button-2 {
+    font-size: var(--font-size-xl);
+    padding: 1.2rem 2.5rem;
+    max-width: 250px; 
+    margin-top: 0; 
+    width: auto;
+    flex-grow: 0;
+    flex-shrink: 1;
+  }
 }
 
-
-/* --- Image Popup Overlay --- */
 #img-popup-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -777,7 +828,6 @@ md-icon {
   cursor: pointer;
 }
 
-/* --- Content Fade Overlay --- */
 #content-fade-overlay {
   position: fixed;
   top: 0;
