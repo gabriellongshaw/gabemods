@@ -1,3 +1,6 @@
+/* 2025 Gabe Mods (https://gabemods.github.io/about), All Rights Reserved.
+ */
+
 const settingsButton = document.getElementById('settings-button');
 const settingsModal = document.getElementById('settings-modal');
 const closeButton = settingsModal.querySelector('.close-button');
@@ -91,9 +94,9 @@ if (resetButton) {
         theme: 'system',
         font: 'system',
         translucency: true,
-        cardTransparency: false,
+        cardTransparency: false, // Default for new toggle on reset
         backgroundImage: '',
-        hardReset: true
+        hardReset: true // Ensure hardReset is true by default
       }
     });
     
@@ -119,61 +122,70 @@ if (settingsModal) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const infoButton = document.getElementById('info-card-transparency');
-  const infoDialog = document.getElementById('info-dialog');
-  const closeInfoDialogButton = document.getElementById('close-info-dialog');
-  
-  if (infoButton && infoDialog && closeInfoDialogButton) {
-    infoButton.addEventListener('click', () => {
-      infoDialog.style.display = 'flex';
-    });
-    
-    closeInfoDialogButton.addEventListener('click', () => {
-      infoDialog.style.display = 'none';
-    });
-    
-    infoDialog.addEventListener('click', (event) => {
-      if (event.target === infoDialog) {
-        infoDialog.style.display = 'none';
-      }
-    });
-  }
+    const infoButton = document.getElementById('info-card-transparency');
+    const infoDialog = document.getElementById('info-dialog');
+    const closeInfoDialogButton = document.getElementById('close-info-dialog');
+
+    if (infoButton && infoDialog && closeInfoDialogButton) {
+        infoButton.addEventListener('click', () => {
+            infoDialog.style.display = 'flex'; // Show the dialog
+        });
+
+        closeInfoDialogButton.addEventListener('click', () => {
+            infoDialog.style.display = 'none'; // Hide the dialog
+        });
+
+        // Optional: Close dialog when clicking outside of it
+        infoDialog.addEventListener('click', (event) => {
+            if (event.target === infoDialog) {
+                infoDialog.style.display = 'none';
+            }
+        });
+    }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const infoButton = document.getElementById('info-card-transparency');
-  const infoDialog = document.getElementById('info-dialog');
-  const closeInfoDialogButton = document.getElementById('close-info-dialog');
-  
-  if (infoButton && infoDialog && closeInfoDialogButton) {
-    
-    infoButton.addEventListener('click', () => {
-      infoDialog.classList.add('show');
-      
-      closeInfoDialogButton.focus();
-    });
-    
-    closeInfoDialogButton.addEventListener('click', () => {
-      infoDialog.classList.remove('show');
-      
-      infoButton.focus();
-    });
-    
-    infoDialog.addEventListener('click', (event) => {
-      
-      if (event.target === infoDialog) {
-        infoDialog.classList.remove('show');
-        
-        infoButton.focus();
-      }
-    });
-    
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && infoDialog.classList.contains('show')) {
-        infoDialog.classList.remove('show');
-        
-        infoButton.focus();
-      }
-    });
-  }
+    const infoButton = document.getElementById('info-card-transparency');
+    const infoDialog = document.getElementById('info-dialog');
+    const closeInfoDialogButton = document.getElementById('close-info-dialog');
+
+    // Ensure all elements exist before adding event listeners
+    if (infoButton && infoDialog && closeInfoDialogButton) {
+
+        // Event listener for opening the dialog
+        infoButton.addEventListener('click', () => {
+            infoDialog.classList.add('show'); // Add the 'show' class to trigger the Material 3 animation
+            // Optional: Set focus to the close button or first interactive element for accessibility
+            closeInfoDialogButton.focus();
+        });
+
+        // Event listener for closing the dialog using the "Got it!" button
+        closeInfoDialogButton.addEventListener('click', () => {
+            infoDialog.classList.remove('show'); // Remove the 'show' class to hide the dialog with animation
+            // Optional: Return focus to the button that opened the dialog for accessibility
+            infoButton.focus();
+        });
+
+        // Optional: Close dialog when clicking *outside* the dialog content
+        // This is important because there's no dimmed background.
+        // We listen on the dialog itself and check if the click target is the dialog (the area around content).
+        infoDialog.addEventListener('click', (event) => {
+            // Check if the clicked element is the dialog container itself,
+            // and not a child element within the dialog content.
+            if (event.target === infoDialog) {
+                infoDialog.classList.remove('show');
+                // Optional: Return focus
+                infoButton.focus();
+            }
+        });
+
+        // Optional: Close dialog when the Escape key is pressed
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && infoDialog.classList.contains('show')) {
+                infoDialog.classList.remove('show');
+                // Optional: Return focus
+                infoButton.focus();
+            }
+        });
+    }
 });

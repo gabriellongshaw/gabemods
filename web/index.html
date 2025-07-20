@@ -122,15 +122,27 @@
   </div>
   
   <dialog id="settings-modal" class="settings-dialog">
-  <div class="modal-content">
+  <div class="modal-header">
+    <div class="icon-placeholder">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#49454F">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.09-.76-1.71-1.05l-.48-2.61c-.04-.2-.23-.35-.44-.35h-4c-.21 0-.4.15-.44.35l-.48 2.61c-.63.29-1.2.65-1.71 1.05l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.12.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.09.76 1.71 1.05l.48 2.61c.04.2.23.35.44.35h4c.21 0 .4-.15.44-.35l.48-2.61c.63-.29 1.2-.65 1.71-1.05l2.49 1c.22.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+      </svg>
+    </div>
     <h2>Settings</h2>
-    <label for="theme-select">Theme</label>
-    <select id="theme-select">
-      <option value="system">System</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </select>
-    <div class="setting-row">
+  </div>
+
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="theme-select">Theme</label>
+      <select id="theme-select">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="font-select">Font</label>
       <select id="font-select">
         <option value="system">System Default</option>
@@ -139,12 +151,14 @@
         <option value="Open Sans">Open Sans</option>
       </select>
     </div>
-    <div class="modal-actions">
-      <button id="reset-settings-button" class="reset-button">Reset</button>
-      <button id="close-settings" class="close-button">Close</button>
-    </div>
+  </div>
+
+  <div class="modal-actions">
+    <button id="reset-settings-button" class="button secondary-button">Reset</button>
+    <button id="close-settings" class="button primary-button">Close</button>
   </div>
 </dialog>
+
   <div id="backdrop" class="backdrop hidden"></div>
    <div id="content-fade-overlay"></div>
  <script type="module" src="assets/js/main.js"></script>
