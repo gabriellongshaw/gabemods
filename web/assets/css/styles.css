@@ -5,12 +5,14 @@
   --background-color-light: #f0f2f5;
   --text-color-light: #333333;
 
-  /* Responsive font sizes using clamp for better control */
-  --font-size-base: 1rem;
-  --font-size-sm: clamp(0.8rem, 0.7vw + 0.5rem, 1rem); /* Smaller text that scales */
-  --font-size-md: clamp(1rem, 1vw + 0.8rem, 1.2rem); /* Medium text that scales */
-  --font-size-lg: clamp(1.2rem, 1.5vw + 1rem, 1.5rem); /* Larger text that scales */
-  --font-size-xl: clamp(1.5rem, 2vw + 1rem, 2rem); /* Extra large text that scales */
+  /* Responsive font sizes using clamp for better control - Adjusted values */
+  --font-size-base: 1rem; /* Base for rem units, often 16px */
+  --font-size-xs: clamp(0.75rem, 1.8vw, 0.9rem); /* Extra small text for details */
+  --font-size-sm: clamp(0.9rem, 2.2vw, 1rem);   /* Small text that scales well */
+  --font-size-md: clamp(1rem, 2.5vw, 1.15rem);  /* Medium text, general body copy */
+  --font-size-lg: clamp(1.15rem, 3vw, 1.35rem); /* Larger text, for subtitles */
+  --font-size-xl: clamp(1.4rem, 4vw, 1.8rem);   /* Extra large text, main titles on smaller screens */
+  --font-size-xxl: clamp(1.8rem, 5vw, 2.2rem);  /* Very large text, main titles on larger screens */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
@@ -79,24 +81,24 @@ body, html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  /* Use 100% for height to ensure it fills the viewport on all devices */
-  height: 100%;
+  height: 100%; /* Ensure full height for layout */
   font-family: 'Roboto', sans-serif;
   background-color: #212121;
   color: #ffffff;
   animation: fadeUp 0.8s ease forwards;
+  /* Default font-weight for body text for readability */
+  font-weight: 400;
 }
 
 /* --- Container for main content --- */
 .container {
-  /* Using clamp for padding-top to adapt to header height on smaller screens */
-  padding-top: clamp(56px, 10vh, 80px);
+  padding-top: clamp(56px, 10vh, 80px); /* Adapt to header height */
   max-width: 900px;
   margin: 0 auto;
   box-sizing: border-box;
-  /* Responsive horizontal padding using a combination of vw and px for minimum */
-  padding-left: clamp(16px, 4vw, 40px);
-  padding-right: clamp(16px, 4vw, 40px);
+  /* Reduced horizontal padding for cards to be wider */
+  padding-left: clamp(0.75rem, 4vw, 1.5rem);
+  padding-right: clamp(0.75rem, 4vw, 1.5rem);
 }
 
 .header,
@@ -109,8 +111,7 @@ body, html {
 /* --- Header --- */
 .header {
   width: 100%;
-  /* Using a fixed height for header, but consider `min-height` or `rem` for more adaptability */
-  height: 56px;
+  height: 56px; /* Keeping a fixed height for consistency */
   background-color: #1e1e1e;
   display: flex;
   align-items: center;
@@ -122,28 +123,28 @@ body, html {
 }
 
 .main-title {
-  /* Use responsive margin-left and fluid font size */
-  margin-left: clamp(16px, 4vw, 20px);
-  font-weight: 500;
-  font-size: var(--font-size-xl);
-  flex-grow: 1; /* Allows title to take up available space */
-  text-align: left; /* Default alignment */
+  /* Adjusted margin and font size for better scaling - Smaller */
+  margin-left: clamp(1rem, 4vw, 1.25rem);
+  font-weight: 500; /* Good font-weight for titles */
+  font-size: var(--font-size-lg); /* Using --font-size-lg for slightly smaller main title */
+  flex-grow: 1;
+  text-align: left;
 }
 
 .role-title {
-  /* Fluid font size and vertical margin */
+  /* Adjusted font size and vertical margin for readability */
   font-size: var(--font-size-lg);
-  margin: clamp(20px, 5vh, 35px) 0 clamp(10px, 2vh, 15px);
+  margin: clamp(2rem, 5vh, 2.5rem) 0 clamp(1rem, 2.5vh, 1.5rem);
   color: #bbb;
   text-align: left;
+  font-weight: 400; /* Standard font-weight for secondary titles */
 }
 
 /* --- Menu Toggle (Hamburger) --- */
 .menu-toggle {
-  /* Fixed size for consistent tap target, but can be adjusted with `rem` for accessibility */
   width: 26px;
   height: 20px;
-  margin-left: 16px;
+  margin-left: clamp(1rem, 4vw, 1.25rem); /* Responsive margin */
   cursor: pointer;
   position: relative;
   z-index: 1003;
@@ -174,19 +175,16 @@ body, html {
 .side-menu {
   position: fixed;
   top: 0;
-  /* Use a percentage for `left` to make it responsive */
   left: -80vw;
-  /* Max width and a percentage for width ensure it scales but doesn't get too wide */
   width: min(80vw, 300px);
-  /* Use 100vh to ensure it always takes up the full viewport height */
-  height: 100vh;
+  height: 100vh; /* Ensures full viewport height */
   background-color: #1e1e1e;
-  /* Responsive padding for menu content */
-  padding: clamp(60px, 10vh, 80px) clamp(15px, 5vw, 20px);
+  /* Adjusted padding for more generous space */
+  padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.5rem);
   box-sizing: border-box;
   z-index: 1001;
   transition: left 0.4s ease;
-  overflow-y: auto; /* Allow scrolling if menu content exceeds height */
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -203,15 +201,16 @@ body, html {
 }
 
 .side-menu li {
-  margin-bottom: clamp(10px, 2vh, 20px); /* Responsive vertical spacing */
+  margin-bottom: clamp(1rem, 2.5vh, 1.5rem); /* Responsive vertical spacing */
 }
 
 .side-menu a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
-  font-size: var(--font-size-md); /* Use responsive font size */
+  font-size: var(--font-size-md); /* Consistent menu item size */
+  font-weight: 400; /* Good readability */
   display: block;
-  padding: clamp(8px, 1.5vh, 10px) clamp(10px, 2vw, 15px); /* Responsive padding */
+  padding: clamp(0.75rem, 1.5vh, 1rem) clamp(1rem, 2.5vw, 1.25rem);
   border-radius: 10px;
   transition: background 0.3s ease;
 }
@@ -220,12 +219,14 @@ body, html {
   color: #A4CDF3;
   background-color: #2C3644;
   border-radius: 12px;
+  font-weight: 500; /* Slightly bolder for current page */
 }
 
 .side-menu li.active a {
   color: #fff;
   background-color: rgba(0, 123, 255, 0.3);
   border-radius: 12px;
+  font-weight: 500;
 }
 
 .side-menu a:hover:not(.active) {
@@ -244,8 +245,8 @@ body, html {
 
 .side-menu-settings {
   position: absolute;
-  bottom: clamp(10px, 2vh, 20px); /* Responsive bottom positioning */
-  right: clamp(10px, 2vw, 20px); /* Responsive right positioning */
+  bottom: clamp(1rem, 2.5vh, 1.5rem);
+  right: clamp(1rem, 2.5vw, 1.5rem);
   padding: 0;
 }
 
@@ -253,7 +254,7 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px; /* Consider `rem` for consistent sizing across zoom levels */
+  width: 48px;
   height: 48px;
   padding: 0;
   margin: 0;
@@ -283,9 +284,8 @@ md-icon {
   position: fixed;
   top: 0;
   left: 0;
-  /* Use 100vw and 100vh to guarantee full screen coverage */
   width: 100vw;
-  height: 100vh;
+  height: 100vh; /* Ensures full viewport height */
   background: rgba(0, 0, 50, 0.3);
   opacity: 0;
   visibility: hidden;
@@ -301,9 +301,10 @@ md-icon {
 /* --- Button Intro Text --- */
 .button-intro-text {
   text-align: center;
-  margin: clamp(10px, 2vh, 20px) 0 0;
-  font-size: var(--font-size-sm); /* Use responsive font size */
+  margin: clamp(1.25rem, 3vh, 1.5rem) 0 0;
+  font-size: var(--font-size-sm); /* Using sm for intro text */
   color: #bbb;
+  font-weight: 400;
 }
 
 /* --- Card Components --- */
@@ -315,13 +316,14 @@ md-icon {
   justify-content: flex-start;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  /* Responsive padding for card content */
-  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px);
-  /* Use a combination of vw and px for width to ensure responsiveness with a max */
-  width: calc(min(100vw, 400px) - clamp(24px, 6vw, 32px));
-  /* Responsive height using vh or a fixed rem for consistency, consider `min-height` */
-  min-height: 60px; /* Use min-height for flexibility with content */
-  margin: clamp(10px, 2vh, 16px) auto;
+  /* Adjusted padding for cards */
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.25rem);
+  /* CRITICAL FIX: Use max-width and `calc()` with `vw` to ensure it doesn't overflow */
+  /* Adjusted `calc()` for wider cards, less space from edge */
+  width: calc(min(100%, 400px) - clamp(1.5rem, 4vw, 2rem)); /* Reduced the subtracted value */
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+  min-height: 60px; /* Keep minimum height for consistent tap target */
+  margin: clamp(1rem, 2.5vh, 1.5rem) auto; /* Responsive vertical margin, auto for horizontal centering */
   box-shadow: 0 3px 15px rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -343,18 +345,17 @@ md-icon {
 }
 
 .profile-pic {
-  /* Use vw for fluid sizing, with a max-width for control */
-  width: clamp(50px, 10vw, 60px);
-  height: clamp(50px, 10vw, 60px);
-  border-radius: 50%; /* Changed to 50% for perfect circle */
+  width: clamp(3rem, 10vw, 4rem); /* More controlled scaling for profile pic */
+  height: clamp(3rem, 10vw, 4rem);
+  border-radius: 50%;
   object-fit: cover;
-  margin-right: clamp(10px, 3vw, 16px); /* Responsive margin */
+  margin-right: clamp(0.75rem, 2.5vw, 1rem);
 }
 
 .card h1 {
-  font-size: var(--font-size-md); /* Use responsive font size */
+  font-size: var(--font-size-md); /* Card title size */
   margin: 0;
-  font-weight: 500;
+  font-weight: 500; /* Good visibility */
 }
 
 .card .text-content {
@@ -364,36 +365,38 @@ md-icon {
 }
 
 .card p {
-  font-size: var(--font-size-sm); /* Use responsive font size */
+  font-size: var(--font-size-xs); /* Card description, slightly smaller */
   color: rgba(173, 216, 230, 0.6);
-  margin: clamp(2px, 0.5vh, 4px) 0 0; /* Responsive vertical margin */
+  margin: clamp(0.1rem, 0.3vh, 0.15rem) 0 0; /* Reduced gap between h1 and p */
   opacity: 0.8;
   line-height: 1.3;
+  font-weight: 400; /* Standard readability */
 }
 
 /* --- Footer --- */
 .footer {
   width: 100%;
   text-align: center;
-  padding: clamp(15px, 3vh, 20px) 0; /* Responsive padding */
-  font-size: var(--font-size-sm); /* Use responsive font size */
+  padding: clamp(1rem, 3vh, 1.25rem) 0;
+  font-size: 16px; /* Reverted credits font-size to fixed px as requested */
   color: rgba(255, 255, 255, 0.6);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: clamp(15px, 3vh, 20px); /* Responsive top margin */
+  margin-top: clamp(1.25rem, 3vh, 1.5rem);
   box-sizing: border-box;
+  font-weight: 400; /* Reverted credits font-weight to 400 */
 }
 
 .social-footer {
   display: flex;
   justify-content: center;
-  margin-top: clamp(8px, 2vh, 10px); /* Responsive top margin */
-  gap: clamp(8px, 2vw, 12px); /* Responsive gap between items */
+  margin-top: clamp(0.5rem, 1.5vh, 0.75rem);
+  gap: clamp(0.75rem, 2vw, 1rem);
 }
 
 .footer-social-button {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
-  padding: clamp(8px, 2vw, 12px); /* Responsive padding */
+  padding: clamp(0.75rem, 2vw, 1rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -406,8 +409,8 @@ md-icon {
 }
 
 .footer-social-button svg {
-  width: clamp(18px, 4vw, 22px); /* Responsive icon size */
-  height: clamp(18px, 4vw, 22px);
+  width: clamp(1.2rem, 4.5vw, 1.6rem); /* Increased SVG size */
+  height: clamp(1.2rem, 4.5vw, 1.6rem); /* Increased SVG size */
   fill: white;
 }
 
@@ -416,25 +419,28 @@ md-icon {
 .download-button-wrapper {
   display: flex;
   justify-content: center;
-  padding: clamp(3px, 1vh, 5px) 0;
+  /* Further reduced vertical padding on button wrappers */
+  padding: clamp(0.1rem, 0.5vh, 0.2rem) 0;
   box-sizing: border-box;
 }
 .download-button-wrapper {
-  padding-top: clamp(16px, 4vh, 24px);
+    /* Reduced top padding for download button, minimal gap */
+    padding-top: clamp(0.75rem, 2vh, 1rem);
 }
 
 .download-button,
 .button-2 {
   font-family: "Roboto", sans-serif;
-  font-size: var(--font-size-md); /* Use responsive font size */
-  font-weight: 450;
-  padding: clamp(12px, 3vw, 16px) clamp(24px, 6vw, 32px); /* Responsive padding */
+  font-size: var(--font-size-lg); /* Slightly larger for buttons for tap targets */
+  font-weight: 500; /* Bolder for buttons */
+  /* Reduced horizontal and vertical padding for buttons */
+  padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2rem);
   border: none;
   border-radius: 50px;
   text-decoration: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   width: 100%;
-  max-width: 400px; /* Max width to prevent buttons from becoming too wide */
+  max-width: 400px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -446,7 +452,7 @@ md-icon {
 }
 
 .button-2 {
-  margin-top: clamp(8px, 2vh, 10px); /* Responsive top margin */
+  margin-top: clamp(0.25rem, 1vh, 0.5rem); /* Significantly reduced margin between buttons */
   background-color: rgba(173, 216, 230, 0.08);
   color: #fff;
 }
@@ -461,76 +467,94 @@ md-icon {
 @media screen and (min-width: 600px) {
   .main-title {
     text-align: center;
+    font-size: var(--font-size-xl); /* Adjusted main title size for wider screens, slightly smaller */
   }
 }
 
 /* Landscape orientation for smaller screens (phones/small tablets) */
 @media (orientation: landscape) and (max-width: 767px) {
   .role-title {
-    font-size: var(--font-size-sm);
-    margin: clamp(15px, 3vh, 25px) 0 clamp(8px, 1.5vh, 12px);
+    /* Adjusted for better use of horizontal space */
+    font-size: var(--font-size-md);
+    margin: clamp(0.8rem, 2vh, 1.2rem) 0 clamp(0.4rem, 1vh, 0.7rem);
   }
   .card {
-    min-height: 50px; /* Slightly reduce height for better fit */
-    padding: clamp(8px, 1.5vw, 10px) clamp(10px, 2vw, 12px);
+    /* Adjust card sizing for landscape to allow more cards per row if desired, or better fit */
+    min-height: 50px;
+    padding: clamp(0.5rem, 1.2vw, 0.7rem) clamp(0.8rem, 2vw, 1rem);
   }
   .profile-pic {
-    width: clamp(40px, 8vw, 50px);
-    height: clamp(40px, 8vw, 50px);
-    margin-right: clamp(8px, 2vw, 12px);
+    width: clamp(2.2rem, 7vw, 3rem);
+    height: clamp(2.2rem, 7vw, 3rem);
+    margin-right: clamp(0.5rem, 1.2vw, 0.7rem);
   }
   .card h1 {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
   }
   .card p {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
+  }
+  .button-2-wrapper,
+  .download-button-wrapper {
+      /* Further reduce button wrapper padding in landscape */
+      padding: clamp(0.1rem, 0.4vh, 0.2rem) 0;
+  }
+  .download-button-wrapper {
+      padding-top: clamp(0.5rem, 1.5vh, 0.8rem);
+  }
+  .download-button,
+  .button-2 {
+      /* Reduce button padding in landscape for a more compact look */
+      padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 4vw, 1.5rem);
+  }
+  .button-2 {
+      margin-top: clamp(0.2rem, 0.8vh, 0.4rem); /* Very small gap in landscape */
   }
 }
 
 /* Adjustments for medium screens (tablets) */
 @media (max-width: 768px) {
   .main-title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
   }
 
   .profile-pic {
-    width: clamp(45px, 9vw, 55px);
-    height: clamp(45px, 9vw, 55px);
+    width: clamp(3rem, 9vw, 3.5rem);
+    height: clamp(3rem, 9vw, 3.5rem);
   }
   .card h1 {
     font-size: var(--font-size-md);
   }
   .card p {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
   }
 }
 
 /* Adjustments for small screens (phones) */
 @media (max-width: 480px) {
   .main-title {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-lg); /* Consistent main title size for phones */
   }
 
   .profile-pic {
-    width: clamp(40px, 8vw, 45px);
-    height: clamp(40px, 8vw, 45px);
-    margin-right: clamp(8px, 2vw, 12px);
+    width: clamp(2.5rem, 8vw, 3rem);
+    height: clamp(2.5rem, 8vw, 3rem);
+    margin-right: clamp(0.5rem, 1.5vw, 0.75rem);
   }
   .card h1 {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-sm); /* Ensure card titles are readable */
   }
   .card p {
-    font-size: calc(var(--font-size-sm) * 0.9); /* Slightly smaller for very small screens */
+    font-size: var(--font-size-xs);
   }
   .role-title {
-    font-size: var(--font-size-sm);
-    margin: clamp(20px, 4vh, 30px) 0 clamp(10px, 2vh, 15px);
+    font-size: var(--font-size-lg); /* Keep role title a good size */
+    margin: clamp(1.5rem, 3.5vh, 2rem) 0 clamp(0.75rem, 1.5vh, 1rem);
   }
   .footer {
-    font-size: calc(var(--font-size-sm) * 0.9);
+    font-size: 14px; /* Maintain fixed font size for footer on small screens if desired */
   }
 }
-
 
 /* --- Image Popup Overlay (kept as is, it's generally well-structured for full screen) --- */
 #img-popup-overlay {
