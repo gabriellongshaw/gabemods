@@ -3,7 +3,7 @@
 
 const settingsButton = document.getElementById('settings-button');
 const settingsModal = document.getElementById('settings-modal');
-const closeButton = settingsModal.querySelector('.close-button');
+const closeButton = settingsModal.querySelector('#close-settings');
 const resetButton = settingsModal.querySelector('#reset-settings-button');
 const backdrop = document.getElementById('backdrop');
 

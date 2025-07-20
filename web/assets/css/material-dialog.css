@@ -1,26 +1,24 @@
 :root {
-  --md-icon-font: Material Symbols Rounded; /* Keeping this for potential use, though using SVG for direct control */
-  --transition: all 0.2s ease-out; /* Slightly faster and smoother cubic-bezier for Material 3 feel */
+  --md-icon-font: Material Symbols Rounded; 
+  --transition: all 0.2s ease-out; 
 
-  /* Dark mode specific variables, as the image is dark themed */
-  --dialog-bg: #202020; /* Slightly lighter dark than #121212 to match image */
-  --dialog-text: #E0E0E0; /* Light gray for main text */
-  --dialog-secondary-text: #B0B0B0; /* Slightly darker gray for description */
+  --dialog-bg: #202020; 
+  --dialog-text: #E0E0E0; 
+  --dialog-secondary-text: #B0B0B0; 
 
-  --select-bg: #303030; /* Darker background for select boxes */
-  --select-text: #E0E0E0; /* Light text within select boxes */
-  --select-border-initial: #303030; /* Initial border color, same as background for seamless look */
-  --select-active-bg: #404040; /* Slightly lighter when active/focused */
-  --select-active-border: #8AB4F8; /* A light blue for active border */
-  --select-arrow-color: #B0B0B0; /* Color for the dropdown arrow */
+  --select-bg: #303030; 
+  --select-text: #E0E0E0; 
+  --select-border-initial: #303030; 
+  --select-active-bg: #404040; 
+  --select-active-border: #8AB4F8; 
+  --select-arrow-color: #B0B0B0; 
 
-  --button-text: #8AB4F8; /* Light blue for button text */
-  --button-hover-bg: rgba(138, 180, 248, 0.1); /* Light blue transparent hover */
+  --button-text: #8AB4F8; 
+  --button-hover-bg: rgba(138, 180, 248, 0.1); 
 
-  --settings-icon-color: #B0B0B0; /* Color for the settings icon */
+  --settings-icon-color: #B0B0B0; 
 }
 
-/* Base dialog styles remain largely the same for opening/closing animations */
 dialog {
   position: fixed;
   top: 50%;
@@ -71,25 +69,22 @@ dialog.closing {
   pointer-events: none;
 }
 
-/* --- Settings Dialog Specific Styles --- */
 .settings-dialog {
   width: 90vw;
-  max-width: 500px; /* Adjusted max-width based on your update */
-  border-radius: 20px; /* Match the more rounded corners in the image */
+  max-width: 500px; 
+  border-radius: 20px; 
   background-color: var(--dialog-bg);
   color: var(--dialog-text);
   font-family: 'Roboto', sans-serif;
-  box-shadow: 0px 8px 10px 1px rgba(0,0,0,0.14), /* Re-added box-shadow which was removed in your snippet */
+  box-shadow: 0px 8px 10px 1px rgba(0,0,0,0.14), 
               0px 3px 14px 2px rgba(0,0,0,0.12),
               0px 5px 5px -3px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
 }
 
-/* Dark mode specific body.dark styles are now mostly handled by direct variable use */
-/* but keeping a placeholder for overall body theming if needed */
 body.dark {
-  /* This would be for overall body background, etc. if you have a dark mode toggle */
+
   background-color: #121212;
 }
 
@@ -97,40 +92,40 @@ body.dark {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px 24px 8px; /* Adjusted top/bottom padding */
+  padding: 24px 24px 8px; 
 }
 
 .settings-dialog .icon-placeholder {
-  margin-bottom: 8px; /* More space between icon and title */
+  margin-bottom: 8px; 
 }
 
 .settings-dialog .icon-placeholder svg {
-  width: 35px; /* Adjusted icon size based on your update */
-  height: 35px; /* Adjusted icon size based on your update */
-  fill: var(--settings-icon-color); /* Use specific icon color variable */
+  width: 35px; 
+  height: 35px; 
+  fill: var(--settings-icon-color); 
 }
 
 .settings-dialog .modal-header h2 {
   margin: 0;
-  font-weight: 500; /* Medium weight, common in Material Design */
-  font-size: 1.5rem; /* 24px */
+  font-weight: 500; 
+  font-size: 1.5rem; 
   color: inherit;
 }
 
 .settings-dialog .modal-body {
-  padding: 0 24px 24px; /* Padding for content, top padding handled by header */
+  padding: 0 24px 24px; 
   text-align: center;
 }
 
 .settings-dialog .modal-body p {
   margin-top: 0;
-  margin-bottom: 20px; /* More space below description */
-  font-size: 0.95rem; /* Slightly smaller for description */
-  color: var(--dialog-secondary-text); /* Lighter gray for description */
+  margin-bottom: 20px; 
+  font-size: 0.95rem; 
+  color: var(--dialog-secondary-text); 
 }
 
 .settings-dialog .form-group {
-  margin-bottom: 20px; /* Consistent spacing between form groups */
+  margin-bottom: 20px; 
 }
 
 .settings-dialog .form-group:last-of-type {
@@ -139,54 +134,50 @@ body.dark {
 
 .settings-dialog select {
   width: 100%;
-  padding: 12px 18px; /* Slightly adjusted padding */
-  margin-top: 8px; /* Space between label and select */
-  border: 1px solid var(--select-border-initial); /* <-- FIX: Set initial border color */
-  border-radius: 12px; /* More rounded square for select boxes */
+  padding: 12px 18px; 
+  margin-top: 8px; 
+  border: 1px solid var(--select-border-initial); 
+  border-radius: 12px; 
   background-color: var(--select-bg);
   color: var(--select-text);
-  font-weight: 500; /* Medium font weight */
-  font-size: 1rem; /* 16px */
-  appearance: none; /* Remove default arrow */
-  text-align: center; /* Center text as per image */
-  transition: background-color var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition); /* <-- Ensure border-color is in transition */
-  cursor: pointer; /* Indicate it's interactive */
+  font-weight: 500; 
+  font-size: 1rem; 
+  appearance: none; 
+  text-align: center; 
+  transition: backround 0.2s ease, border 0.2s ease; 
+  cursor: pointer; 
 
-  /* Custom dropdown arrow for better control */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B0B0B0'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
-  background-size: 24px; /* Adjust size of arrow */
+  background-size: 24px; 
 }
 
-
 .settings-dialog select:hover {
-    background-color: var(--select-active-bg); /* Slight background change on hover */
+    background-color: var(--select-active-bg); 
 }
 
 .settings-dialog select:active,
 .settings-dialog select:focus {
   background-color: var(--select-active-bg);
-  border-color: var(--select-active-border); /* Blue border on focus/active */
+  border-color: var(--select-active-border); 
   outline: none;
-  box-shadow: 0 0 0 3px rgba(138, 180, 248, 0.3); /* Subtle blue glow on focus */
+  box-shadow: 0 0 0 3px rgba(138, 180, 248, 0.3); 
 }
-
 
 .settings-dialog label {
-  font-size: 0.9rem; /* Smaller label text */
-  font-weight: 400; /* Regular font weight */
+  font-size: 0.9rem; 
+  font-weight: 400; 
   display: block;
-  margin-bottom: 0px; /* No extra margin here, handled by select's margin-top */
+  margin-bottom: 0px; 
   text-align: left;
-  color: var(--dialog-secondary-text); /* Lighter gray for labels */
+  color: var(--dialog-secondary-text); 
 }
-
 
 .settings-dialog .modal-actions {
   display: flex;
   justify-content: flex-end;
-  padding: 16px 24px 24px; /* Adjust padding for button actions */
+  padding: 16px 24px 24px; 
   margin-top: 0px;
   gap: 8px;
 }
@@ -194,24 +185,24 @@ body.dark {
 .settings-dialog .button {
   background: none;
   border: none;
-  font-family: 'Roboto', sans-serif; /* Use Roboto for consistency */
-  font-weight: 500; /* Medium weight for buttons */
-  font-size: 0.95rem; /* Slightly smaller button text */
+  font-family: 'Roboto', sans-serif; 
+  font-weight: 500; 
+  font-size: 0.95rem; 
   cursor: pointer;
-  padding: 10px 18px; /* Adjusted padding for buttons */
-  transition: background-color var(--transition), color var(--transition), transform 0.15s ease-out; /* Add transform for press animation */
-  border-radius: 50px; /* Very rounded pill shape */
+  padding: 10px 18px; 
+  transition: background-color var(--transition), color var(--transition), transform 0.15s ease-out; 
+  border-radius: 50px; 
   outline: none;
-  text-transform: none; /* No capitalization as in image */
-  letter-spacing: 0.01em; /* Subtle letter spacing */
+  text-transform: none; 
+  letter-spacing: 0.01em; 
 }
 
 .settings-dialog .button:active {
-  transform: scale(0.98); /* Subtle press animation */
+  transform: scale(0.98); 
 }
 
 .settings-dialog .secondary-button,
-.settings-dialog .primary-button { /* Both buttons appear to have the same styling in the image */
+.settings-dialog .primary-button { 
   color: var(--button-text);
 }
 
@@ -220,14 +211,11 @@ body.dark {
   background-color: var(--button-hover-bg);
 }
 
-.settings-dialog .secondary-button:focus-visible, /* Use :focus-visible for better accessibility outline */
+.settings-dialog .secondary-button:focus-visible, 
 .settings-dialog .primary-button:focus-visible {
-  outline: 2px solid var(--button-text); /* Outline for keyboard navigation */
+  outline: 2px solid var(--button-text); 
   outline-offset: 2px;
 }
-
-
-/* --- Other dialogs (keeping them for completeness based on your original CSS) --- */
 
 .toggle-setting {
   display: flex;
@@ -241,10 +229,9 @@ body.dark {
 .setting-label {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--dialog-text); /* Use new variable */
+  color: var(--dialog-text); 
   flex-grow: 1;
 }
-
 
 .switch {
   position: relative;
@@ -268,7 +255,7 @@ body.dark {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #444; /* Dark mode default */
+  background-color: #444; 
   transition: background-color 0.3s ease;
   border-radius: 34px;
   cursor: pointer;
@@ -281,20 +268,19 @@ body.dark {
   width: 22px;
   left: 3px;
   bottom: 3px;
-  background-color: #E0E0E0; /* Dark mode default */
+  background-color: #E0E0E0; 
   border-radius: 50%;
   transition: transform 0.3s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 input:checked + .slider {
-  background-color: #8AB4F8; /* Light blue when checked */
+  background-color: #8AB4F8; 
 }
 
 input:checked + .slider:before {
   transform: translateX(24px);
 }
-
 
 .info-button {
     background: none;
@@ -312,15 +298,15 @@ input:checked + .slider:before {
 }
 
 .info-button:hover {
-    background-color: rgba(255, 255, 255, 0.08); /* Adjusted for dark mode hover */
+    background-color: rgba(255, 255, 255, 0.08); 
 }
 
 .info-button:active {
-    background-color: rgba(255, 255, 255, 0.12); /* Adjusted for dark mode active */
+    background-color: rgba(255, 255, 255, 0.12); 
 }
 
 .info-button svg {
-    fill: var(--settings-icon-color); /* Use general icon color */
+    fill: var(--settings-icon-color); 
     width: 20px;
     height: 20px;
 }
@@ -330,14 +316,13 @@ input:checked + .slider:before {
     max-width: 500px;
     padding: 24px;
     border-radius: 28px;
-    background-color: #1C1B1F; /* Dark mode equivalent for Material dialog */
-    color: #E6E1E5; /* Dark mode text equivalent */
+    background-color: #1C1B1F; 
+    color: #E6E1E5; 
     box-shadow: 0px 8px 10px 1px rgba(0,0,0,0.14),
                 0px 3px 14px 2px rgba(0,0,0,0.12),
                 0px 5px 5px -3px rgba(0,0,0,0.2);
     text-align: left;
 }
-
 
 .material-dialog-content h3 {
     font-size: 1.5rem;
@@ -362,7 +347,7 @@ input:checked + .slider:before {
 
 .material-dialog-close-button {
     background-color: transparent;
-    color: #D0BCFF; /* Dark mode button color */
+    color: #D0BCFF; 
     border: none;
     padding: 10px 12px;
     border-radius: 20px;
@@ -374,13 +359,12 @@ input:checked + .slider:before {
 }
 
 .material-dialog-close-button:hover {
-    background-color: rgba(208, 188, 255, 0.08); /* Dark mode hover */
+    background-color: rgba(208, 188, 255, 0.08); 
 }
 
 .material-dialog-close-button:active {
-    background-color: rgba(208, 188, 255, 0.12); /* Dark mode active */
+    background-color: rgba(208, 188, 255, 0.12); 
 }
-
 
 .download-dialog {
   width: 320px;
@@ -388,16 +372,14 @@ input:checked + .slider:before {
   text-align: center;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(15px);
-  background-color: rgba(10, 10, 10, 0.5); /* Dark transparent as per image's general vibe */
-  color: white; /* White text for contrast */
+  background-color: rgba(10, 10, 10, 0.5); 
+  color: white; 
 }
-
 
 .download-dialog.opaque {
   backdrop-filter: none;
-  background-color: #1e1e1e; /* Dark opaque */
+  background-color: #1e1e1e; 
 }
-
 
 .download-dialog .modal-content {
   display: flex;
