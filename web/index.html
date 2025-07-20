@@ -130,15 +130,6 @@
       <option value="dark">Dark</option>
     </select>
     <div class="setting-row">
-      <div class="toggle-setting">
-        <span class="setting-label">Translucency</span>
-        <label class="switch">
-          <input type="checkbox" id="translucency-toggle">
-          <span class="slider"></span>
-        </label>
-      </div>
-    </div>
-    <div class="setting-row">
       <label for="font-select">Font</label>
       <select id="font-select">
         <option value="system">System Default</option>
@@ -146,21 +137,6 @@
         <option value="Roboto">Roboto</option>
         <option value="Open Sans">Open Sans</option>
       </select>
-    </div>
-    <div class="setting-item">
-      <label for="background-select" class="setting-label">Background Image:</label>
-      <div class="background-image-controls">
-        <button id="choose-background-button" class="image-picker-button">
-          <md-icon>image</md-icon> Image picker
-        </button>
-        <button id="clear-background-button" class="image-picker-button clear-button">
-          <md-icon>close</md-icon> Clear
-        </button>
-        
-        <input type="file" id="image-upload-input" accept="image/*" style="display: none;">
-        
-        <span id="current-background-status" class="background-status">None selected</span>
-      </div>
     </div>
     <div class="modal-actions">
       <button id="reset-settings-button" class="reset-button">Reset</button>

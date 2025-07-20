@@ -392,7 +392,7 @@ body.dark md-icon {
   max-width: 400px;
   text-align: center;
   cursor: pointer;
-  transition: ;
+  transition: transform 0.2s ease;
 }
 
 .download-button {
