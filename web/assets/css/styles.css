@@ -221,7 +221,7 @@ body, html {
   padding: 0;
 }
 
-md-icon-button {
+.md-icon-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,7 +238,7 @@ md-icon-button {
   --md-sys-color-on-surface: white;
 }
 
-md-icon-button:hover {
+.md-icon-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -246,7 +246,7 @@ body.dark md-icon {
   color: white;
 }
 
-.md-icon {
+md-icon {
   color: #fff;
 }
 
