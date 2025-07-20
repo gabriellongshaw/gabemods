@@ -1,0 +1,84 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #212121; /* Dark background to match your site's feel */
+    color: #ffffff; /* White text */
+    margin: 0;
+    text-align: center;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.maintenance-container {
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #1e1e1e; /* Slightly lighter dark background for the container */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    animation: fadeIn 1s ease-out;
+}
+
+.maintenance-icon {
+    font-size: 80px; /* Large icon */
+    color: #A9D3FB; /* Your brand blue */
+    margin-bottom: 20px;
+    animation: bounce 2s infinite ease-in-out; /* Subtle animation for the icon */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #bbb; /* Slightly lighter text for paragraphs */
+}
+
+p:last-of-type {
+    margin-top: 25px;
+    font-style: italic;
+    color: #999;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .maintenance-icon {
+        font-size: 60px;
+    }
+}
+
