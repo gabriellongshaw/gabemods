@@ -1,0 +1,379 @@
+/* New CSS for Download Page Elements */
+
+.section-title {
+  font-size: var(--font-size-lg); /* Reusing role-title style */
+  margin: clamp(2rem, 5vh, 2.5rem) 0 clamp(1rem, 2.5vh, 1.5rem);
+  color: #bbb;
+  text-align: left;
+  font-weight: 400;
+}
+
+.section-description {
+  text-align: left;
+  margin: clamp(0.75rem, 2vh, 1rem) 0 clamp(1.5rem, 3vh, 2rem);
+  font-size: var(--font-size-sm);
+  color: #bbb;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.download-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 3.5vh, 2rem); /* Slightly larger gap than card-group-wrapper for main sections */
+  width: 100%;
+}
+
+.download-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: clamp(1.25rem, 4vw, 1.75rem); /* More padding for download content */
+  width: calc(100% - clamp(1.5rem, 4vw, 2rem));
+  max-width: 500px; /* Slightly wider cards for download info */
+  box-sizing: border-box;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.download-card h3 {
+  font-size: var(--font-size-xl);
+  margin: 0 0 clamp(0.5rem, 1.5vh, 0.75rem);
+  font-weight: 500;
+}
+
+.download-card p {
+  font-size: var(--font-size-md);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 clamp(0.2rem, 0.7vh, 0.4rem);
+}
+
+.download-card .version-info,
+.download-card .update-info {
+    font-size: var(--font-size-sm);
+    color: rgba(173, 216, 230, 0.6);
+    margin-bottom: clamp(0.5rem, 1.2vh, 0.75rem);
+}
+
+.download-main-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2rem);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  background-color: #A9D3FB;
+  color: #000;
+  width: 100%;
+  max-width: 300px; /* Adjusted max-width for primary download button */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+  margin-top: clamp(1rem, 2.5vh, 1.5rem);
+}
+
+.download-main-button .material-symbols-rounded {
+    margin-left: 0.5rem;
+    font-size: var(--font-size-xl);
+}
+
+.download-main-button:hover {
+    transform: translateY(-2px);
+    background-color: #92c0ed;
+}
+
+.download-main-button:active {
+    transform: scale(0.98);
+    background-color: #79aee5;
+}
+
+.installation-guide {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1rem, 3vw, 1.25rem);
+  margin-top: clamp(1.5rem, 3.5vh, 2rem);
+  width: calc(100% - clamp(2rem, 6vw, 2.5rem)); /* Adjust for padding */
+  text-align: left;
+}
+
+.installation-guide h4 {
+  font-size: var(--font-size-md);
+  margin: 0 0 clamp(0.4rem, 1vh, 0.6rem);
+  color: #A4CDF3;
+  font-weight: 500;
+}
+
+.installation-guide ol {
+  list-style-type: decimal;
+  padding-left: clamp(1.25rem, 4vw, 1.5rem);
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--font-size-sm);
+}
+
+.installation-guide ol li {
+  margin-bottom: clamp(0.2rem, 0.5vh, 0.3rem);
+  line-height: 1.4;
+}
+
+/* Disabled Android Card */
+.download-card.disabled-card {
+  opacity: 0.7;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+}
+
+.download-card.disabled-card h3 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.download-card.disabled-card p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.download-card .download-main-button.disabled {
+    background-color: #555; /* Dimmed grey for disabled */
+    color: #bbb; /* Dimmed text for disabled */
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none; /* No hover/active effects */
+    box-shadow: none;
+}
+
+.download-card .download-main-button.disabled:hover {
+    background-color: #555; /* Keep background same on hover */
+    transform: none;
+}
+
+.download-card .download-main-button.disabled:active {
+    background-color: #555;
+    transform: none;
+}
+
+/* iOS Button Styling */
+.download-card .download-main-button.ios-button {
+    background-color: #2196F3; /* Material Blue */
+    color: #FFFFFF; /* White text for contrast */
+}
+
+.download-card .download-main-button.ios-button:hover {
+    background-color: #1976D2; /* Darker blue on hover */
+}
+
+.download-card .download-main-button.ios-button:active {
+    background-color: #1565C0; /* Even darker blue on active */
+}
+
+/* Web App Card Styling */
+.download-card .web-app-note {
+    font-size: var(--font-size-xs);
+    color: rgba(173, 216, 230, 0.7); /* Slightly brighter than other dimmed text */
+    margin-top: clamp(0.5rem, 1.2vh, 0.75rem);
+    margin-bottom: clamp(0.5rem, 1.2vh, 0.75rem);
+    line-height: 1.4;
+}
+
+.download-card .download-main-button.web-app-button {
+    background-color: #4CAF50; /* A pleasant green */
+    color: #FFFFFF;
+}
+
+.download-card .download-main-button.web-app-button:hover {
+    background-color: #388E3C;
+}
+
+.download-card .download-main-button.web-app-button:active {
+    background-color: #2E7D32;
+}
+
+
+/* Media queries for new elements */
+@media screen and (min-width: 600px) and (max-width: 991px) {
+    .section-title, .section-description {
+        text-align: left;
+    }
+    .download-cards-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; /* Center cards on medium screens */
+        gap: clamp(1.2rem, 2.5vw, 1.7rem);
+    }
+    .download-card {
+        flex: 1 1 calc(50% - clamp(0.6rem, 1.25vw, 0.85rem)); /* Two cards per row */
+        max-width: calc(50% - clamp(0.6rem, 1.25vw, 0.85rem));
+        padding: clamp(1rem, 3vw, 1.5rem);
+        margin: 0;
+    }
+    .download-card h3 {
+        font-size: var(--font-size-lg);
+    }
+    .download-card p {
+        font-size: var(--font-size-sm);
+    }
+    .download-main-button {
+        font-size: var(--font-size-md);
+        padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(1.2rem, 4vw, 1.8rem);
+        max-width: 250px;
+    }
+    .download-main-button .material-symbols-rounded {
+        font-size: var(--font-size-lg);
+    }
+    .installation-guide {
+        padding: clamp(0.6rem, 1.8vw, 0.9rem) clamp(0.8rem, 2.5vw, 1.1rem);
+    }
+    .installation-guide h4 {
+        font-size: var(--font-size-sm);
+    }
+    .installation-guide ol {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (orientation: landscape) and (max-width: 767px) {
+    .section-title {
+        font-size: var(--font-size-md);
+        margin: clamp(0.8rem, 2vh, 1.2rem) 0 clamp(0.4rem, 1vh, 0.7rem);
+    }
+    .section-description {
+        font-size: 0.75rem;
+        margin: clamp(0.4rem, 1vh, 0.6rem) 0 clamp(0.8rem, 2vh, 1rem);
+    }
+    .download-cards-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: clamp(0.8rem, 2vw, 1.2rem);
+    }
+    .download-card {
+        flex: 1 1 calc(50% - clamp(0.4rem, 1vw, 0.6rem));
+        max-width: calc(50% - clamp(0.4rem, 1vw, 0.6rem));
+        padding: clamp(0.75rem, 2.5vw, 1rem);
+    }
+    .download-card h3 {
+        font-size: var(--font-size-md);
+    }
+    .download-card p {
+        font-size: var(--font-size-xs);
+    }
+    .download-main-button {
+        font-size: var(--font-size-sm);
+        padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.8rem, 3vw, 1.2rem);
+        max-width: 180px;
+        margin-top: clamp(0.7rem, 1.7vh, 1rem);
+    }
+    .download-main-button .material-symbols-rounded {
+        font-size: var(--font-size-md);
+    }
+    .installation-guide {
+        padding: clamp(0.4rem, 1.2vw, 0.6rem) clamp(0.5rem, 1.5vw, 0.75rem);
+        margin-top: clamp(0.8rem, 2vh, 1rem);
+    }
+    .installation-guide h4 {
+        font-size: var(--font-size-xs);
+    }
+    .installation-guide ol {
+        font-size: 0.65rem;
+        padding-left: clamp(1rem, 3vw, 1.2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: var(--font-size-lg);
+        margin: clamp(1.5rem, 3.5vh, 2rem) 0 clamp(0.75rem, 1.5vh, 1rem);
+    }
+    .section-description {
+        font-size: var(--font-size-sm);
+        margin: clamp(0.6rem, 1.5vh, 0.8rem) 0 clamp(1rem, 2.5vh, 1.2rem);
+    }
+    .download-card {
+        padding: clamp(1rem, 3vw, 1.25rem);
+        width: calc(100% - clamp(1.5rem, 4vw, 2rem));
+        max-width: 400px;
+    }
+    .download-card h3 {
+        font-size: var(--font-size-lg);
+    }
+    .download-card p {
+        font-size: var(--font-size-sm);
+    }
+    .download-main-button {
+        font-size: var(--font-size-md);
+        padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(1.2rem, 4vw, 1.8rem);
+        max-width: 300px;
+    }
+    .download-main-button .material-symbols-rounded {
+        font-size: var(--font-size-lg);
+    }
+    .installation-guide {
+        padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(0.9rem, 2.8vw, 1.2rem);
+        width: calc(100% - clamp(1.8rem, 5vw, 2.2rem));
+    }
+    .installation-guide h4 {
+        font-size: var(--font-size-sm);
+    }
+    .installation-guide ol {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .section-title {
+        font-size: var(--font-size-xl);
+        margin: 4rem 0 2rem;
+    }
+    .section-description {
+        font-size: var(--font-size-md);
+        margin: 1rem 0 2.5rem;
+    }
+    .download-cards-wrapper {
+        flex-direction: row;
+        justify-content: center; /* Center cards on large screens too */
+        gap: 2rem;
+    }
+    .download-card {
+        padding: 2rem 2.5rem;
+        max-width: 550px; /* Wider for desktop */
+        flex: 1 1 calc(33.33% - 1.33rem); /* Three cards per row on larger screens */
+        max-width: calc(33.33% - 1.33rem);
+    }
+    .download-card h3 {
+        font-size: var(--font-size-xxl);
+    }
+    .download-card p {
+        font-size: var(--font-size-lg);
+    }
+    .download-main-button {
+        font-size: var(--font-size-xl);
+        padding: 1.2rem 2.5rem;
+        max-width: 350px;
+        margin-top: 2rem;
+    }
+    .download-main-button .material-symbols-rounded {
+        font-size: var(--font-size-xl);
+    }
+    .installation-guide {
+        padding: 1.25rem 1.5rem;
+        margin-top: 2.5rem;
+        width: calc(100% - 3rem);
+    }
+    .installation-guide h4 {
+        font-size: var(--font-size-md);
+    }
+    .installation-guide ol {
+        font-size: var(--font-size-sm);
+    }
+}
