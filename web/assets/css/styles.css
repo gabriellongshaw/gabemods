@@ -150,26 +150,35 @@
     transform: translateY(-8.5px) rotate(-45deg);
   }
   
-  .side-menu {
-    position: fixed;
-    top: 0;
-    left: -80vw;
-    width: min(80vw, 300px);
-    height: 100vh;
-    background-color: #1e1e1e;
-    padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.5rem);
-    box-sizing: border-box;
-    z-index: 1001;
-    transition: left 0.4s ease;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .side-menu.open {
-    left: 0;
-  }
+.side-menu {
+  position: fixed;
+  top: 0;
+  /* Start slightly off-screen to the left, but not entirely hidden */
+  left: -20px; /* Adjust as needed, a small negative value is enough */
+  width: min(80vw, 300px);
+  height: 100vh;
+  background-color: #1e1e1e;
+  padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.5rem);
+  box-sizing: border-box;
+  z-index: 1001;
+
+  /* New transform properties for the animation */
+  transform: translateX(-100%) scale(0.9); /* Start fully off-screen, slightly scaled down */
+  opacity: 0; /* Start invisible */
+  transform-origin: left center; /* Important for scaling from the left edge */
+
+  /* Updated transition property */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.side-menu.open {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
   
   .side-menu ul {
     list-style: none;
@@ -256,23 +265,23 @@
     color: #fff;
   }
   
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 50, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-  }
-  
-  .overlay.show {
-    opacity: 1;
-    visibility: visible;
-  }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 50, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
   
   .button-intro-text {
     text-align: left;

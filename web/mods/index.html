@@ -5,28 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Gabe Mods - Mods</title>
   <meta name="google-site-verification" content="HihCOsgH0UVQPbqo7pMEgDNXIXR16hIm907pXZPI3w8" />
-  <meta name="description" content="Gabe Mods provides high-quality, malware-free mods for Android and iOS including Geometry Dash, Subway Surfers, Grand Battle Royale and more.">
-  <meta name="keywords" content="Gabe Mods, Android mods, iOS mods, Geometry Dash mod, Spotify mod, APK downloads, game mods">
+  <meta name="description" content="Explore a wide range of high-quality, malware-free mods for Android and iOS games and apps, including Geometry Dash, Subway Surfers, and more, created by Gabe Mods and the community.">
+  <meta name="keywords" content="Gabe Mods, Android mods, iOS mods, Geometry Dash mod, Subway Surfers mod, modded apps, game mods, community mods">
   <meta name="author" content="Gabe Mods">
-  <meta property="og:title" content="Gabe Mods">
-  <meta property="og:description" content="High-quality Android and iOS mods. Safe, free, and easy to install.">
-  <meta property="og:image" content="assets/images/IMG_7790.jpeg">
+  <meta property="og:title" content="Gabe Mods - Mods Library">
+  <meta property="og:description" content="Explore high-quality Android and iOS mods, safe, free, and easy to install. Find mods made by Gabe Mods and the community.">
+  <meta property="og:image" content="../assets/images/gabemods.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="google-site-verification" content="HihCOsgH0UVQPbqo7pMEgDNXIXR16hIm907pXZPI3w8"/>
   <meta name="msvalidate.01" content="D8E2192242F2093B4379471689E3082A"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
-   <link rel="stylesheet" href="../assets/css/material-dialog.css">
-   <meta http-equiv="refresh" content="0; url=../under-development/index.html">
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="assets/favicon/manifest.json" />
+  <link rel="stylesheet" href="../assets/css/material-dialog.css">
+  <link rel="stylesheet" href="../assets/css/mods-page.css">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/favicon/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="../assets/favicon/manifest.json" />
   <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png" />
+  <meta name="msapplication-TileImage" content="../assets/favicon/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
@@ -38,12 +38,12 @@
       }
     }
   </script>
-<script type="module">
-  import '@material/web/all.js';
-  import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
-  
-  document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-</script>
+  <script type="module">
+    import '@material/web/all.js';
+    import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+    
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
 </head>
 <body>
   <div class="overlay" id="overlay"></div>
@@ -59,42 +59,108 @@
 
   <nav class="side-menu" id="side-menu">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li class="active"><a href="mods/">Mods</a></li>
-      <li><a href="download/">Download</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li class="current-page"><a href="index.html">Mods</a></li>
+      <li><a href="../download/">Download</a></li>
     </ul>
     <div class="side-menu-settings">
- <md-icon-button id="settings-button" aria-label="Settings">
-   <md-icon>settings</md-icon>
- </md-icon-button>
+      <md-icon-button id="settings-button" aria-label="Settings">
+        <md-icon>settings</md-icon>
+      </md-icon-button>
     </div>
   </nav>
 
   <div class="container">
-    <p class="button-intro-text">Click the buttons below to download the app or find out more about me</p>
-    <div class="download-button-wrapper">
-      <a href="Download-link" class="download-button">Download</a>
-    </div>
-    <div class="button-2-wrapper">
-      <a href="https://gabemods.github.io/about" class="button-2">About</a>
-    </div>
+    <h2 class="role-title">Welcome to the Mod Library!</h2>
+    <p class="section-description">
+      Explore a collection of custom modifications for various games and apps. Enhance your experience with unique features. Please ensure you understand how to install mods for the respective games/apps before downloading.
+    </p>
 
-    <h2 class="role-title">Credits</h2>
-    <a href="https://gabemods.github.io" target="_blank" class="card">
-      <img class="profile-pic" src="assets/images/IMG_7790.jpeg" alt="Gabe Mods" />
-      <div class="text-content">
-        <h1>Gabe Mods</h1>
-        <p>Founder, Owner and Main Creator.</p>
+    <h2 class="section-title">Mods Made By Me (Coming Soon!)</h2>
+    <div class="mods-section-grid">
+      <div class="mod-card">
+          <img src="../assets/images/Grand-Battle-Royale.png" alt="Mod Icon" class="mod-icon">
+          <div class="mod-info">
+              <h3>GBR Mod Menu</h3>
+              <p class="mod-version">Version: 1.0.0</p>
+              <p class="mod-game">For: Grand Battle Royale</p>
+              <p class="mod-description">
+                  This mod comes with a mod menu built-in which will provide options such as: No Clip, Multi Jump, Speed, Unlimited Money, Gems and Keys, Unlock all items.
+              </p>
+              <div class="mod-meta">
+                  </span> Last Updated: 2025-07-20</span>
+              </div>
+          </div>
+          <div class="mod-actions">
+              <a href="../assets/downloads/my-custom-game-mod.zip" class="download-main-button">
+                  <span class="material-symbols-rounded">download</span> Download the Mod
+              </a>
+          </div>
       </div>
-    </a>
+      <div class="mod-card">
+          <img src="../assets/images/Subway-Surfers.jpeg" alt="Mod Icon" class="mod-icon">
+          <div class="mod-info">
+              <h3>Subway Surfers Mod Menu</h3>
+              <p class="mod-version">Version: 1.0.0</p>
+              <p class="mod-game">Subway Surfers</p>
+              <p class="mod-description">
+                  This mod comes with a mod menu built-in which will provide options such as: No Clip, Multi Jump, Speed, Unlimited Money and Keys, Unlock all items.
+              </p>
+              <div class="mod-meta">
+                  <span> Last Updated: 2025-07-10</span>
+              </div>
+          </div>
+          <div class="mod-actions">
+              <a href="../assets/downloads/app-enhancer-beta.zip" class="download-main-button">
+                  <span class="material-symbols-rounded">download</span> Download the Mod
+              </a>
+          </div>
+      </div>
+      </div>
 
-    <a href="https://bocajthomas.github.io" target="_blank" class="card">
-      <img class="profile-pic" src="assets/images/bocajthomas.jpeg" alt="bocajthomas" />
-      <div class="text-content">
-        <h1>bocajthomas</h1>
-        <p>Web | Software Developer</p>
+    <h2 class="section-title">Community Mods</h2>
+    <div class="mods-section-grid">
+      <div class="mod-card community-mod">
+          <img src="../assets/images/Grand-Battle-Royale.png" alt="Community Mod Icon" class="mod-icon">
+          <div class="mod-info">
+              <h3>GBR Mod Menu</h3>
+              <p class="mod-version">Version: 4.0.0</p>
+              <p class="mod-game">For: Online Multiplayer Title</p>
+              <p class="mod-description">
+                  This mod comes with a mod menu built-in which will provide options such as: No Clip, Multi Jump, Speed, Unlimited Money, Gems and Keys, Unlock all items.
+              </p>
+              <div class="mod-meta">
+                  <span><span class="material-symbols-rounded">person</span> By: Anas Mods</span>
+                  <span><span class="material-symbols-rounded">update</span> Last Updated: 2024-09-24</span>
+              </div>
+          </div>
+          <div class="mod-actions">
+              <a href="https://t.me/ANASMODZ/56" class="download-main-button" target="_blank" rel="noopener noreferrer">
+                  <span class="material-symbols-rounded">download</span> Download the Mod
+              </a>
+          </div>
       </div>
-    </a>
+      <div class="mod-card community-mod">
+          <img src="../assets/images/Subway-Surfers.jpeg" alt="Community Mod Icon" class="mod-icon">
+          <div class="mod-info">
+              <h3>Subway Surfers Mod Menu</h3>
+              <p class="mod-version">Version: 1.0 Release</p>
+              <p class="mod-game">For: Subway Surfers</p>
+              <p class="mod-description">
+                  A mod menu for a classic game bringing many, many features.
+              </p>
+              <div class="mod-meta">
+                  <span><span class="material-symbols-rounded">person</span> By: Infinite Mods</span>
+                  <span><span class="material-symbols-rounded">update</span> Last Updated: 2025-07-05</span>
+              </div>
+          </div>
+          <div class="mod-actions">
+              <a href="https://t.me/MKGamer351Official/553" target="_blank" rel="noopener noreferrer">
+                  <span class="material-symbols-rounded">download</span> Dowmload the Mod
+              </a>
+          </div>
+      </div>
+      </div>
   </div>
 
   <div class="footer">
@@ -120,61 +186,53 @@
       </a>
     </div>
   </div>
+
   
   <dialog id="settings-modal" class="settings-dialog">
-  <div class="modal-content">
-    <h2>Settings</h2>
-    <label for="theme-select">Theme</label>
-    <select id="theme-select">
-      <option value="system">System</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </select>
-    <div class="setting-row">
-      <div class="toggle-setting">
-        <span class="setting-label">Translucency</span>
-        <label class="switch">
-          <input type="checkbox" id="translucency-toggle">
-          <span class="slider"></span>
-        </label>
+    <div class="modal-header">
+      <div class="icon-placeholder">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#49454F">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.09-.76-1.71-1.05l-.48-2.61c-.04-.2-.23-.35-.44-.35h-4c-.21 0-.4.15-.44.35l-.48 2.61c-.63-.29-1.2-.65-1.71-1.05l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.12.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52-.4 1.09.76 1.71 1.05l.48 2.61c.04.2.23.35.44-.35h4c.21 0 .4-.15.44-.35l-.48-2.61c.63-.29 1.2-.65 1.71-1.05l2.49 1c-.22-.09-.49 0-.61.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+        </svg>
+      </div>
+      <h2>Settings</h2>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="theme-select">Theme</label>
+        <select id="theme-select">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="font-select">Font</label>
+        <select id="font-select">
+          <option value="system">System Default</option>
+          <option value="OneUISans">OneUISans</option>
+          <option value="Roboto">Roboto</option>
+          <option value="Open Sans">Open Sans</option>
+        </select>
       </div>
     </div>
-    <div class="setting-row">
-      <label for="font-select">Font</label>
-      <select id="font-select">
-        <option value="system">System Default</option>
-        <option value="OneUISans">OneUISans</option>
-        <option value="Roboto">Roboto</option>
-        <option value="Open Sans">Open Sans</option>
-      </select>
-    </div>
-    <div class="setting-item">
-      <label for="background-select" class="setting-label">Background Image:</label>
-      <div class="background-image-controls">
-        <button id="choose-background-button" class="image-picker-button">
-          <md-icon>image</md-icon> Image picker
-        </button>
-        <button id="clear-background-button" class="image-picker-button clear-button">
-          <md-icon>close</md-icon> Clear
-        </button>
-        
-        <input type="file" id="image-upload-input" accept="image/*" style="display: none;">
-        
-        <span id="current-background-status" class="background-status">None selected</span>
-      </div>
-    </div>
+
     <div class="modal-actions">
-      <button id="reset-settings-button" class="reset-button">Reset</button>
-      <button id="close-settings" class="close-button">Close</button>
+      <button id="reset-settings-button" class="button secondary-button">Reset</button>
+      <button id="close-settings" class="button primary-button">Close</button>
     </div>
-  </div>
-</dialog>
+  </dialog>
+
   <div id="backdrop" class="backdrop hidden"></div>
-   <div id="content-fade-overlay"></div>
- <script type="module" src="../assets/js/main.js"></script>
- <script type="module" src="../assets/js/material-dialog.js"></script>
- <script type="module" src="../assets/js/themes.js"></script>
- <script type="module" src="../assets/js/fonts.js"></script>
- <script type="module" src="../assets/js/download-dialog.js"></script>
+  <div id="content-fade-overlay"></div>
+  
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/material-dialog.js"></script>
+  <script type="module" src="../assets/js/themes.js"></script>
+  <script type="module" src="../assets/js/fonts.js"></script>
+  <script type="module" src="../assets/js/download-dialog.js"></script>
 </body>
 </html>
