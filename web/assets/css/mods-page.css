@@ -1,6 +1,5 @@
-/* --- General Section Titles & Descriptions (reused from download page for consistency) --- */
 .section-title {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-lg); 
   margin: clamp(2rem, 5vh, 2.5rem) 0 clamp(1rem, 2.5vh, 1.5rem);
   color: #bbb;
   text-align: left;
@@ -16,23 +15,21 @@
   line-height: 1.5;
 }
 
-/* --- Mods Section Grid Layout --- */
 .mods-section-grid {
     display: grid;
-    /* Default to a single column for smaller screens (mobile portrait) */
+
     grid-template-columns: 1fr;
-    gap: clamp(1.5rem, 3.5vh, 2rem); /* Space between mod cards */
-    padding-bottom: clamp(2rem, 5vh, 3rem); /* Space before footer/next section */
+    gap: clamp(1.5rem, 3.5vh, 2rem); 
+    padding-bottom: clamp(2rem, 5vh, 3rem); 
     width: 100%;
-    max-width: 1200px; /* Overall max width for the grid on very large screens */
+    max-width: 1200px; 
     margin: 0 auto;
 }
 
-/* --- Individual Mod Card Styles --- */
 .mod-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
-    padding: clamp(1.25rem, 4vw, 1.75rem);
+    padding: clamp(1.25rem, 4vw, 1.75rem); 
     box-sizing: border-box;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
@@ -40,9 +37,9 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: inherit;
     display: flex;
-    flex-direction: column; /* Stack icon, info, actions vertically by default */
-    align-items: center; /* Center content horizontally within card */
-    text-align: center; /* Center text within content blocks */
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
@@ -52,7 +49,7 @@
 }
 
 .mod-card .mod-icon {
-    width: clamp(70px, 18vw, 100px); /* Scaled for mobile, up to 100px */
+    width: clamp(70px, 18vw, 100px); 
     height: clamp(70px, 18vw, 100px);
     border-radius: 15%;
     object-fit: cover;
@@ -69,7 +66,7 @@
 }
 
 .mod-card h3 {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-xl); 
     margin: 0 0 clamp(0.5rem, 1.2vh, 0.75rem);
     font-weight: 600;
     color: #A9D3FB;
@@ -83,15 +80,15 @@
 }
 
 .mod-card .mod-description {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-md); 
     color: rgba(255, 255, 255, 0.8);
     margin: clamp(0.75rem, 2vh, 1rem) 0;
     line-height: 1.4;
-    overflow: hidden; /* Ensure text doesn't overflow */
-    display: -webkit-box; /* For multi-line ellipsis */
-    -webkit-line-clamp: 3; /* Limit description to 3 lines */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    text-overflow: ellipsis;
 }
 
 .mod-card .mod-meta {
@@ -118,14 +115,13 @@
 
 .mod-card .mod-actions {
     display: flex;
-    flex-direction: column; /* Buttons always stack vertically */
+    flex-direction: column; 
     gap: clamp(0.75rem, 2vh, 1rem);
-    width: 100%; /* Take full width of card's content area */
-    max-width: 250px; /* Limit button width within the card for better aesthetics */
+    width: 100%; 
+    max-width: 250px; 
     margin-top: clamp(1.5rem, 3.5vh, 2rem);
 }
 
-/* --- Download Button Styling (moved from main styles.css to here for mod-page specificity) --- */
 .download-main-button {
     display: flex;
     align-items: center;
@@ -139,12 +135,12 @@
     font-size: var(--font-size-md);
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%; /* Ensure it's full width within its container */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .download-main-button:hover {
- background-color: #85B7EA;   
+ background-color: #85B7EA;
 }
 
 .download-main-button:active {
@@ -152,51 +148,108 @@
 }
 
 .download-main-button .material-symbols-rounded {
-    margin-right: 0.5em; /* Space between icon and text */
-    font-size: var(--font-size-lg); /* Adjust icon size relative to button text */
+    margin-right: 0.5em; 
+    font-size: var(--font-size-lg); 
 }
 
-/* --- Responsive Adjustments for Mod Cards --- */
-
-/* Small devices (e.g., phones in landscape, tablets in portrait) */
 @media screen and (min-width: 480px) {
+
+    .section-title {
+
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem); 
+        margin: clamp(0.6rem, 1.5vh, 0.9rem) 0 clamp(0.3rem, 0.8vh, 0.5rem); 
+    }
+
     .mods-section-grid {
-        grid-template-columns: 1fr 1fr; /* Two columns */
+        grid-template-columns: 1fr 1fr; 
+        gap: clamp(0.5rem, 1.5vw, 1rem); 
     }
 
     .mod-card {
-        padding: clamp(1.5rem, 3vw, 2rem); /* Slightly more padding */
+
+        padding: clamp(0.6rem, 1.5vw, 1rem); 
     }
 
     .mod-card .mod-icon {
-        width: clamp(80px, 12vw, 110px);
-        height: clamp(80px, 12vw, 110px);
+
+        width: clamp(40px, 6vw, 60px); 
+        height: clamp(40px, 6vw, 60px);
+        margin-bottom: clamp(0.5rem, 1.2vh, 0.75rem); 
+    }
+
+    .mod-card .mod-info {
+        margin-bottom: clamp(0.5rem, 1.2vh, 0.75rem); 
+    }
+
+    .mod-card h3 {
+
+        font-size: clamp(0.9rem, 2.8vw, 1.3rem); 
+        margin: 0 0 clamp(0.2rem, 0.5vh, 0.4rem); 
+    }
+
+    .mod-card .mod-version,
+    .mod-card .mod-game {
+        font-size: clamp(0.7rem, 1.8vw, 0.9rem); 
+        margin: 0 0 clamp(0.1rem, 0.3vh, 0.2rem);
+    }
+
+    .mod-card .mod-description {
+
+        font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+        margin: clamp(0.4rem, 1vh, 0.6rem) 0; 
+        -webkit-line-clamp: 2; 
+    }
+
+    .mod-card .mod-meta {
+        gap: clamp(0.3rem, 0.8vw, 0.6rem); 
+        font-size: clamp(0.6rem, 1.5vw, 0.8rem); 
+        margin-top: clamp(0.3rem, 0.8vh, 0.5rem);
+    }
+
+    .mod-card .mod-meta .material-symbols-rounded {
+        font-size: clamp(0.7rem, 1.8vw, 0.9rem);
     }
 
     .mod-card .mod-actions {
-        max-width: 200px; /* Adjust button max width for two columns */
+
+        max-width: 120px; 
+        gap: clamp(0.4rem, 1vh, 0.6rem); 
+        margin-top: clamp(0.8rem, 2vh, 1.2rem); 
+    }
+
+    .download-main-button {
+
+        padding: clamp(0.4rem, 1vw, 0.7rem) clamp(0.6rem, 1.2vw, 1.2rem);
+        font-size: clamp(0.7rem, 1.8vw, 0.9rem); 
+    }
+
+    .download-main-button .material-symbols-rounded {
+        font-size: clamp(0.9rem, 2.2vw, 1.1rem); 
+        margin-right: 0.3em; 
     }
 }
 
-
-/* Medium devices (e.g., larger tablets in landscape, small laptops) */
 @media screen and (min-width: 768px) {
+    .section-title {
+        font-size: var(--font-size-lg); 
+        margin: clamp(2rem, 5vh, 2.5rem) 0 clamp(1rem, 2.5vh, 1.5rem);
+    }
     .mods-section-grid {
-        grid-template-columns: repeat(2, 1fr); /* Still two columns, more refined spacing */
+        grid-template-columns: repeat(2, 1fr); 
         gap: clamp(2rem, 4vw, 2.5rem);
     }
 
     .mod-card {
-        flex-direction: row; /* Layout icon and info side-by-side */
-        text-align: left; /* Align text within card to left */
-        align-items: flex-start; /* Align content to the top */
+        flex-direction: row; 
+        text-align: left; 
+        align-items: flex-start; 
         padding: clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 4vw, 2rem);
     }
 
     .mod-card .mod-icon {
-        margin-right: clamp(1rem, 2.5vw, 1.5rem); /* Space between icon and text */
+        margin-right: clamp(1rem, 2.5vw, 1.5rem); 
         margin-bottom: 0;
-        width: clamp(90px, 10vw, 120px); /* Adjust icon size for larger screens */
+        width: clamp(90px, 10vw, 120px); 
         height: clamp(90px, 10vw, 120px);
     }
 
@@ -205,66 +258,79 @@
         margin-bottom: 0;
     }
 
-    .mod-card .mod-actions {
-        flex-direction: column; /* Always stack buttons vertically */
-        margin-top: 0;
-        margin-left: clamp(1rem, 2.5vw, 1.5rem); /* Add space to the left of buttons */
-        max-width: 180px; /* Consistent button width */
-        flex-shrink: 0; /* Don't shrink buttons */
-        align-items: flex-end; /* Align buttons to the right */
-        justify-content: flex-start; /* Push buttons to the top of their container */
+    .mod-card h3 {
+        font-size: var(--font-size-xl); 
+        margin: 0 0 clamp(0.5rem, 1.2vh, 0.75rem);
     }
 
     .mod-card .mod-description {
+        font-size: var(--font-size-md); 
         margin-top: clamp(0.5rem, 1.5vh, 0.75rem);
         margin-bottom: clamp(0.5rem, 1.5vh, 0.75rem);
-        -webkit-line-clamp: 4; /* Allow more lines for description on larger screens */
+        -webkit-line-clamp: 4; 
+    }
+
+    .mod-card .mod-actions {
+        flex-direction: column; 
+        margin-top: 0;
+        margin-left: clamp(1rem, 2.5vw, 1.5rem); 
+        max-width: 180px; 
+        flex-shrink: 0; 
+        align-items: flex-end; 
+        justify-content: flex-start; 
+    }
+
+    .download-main-button {
+        padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 2.5rem);
+        font-size: var(--font-size-md);
+    }
+
+    .download-main-button .material-symbols-rounded {
+        font-size: var(--font-size-lg);
     }
 }
 
-/* Large devices (e.g., desktops, larger laptops) */
 @media screen and (min-width: 992px) {
     .mods-section-grid {
-        grid-template-columns: repeat(3, 1fr); /* Three columns */
+        grid-template-columns: repeat(3, 1fr); 
         gap: clamp(2.5rem, 3vw, 3rem);
     }
 
     .mod-card {
-        flex-direction: column; /* Revert to column layout for 3-column grid */
-        text-align: center; /* Revert text alignment to center */
-        align-items: center; /* Re-center content */
+        flex-direction: column; 
+        text-align: center; 
+        align-items: center; 
         padding: clamp(1.75rem, 2.5vw, 2.25rem);
     }
 
     .mod-card .mod-icon {
         width: clamp(100px, 8vw, 130px);
         height: clamp(100px, 8vw, 130px);
-        margin-right: 0; /* Remove horizontal margin */
-        margin-bottom: clamp(1rem, 2vh, 1.5rem); /* Re-add bottom margin */
+        margin-right: 0; 
+        margin-bottom: clamp(1rem, 2vh, 1.5rem); 
     }
 
     .mod-card .mod-info {
-        text-align: center; /* Re-center text */
+        text-align: center; 
         margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
     }
 
     .mod-card .mod-description {
-        -webkit-line-clamp: 5; /* Allow even more lines for description */
+        -webkit-line-clamp: 5; 
     }
 
     .mod-card .mod-actions {
-        margin-left: 0; /* Remove horizontal margin */
-        margin-top: clamp(1.5rem, 3.5vh, 2rem); /* Re-add top margin */
-        width: 100%; /* Ensure buttons are full width of card */
-        max-width: 250px; /* Keep consistent button max-width */
-        align-items: center; /* Center buttons */
+        margin-left: 0; 
+        margin-top: clamp(1.5rem, 3.5vh, 2rem); 
+        width: 100%; 
+        max-width: 250px; 
+        align-items: center; 
     }
 }
 
-/* Extra Large devices (e.g., large monitors) */
 @media screen and (min-width: 1200px) {
     .mods-section-grid {
-        grid-template-columns: repeat(4, 1fr); /* Four columns for very large screens */
+        grid-template-columns: repeat(4, 1fr); 
         gap: 2.5rem;
     }
 
@@ -274,14 +340,14 @@
     }
 
     .mod-card h3 {
-        font-size: var(--font-size-xl); /* Slightly smaller titles on 4-column grid */
+        font-size: var(--font-size-xl); 
     }
 
     .mod-card .mod-description {
-        -webkit-line-clamp: 4; /* Adjust lines for more compact 4-column layout */
+        -webkit-line-clamp: 4; 
     }
 
     .mod-card .mod-actions {
-        max-width: 200px; /* Slightly narrower buttons for 4-column layout */
+        max-width: 200px; 
     }
 }
