@@ -41,7 +41,7 @@
 <script type="module">
   import '@material/web/all.js';
   import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
-  
+
   document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
 </script>
 </head>
@@ -72,7 +72,7 @@
 
   <div class="container">
     <h2 class="section-title">Download Gabe Mods App</h2>
-    <p class="section-description">Get the latest version of the Gabe Mods app for your Android device. Enjoy a vast collection of high-quality, safe, and free mods for your favorite games and apps.</p>
+    <p class="section-description">Get the latest version of the Gabe Mods app for your device. Enjoy a vast collection of high-quality, safe, and free mods for your favorite games and apps.</p>
 
     <div class="download-cards-wrapper">
         <div class="download-card disabled-card">
@@ -92,11 +92,28 @@
             </div>
         </div>
 
+        <div class="download-card">
+            <h3>Gabe Mods for PC</h3>
+            <p class="version-info">Desktop Version Not Soon</p>
+            <p class="update-info">Get notified when a PC version is released. No desktop version is currently in the works.</p>
+            <a href="https://t.me/Gabriel_Mods_Channel" target="_blank" class="download-main-button">
+                Get Notified <span class="material-symbols-rounded">notifications_active</span>
+            </a>
+            <div class="installation-guide">
+                <h4>Future Installation (if released):</h4>
+                <ol>
+                    <li>Download the EXE file.</li>
+                    <li>Run the installer and follow the on-screen instructions.</li>
+                    <li>Launch Gabe Mods from your desktop or Start Menu.</li>
+                </ol>
+            </div>
+        </div>
+
         <div class="download-card coming-soon">
             <h3>Gabe Mods for iOS</h3>
             <p>Coming at some point in the future!</p>
             <p>Stay tuned for updates on our Telegram channel.</p>
-            <a href="https://t.me/Gabriel_Mods_Channel" target="_blank" class="download-main-button ios-button">
+            <a href="https://t.me/Gabriel_Mods_Channel" target="_blank" class="download-main-button">
                 Get Notified <span class="material-symbols-rounded">notifications_active</span>
             </a>
         </div>
@@ -105,7 +122,7 @@
             <h3>Gabe Mods Web App</h3>
             <p>Install our website as an app on your device!</p>
             <p class="web-app-note">This is simply the website installed as a Progressive Web App (PWA). It does not provide additional features but offers quick access.</p>
-            <a href="javascript:void(0)" class="download-main-button web-app-button">
+            <a href="../assets/Gabe-Mods-Web-App-v1.0.1.apk" class="download-main-button">
                 Install Web App <span class="material-symbols-rounded">install_mobile</span>
             </a>
         </div>
@@ -154,13 +171,13 @@
       </a>
     </div>
   </div>
-  
+
   <dialog id="settings-modal" class="settings-dialog">
   <div class="modal-header">
     <div class="icon-placeholder">
       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#49454F">
           <path d="M0 0h24v24H0V0z" fill="none"/>
-          <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.09-.76-1.71-1.05l-.48-2.61c-.04-.2-.23-.35-.44-.35h-4c-.21 0-.4.15-.44.35l-.48 2.61c-.63.29-1.2.65-1.71 1.05l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.12.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52-.4 1.09-.76 1.71 1.05l.48 2.61c.04.2.23-.35-.44-.35h4c-.21 0 .4-.15.44-.35l-.48-2.61c.63-.29 1.2-.65 1.71-1.05l2.49 1c.22-.09.49 0-.61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+          <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.09-.76-1.71-1.05l-.48-2.61c-.04-.2-.23-.35-.44-.35h-4c-.21 0-.4.15-.44.35l-.48 2.61c-.63-.29-1.2.65-1.71 1.05l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.12.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52-.4 1.09-.76 1.71-1.05l.48 2.61c.04.2.23-.35-.44-.35h4c-.21 0 .4-.15.44-.35l-.48-2.61c.63-.29 1.2-.65 1.71-1.05l2.49 1c-.22-.09-.49 0-.61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
       </svg>
     </div>
     <h2>Settings</h2>

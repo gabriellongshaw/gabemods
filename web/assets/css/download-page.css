@@ -18,19 +18,20 @@
 }
 
 .download-cards-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(1.5rem, 3.5vh, 2rem); /* Slightly larger gap than card-group-wrapper for main sections */
+  display: grid; /* Changed to grid */
+  grid-template-columns: 1fr; /* Default to single column for small screens */
+  gap: clamp(1.5rem, 3.5vh, 2rem);
   width: 100%;
+  justify-items: center; /* Center items in the grid horizontally */
+  align-items: stretch; /* Stretch items to fill height, ensuring alignment */
 }
 
 .download-card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  padding: clamp(1.25rem, 4vw, 1.75rem); /* More padding for download content */
+  padding: clamp(1.25rem, 4vw, 1.75rem);
   width: calc(100% - clamp(1.5rem, 4vw, 2rem));
-  max-width: 500px; /* Slightly wider cards for download info */
+  max-width: 500px;
   box-sizing: border-box;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
@@ -73,15 +74,17 @@
   border: none;
   border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  background-color: #A9D3FB;
-  color: #000;
-  width: 100%;
-  max-width: 300px; /* Adjusted max-width for primary download button */
+  /* Default active button color */
+  background-color: #A9D3FB; /* The specified Material Blue light color */
+  color: #000000; /* Black text for contrast with light blue */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
   margin-top: clamp(1rem, 2.5vh, 1.5rem);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .download-main-button .material-symbols-rounded {
@@ -89,14 +92,18 @@
     font-size: var(--font-size-xl);
 }
 
-.download-main-button:hover {
-    transform: translateY(-2px);
-    background-color: #92c0ed;
+/* Enabled button hover state (color change only) */
+.download-main-button:not(.disabled):hover {
+    transform: none; /* Remove transform on hover for enabled buttons */
+    background-color: #8EBCEE; /* Slightly darker blue on hover */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Keep original shadow */
 }
 
-.download-main-button:active {
-    transform: scale(0.98);
-    background-color: #79aee5;
+/* Enabled button active state (scale only) */
+.download-main-button:not(.disabled):active {
+    transform: scale(1.05); /* Apply scale on active for enabled buttons */
+    background-color: #6EA0DF; /* Even darker blue on active */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .installation-guide {
@@ -128,7 +135,7 @@
   line-height: 1.4;
 }
 
-/* Disabled Android Card */
+/* Disabled Cards (Android) */
 .download-card.disabled-card {
   opacity: 0.7;
   background: rgba(255, 255, 255, 0.03);
@@ -144,60 +151,31 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-.download-card .download-main-button.disabled {
-    background-color: #555; /* Dimmed grey for disabled */
-    color: #bbb; /* Dimmed text for disabled */
+/* Disabled Buttons */
+.download-main-button.disabled {
+    background-color: #9E9E9E; /* Material Grey 500 for disabled */
+    color: #E0E0E0; /* Lighter grey text */
     cursor: not-allowed;
-    opacity: 0.6;
-    transform: none; /* No hover/active effects */
+    opacity: 0.8;
+    transform: none; /* No transform on disabled buttons */
     box-shadow: none;
 }
 
-.download-card .download-main-button.disabled:hover {
-    background-color: #555; /* Keep background same on hover */
-    transform: none;
+.download-main-button.disabled:hover {
+    background-color: #9E9E9E; /* Keep background same on hover */
+    transform: none; /* No transform on hover for disabled buttons */
+    box-shadow: none;
 }
 
-.download-card .download-main-button.disabled:active {
-    background-color: #555;
-    transform: none;
+.download-main-button.disabled:active {
+    background-color: #9E9E9E; /* Keep background same on active */
+    transform: none; /* No transform on active for disabled buttons */
+    box-shadow: none;
 }
 
-/* iOS Button Styling */
-.download-card .download-main-button.ios-button {
-    background-color: #2196F3; /* Material Blue */
-    color: #FFFFFF; /* White text for contrast */
-}
-
-.download-card .download-main-button.ios-button:hover {
-    background-color: #1976D2; /* Darker blue on hover */
-}
-
-.download-card .download-main-button.ios-button:active {
-    background-color: #1565C0; /* Even darker blue on active */
-}
-
-/* Web App Card Styling */
-.download-card .web-app-note {
-    font-size: var(--font-size-xs);
-    color: rgba(173, 216, 230, 0.7); /* Slightly brighter than other dimmed text */
-    margin-top: clamp(0.5rem, 1.2vh, 0.75rem);
-    margin-bottom: clamp(0.5rem, 1.2vh, 0.75rem);
-    line-height: 1.4;
-}
-
-.download-card .download-main-button.web-app-button {
-    background-color: #4CAF50; /* A pleasant green */
-    color: #FFFFFF;
-}
-
-.download-card .download-main-button.web-app-button:hover {
-    background-color: #388E3C;
-}
-
-.download-card .download-main-button.web-app-button:active {
-    background-color: #2E7D32;
-}
+/* No specific styling for ios-button and web-app-button classes needed anymore,
+   as they now inherit the default .download-main-button styles for Material Blue.
+   The 'pc-button' class is also removed as it's now an enabled button. */
 
 
 /* Media queries for new elements */
@@ -206,14 +184,30 @@
         text-align: left;
     }
     .download-cards-wrapper {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center; /* Center cards on medium screens */
+        grid-template-columns: 1fr 1fr; /* 2 columns on medium screens */
         gap: clamp(1.2rem, 2.5vw, 1.7rem);
+        /* Explicitly order cards for medium screens */
+        grid-template-areas:
+            "android-card pc-card"
+            "ios-card web-app-card";
     }
+    /* Assign grid areas to specific cards */
+    .download-cards-wrapper > div:nth-child(1) { /* Android Card */
+        grid-area: android-card;
+    }
+    .download-cards-wrapper > div:nth-child(2) { /* PC Card */
+        grid-area: pc-card;
+    }
+    .download-cards-wrapper > div:nth-child(3) { /* iOS Card */
+        grid-area: ios-card;
+    }
+    .download-cards-wrapper > div:nth-child(4) { /* Web App Card */
+        grid-area: web-app-card;
+    }
+
     .download-card {
-        flex: 1 1 calc(50% - clamp(0.6rem, 1.25vw, 0.85rem)); /* Two cards per row */
-        max-width: calc(50% - clamp(0.6rem, 1.25vw, 0.85rem));
+        width: 100%; /* Take full width of grid column */
+        max-width: none; /* Remove max-width constraint for grid items */
         padding: clamp(1rem, 3vw, 1.5rem);
         margin: 0;
     }
@@ -252,14 +246,30 @@
         margin: clamp(0.4rem, 1vh, 0.6rem) 0 clamp(0.8rem, 2vh, 1rem);
     }
     .download-cards-wrapper {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        grid-template-columns: 1fr 1fr; /* 2 columns for landscape phones */
         gap: clamp(0.8rem, 2vw, 1.2rem);
+        /* Explicitly order cards for landscape mobile and wider screens */
+        grid-template-areas:
+            "android-card pc-card"
+            "ios-card web-app-card";
     }
+    /* Assign grid areas to specific cards */
+    .download-cards-wrapper > div:nth-child(1) { /* Android Card */
+        grid-area: android-card;
+    }
+    .download-cards-wrapper > div:nth-child(2) { /* PC Card */
+        grid-area: pc-card;
+    }
+    .download-cards-wrapper > div:nth-child(3) { /* iOS Card */
+        grid-area: ios-card;
+    }
+    .download-cards-wrapper > div:nth-child(4) { /* Web App Card */
+        grid-area: web-app-card;
+    }
+
     .download-card {
-        flex: 1 1 calc(50% - clamp(0.4rem, 1vw, 0.6rem));
-        max-width: calc(50% - clamp(0.4rem, 1vw, 0.6rem));
+        width: 100%;
+        max-width: none;
         padding: clamp(0.75rem, 2.5vw, 1rem);
     }
     .download-card h3 {
@@ -340,15 +350,31 @@
         margin: 1rem 0 2.5rem;
     }
     .download-cards-wrapper {
-        flex-direction: row;
-        justify-content: center; /* Center cards on large screens too */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for larger screens */
         gap: 2rem;
+        /* Explicitly order cards for large screens */
+        grid-template-areas:
+            "android-card pc-card"
+            "ios-card web-app-card";
     }
+    /* Assign grid areas to specific cards */
+    .download-cards-wrapper > div:nth-child(1) { /* Android Card */
+        grid-area: android-card;
+    }
+    .download-cards-wrapper > div:nth-child(2) { /* PC Card */
+        grid-area: pc-card;
+    }
+    .download-cards-wrapper > div:nth-child(3) { /* iOS Card */
+        grid-area: ios-card;
+    }
+    .download-cards-wrapper > div:nth-child(4) { /* Web App Card */
+        grid-area: web-app-card;
+    }
+
     .download-card {
         padding: 2rem 2.5rem;
-        max-width: 550px; /* Wider for desktop */
-        flex: 1 1 calc(33.33% - 1.33rem); /* Three cards per row on larger screens */
-        max-width: calc(33.33% - 1.33rem);
+        max-width: none; /* Allow grid to control width */
+        width: 100%; /* Fill the grid column */
     }
     .download-card h3 {
         font-size: var(--font-size-xxl);
