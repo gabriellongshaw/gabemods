@@ -63,3 +63,53 @@ document.addEventListener('DOMContentLoaded', () => {
         contentFadeOverlay.classList.remove('fade-active');
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const appCreditsToggle = document.getElementById('app-credits-toggle');
+    const appCreditsContent = document.getElementById('app-credits-content');
+    
+    const websiteCreditsToggle = document.getElementById('website-credits-toggle');
+    const websiteCreditsContent = document.getElementById('website-credits-content');
+    
+    function setupDropdown(toggleButton, contentArea) {
+        toggleButton.addEventListener('click', () => {
+            
+            toggleButton.classList.toggle('open');
+            const isOpen = toggleButton.classList.contains('open');
+            
+            if (isOpen) {
+                
+                contentArea.style.maxHeight = 'auto';
+                
+                const scrollHeight = contentArea.scrollHeight;
+                
+                contentArea.style.maxHeight = '0px';
+                
+                requestAnimationFrame(() => {
+                    contentArea.style.maxHeight = `${scrollHeight}px`;
+                    contentArea.style.padding = '8px 16px';
+                });
+                
+                const transitionEndHandler = () => {
+                    if (contentArea.style.maxHeight !== '0px') {
+                        contentArea.style.maxHeight = 'auto';
+                    }
+                    contentArea.removeEventListener('transitionend', transitionEndHandler);
+                };
+                contentArea.addEventListener('transitionend', transitionEndHandler);
+                
+            } else {
+                
+                contentArea.style.maxHeight = `${contentArea.scrollHeight}px`;
+                
+                requestAnimationFrame(() => {
+                    contentArea.style.maxHeight = '0px';
+                    contentArea.style.padding = '0 16px';
+                });
+            }
+        });
+    }
+    
+    setupDropdown(appCreditsToggle, appCreditsContent);
+    setupDropdown(websiteCreditsToggle, websiteCreditsContent);
+});
