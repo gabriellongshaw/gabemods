@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #212121; 
+    background-color: #1e1e1e; 
     color: #ffffff; 
     margin: 0;
     text-align: center;
@@ -14,8 +14,7 @@ body {
 .maintenance-container {
     padding: 30px;
     border-radius: 15px;
-    background-color: #1e1e1e; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #1e1e1e;
     max-width: 500px;
     width: 90%;
     animation: fadeIn 1s ease-out;

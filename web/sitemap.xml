@@ -13,28 +13,8 @@
   </url>
 
   <url>
-    <loc>https://gabemods.github.io/games/</loc>
+    <loc>https://gabemods.github.io/download/</loc>
     <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://gabemods.github.io/learn-to-code/</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://gabemods.github.io/download</loc>
-    <priority>0.90</priority>
-  </url>
-
-  <url>
-    <loc>https://gabemods.github.io/contact/</loc>
-    <priority>0.50</priority>
-  </url>
-
-  <url>
-    <loc>https://gabemods.github.io/settings/</loc>
-    <priority>0.70</priority>
   </url>
 
 </urlset>
