@@ -4,11 +4,11 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #1e1e1e; 
-    color: #ffffff; 
+    background-color: #1e1e1e;
+    color: #ffffff;
     margin: 0;
     text-align: center;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .maintenance-container {
@@ -21,10 +21,9 @@ body {
 }
 
 .maintenance-icon {
-    font-size: 80px; 
-    color: #A9D3FB; 
-    margin-bottom: 20px;
-    animation: bounce 2s infinite ease-in-out; 
+    font-size: 80px;
+    color: #A9D3FB;
+    animation: bounce 2s infinite ease-in-out;
 }
 
 h1 {
@@ -37,14 +36,26 @@ h1 {
 p {
     font-size: 1.1em;
     line-height: 1.6;
-    margin-bottom: 10px;
-    color: #bbb; 
+    margin-bottom: 25px; 
+    color: #bbb;
 }
 
-p:last-of-type {
-    margin-top: 25px;
-    font-style: italic;
-    color: #999;
+.home-button {
+    display: inline-block; 
+    padding: 10px 10px;
+    margin-top: 10px; 
+    background-color: #A4CDF3; 
+    color: #ffffff;
+    text-decoration: none; 
+    border-radius: 50px; 
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.home-button:active {
+    background-color: #94CDF3;
+    transform: scale(1.05);
 }
 
 @keyframes fadeIn {
@@ -75,6 +86,10 @@ p:last-of-type {
         font-size: 1em;
     }
     .maintenance-icon {
-        font-size: 60px;
+        font-size: 75px;
+    }
+    .home-button {
+        padding: 10px 30px;
+        font-size: 1.1em;
     }
 }
