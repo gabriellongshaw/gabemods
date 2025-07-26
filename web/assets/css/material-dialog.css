@@ -491,3 +491,92 @@ input:checked + .slider:before {
 .download-dialog .close-button:active {
   transform: scale(0.95);
 }
+
+/* Existing styles above */
+
+.toggle-setting {
+  display: flex;
+  justify-content: space-between; /* Pushes label and switch to opposite ends */
+  align-items: center; /* Vertically centers label and switch */
+  margin: 16px 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+  /* Ensure it takes full available width within its parent */
+  width: 100%;
+}
+
+.setting-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dialog-text);
+  /* Allows the label to take up remaining space, pushing the switch */
+  flex-grow: 1;
+  /* Add some right margin to create separation from the switch */
+  margin-right: 16px;
+  /* Align text to the left */
+  text-align: left;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px; /* Standard Material Design 3 width for a switch */
+  height: 32px; /* Standard Material Design 3 height for a switch */
+  touch-action: none;
+  flex-shrink: 0; /* Prevents the switch from shrinking */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #444;
+  transition: background-color 0.3s ease;
+  border-radius: 34px; /* Makes the track pill-shaped */
+  cursor: pointer;
+  /* Added a subtle border for clarity when off */
+  border: 2px solid #555; /* A slightly darker grey border */
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  /* Adjusted size for the Material 3 thumb (20x20px with 24px track height, 2px border) */
+  height: 20px;
+  width: 20px;
+  /* Centered vertically on a 32px high track with 2px border on each side (32 - 2 - 2 - 20 = 8 / 2 = 4) */
+  bottom: 4px;
+  left: 4px; /* Aligns with Material 3 spacing */
+  background-color: #E0E0E0;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Add background transition for thumb */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+input:checked + .slider {
+  background-color: #8AB4F8; /* Material-like blue for active state */
+  border-color: #8AB4F8; /* No border needed when active */
+}
+
+input:checked + .slider:before {
+  /* Move thumb to the right, considering new dimensions and padding */
+  transform: translateX(20px); /* (52px width - 2px border - 2px border - 4px left - 20px thumb width = 24px remaining) */
+  background-color: #FFFFFF; /* White thumb on blue track */
+}
+
+/* Add focus-visible for accessibility */
+.switch input:focus-visible + .slider {
+    outline: 2px solid #8AB4F8; /* Focus ring around the slider */
+    outline-offset: 2px;
+}
+
+/* Rest of your CSS remains the same */

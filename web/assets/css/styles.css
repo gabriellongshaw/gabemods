@@ -108,7 +108,7 @@ body, html {
     height: 100%;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
-    background-color: #212121;
+    background-color: #121212;
     color: #ffffff;
     font-weight: 400;
 }
@@ -141,6 +141,15 @@ body, html {
     left: 0;
     position: fixed;
     z-index: 1002;
+}
+
+.header.translucent {
+   background-color: rgba(30, 30, 30, 0.8);
+   backdrop-filter: blur(20px);
+}
+
+.header.no-translucent {
+    background-color: #1e1e1e;
 }
 
 .main-title {
