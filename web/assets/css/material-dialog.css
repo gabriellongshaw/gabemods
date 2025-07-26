@@ -5,18 +5,16 @@
   --dialog-bg: #202020; 
   --dialog-text: #E0E0E0; 
   --dialog-secondary-text: #B0B0B0; 
-
   --select-bg: #303030; 
   --select-text: #E0E0E0; 
   --select-border-initial: #303030; 
   --select-active-bg: #404040; 
   --select-active-border: #8AB4F8; 
   --select-arrow-color: #B0B0B0; 
-
   --button-text: #8AB4F8; 
   --button-hover-bg: rgba(138, 180, 248, 0.1); 
-
   --settings-icon-color: #B0B0B0; 
+  --amoled-bg: #000000;
 }
 
 dialog {
@@ -85,6 +83,10 @@ dialog.closing {
 
 body.dark {
   background-color: #121212;
+}
+
+body.amolded-dark {
+  background-color: var(--amoled-bg);
 }
 
 .settings-dialog .modal-header {
