@@ -366,7 +366,7 @@ md-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background var(--transition), transform var(--transition);
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .footer-social-button:hover {
