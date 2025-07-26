@@ -88,7 +88,7 @@ if (resetButton) {
     
     const resetEvent = new CustomEvent('resetSettings', {
       detail: {
-        theme: 'system', // Set theme to system on reset
+        theme: 'system',
         font: 'system',
         translucency: false,
         cardTransparency: false,
