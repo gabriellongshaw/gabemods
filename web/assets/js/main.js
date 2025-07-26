@@ -78,16 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const isOpen = toggleButton.classList.contains('open');
             
             if (isOpen) {
+                contentArea.classList.add('open');
                 
                 contentArea.style.maxHeight = 'auto';
-                
                 const scrollHeight = contentArea.scrollHeight;
-                
                 contentArea.style.maxHeight = '0px';
                 
                 requestAnimationFrame(() => {
                     contentArea.style.maxHeight = `${scrollHeight}px`;
-                    contentArea.style.padding = '8px 16px';
+                    contentArea.style.padding = '16px';
                 });
                 
                 const transitionEndHandler = () => {
@@ -101,10 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 
                 contentArea.style.maxHeight = `${contentArea.scrollHeight}px`;
+                contentArea.style.padding = '16px';
                 
                 requestAnimationFrame(() => {
                     contentArea.style.maxHeight = '0px';
                     contentArea.style.padding = '0 16px';
+                    contentArea.classList.remove('open');
                 });
             }
         });

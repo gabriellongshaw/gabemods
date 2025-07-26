@@ -405,7 +405,7 @@ md-icon {
     max-width: 400px;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease-in-out;
 }
 
 .download-button {
@@ -420,7 +420,7 @@ md-icon {
 
 .download-button:active,
 .button-2:active {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .button-group-wrapper {
@@ -777,7 +777,7 @@ body.dark {
 }
 
 .credits-dropdown-header:hover {
-  background-color: var(--md-sys-color-surface-container-high);
+  background-color: var(--md-sys-color-surface-container-low);
 }
 
 .credits-dropdown-header h3 {
@@ -800,21 +800,24 @@ body.dark {
 }
 
 .credits-dropdown-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1),
-    padding 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-  background-color: var(--md-sys-color-surface-container);
-  padding: 0 16px;
-  border: 1px solid #383E4D;
-  border-top: none;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1),
+        padding 0.3s cubic-bezier(0.4, 0.0, 0.2, 1),
+        border 0.2s ease;
+    background-color: var(--md-sys-color-surface-container);
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-top: none;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
 }
 
 .credits-dropdown-content.open {
-  max-height: 1000px;
-  padding: 16px;
+    max-height: 1000px;
+    padding: 16px;
+    border: 1px solid #383E4D;
+    border-top: none;
 }
 
 .credits-dropdown-content .card {
@@ -824,6 +827,7 @@ body.dark {
 .card {
   display: flex;
   align-items: center;
+  margin-top: 5px;
   padding: 14px 18px;
   background-color: var(--md-sys-color-surface-container-highest);
   border-radius: 15px;
