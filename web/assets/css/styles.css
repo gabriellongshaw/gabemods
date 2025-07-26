@@ -39,7 +39,7 @@
     --md-sys-color-surface-container-low: #201F23; 
     --md-sys-color-surface-container: #1A191F; 
     --md-sys-color-surface-container-high: #1C1C24; 
-    --md-sys-color-surface-container-highest: #212121; 
+    --md-sys-color-surface-container-highest: #121212; 
 
     --md-sys-color-surface-variant: #423F49; 
     --md-sys-color-on-surface-variant: #C9C3CD; 
@@ -442,28 +442,6 @@ md-icon {
         text-align: left;
     }
 
-    .card-group-wrapper {
-        flex-direction: row; 
-        flex-wrap: wrap; 
-        justify-content: flex-start; 
-        gap: clamp(1rem, 2.5vw, 1.5rem); 
-        margin-left: 0; 
-        margin-right: 0;
-    }
-    .card {
-        padding: clamp(1rem, 2.5vw, 1.25rem) clamp(1.25rem, 3.5vw, 1.5rem);
-        min-height: 70px;
-        margin: 0; 
-        flex: 1 1 calc(50% - clamp(0.5rem, 1.25vw, 0.75rem)); 
-        max-width: calc(50% - clamp(0.5rem, 1.25vw, 0.75rem)); 
-        box-sizing: border-box; 
-    }
-    .profile-pic {
-        width: clamp(3.5rem, 12vw, 4.5rem);
-        height: clamp(3.5rem, 12vw, 4.5rem);
-        margin-right: clamp(1rem, 3vw, 1.25rem);
-    }
-
     .button-group-wrapper {
         flex-direction: row; 
         justify-content: flex-start; 
@@ -544,35 +522,6 @@ md-icon {
     .footer-social-button svg {
         width: clamp(0.9rem, 3vw, 1.1rem); 
         height: clamp(0.9rem, 3vw, 1.1rem); 
-    }
-
-    .card-group-wrapper {
-        flex-direction: row; 
-        flex-wrap: wrap; 
-        justify-content: flex-start; 
-        gap: clamp(0.8rem, 2vw, 1rem); 
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .card {
-        min-height: 40px; 
-        padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem);
-        margin: 0; 
-        border-radius: 12px; 
-        flex: 1 1 calc(50% - clamp(0.4rem, 1vw, 0.5rem)); 
-        max-width: calc(50% - clamp(0.4rem, 1vw, 0.5rem)); 
-        box-sizing: border-box;
-    }
-    .profile-pic {
-        width: clamp(1.8rem, 5vw, 2.2rem); 
-        height: clamp(1.8rem, 5vw, 2.2rem); 
-        margin-right: clamp(0.3rem, 1vw, 0.5rem); 
-    }
-    .card h1 {
-        font-size: var(--font-size-sm); 
-    }
-    .card p {
-        font-size: var(--font-size-xs); 
     }
 
     .button-group-wrapper {
@@ -857,7 +806,8 @@ body.dark {
     padding 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
   background-color: var(--md-sys-color-surface-container);
   padding: 0 16px;
-  border: 1px solid transparent;
+  border: 1px solid #383E4D;
+  border-top: none;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
 }
@@ -865,9 +815,6 @@ body.dark {
 .credits-dropdown-content.open {
   max-height: 1000px;
   padding: 16px;
-  border: #383E4D;
-  border-bottom-left-radius: 16px; 
-  border-bottom-right-radius: 16px;
 }
 
 .credits-dropdown-content .card {
@@ -879,7 +826,7 @@ body.dark {
   align-items: center;
   padding: 14px 18px;
   background-color: var(--md-sys-color-surface-container-highest);
-  border-radius: 12px;
+  border-radius: 15px;
   text-decoration: none;
   color: inherit;
   transition: background-color 0.2s ease, transform 0.2s ease;
@@ -891,12 +838,8 @@ body.dark {
     margin-top: 10px; 
 }
 
-.card:hover {
-  background-color: var(--md-sys-color-surface-container);
-}
-
 .card:active {
-  background-color: var(--md-sys-color-surface-container-high); 
+  background-color: var(--md-sys-color-surface-container-low); 
   transform: scale(1.02);
 }
 
@@ -960,7 +903,7 @@ body.dark {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.05em;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease-in-out;
 }
 
 .contribution-box .md-button:hover {
