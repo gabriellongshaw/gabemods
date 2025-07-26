@@ -1,7 +1,7 @@
 const settingsButton = document.getElementById('settings-button');
 const settingsModal = document.getElementById('settings-modal');
-const closeButton = settingsModal.querySelector('#close-settings');
-const resetButton = settingsModal.querySelector('#reset-settings-button');
+const closeButton = settingsModal ? settingsModal.querySelector('#close-settings') : null;
+const resetButton = settingsModal ? settingsModal.querySelector('#reset-settings-button') : null;
 const backdrop = document.getElementById('backdrop');
 
 function _openDialogInternal() {
@@ -88,7 +88,7 @@ if (resetButton) {
     
     const resetEvent = new CustomEvent('resetSettings', {
       detail: {
-        theme: 'system',
+        theme: 'system', // Set theme to system on reset
         font: 'system',
         translucency: false,
         cardTransparency: false,
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (infoButton && infoDialog && closeInfoDialogButton) {
         infoButton.addEventListener('click', () => {
             infoDialog.classList.add('show');
-            closeInfoDialogButton.focus();
+            closeInfoInfoDialogButton.focus();
         });
 
         closeInfoDialogButton.addEventListener('click', () => {

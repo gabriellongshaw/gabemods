@@ -1,18 +1,13 @@
 :root {
     --transition: all 0.2s ease;
     --md-icon-font: Material Symbols Rounded;
-
-    --background-color-light: #f0f2f5;
-    --text-color-light: #333333;
-
     --font-size-base: 1rem; 
     --font-size-xs: clamp(0.75rem, 1.8vw, 0.9rem); 
     --font-size-sm: clamp(0.9rem, 2.2vw, 1rem);   
     --font-size-md: clamp(1.05rem, 2.5vw, 1.15rem);  
     --font-size-lg: clamp(1.15rem, 3vw, 1.35rem); 
     --font-size-xl: clamp(1.4rem, 4vw, 1.8rem);   
-    --font-size-xxl: clamp(1.8rem, 5vw, 2.2rem); 
-
+    --font-size-xxl: clamp(1.8rem, 5vw, 2.2rem);
     --md-sys-color-primary: #A9D3FB; 
     --md-sys-color-on-primary: rgba(0, 0, 0, 0.8);
     --md-sys-color-primary-container: #4F378A;
@@ -29,18 +24,15 @@
     --md-sys-color-on-error: #690005;
     --md-sys-color-error-container: #93000A;
     --md-sys-color-on-error-container: #FFDAD6;
-
     --md-sys-color-background: #121215; 
     --md-sys-color-on-background: #EAE5EB; 
     --md-sys-color-surface: #121215; 
     --md-sys-color-on-surface: #A9D3FB; 
-
     --md-sys-color-surface-container-lowest: #1B1A1E; 
     --md-sys-color-surface-container-low: #201F23; 
     --md-sys-color-surface-container: #1A191F; 
     --md-sys-color-surface-container-high: #1C1C24; 
     --md-sys-color-surface-container-highest: #121212; 
-
     --md-sys-color-surface-variant: #423F49; 
     --md-sys-color-on-surface-variant: #C9C3CD; 
     --md-sys-color-outline: #8B8791; 
@@ -51,6 +43,9 @@
     --md-sys-color-surface-tint: #D0BCFF;
     --md-sys-color-outline-variant: #423F49; 
     --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
+    --amoled-background: #000000;
+    --amoled-header-bg: #000000;
+    --amoled-header-translucent-bg: rgba(0, 0, 0, 0.8);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
@@ -108,9 +103,27 @@ body, html {
     height: 100%;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
-    background-color: #121212;
+
+    background-color: var(--md-sys-color-background); 
     color: #ffffff;
     font-weight: 400;
+    transition: background-color 0.3s ease; 
+}
+
+body.light-mode {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+
+}
+
+body.dark-mode {
+    background-color: var(--md-sys-color-background);
+    color: #ffffff;
+
+}
+
+body.amoled-dark-mode {
+    background-color: var(--amoled-background);
 }
 
 .container {
@@ -133,7 +146,7 @@ body, html {
 .header {
     width: 100%;
     height: 60px;
-    background-color: #1e1e1e;
+    background-color: #1e1e1e; 
     display: flex;
     align-items: center;
     padding: 0;
@@ -141,6 +154,7 @@ body, html {
     left: 0;
     position: fixed;
     z-index: 1002;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease; 
 }
 
 .header.translucent {
@@ -149,7 +163,20 @@ body, html {
 }
 
 .header.no-translucent {
-    background-color: #1e1e1e;
+    background-color: #1e1e1e; 
+    backdrop-filter: none;
+}
+
+body.amoled-dark-mode .header {
+    background-color: var(--amoled-header-bg); 
+}
+
+body.amoled-dark-mode .header.translucent {
+    background-color: var(--amoled-header-translucent-bg); 
+}
+
+body.amoled-dark-mode .header.no-translucent {
+    background-color: var(--amoled-header-bg);
 }
 
 .main-title {
@@ -739,7 +766,7 @@ md-icon {
     pointer-events: none;
 }
 
-body.dark {
+body.dark { 
     --fade-overlay-color: rgba(0, 0, 0, 1);
 }
 
