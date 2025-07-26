@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const translucencyToggle = document.getElementById('translucency-toggle');
   const translucentElements = document.querySelectorAll('.translucent, .header');
-
+  
   function applyTranslucency(isTranslucent, isHardReset = false) {
     translucentElements.forEach(el => {
       el.classList.toggle('translucent', isTranslucent);
@@ -15,26 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
-  // Initial Load for Translucency
   const savedTranslucency = localStorage.getItem('translucency');
-  let initialTranslucencyState = false; // Default to off
-  if (savedTranslucency === 'on') {
-    initialTranslucencyState = true;
-  }
+  let initialTranslucencyState = (savedTranslucency === 'on');
+  
   translucencyToggle.checked = initialTranslucencyState;
   applyTranslucency(initialTranslucencyState);
-
-  // Event Listener for Translucency Toggle
+  
   translucencyToggle.addEventListener('change', () => {
     const enabled = translucencyToggle.checked;
     applyTranslucency(enabled);
   });
   
-  // Settings Modal Reset Listener (for translucency only)
   const settingsModal = document.getElementById('settings-modal');
   if (settingsModal) {
     settingsModal.addEventListener('resetSettings', (event) => {
-      const { translucency, hardReset } = event.detail; // Only destructure what's needed
+      const { translucency, hardReset } = event.detail;
       
       translucencyToggle.checked = translucency;
       applyTranslucency(translucency, hardReset);
