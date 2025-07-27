@@ -3,55 +3,71 @@ document.addEventListener('DOMContentLoaded', () => {
     const sideMenu = document.getElementById('side-menu');
     const overlay = document.getElementById('overlay');
     const contentFadeOverlay = document.getElementById('content-fade-overlay');
-    
+
     let menuOpen = false;
-    
-    sideMenu.style.display = 'block';
-    const targetMenuWidth = sideMenu.offsetWidth;
-    sideMenu.style.display = '';
-    
-    const menuTimeline = gsap.timeline({
-        paused: true,
-        reversed: true,
-        defaults: {
-            duration: 0.3,
-            ease: 'power3.out'
-        },
-        onStart: () => {
-            
-            sideMenu.style.visibility = 'visible';
-            document.body.style.overflow = 'hidden';
-        },
-        onReverseComplete: () => {
-            
-            sideMenu.style.visibility = 'hidden';
-            document.body.style.overflow = '';
-        },
-        
-    });
-    
-    menuTimeline.to(sideMenu, {
-        width: targetMenuWidth,
-    });
-    
-    gsap.set(sideMenu, { width: 0, visibility: 'hidden' });
-    
+
+    gsap.set(menuToggle.children, { y: 0, x: 0, xPercent: 0, rotate: 0, opacity: 1, transformOrigin: '50% 50%' });
+    gsap.set(sideMenu, { clipPath: 'inset(0% 100% 0% 0%)', visibility: 'hidden' });
+    gsap.set(overlay, { opacity: 0, visibility: 'hidden' });
+
     const openMenu = () => {
-        if (menuTimeline.isActive()) return;
-        menuTimeline.play();
+        if (gsap.isTweening(sideMenu) || gsap.isTweening(overlay)) return;
+
+        menuOpen = true;
+        document.body.style.overflow = 'hidden';
+
+        gsap.to(menuToggle.children[0], { duration: 0.1, y: 6.5, rotate: 45, transformOrigin: '50% 50%', ease: 'power3.out' });
+        gsap.to(menuToggle.children[1], { duration: 0.1, xPercent: -50, opacity: 0, transformOrigin: '50% 50%', ease: 'power3.out' });
+        gsap.to(menuToggle.children[2], { duration: 0.1, y: -6.5, rotate: -45, transformOrigin: '50% 50%', ease: 'power3.out' });
+
+        gsap.to(sideMenu, {
+            duration: 0.3,
+            clipPath: 'inset(0% 0% 0% 0%)',
+            visibility: 'visible',
+            ease: 'power3.out'
+        });
+
+        gsap.to(overlay, {
+            duration: 0.25,
+            opacity: 1,
+            visibility: 'visible',
+            ease: 'power3.out'
+        });
+
         menuToggle.classList.add('open');
         overlay.classList.add('show');
-        menuOpen = true;
     };
-    
+
     const closeMenu = () => {
-        if (menuTimeline.isActive()) return;
-        menuTimeline.reverse();
+        if (gsap.isTweening(sideMenu) || gsap.isTweening(overlay)) return;
+
+        menuOpen = false;
+        document.body.style.overflow = '';
+
+        gsap.to(menuToggle.children[0], { duration: 0.1, y: 0, rotate: 0, ease: 'power3.out' });
+        gsap.to(menuToggle.children[1], { duration: 0.1, xPercent: 0, opacity: 1, ease: 'power3.out' });
+        gsap.to(menuToggle.children[2], { duration: 0.1, y: 0, rotate: 0, ease: 'power3.out' });
+
+        gsap.to(sideMenu, {
+            duration: 0.3,
+            clipPath: 'inset(0% 100% 0% 0%)',
+            ease: 'power3.out',
+            onComplete: () => {
+                sideMenu.style.visibility = 'hidden';
+            }
+        });
+
+        gsap.to(overlay, {
+            duration: 0.3,
+            opacity: 0,
+            visibility: 'hidden',
+            ease: 'power3.out'
+        });
+
         menuToggle.classList.remove('open');
         overlay.classList.remove('show');
-        menuOpen = false;
     };
-    
+
     menuToggle.addEventListener('click', () => {
         if (menuOpen) {
             closeMenu();
@@ -59,34 +75,36 @@ document.addEventListener('DOMContentLoaded', () => {
             openMenu();
         }
     });
-    
+
     overlay.addEventListener('click', () => {
         if (menuOpen) {
             closeMenu();
         }
     });
-    
+
     sideMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             closeMenu();
         });
     });
-    
+
     const currentPath = window.location.pathname.replace(/\/$/, "");
     const menuLinks = sideMenu.querySelectorAll('a');
+
     menuLinks.forEach(link => {
         const linkPath = link.getAttribute('href').replace(/\/$/, "");
-        if (currentPath === "" || currentPath === "/index.html") {
-            if (linkPath === "index.html" || linkPath === "") {
-                link.parentElement.classList.add('current-page');
-            }
-        } else if (currentPath.includes(linkPath) && linkPath !== "") {
+
+        const isCurrentPage = (currentPath === "" || currentPath === "/index.html")
+            ? (linkPath === "index.html" || linkPath === "")
+            : (currentPath.includes(linkPath) && linkPath !== "");
+
+        if (isCurrentPage) {
             link.parentElement.classList.add('current-page');
         } else {
             link.parentElement.classList.remove('current-page');
         }
     });
-    
+
     window.addEventListener('beforeunload', () => {
         contentFadeOverlay.classList.add('fade-active');
     });
@@ -100,21 +118,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const appCreditsContent = document.getElementById('app-credits-content');
     const websiteCreditsToggle = document.getElementById('website-credits-toggle');
     const websiteCreditsContent = document.getElementById('website-credits-content');
-    
+
     function setupDropdown(toggleButton, contentArea) {
         toggleButton.addEventListener('click', () => {
             toggleButton.classList.toggle('open');
             const isOpen = toggleButton.classList.contains('open');
-            
+
             if (isOpen) {
                 contentArea.classList.add('open');
                 contentArea.style.maxHeight = 'auto';
                 const scrollHeight = contentArea.scrollHeight;
                 contentArea.style.maxHeight = '0px';
+
                 requestAnimationFrame(() => {
                     contentArea.style.maxHeight = `${scrollHeight}px`;
                     contentArea.style.padding = '16px';
                 });
+
                 const transitionEndHandler = () => {
                     if (contentArea.style.maxHeight !== '0px') {
                         contentArea.style.maxHeight = 'auto';
@@ -122,9 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     contentArea.removeEventListener('transitionend', transitionEndHandler);
                 };
                 contentArea.addEventListener('transitionend', transitionEndHandler);
+
             } else {
                 contentArea.style.maxHeight = `${contentArea.scrollHeight}px`;
                 contentArea.style.padding = '16px';
+
                 requestAnimationFrame(() => {
                     contentArea.style.maxHeight = '0px';
                     contentArea.style.padding = '0 16px';
@@ -133,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     setupDropdown(appCreditsToggle, appCreditsContent);
     setupDropdown(websiteCreditsToggle, websiteCreditsContent);
 });

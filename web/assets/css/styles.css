@@ -408,7 +408,7 @@ body.amoled-dark-mode .menu-toggle span {
   box-sizing: border-box;
   z-index: 1001;
 
-  transform-origin: left; 
+  transform-origin: left;
   overflow: hidden; 
   opacity: 1; 
   visibility: hidden; 
@@ -430,15 +430,166 @@ body.amoled-dark-mode .side-menu {
     padding: 0;
     margin: 0;
 
-    transform-origin: left; 
-
+    transform-origin: left;
     width: 100%; 
 }
 
 .side-menu li {
     margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
-    opacity: 1; 
-    transform: translateX(0); 
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: var(--font-size-md);
+    font-weight: 400;
+    display: block;
+    padding: clamp(0.75rem, 1.5vh, 1rem) clamp(1rem, 2.5vw, 1.25rem);
+    border-radius: 10px;
+    transition: background 0.3s ease; 
+}
+
+body.dark-mode .side-menu a {
+    color: var(--dark-md-sys-color-on-surface-variant);
+}
+
+body.amoled-dark-mode .side-menu a {
+    color: var(--dark-md-sys-color-on-surface-variant);
+}
+
+.side-menu li.current-page a {
+    color: var(--md-sys-color-on-primary-container);
+    background-color: var(--md-sys-color-primary-container);
+    border-radius: 12px;
+    font-weight: 500;
+    pointer-events: none; 
+}
+
+body.dark-mode .side-menu li.current-page a {
+    color: var(--dark-md-sys-color-on-primary-container);
+    background-color: var(--dark-md-sys-color-primary-container);
+}
+
+body.amoled-dark-mode .side-menu li.current-page a {
+    color: var(--dark-md-sys-color-on-primary-container);
+    background-color: var(--dark-md-sys-color-primary-container);
+}
+
+.side-menu a:hover:not(.current-page) { 
+    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.02); 
+}
+
+body.dark-mode .side-menu a:hover:not(.current-page) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.05); 
+}
+
+body.amoled-dark-mode .side-menu a:hover:not(.current-page) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.05); 
+}
+
+.side-menu a:active:not(.current-page) { 
+    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.04); 
+    transition: background 0.1s ease;
+}
+
+body.dark-mode .side-menu a:active:not(.current-page) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.1); 
+}
+
+body.amoled-dark-mode .side-menu a:active:not(.current-page) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.1); 
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out;
+}
+
+#overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+.menu-toggle {
+    width: 26px;
+    height: 15px;
+    margin-left: clamp(1rem, 4vw, 1.25rem);
+    cursor: pointer;
+    position: relative;
+    z-index: 1003;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    touch-action: none;
+}
+
+.menu-toggle span {
+    height: 2px;
+    background: var(--md-sys-color-on-surface-variant);
+}
+
+body.light-mode .menu-toggle span {
+    background: var(--md-sys-color-on-surface-variant);
+}
+
+body.dark-mode .menu-toggle span {
+    background: var(--dark-md-sys-color-on-surface-variant);
+}
+
+body.amoled-dark-mode .menu-toggle span {
+    background: var(--dark-md-sys-color-on-surface-variant);
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(80vw, 300px);
+  height: 100vh;
+  background-color: var(--md-sys-color-surface);
+  padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.25rem);
+  box-sizing: border-box;
+  z-index: 1001;
+
+  clip-path: inset(0% 100% 0% 0%);
+  opacity: 1;
+  visibility: hidden;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body.dark-mode .side-menu {
+  background-color: var(--dark-md-sys-color-surface);
+}
+
+body.amoled-dark-mode .side-menu {
+  background-color: var(--amoled-background);
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transform: none;
+    width: 100%;
+}
+
+.side-menu li {
+    margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .side-menu a {
@@ -460,70 +611,47 @@ body.amoled-dark-mode .side-menu a {
     color: var(--dark-md-sys-color-on-surface-variant);
 }
 
-.side-menu li.current-page a,
-.side-menu li.active a {
+.side-menu li.current-page a {
     color: var(--md-sys-color-on-primary-container);
     background-color: var(--md-sys-color-primary-container);
     border-radius: 12px;
     font-weight: 500;
+    pointer-events: none;
 }
 
-body.dark-mode .side-menu li.current-page a,
-body.dark-mode .side-menu li.active a {
+body.dark-mode .side-menu li.current-page a {
     color: var(--dark-md-sys-color-on-primary-container);
     background-color: var(--dark-md-sys-color-primary-container);
 }
 
-body.amoled-dark-mode .side-menu li.current-page a,
-body.amoled-dark-mode .side-menu li.active a {
+body.amoled-dark-mode .side-menu li.current-page a {
     color: var(--dark-md-sys-color-on-primary-container);
     background-color: var(--dark-md-sys-color-primary-container);
 }
 
-.side-menu a:hover:not(.current-page):not(.active) {
+.side-menu a:hover:not(.current-page) {
+    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.02);
+}
+
+body.dark-mode .side-menu a:hover:not(.current-page) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.05);
+}
+
+body.amoled-dark-mode .side-menu a:hover:not(.current-page) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.05);
+}
+
+.side-menu a:active:not(.current-page) {
     background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.04);
-}
-
-body.dark-mode .side-menu a:hover:not(.current-page):not(.active) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.08);
-}
-
-body.amoled-dark-mode .side-menu a:hover:not(.current-page):not(.active) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.08);
-}
-
-.side-menu a:active:not(.current-page):not(.active) {
-    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.08);
     transition: background 0.1s ease;
 }
 
-body.dark-mode .side-menu a:active:not(.current-page):not(.active) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.15);
+body.dark-mode .side-menu a:active:not(.current-page) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.1);
 }
 
-body.amoled-dark-mode .side-menu a:active:not(.current-page):not(.active) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.15);
-}
-
-.side-menu li.current-page a:hover,
-.side-menu li.current-page a:active,
-.side-menu li.active a:hover,
-.side-menu li.active a:active {
-    background-color: rgba(var(--md-sys-color-on-primary-container-rgb, 34, 0, 93), 0.12);
-}
-
-body.dark-mode .side-menu li.current-page a:hover,
-body.dark-mode .side-menu li.current-page a:active,
-body.dark-mode .side-menu li.active a:hover,
-body.dark-mode .side-menu li.active a:active {
-    background-color: rgba(0, 123, 255, 0.4);
-}
-
-body.amoled-dark-mode .side-menu li.current-page a:hover,
-body.amoled-dark-mode .side-menu li.current-page a:active,
-body.amoled-dark-mode .side-menu li.active a:hover,
-body.amoled-dark-mode .side-menu li.active a:active {
-    background-color: rgba(0, 123, 255, 0.4);
+body.amoled-dark-mode .side-menu a:active:not(.current-page) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.1);
 }
 
 #overlay {
@@ -536,12 +664,9 @@ body.amoled-dark-mode .side-menu li.active a:active {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-out;
 }
 
 #overlay.show {
-    opacity: 1;
-    visibility: visible;
 }
 
 .side-menu-settings {
