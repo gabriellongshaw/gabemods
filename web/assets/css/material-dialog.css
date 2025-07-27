@@ -15,6 +15,57 @@
   --button-hover-bg: rgba(138, 180, 248, 0.1); 
   --settings-icon-color: #B0B0B0; 
   --amoled-bg: #000000;
+
+  --slider-bg-off: #444;
+  --slider-border-off: #555;
+  --slider-toggle-off: #E0E0E0;
+  --slider-bg-on: #8AB4F8;
+  --slider-border-on: #8AB4F8;
+  --slider-toggle-on: #FFFFFF;
+}
+
+body.light-mode {
+  --dialog-bg: #FFFFFF;
+  --dialog-text: #1F1F1F;
+  --dialog-secondary-text: #616161;
+  --select-bg: #F0F0F0;
+  --select-text: #1F1F1F;
+  --select-border-initial: #D0D0D0;
+  --select-active-bg: #E0E0E0;
+  --select-active-border: #4285F4;
+  --select-arrow-color: #757575;
+  --button-text: #4285F4;
+  --button-hover-bg: rgba(66, 133, 244, 0.08);
+  --settings-icon-color: #757575;
+
+  --slider-bg-off: #B0B0B0;
+  --slider-border-off: #A0A0A0;
+  --slider-toggle-off: #FFFFFF;
+  --slider-bg-on: #4285F4;
+  --slider-border-on: #4285F4;
+  --slider-toggle-on: #FFFFFF;
+}
+
+body.amoled-dark-mode {
+  --dialog-bg: #000000;
+  --dialog-text: #E0E0E0;
+  --dialog-secondary-text: #B0B0B0;
+  --select-bg: #1A1A1A;
+  --select-text: #E0E0E0;
+  --select-border-initial: #2A2A2A;
+  --select-active-bg: #3A3A3A;
+  --select-active-border: #8AB4F8;
+  --select-arrow-color: #B0B0B0;
+  --button-text: #8AB4F8;
+  --button-hover-bg: rgba(138, 180, 248, 0.1);
+  --settings-icon-color: #B0B0B0;
+
+  --slider-bg-off: #333;
+  --slider-border-off: #444;
+  --slider-toggle-off: #E0E0E0;
+  --slider-bg-on: #8AB4F8;
+  --slider-border-on: #8AB4F8;
+  --slider-toggle-on: #FFFFFF;
 }
 
 dialog {
@@ -81,11 +132,11 @@ dialog.closing {
   flex-direction: column;
 }
 
-body.dark {
+body.dark-mode {
   background-color: #121212;
 }
 
-body.amolded-dark {
+body.amoled-dark-mode {
   background-color: var(--amoled-bg);
 }
 
@@ -137,7 +188,7 @@ body.amolded-dark {
   width: 100%;
   padding: 12px 18px; 
   margin-top: 8px; 
-  border: 1px solid var(--select-border-initial); 
+  border: 2px solid var(--select-border-initial); 
   border-radius: 12px; 
   background-color: var(--select-bg);
   color: var(--select-text);
@@ -154,6 +205,15 @@ body.amolded-dark {
   background-size: 24px; 
 }
 
+body.light-mode .settings-dialog select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23757575'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
+
+body.dark-mode .settings-dialog select,
+body.amoled-dark-mode .settings-dialog select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B0B0B0'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
+
 .settings-dialog select:hover {
     background-color: var(--select-active-bg); 
 }
@@ -163,7 +223,6 @@ body.amolded-dark {
   background-color: var(--select-active-bg);
   border-color: var(--select-active-border); 
   outline: none;
-  box-shadow: 0 0 0 3px rgba(138, 180, 248, 0.3); 
 }
 
 .settings-dialog label {
@@ -259,11 +318,11 @@ body.amolded-dark {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #444; 
+  background-color: var(--slider-bg-off); 
   transition: background-color 0.3s ease;
   border-radius: 34px;
   cursor: pointer;
-  border: 2px solid #555;
+  border: 2px solid var(--slider-border-off);
 }
 
 .slider:before {
@@ -273,23 +332,23 @@ body.amolded-dark {
   width: 20px;
   bottom: 4px;
   left: 4px;
-  background-color: #E0E0E0; 
+  background-color: var(--slider-toggle-off); 
   border-radius: 50%;
   transition: transform 0.3s ease, background-color 0.3s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 input:checked + .slider {
-  background-color: #8AB4F8; 
-  border-color: #8AB4F8;
+  background-color: var(--slider-bg-on); 
+  border-color: var(--slider-border-on);
 }
 
 input:checked + .slider:before {
   transform: translateX(20px);
-  background-color: #FFFFFF;
+  background-color: var(--slider-toggle-on);
 }
 
 .switch input:focus-visible + .slider {
-    outline: 2px solid #8AB4F8; 
+    outline: 2px solid var(--slider-bg-on); 
     outline-offset: 2px;
 }
