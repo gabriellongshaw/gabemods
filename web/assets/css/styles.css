@@ -322,7 +322,6 @@ body.dark-mode .header.no-translucent {
     background-color: var(--dark-md-sys-color-surface-container-high);
 }
 
-
 body.amoled-dark-mode .header {
     background-color: var(--amoled-header-bg);
 }
@@ -358,7 +357,7 @@ body.light-mode .main-title {
 
 .menu-toggle {
     width: 26px;
-    height: 20px;
+    height: 15px;
     margin-left: clamp(1rem, 4vw, 1.25rem);
     cursor: pointer;
     position: relative;
@@ -366,65 +365,80 @@ body.light-mode .main-title {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    touch-action: none;
 }
 
 .menu-toggle span {
-    height: 3px;
-    background: #B0C0D0;
-    border-radius: 2px;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    height: 2px;
+    background: var(--md-sys-color-on-surface-variant);
+    transition: transform 0.25s ease-out, opacity 0.25s ease-out;
 }
 
 body.light-mode .menu-toggle span {
-    height: 3px;
-    background: #000;
-    border-radius: 2px;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    background: var(--md-sys-color-on-surface-variant);
+}
+
+body.dark-mode .menu-toggle span {
+    background: var(--dark-md-sys-color-on-surface-variant);
+}
+
+body.amoled-dark-mode .menu-toggle span {
+    background: var(--dark-md-sys-color-on-surface-variant);
 }
 
 .menu-toggle.open span:nth-child(1) {
-    transform: translateY(8.5px) rotate(45deg);
+    transform: translateY(6.5px) rotate(45deg);
 }
 .menu-toggle.open span:nth-child(2) {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
     opacity: 0;
 }
 .menu-toggle.open span:nth-child(3) {
-    transform: translateY(-8.5px) rotate(-45deg);
+    transform: translateY(-6.5px) rotate(-45deg);
 }
 
 .side-menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: min(80vw, 300px);
+  width: min(80vw, 300px); 
   height: 100vh;
   background-color: var(--md-sys-color-surface);
   padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.5rem);
   box-sizing: border-box;
   z-index: 1001;
-  transform: translateX(-100%);
-  opacity: 1;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow-y: auto;
+
+  transform-origin: left; 
+  overflow: hidden; 
+  opacity: 1; 
+  visibility: hidden; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.side-menu.open {
-  transform: translateX(0) scale(1);
-  opacity: 1;
+body.dark-mode .side-menu {
+  background-color: var(--dark-md-sys-color-surface);
+}
+
+body.amoled-dark-mode .side-menu {
+  background-color: var(--amoled-background);
 }
 
 .side-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
+
+    transform-origin: left; 
+
+    width: 100%; 
 }
 
 .side-menu li {
     margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
+    opacity: 1; 
+    transform: translateX(0); 
 }
 
 .side-menu a {
@@ -438,47 +452,97 @@ body.light-mode .menu-toggle span {
     transition: background 0.3s ease;
 }
 
-.side-menu li.current-page a {
+body.dark-mode .side-menu a {
+    color: var(--dark-md-sys-color-on-surface-variant);
+}
+
+body.amoled-dark-mode .side-menu a {
+    color: var(--dark-md-sys-color-on-surface-variant);
+}
+
+.side-menu li.current-page a,
+.side-menu li.active a {
     color: var(--md-sys-color-on-primary-container);
     background-color: var(--md-sys-color-primary-container);
     border-radius: 12px;
     font-weight: 500;
 }
 
-.side-menu li.active a {
-    color: var(--md-sys-color-on-primary);
-    background-color: var(--md-sys-color-primary-container);
-    border-radius: 12px;
-    font-weight: 500;
+body.dark-mode .side-menu li.current-page a,
+body.dark-mode .side-menu li.active a {
+    color: var(--dark-md-sys-color-on-primary-container);
+    background-color: var(--dark-md-sys-color-primary-container);
 }
 
-.side-menu a:hover:not(.active) {
-    background-color: rgba(0, 0, 0, 0.04);
+body.amoled-dark-mode .side-menu li.current-page a,
+body.amoled-dark-mode .side-menu li.active a {
+    color: var(--dark-md-sys-color-on-primary-container);
+    background-color: var(--dark-md-sys-color-primary-container);
 }
 
-body.dark-mode .side-menu a:hover:not(.active) {
-    background-color: rgba(255, 255, 255, 0.08);
+.side-menu a:hover:not(.current-page):not(.active) {
+    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.04);
 }
 
-.side-menu a:active:not(.active) {
-    background-color: rgba(0, 0, 0, 0.08);
+body.dark-mode .side-menu a:hover:not(.current-page):not(.active) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.08);
+}
+
+body.amoled-dark-mode .side-menu a:hover:not(.current-page):not(.active) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.08);
+}
+
+.side-menu a:active:not(.current-page):not(.active) {
+    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.08);
     transition: background 0.1s ease;
 }
 
-body.dark-mode .side-menu a:active:not(.active) {
-    background-color: rgba(173, 216, 230, 0.15);
+body.dark-mode .side-menu a:active:not(.current-page):not(.active) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.15);
 }
 
+body.amoled-dark-mode .side-menu a:active:not(.current-page):not(.active) {
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.15);
+}
+
+.side-menu li.current-page a:hover,
+.side-menu li.current-page a:active,
 .side-menu li.active a:hover,
 .side-menu li.active a:active {
-    background-color: rgba(0, 0, 0, 0.12);
+    background-color: rgba(var(--md-sys-color-on-primary-container-rgb, 34, 0, 93), 0.12);
 }
 
+body.dark-mode .side-menu li.current-page a:hover,
+body.dark-mode .side-menu li.current-page a:active,
 body.dark-mode .side-menu li.active a:hover,
 body.dark-mode .side-menu li.active a:active {
     background-color: rgba(0, 123, 255, 0.4);
 }
 
+body.amoled-dark-mode .side-menu li.current-page a:hover,
+body.amoled-dark-mode .side-menu li.current-page a:active,
+body.amoled-dark-mode .side-menu li.active a:hover,
+body.amoled-dark-mode .side-menu li.active a:active {
+    background-color: rgba(0, 123, 255, 0.4);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out;
+}
+
+#overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
 
 .side-menu-settings {
     position: absolute;
@@ -656,7 +720,6 @@ body.dark-mode .button-2 {
     color: #fff;
 }
 
-
 .download-button:active,
 .button-2:active {
     transform: scale(1.03);
@@ -719,7 +782,7 @@ body.dark-mode .button-2 {
     }
     .menu-toggle {
         margin-left: clamp(0.6rem, 2.2vw, 0.9rem);
-        width: 22px;
+        width: 25px;
         height: 16px;
     }
     .menu-toggle span {
@@ -791,7 +854,7 @@ body.dark-mode .button-2 {
         margin-left: clamp(0.8rem, 3vw, 1rem);
     }
     .menu-toggle {
-        margin-left: clamp(0.8rem, 3vw, 1rem);
+        margin-left: clamp(1.8rem, 3vw, 1rem);
     }
     .container {
         padding-left: clamp(0.5rem, 3vw, 1rem);
