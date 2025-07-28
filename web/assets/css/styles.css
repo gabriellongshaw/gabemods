@@ -536,6 +536,7 @@ body.amoled-dark-mode .side-menu a:active:not(.current-page) {
     opacity: 0;
     visibility: hidden;
     font-family: inherit;
+    transition: opac;
 }
 
 #overlay.show {

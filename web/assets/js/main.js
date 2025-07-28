@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     gsap.set(menuToggle.children, { y: 0, x: 0, xPercent: 0, rotate: 0, opacity: 1, transformOrigin: '50% 50%' });
     gsap.set(sideMenu, { clipPath: 'inset(0% 100% 0% 0%)', visibility: 'hidden' });
-    gsap.set(overlay, { opacity: 0, visibility: 'hidden' });
     
     const getMenuTween = () => {
         if (!menuTween) {
@@ -18,26 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     onStart: () => {
                         if (!menuTween.reversed()) {
                             sideMenu.style.visibility = 'visible';
-                            overlay.style.visibility = 'visible';
+                            
                             document.body.style.overflow = 'hidden';
                         }
                         menuToggle.classList.add('animating');
-                        overlay.classList.add('animating');
+                        
                     },
                     onComplete: () => {
                         menuToggle.classList.add('open');
                         overlay.classList.add('show');
                         menuToggle.classList.remove('animating');
-                        overlay.classList.remove('animating');
+                        
                     },
                     onReverseComplete: () => {
                         sideMenu.style.visibility = 'hidden';
-                        overlay.style.visibility = 'hidden';
+                        
                         document.body.style.overflow = '';
                         menuToggle.classList.remove('open');
                         overlay.classList.remove('show');
                         menuToggle.classList.remove('animating');
-                        overlay.classList.remove('animating');
+                        
                     }
                 })
                 
@@ -49,13 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     duration: 0.25,
                     clipPath: 'inset(0% 0% 0% 0%)',
                     ease: 'power2.inOut'
-                }, 0)
-                
-                .to(overlay, {
-                    duration: 0.1,
-                    opacity: 1,
-                    ease: 'power1.out'
                 }, 0);
+            
         }
         return menuTween;
     };
@@ -68,9 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (tween.reversed()) {
+            
+            overlay.style.visibility = 'visible';
+            overlay.classList.add('show');
             tween.play();
         } else {
+            
+            overlay.classList.remove('show');
             tween.reverse();
+            
         }
     };
     
