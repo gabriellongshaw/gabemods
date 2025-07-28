@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.to(menuToggle.children[2], { duration: 0.1, y: -6.5, rotate: -45, transformOrigin: '50% 50%', ease: 'power3.out' });
 
         gsap.to(sideMenu, {
-            duration: 0.3,
+            duration: 0.35,
             clipPath: 'inset(0% 0% 0% 0%)',
             visibility: 'visible',
             ease: 'power3.out'
         });
 
         gsap.to(overlay, {
-            duration: 0.25,
+            duration: 0.35,
             opacity: 1,
             visibility: 'visible',
             ease: 'power3.out'
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.to(menuToggle.children[2], { duration: 0.1, y: 0, rotate: 0, ease: 'power3.out' });
 
         gsap.to(sideMenu, {
-            duration: 0.3,
+            duration: 0.35,
             clipPath: 'inset(0% 100% 0% 0%)',
             ease: 'power3.out',
             onComplete: () => {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         gsap.to(overlay, {
-            duration: 0.3,
+            duration: 0.35,
             opacity: 0,
             visibility: 'hidden',
             ease: 'power3.out'

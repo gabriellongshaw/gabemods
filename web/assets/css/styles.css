@@ -8,7 +8,6 @@
     --font-size-lg: clamp(1.15rem, 3vw, 1.35rem);
     --font-size-xl: clamp(1.4rem, 4vw, 1.8rem);
     --font-size-xxl: clamp(1.8rem, 5vw, 2.2rem);
-
     --md-sys-color-primary: #A9D3FB;
     --md-sys-color-on-primary: #000000;
     --md-sys-color-primary-container: #CFE5FF;
@@ -41,8 +40,7 @@
     --md-sys-color-surface-tint: #A9D3FB;
     --md-sys-color-outline-variant: #C3C7CF;
     --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
-    --fade-overlay-color: rgba(255, 255, 255, 1);
-
+    --fade-overlay-color: #FFFFFF;
     --dark-md-sys-color-primary: #A9D3FB;
     --dark-md-sys-color-on-primary: rgba(0, 0, 0, 0.8);
     --dark-md-sys-color-primary-container: #2C3644;
@@ -78,14 +76,10 @@
     --dark-md-sys-color-surface-tint: #D0BCFF;
     --dark-md-sys-color-outline-variant: #383E4D;
     --dark-md-sys-color-scrim: rgba(0, 0, 0, 0.4);
-
     --amoled-background: #000000;
     --amoled-header-bg: #000000;
     --amoled-header-translucent-bg: rgba(0, 0, 0, 0.8);
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 body.font-system {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -96,6 +90,23 @@ body.font-system {
     src: url("../fonts/OneUISans-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 body.font-OneUISans {
@@ -138,8 +149,7 @@ body, html {
     padding: 0;
     height: 100%;
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
-
+    font-family: inherit;
     background-color: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
     font-weight: 400;
@@ -179,8 +189,7 @@ body.light-mode {
     --md-sys-color-surface-tint: #A9D3FB;
     --md-sys-color-outline-variant: #C3C7CF;
     --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
-    --fade-overlay-color: rgba(255, 255, 255, 1);
-
+    --fade-overlay-color: #FFFFFF;
     background-color: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
 }
@@ -221,8 +230,7 @@ body.dark-mode {
     --md-sys-color-surface-tint: var(--dark-md-sys-color-surface-tint);
     --md-sys-color-outline-variant: var(--dark-md-sys-color-outline-variant);
     --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
-    --fade-overlay-color: rgba(0, 0, 0, 1);
-
+    --fade-overlay-color: #000000;
     background-color: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
 }
@@ -263,8 +271,7 @@ body.amoled-dark-mode {
     --md-sys-color-surface-tint: var(--dark-md-sys-color-surface-tint);
     --md-sys-color-outline-variant: var(--dark-md-sys-color-outline-variant);
     --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
-    --fade-overlay-color: rgba(0, 0, 0, 1);
-
+    --fade-overlay-color: #000000;
     background-color: var(--amoled-background);
     color: var(--dark-md-sys-color-on-background);
 }
@@ -277,6 +284,7 @@ body.amoled-dark-mode {
     box-sizing: border-box;
     padding-left: clamp(0.75rem, 4vw, 1.5rem);
     padding-right: clamp(0.75rem, 4vw, 1.5rem);
+    font-family: inherit;
 }
 
 .header,
@@ -284,6 +292,7 @@ body.amoled-dark-mode {
 .role-title,
 .footer {
     animation: fadeUp 0.8s ease forwards;
+    font-family: inherit;
 }
 
 .header {
@@ -298,40 +307,49 @@ body.amoled-dark-mode {
     position: fixed;
     z-index: 1002;
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    font-family: inherit;
 }
 
 .header.translucent {
    background-color: rgba(235, 232, 238, 0.8);
    backdrop-filter: blur(20px);
+   font-family: inherit;
 }
 
 .header.no-translucent {
     background-color: var(--md-sys-color-surface-container-high);
     backdrop-filter: none;
+    font-family: inherit;
 }
 
 body.dark-mode .header {
     background-color: var(--dark-md-sys-color-surface-container-high);
+    font-family: inherit;
 }
 
 body.dark-mode .header.translucent {
     background-color: rgba(28, 28, 36, 0.8);
+    font-family: inherit;
 }
 
 body.dark-mode .header.no-translucent {
     background-color: var(--dark-md-sys-color-surface-container-high);
+    font-family: inherit;
 }
 
 body.amoled-dark-mode .header {
     background-color: var(--amoled-header-bg);
+    font-family: inherit;
 }
 
 body.amoled-dark-mode .header.translucent {
     background-color: var(--amoled-header-translucent-bg);
+    font-family: inherit;
 }
 
 body.amoled-dark-mode .header.no-translucent {
     background-color: var(--amoled-header-bg);
+    font-family: inherit;
 }
 
 .main-title {
@@ -341,10 +359,12 @@ body.amoled-dark-mode .header.no-translucent {
     flex-grow: 1;
     text-align: left;
     color: #FFF;
+    font-family: inherit;
 }
 
 body.light-mode .main-title {
     color: #000;
+    font-family: inherit;
 }
 
 .role-title {
@@ -353,6 +373,7 @@ body.light-mode .main-title {
     color: var(--md-sys-color-on-surface-variant);
     text-align: left;
     font-weight: 500;
+    font-family: inherit;
 }
 
 .menu-toggle {
@@ -366,78 +387,85 @@ body.light-mode .main-title {
     flex-direction: column;
     justify-content: space-between;
     touch-action: none;
+    font-family: inherit;
 }
 
 .menu-toggle span {
     height: 2px;
     background: var(--md-sys-color-on-surface-variant);
     transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+    font-family: inherit;
 }
 
 body.light-mode .menu-toggle span {
     background: var(--md-sys-color-on-surface-variant);
+    font-family: inherit;
 }
 
-body.dark-mode .menu-toggle span {
-    background: var(--dark-md-sys-color-on-surface-variant);
-}
-
+body.dark-mode .menu-toggle span,
 body.amoled-dark-mode .menu-toggle span {
     background: var(--dark-md-sys-color-on-surface-variant);
+    font-family: inherit;
 }
 
 .menu-toggle.open span:nth-child(1) {
     transform: translateY(6.5px) rotate(45deg);
+    font-family: inherit;
 }
 .menu-toggle.open span:nth-child(2) {
     transform: translateX(-50%);
     opacity: 0;
+    font-family: inherit;
 }
 .menu-toggle.open span:nth-child(3) {
     transform: translateY(-6.5px) rotate(-45deg);
+    font-family: inherit;
 }
 
 .side-menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: min(80vw, 300px); 
+  width: min(80vw, 300px);
   height: 100vh;
   background-color: var(--md-sys-color-surface);
-  padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.5rem);
+  padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.25rem);
   box-sizing: border-box;
   z-index: 1001;
-
-  transform-origin: left;
-  overflow: hidden; 
-  opacity: 1; 
-  visibility: hidden; 
+  clip-path: inset(0% 100% 0% 0%);
+  opacity: 1;
+  visibility: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: inherit;
 }
 
 body.dark-mode .side-menu {
   background-color: var(--dark-md-sys-color-surface);
+  font-family: inherit;
 }
 
 body.amoled-dark-mode .side-menu {
   background-color: var(--amoled-background);
+  font-family: inherit;
 }
 
 .side-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-
-    transform-origin: left;
-    width: 100%; 
+    transform: none;
+    width: 100%;
+    font-family: inherit;
 }
 
 .side-menu li {
     margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
     opacity: 1;
     transform: translateX(0);
+    font-family: inherit;
 }
 
 .side-menu a {
@@ -448,15 +476,14 @@ body.amoled-dark-mode .side-menu {
     display: block;
     padding: clamp(0.75rem, 1.5vh, 1rem) clamp(1rem, 2.5vw, 1.25rem);
     border-radius: 10px;
-    transition: background 0.3s ease; 
+    transition: background 0.3s ease;
+    font-family: inherit;
 }
 
-body.dark-mode .side-menu a {
-    color: var(--dark-md-sys-color-on-surface-variant);
-}
-
+body.dark-mode .side-menu a,
 body.amoled-dark-mode .side-menu a {
     color: var(--dark-md-sys-color-on-surface-variant);
+    font-family: inherit;
 }
 
 .side-menu li.current-page a {
@@ -464,42 +491,38 @@ body.amoled-dark-mode .side-menu a {
     background-color: var(--md-sys-color-primary-container);
     border-radius: 12px;
     font-weight: 500;
-    pointer-events: none; 
+    pointer-events: none;
+    font-family: inherit;
 }
 
-body.dark-mode .side-menu li.current-page a {
-    color: var(--dark-md-sys-color-on-primary-container);
-    background-color: var(--dark-md-sys-color-primary-container);
-}
-
+body.dark-mode .side-menu li.current-page a,
 body.amoled-dark-mode .side-menu li.current-page a {
     color: var(--dark-md-sys-color-on-primary-container);
     background-color: var(--dark-md-sys-color-primary-container);
+    font-family: inherit;
 }
 
-.side-menu a:hover:not(.current-page) { 
-    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.02); 
+.side-menu a:hover:not(.current-page) {
+    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.02);
+    font-family: inherit;
 }
 
-body.dark-mode .side-menu a:hover:not(.current-page) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.05); 
-}
-
+body.dark-mode .side-menu a:hover:not(.current-page),
 body.amoled-dark-mode .side-menu a:hover:not(.current-page) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.05); 
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.05);
+    font-family: inherit;
 }
 
-.side-menu a:active:not(.current-page) { 
-    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.04); 
+.side-menu a:active:not(.current-page) {
+    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.04);
     transition: background 0.1s ease;
+    font-family: inherit;
 }
 
-body.dark-mode .side-menu a:active:not(.current-page) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.1); 
-}
-
+body.dark-mode .side-menu a:active:not(.current-page),
 body.amoled-dark-mode .side-menu a:active:not(.current-page) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.1); 
+    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.1);
+    font-family: inherit;
 }
 
 #overlay {
@@ -513,160 +536,13 @@ body.amoled-dark-mode .side-menu a:active:not(.current-page) {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-out;
+    font-family: inherit;
 }
 
 #overlay.show {
     opacity: 1;
     visibility: visible;
-}
-.menu-toggle {
-    width: 26px;
-    height: 15px;
-    margin-left: clamp(1rem, 4vw, 1.25rem);
-    cursor: pointer;
-    position: relative;
-    z-index: 1003;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    touch-action: none;
-}
-
-.menu-toggle span {
-    height: 2px;
-    background: var(--md-sys-color-on-surface-variant);
-}
-
-body.light-mode .menu-toggle span {
-    background: var(--md-sys-color-on-surface-variant);
-}
-
-body.dark-mode .menu-toggle span {
-    background: var(--dark-md-sys-color-on-surface-variant);
-}
-
-body.amoled-dark-mode .menu-toggle span {
-    background: var(--dark-md-sys-color-on-surface-variant);
-}
-
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: min(80vw, 300px);
-  height: 100vh;
-  background-color: var(--md-sys-color-surface);
-  padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.25rem);
-  box-sizing: border-box;
-  z-index: 1001;
-
-  clip-path: inset(0% 100% 0% 0%);
-  opacity: 1;
-  visibility: hidden;
-  overflow: hidden;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-body.dark-mode .side-menu {
-  background-color: var(--dark-md-sys-color-surface);
-}
-
-body.amoled-dark-mode .side-menu {
-  background-color: var(--amoled-background);
-}
-
-.side-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    transform: none;
-    width: 100%;
-}
-
-.side-menu li {
-    margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.side-menu a {
-    text-decoration: none;
-    color: var(--md-sys-color-on-surface-variant);
-    font-size: var(--font-size-md);
-    font-weight: 400;
-    display: block;
-    padding: clamp(0.75rem, 1.5vh, 1rem) clamp(1rem, 2.5vw, 1.25rem);
-    border-radius: 10px;
-    transition: background 0.3s ease;
-}
-
-body.dark-mode .side-menu a {
-    color: var(--dark-md-sys-color-on-surface-variant);
-}
-
-body.amoled-dark-mode .side-menu a {
-    color: var(--dark-md-sys-color-on-surface-variant);
-}
-
-.side-menu li.current-page a {
-    color: var(--md-sys-color-on-primary-container);
-    background-color: var(--md-sys-color-primary-container);
-    border-radius: 12px;
-    font-weight: 500;
-    pointer-events: none;
-}
-
-body.dark-mode .side-menu li.current-page a {
-    color: var(--dark-md-sys-color-on-primary-container);
-    background-color: var(--dark-md-sys-color-primary-container);
-}
-
-body.amoled-dark-mode .side-menu li.current-page a {
-    color: var(--dark-md-sys-color-on-primary-container);
-    background-color: var(--dark-md-sys-color-primary-container);
-}
-
-.side-menu a:hover:not(.current-page) {
-    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.02);
-}
-
-body.dark-mode .side-menu a:hover:not(.current-page) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.05);
-}
-
-body.amoled-dark-mode .side-menu a:hover:not(.current-page) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.05);
-}
-
-.side-menu a:active:not(.current-page) {
-    background-color: rgba(var(--md-sys-color-on-surface-rgb, 0, 0, 0), 0.04);
-    transition: background 0.1s ease;
-}
-
-body.dark-mode .side-menu a:active:not(.current-page) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.1);
-}
-
-body.amoled-dark-mode .side-menu a:active:not(.current-page) {
-    background-color: rgba(var(--dark-md-sys-color-on-surface-rgb, 255, 255, 255), 0.1);
-}
-
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-}
-
-#overlay.show {
+    font-family: inherit;
 }
 
 .side-menu-settings {
@@ -717,15 +593,16 @@ body.dark-mode md-icon {
   background: var(--md-sys-color-scrim);
   opacity: 0;
   visibility: hidden;
-
   transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.4s;
   z-index: 1000;
+  font-family: inherit;
 }
 
 .overlay.show {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
 }
 
 .button-intro-text {
@@ -734,6 +611,7 @@ body.dark-mode md-icon {
     font-size: 0.85rem;
     color: var(--md-sys-color-on-surface-variant);
     font-weight: 400;
+    font-family: inherit;
 }
 
 .footer {
@@ -745,16 +623,17 @@ body.dark-mode md-icon {
     margin-top: clamp(1.25rem, 3vh, 1.5rem);
     box-sizing: border-box;
     font-weight: 400;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    font-family: inherit;
 }
 
 body.dark-mode .footer {
     color: rgba(255, 255, 255, 0.6);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: inherit;
 }
 
 .social-footer {
@@ -762,6 +641,7 @@ body.dark-mode .footer {
     justify-content: center;
     margin-top: clamp(0.5rem, 1.5vh, 0.75rem);
     gap: clamp(0.75rem, 2vw, 1rem);
+    font-family: inherit;
 }
 
 .footer-social-button {
@@ -772,29 +652,35 @@ body.dark-mode .footer {
     align-items: center;
     justify-content: center;
     transition: background 0.2s ease, transform 0.2s ease;
+    font-family: inherit;
 }
 
 body.dark-mode .footer-social-button {
     background: rgba(255, 255, 255, 0.05);
+    font-family: inherit;
 }
 
 .footer-social-button:hover {
     background: rgba(0, 0, 0, 0.08);
     transform: scale(1.1);
+    font-family: inherit;
 }
 
 body.dark-mode .footer-social-button:hover {
     background: rgba(255, 255, 255, 0.1);
+    font-family: inherit;
 }
 
 .footer-social-button svg {
     width: clamp(1.2rem, 4.5vw, 1.6rem);
     height: clamp(1.2rem, 4.5vw, 1.6rem);
     fill: var(--md-sys-color-on-surface-variant);
+    font-family: inherit;
 }
 
 body.dark-mode .footer-social-button svg {
     fill: white;
+    font-family: inherit;
 }
 
 .button-2-wrapper,
@@ -803,9 +689,11 @@ body.dark-mode .footer-social-button svg {
     justify-content: center;
     padding: clamp(0.1rem, 0.5vh, 0.2rem) 0;
     box-sizing: border-box;
+    font-family: inherit;
 }
 .download-button-wrapper {
     padding-top: clamp(0.75rem, 2vh, 1rem);
+    font-family: inherit;
 }
 
 .download-button,
@@ -828,26 +716,31 @@ body.dark-mode .footer-social-button svg {
 .download-button {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
+    font-family: inherit;
 }
 
 .button-2 {
     background-color: var(--md-sys-color-surface-container-high);
     color: var(--md-sys-color-on-surface);
+    font-family: inherit;
 }
 
 body.dark-mode .download-button {
     background-color: var(--dark-md-sys-color-primary);
     color: var(--dark-md-sys-color-on-primary);
+    font-family: inherit;
 }
 
 body.dark-mode .button-2 {
     background-color: rgba(173, 216, 230, 0.08);
     color: #fff;
+    font-family: inherit;
 }
 
 .download-button:active,
 .button-2:active {
     transform: scale(1.03);
+    font-family: inherit;
 }
 
 .button-group-wrapper {
@@ -860,6 +753,7 @@ body.dark-mode .button-2 {
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
+    font-family: inherit;
 }
 
 @media screen and (min-width: 600px) and (max-width: 991px) {
@@ -867,8 +761,8 @@ body.dark-mode .button-2 {
     .role-title,
     .button-intro-text {
         text-align: left;
+        font-family: inherit;
     }
-
     .button-group-wrapper {
         flex-direction: row;
         justify-content: flex-start;
@@ -876,6 +770,7 @@ body.dark-mode .button-2 {
         gap: clamp(0.8rem, 2vw, 1.2rem);
         margin-left: 0;
         margin-right: 0;
+        font-family: inherit;
     }
     .download-button,
     .button-2 {
@@ -886,6 +781,7 @@ body.dark-mode .button-2 {
         flex-grow: 0;
         flex-shrink: 1;
         max-width: 200px;
+        font-family: inherit;
     }
 }
 
@@ -895,62 +791,72 @@ body.dark-mode .button-2 {
         padding-left: clamp(0.5rem, 2vw, 0.75rem);
         padding-right: clamp(0.5rem, 2vw, 0.75rem);
         max-width: 100%;
+        font-family: inherit;
     }
-
     .header {
         height: 48px;
+        font-family: inherit;
     }
     .main-title {
         font-size: var(--font-size-sm);
         margin-left: clamp(0.6rem, 2.2vw, 0.9rem);
         text-align: left;
+        font-family: inherit;
     }
     .menu-toggle {
         margin-left: clamp(0.6rem, 2.2vw, 0.9rem);
         width: 25px;
         height: 16px;
+        font-family: inherit;
     }
     .menu-toggle span {
         height: 2px;
+        font-family: inherit;
     }
     .menu-toggle.open span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
+        font-family: inherit;
     }
     .menu-toggle.open span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
+        font-family: inherit;
     }
     .role-title {
         font-size: var(--font-size-md);
         margin: clamp(0.8rem, 2vh, 1.2rem) 0 clamp(0.4rem, 1vh, 0.7rem);
         text-align: left;
+        font-family: inherit;
     }
     .button-intro-text {
         font-size: 0.7rem;
         margin: clamp(0.5rem, 1.2vh, 0.7rem) 0 0;
         text-align: left;
+        font-family: inherit;
     }
     .footer {
         padding: clamp(0.5rem, 1.2vh, 0.7rem) 0;
         font-size: 12px;
         margin-top: clamp(0.6rem, 1.5vh, 0.9rem);
-
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        font-family: inherit;
     }
     .social-footer {
         margin-top: clamp(0.1rem, 0.5vh, 0.2rem);
         gap: clamp(0.4rem, 1.2vw, 0.6rem);
+        font-family: inherit;
     }
     .footer-social-button {
         padding: clamp(0.4rem, 1.2vw, 0.6rem);
+        font-family: inherit;
     }
     .footer-social-button svg {
         width: clamp(0.9rem, 3vw, 1.1rem);
         height: clamp(0.9rem, 3vw, 1.1rem);
+        font-family: inherit;
     }
-
     .button-group-wrapper {
         flex-direction: row;
         justify-content: flex-start;
@@ -959,6 +865,7 @@ body.dark-mode .button-2 {
         margin-left: 0;
         margin-right: 0;
         margin-top: clamp(0.5rem, 1.2vh, 0.7rem);
+        font-family: inherit;
     }
     .download-button,
     .button-2 {
@@ -970,6 +877,7 @@ body.dark-mode .button-2 {
         width: auto;
         flex-grow: 0;
         flex-shrink: 1;
+        font-family: inherit;
     }
 }
 
@@ -977,25 +885,29 @@ body.dark-mode .button-2 {
     .main-title {
         font-size: var(--font-size-lg);
         margin-left: clamp(0.8rem, 3vw, 1rem);
+        font-family: inherit;
     }
     .menu-toggle {
         margin-left: clamp(1.8rem, 3vw, 1rem);
+        font-family: inherit;
     }
     .container {
         padding-left: clamp(0.5rem, 3vw, 1rem);
         padding-right: clamp(0.5rem, 3vw, 1rem);
+        font-family: inherit;
     }
     .role-title {
         font-size: var(--font-size-lg);
         margin: clamp(1.5rem, 3.5vh, 2rem) 0 clamp(0.75rem, 1.5vh, 1rem);
+        font-family: inherit;
     }
-
     .button-group-wrapper {
         flex-direction: column;
         align-items: center;
         gap: clamp(0.75rem, 2vh, 1rem);
         margin-left: auto;
         margin-right: auto;
+        font-family: inherit;
     }
     .download-button,
     .button-2 {
@@ -1004,26 +916,29 @@ body.dark-mode .button-2 {
         margin-top: 0;
         width: 90%;
         max-width: 400px;
+        font-family: inherit;
     }
-
     .footer {
         font-size: 14px;
         padding: clamp(0.8rem, 2.5vh, 1rem) 0;
-
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        font-family: inherit;
     }
     .social-footer {
         gap: clamp(0.6rem, 1.8vw, 0.9rem);
+        font-family: inherit;
     }
     .footer-social-button {
         padding: clamp(0.6rem, 1.8vw, 0.9rem);
+        font-family: inherit;
     }
     .footer-social-button svg {
         width: clamp(1.1rem, 4vw, 1.5rem);
         height: clamp(1.1rem, 4vw, 1.5rem);
+        font-family: inherit;
     }
 }
 
@@ -1032,76 +947,91 @@ body.dark-mode .button-2 {
         max-width: 1200px;
         padding-left: 2.5rem;
         padding-right: 2.5rem;
+        font-family: inherit;
     }
     .header {
         height: 70px;
+        font-family: inherit;
     }
     .main-title {
         font-size: var(--font-size-xxl);
         margin-left: 2rem;
         text-align: left;
+        font-family: inherit;
     }
     .role-title {
         font-size: var(--font-size-xl);
         margin: 4rem 0 2rem;
         text-align: left;
+        font-family: inherit;
     }
     .menu-toggle {
         width: 30px;
         height: 24px;
         margin-left: 2rem;
+        font-family: inherit;
     }
     .menu-toggle span {
         height: 4px;
+        font-family: inherit;
     }
     .menu-toggle.open span:nth-child(1) {
         transform: translateY(10px) rotate(45deg);
+        font-family: inherit;
     }
     .menu-toggle.open span:nth-child(3) {
         transform: translateY(-10px) rotate(-45deg);
+        font-family: inherit;
     }
     .side-menu {
         width: 350px;
         padding: 6rem 2rem;
+        font-family: inherit;
     }
     .side-menu li {
         margin-bottom: 2rem;
+        font-family: inherit;
     }
     .side-menu a {
         font-size: var(--font-size-lg);
         padding: 1rem 1.5rem;
+        font-family: inherit;
     }
     .side-menu-settings {
         bottom: 2rem;
         right: 2rem;
+        font-family: inherit;
     }
     .button-intro-text {
         margin: 2rem 0 0;
         font-size: var(--font-size-md);
         text-align: left;
+        font-family: inherit;
     }
     .footer {
         padding: 2rem 0;
         font-size: 18px;
         margin-top: 3rem;
-
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        font-family: inherit;
     }
     .social-footer {
         margin-top: 1rem;
         gap: 1.5rem;
+        font-family: inherit;
     }
     .footer-social-button {
         padding: 1rem;
+        font-family: inherit;
     }
     .footer-social-button svg {
         width: 2rem;
         height: 2rem;
+        font-family: inherit;
     }
-
     .button-group-wrapper {
         flex-direction: row;
         justify-content: flex-start;
@@ -1110,6 +1040,7 @@ body.dark-mode .button-2 {
         margin-left: 0;
         margin-right: 0;
         margin-top: 1.5rem;
+        font-family: inherit;
     }
     .download-button,
     .button-2 {
@@ -1120,6 +1051,7 @@ body.dark-mode .button-2 {
         width: auto;
         flex-grow: 0;
         flex-shrink: 1;
+        font-family: inherit;
     }
 }
 
@@ -1135,6 +1067,7 @@ body.dark-mode .button-2 {
     overflow: hidden;
     touch-action: none;
     user-select: none;
+    font-family: inherit;
 }
 
 #img-popup-overlay img {
@@ -1146,10 +1079,12 @@ body.dark-mode .button-2 {
     max-width: none;
     transition: all 0.25s cubic-bezier(0.33, 1, 0.68, 1);
     touch-action: none;
+    font-family: inherit;
 }
 
 .popup-img {
     cursor: pointer;
+    font-family: inherit;
 }
 
 #content-fade-overlay {
@@ -1164,12 +1099,14 @@ body.dark-mode .button-2 {
     visibility: hidden;
     transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
     pointer-events: none;
+    font-family: inherit;
 }
 
 #content-fade-overlay.fade-active {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    font-family: inherit;
 }
 
 .credits-section {
@@ -1177,6 +1114,7 @@ body.dark-mode .button-2 {
   border-radius: 16px;
   overflow: hidden;
   background-color: transparent;
+  font-family: inherit;
 }
 
 .credits-dropdown-header {
@@ -1192,15 +1130,18 @@ body.dark-mode .button-2 {
   font-weight: 500;
   color: var(--md-sys-color-on-surface);
   transition: background-color 0.2s ease, border-radius 0.5s ease, transform 0.2s ease;
+  font-family: inherit;
 }
 
 .credits-dropdown-header.open {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  font-family: inherit;
 }
 
 .credits-dropdown-header:hover {
   background-color: var(--md-sys-color-surface-container-low);
+  font-family: inherit;
 }
 
 .credits-dropdown-header h3 {
@@ -1210,6 +1151,7 @@ body.dark-mode .button-2 {
   margin: 0;
   display: flex;
   align-items: center;
+  font-family: inherit;
 }
 
 .dropdown-arrow {
@@ -1234,6 +1176,7 @@ body.dark-mode .button-2 {
     border-top: none;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
+    font-family: inherit;
 }
 
 .credits-dropdown-content.open {
@@ -1241,10 +1184,12 @@ body.dark-mode .button-2 {
     padding: 16px;
     border: 1px solid var(--md-sys-color-outline-variant);
     border-top: none;
+    font-family: inherit;
 }
 
 .credits-dropdown-content .card {
   margin-bottom: 0;
+  font-family: inherit;
 }
 
 .card {
@@ -1259,15 +1204,18 @@ body.dark-mode .button-2 {
   transition: background-color 0.2s ease, transform 0.2s ease;
   position: relative;
   overflow: hidden;
+  font-family: inherit;
 }
 
 .credits-dropdown-content .card + .card {
     margin-top: 10px;
+    font-family: inherit;
 }
 
 .card:active {
   background-color: var(--md-sys-color-surface-container-low);
   transform: scale(1.02);
+  font-family: inherit;
 }
 
 .profile-pic {
@@ -1277,6 +1225,7 @@ body.dark-mode .button-2 {
   object-fit: cover;
   margin-right: 14px;
   flex-shrink: 0;
+  font-family: inherit;
 }
 
 .card .text-content h1 {
@@ -1284,6 +1233,7 @@ body.dark-mode .button-2 {
   margin: 0 0 2px 0;
   color: var(--md-sys-color-on-surface);
   font-weight: 500;
+  font-family: inherit;
 }
 
 .card .text-content p {
@@ -1291,6 +1241,7 @@ body.dark-mode .button-2 {
   color: var(--md-sys-color-on-surface-variant);
   margin: 0;
   line-height: 1.4;
+  font-family: inherit;
 }
 
 .contribution-box {
@@ -1302,6 +1253,7 @@ body.dark-mode .button-2 {
   color: var(--md-sys-color-on-surface);
   text-align: center;
   transition: background-color 0.2s ease, transform 0.2s ease;
+  font-family: inherit;
 }
 
 .contribution-box h2 {
@@ -1310,6 +1262,7 @@ body.dark-mode .button-2 {
   margin-bottom: 16px;
   color: var(--md-sys-color-primary);
   font-weight: 600;
+  font-family: inherit;
 }
 
 .contribution-box p {
@@ -1317,6 +1270,7 @@ body.dark-mode .button-2 {
   line-height: 1.6;
   margin-bottom: 32px;
   color: var(--md-sys-color-on-surface-variant);
+  font-family: inherit;
 }
 
 .contribution-box .md-button {
@@ -1331,13 +1285,16 @@ body.dark-mode .button-2 {
   font-weight: 600;
   font-size: 1.05em;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease-in-out;
+  font-family: inherit;
 }
 
 .contribution-box .md-button:hover {
   background-color: #8CC0F0;
+  font-family: inherit;
 }
 
 .contribution-box .md-button:active {
   transform: scale(1.05);
   background-color: var(--md-sys-color-primary);
+  font-family: inherit;
 }
