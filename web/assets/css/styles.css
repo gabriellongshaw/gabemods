@@ -535,7 +535,6 @@ body.amoled-dark-mode .side-menu a:active:not(.current-page) {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-out;
     font-family: inherit;
 }
 
