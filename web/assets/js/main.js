@@ -9,68 +9,57 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.set(menuToggle.children, { y: 0, x: 0, xPercent: 0, rotate: 0, opacity: 1, transformOrigin: '50% 50%' });
     gsap.set(sideMenu, { clipPath: 'inset(0% 100% 0% 0%)', visibility: 'hidden' });
     
-    const getMenuTween = () => {
-        if (!menuTween) {
-            menuTween = gsap.timeline({
-                    paused: true,
-                    reversed: true,
-                    onStart: () => {
-                        if (!menuTween.reversed()) {
-                            sideMenu.style.visibility = 'visible';
-                            
-                            document.body.style.overflow = 'hidden';
-                        }
-                        menuToggle.classList.add('animating');
-                        
-                    },
-                    onComplete: () => {
-                        menuToggle.classList.add('open');
-                        overlay.classList.add('show');
-                        menuToggle.classList.remove('animating');
-                        
-                    },
-                    onReverseComplete: () => {
-                        sideMenu.style.visibility = 'hidden';
-                        
-                        document.body.style.overflow = '';
-                        menuToggle.classList.remove('open');
-                        overlay.classList.remove('show');
-                        menuToggle.classList.remove('animating');
-                        
+    const createMenuTween = () => {
+        return gsap.timeline({
+                paused: true,
+                onStart: function() {
+                    
+                    if (!this.reversed()) {
+                        sideMenu.style.visibility = 'visible';
+                        document.body.style.overflow = 'hidden';
                     }
-                })
-                
-                .to(menuToggle.children[0], { duration: 0.05, y: 6.5, rotate: 45, ease: 'none' }, 0)
-                .to(menuToggle.children[1], { duration: 0.05, xPercent: -50, opacity: 0, ease: 'none' }, 0)
-                .to(menuToggle.children[2], { duration: 0.05, y: -6.5, rotate: -45, ease: 'none' }, 0)
-                
-                .to(sideMenu, {
-                    duration: 0.25,
-                    clipPath: 'inset(0% 0% 0% 0%)',
-                    ease: 'power2.inOut'
-                }, 0);
+                },
+                onReverseComplete: () => {
+                    
+                    sideMenu.style.visibility = 'hidden';
+                    document.body.style.overflow = '';
+                }
+            })
             
-        }
-        return menuTween;
+            .to(sideMenu, {
+                duration: 0.3,
+                clipPath: 'inset(0% 0% 0% 0%)',
+                ease: 'power2.inOut'
+            }, 0);
     };
     
+    menuTween = createMenuTween();
+    
     const toggleMenuState = () => {
-        const tween = getMenuTween();
+        const isOpen = menuToggle.classList.contains('open');
         
-        if (menuToggle.classList.contains('animating')) {
-            return;
-        }
+        gsap.killTweensOf(menuToggle.children);
         
-        if (tween.reversed()) {
+        if (isOpen) {
             
-            overlay.style.visibility = 'visible';
-            overlay.classList.add('show');
-            tween.play();
+            gsap.to(menuToggle.children[0], { duration: 0.05, y: 0, rotate: 0, ease: 'power2.out' });
+            gsap.to(menuToggle.children[1], { duration: 0.05, xPercent: 0, opacity: 1, ease: 'power2.out' });
+            gsap.to(menuToggle.children[2], { duration: 0.05, y: 0, rotate: 0, ease: 'power2.out' });
+            
+            menuToggle.classList.remove('open');
+            overlay.classList.remove('show');
+            
+            menuTween.progress(1).reverse();
         } else {
             
-            overlay.classList.remove('show');
-            tween.reverse();
+            gsap.to(menuToggle.children[0], { duration: 0.15, y: 6.5, rotate: 45, ease: 'power2.out' });
+            gsap.to(menuToggle.children[1], { duration: 0.15, xPercent: -50, opacity: 0, ease: 'power2.out' });
+            gsap.to(menuToggle.children[2], { duration: 0.15, y: -6.5, rotate: -45, ease: 'power2.out' });
             
+            menuToggle.classList.add('open');
+            overlay.classList.add('show');
+            
+            menuTween.play();
         }
     };
     
@@ -79,8 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     sideMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            const tween = getMenuTween();
-            if (!tween.reversed()) {
+            if (menuToggle.classList.contains('open')) {
                 toggleMenuState();
             }
         });
