@@ -287,10 +287,7 @@ body.amoled-dark-mode {
     font-family: inherit;
 }
 
-.header,
-.main-title,
-.role-title,
-.footer {
+.container {
     animation: fadeUp 0.8s ease forwards;
     font-family: inherit;
 }
