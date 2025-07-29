@@ -592,7 +592,6 @@ body.dark-mode md-icon {
   background: var(--md-sys-color-scrim);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.4s;
   z-index: 1000;
   font-family: inherit;
 }
@@ -600,7 +599,6 @@ body.dark-mode md-icon {
 .overlay.show {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
 }
 

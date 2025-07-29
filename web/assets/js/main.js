@@ -8,20 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
     
     gsap.set(menuToggle.children, { y: 0, x: 0, xPercent: 0, rotate: 0, opacity: 1, transformOrigin: '50% 50%' });
     gsap.set(sideMenu, { clipPath: 'inset(0% 100% 0% 0%)', visibility: 'hidden' });
+    gsap.set(overlay, { opacity: 0, visibility: 'hidden' });
     
     const createMenuTween = () => {
         return gsap.timeline({
                 paused: true,
                 onStart: function() {
-                    
                     if (!this.reversed()) {
                         sideMenu.style.visibility = 'visible';
+                        overlay.style.visibility = 'visible';
                         document.body.style.overflow = 'hidden';
                     }
                 },
                 onReverseComplete: () => {
-                    
                     sideMenu.style.visibility = 'hidden';
+                    overlay.style.visibility = 'hidden';
                     document.body.style.overflow = '';
                 }
             })
@@ -30,6 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 0.3,
                 clipPath: 'inset(0% 0% 0% 0%)',
                 ease: 'power2.inOut'
+            }, 0)
+            
+            .to(overlay, {
+                duration: 0.3,
+                opacity: 1,
+                ease: 'power2'
             }, 0);
     };
     
@@ -47,9 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.to(menuToggle.children[2], { duration: 0.05, y: 0, rotate: 0, ease: 'power2.out' });
             
             menuToggle.classList.remove('open');
-            overlay.classList.remove('show');
             
-            menuTween.progress(1).reverse();
+            menuTween.reverse();
         } else {
             
             gsap.to(menuToggle.children[0], { duration: 0.15, y: 6.5, rotate: 45, ease: 'power2.out' });
@@ -57,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.to(menuToggle.children[2], { duration: 0.15, y: -6.5, rotate: -45, ease: 'power2.out' });
             
             menuToggle.classList.add('open');
-            overlay.classList.add('show');
             
             menuTween.play();
         }
