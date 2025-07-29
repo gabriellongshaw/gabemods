@@ -533,7 +533,6 @@ body.amoled-dark-mode .side-menu a:active:not(.current-page) {
     opacity: 0;
     visibility: hidden;
     font-family: inherit;
-    transition: opac;
 }
 
 #overlay.show {
@@ -599,6 +598,7 @@ body.dark-mode md-icon {
 .overlay.show {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
 }
 
