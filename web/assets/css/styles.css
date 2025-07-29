@@ -546,10 +546,12 @@ body.amoled-dark-mode .side-menu a:active:not(.current-page) {
 }
 
 .side-menu-settings {
+    padding: 0;
     position: absolute;
     bottom: 1rem;
     right: 1rem;
-    padding: 0;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    right: calc(1rem + env(safe-area-inset-right));
 }
 
 .md-icon-button {
