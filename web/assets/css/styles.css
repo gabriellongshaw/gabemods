@@ -546,9 +546,9 @@ body.amoled-dark-mode .side-menu a:active:not(.current-page) {
 }
 
 .side-menu-settings {
-    position: absolute;
-    bottom: clamp(1rem, 2.5vh, 1.5rem);
-    right: clamp(1rem, 2.5vw, 1.5rem);
+    align-self: flex-end;
+    margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
+    margin-right: clamp(1rem, 2.5vw, 1.5rem);
     padding: 0;
 }
 
