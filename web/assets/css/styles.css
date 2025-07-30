@@ -1,14 +1,19 @@
 :root {
+
   --transition-duration: 0.2s;
   --transition-ease: ease;
+
   --md-icon-font: Material Symbols Rounded;
-  --font-size-base: 1rem;
-  --font-size-xs: clamp(0.75rem, 1.8vw, 0.9rem);
-  --font-size-sm: clamp(0.9rem, 2.2vw, 1rem);
-  --font-size-md: clamp(1.05rem, 2.5vw, 1.15rem);
-  --font-size-lg: clamp(1.15rem, 3vw, 1.35rem);
-  --font-size-xl: clamp(1.4rem, 4vw, 1.8rem);
-  --font-size-xxl: clamp(1.8rem, 5vw, 2.2rem);
+
+  --font-size-base: 16px; 
+
+  --font-size-xs: clamp(0.75rem, 2vw, 0.9rem); 
+  --font-size-sm: clamp(0.875rem, 2.5vw, 1rem); 
+  --font-size-md: clamp(1rem, 3vw, 1.15rem); 
+  --font-size-lg: clamp(1.125rem, 3.5vw, 1.35rem); 
+  --font-size-xl: clamp(1.375rem, 4.5vw, 1.8rem); 
+  --font-size-xxl: clamp(1.75rem, 5.5vw, 2.2rem); 
+
   --md-sys-color-primary: #A9D3FB;
   --md-sys-color-on-primary: #000000;
   --md-sys-color-primary-container: #CFE5FF;
@@ -42,6 +47,7 @@
   --md-sys-color-outline-variant: #C3C7CF;
   --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
   --fade-overlay-color: #FFFFFF;
+
   --dark-md-sys-color-primary: #A9D3FB;
   --dark-md-sys-color-on-primary: rgba(0, 0, 0, 0.8);
   --dark-md-sys-color-primary-container: #2C3644;
@@ -77,6 +83,7 @@
   --dark-md-sys-color-surface-tint: #D0BCFF;
   --dark-md-sys-color-outline-variant: #383E4D;
   --dark-md-sys-color-scrim: rgba(0, 0, 0, 0.4);
+
   --amoled-background: #000000;
   --amoled-header-bg: #000000;
   --amoled-header-translucent-bg: rgba(0, 0, 0, 0.8);
@@ -93,6 +100,8 @@ html {
   color: var(--md-sys-color-on-background);
   font-weight: 400;
   transition: background-color var(--transition-duration) var(--transition-ease);
+
+  font-size: var(--font-size-base); 
 }
 
 body.font-system {
@@ -241,11 +250,11 @@ body.dark-mode {
   --md-sys-color-on-surface-variant: var(--dark-md-sys-color-on-surface-variant);
   --md-sys-color-outline: var(--dark-md-sys-color-outline);
   --md-sys-color-inverse-on-surface: var(--dark-md-sys-color-inverse-on-surface);
-  --md-sys-color-inverse-surface: var(--dark-md-sys-color-inverse-surface);
-  --md-sys-color-inverse-primary: var(--dark-md-sys-color-inverse-primary);
-  --md-sys-color-shadow: var(--dark-md-sys-color-shadow);
-  --md-sys-color-surface-tint: var(--dark-md-sys-color-surface-tint);
-  --md-sys-color-outline-variant: var(--dark-md-sys-color-outline-variant);
+  --md-sys-color-inverse-surface: #E6E1E5;
+  --md-sys-color-inverse-primary: #6750A4;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.25);
+  --md-sys-color-surface-tint: #D0BCFF;
+  --md-sys-color-outline-variant: #383E4D;
   --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
   --fade-overlay-color: #000000;
   background-color: var(--md-sys-color-background);
@@ -282,11 +291,11 @@ body.amoled-dark-mode {
   --md-sys-color-on-surface-variant: var(--dark-md-sys-color-on-surface-variant);
   --md-sys-color-outline: var(--dark-md-sys-color-outline);
   --md-sys-color-inverse-on-surface: var(--dark-md-sys-color-inverse-on-surface);
-  --md-sys-color-inverse-surface: var(--dark-md-sys-color-inverse-surface);
-  --md-sys-color-inverse-primary: var(--dark-md-sys-color-inverse-primary);
-  --md-sys-color-shadow: var(--dark-md-sys-color-shadow);
-  --md-sys-color-surface-tint: var(--dark-md-sys-color-surface-tint);
-  --md-sys-color-outline-variant: var(--dark-md-sys-color-outline-variant);
+  --md-sys-color-inverse-surface: #E6E1E5;
+  --md-sys-color-inverse-primary: #6750A4;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.25);
+  --md-sys-color-surface-tint: #D0BCFF;
+  --md-sys-color-outline-variant: #383E4D;
   --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
   --fade-overlay-color: #000000;
   background-color: var(--amoled-background);
@@ -295,8 +304,9 @@ body.amoled-dark-mode {
 
 .container {
   animation: fadeUp 0.8s ease forwards;
-  padding-top: clamp(56px, 10vh, 80px);
-  max-width: 900px;
+
+  padding-top: clamp(3.5rem, 10vh, 5rem); 
+  max-width: 900px; 
   margin: 0 auto;
   box-sizing: border-box;
   padding-left: clamp(0.75rem, 4vw, 1.5rem);
@@ -305,7 +315,7 @@ body.amoled-dark-mode {
 
 .header {
   width: 100%;
-  height: 60px;
+  height: clamp(3.5rem, 8vh, 4rem); 
   background-color: var(--md-sys-color-surface-container-high);
   display: flex;
   align-items: center;
@@ -354,7 +364,7 @@ body.amoled-dark-mode .header.no-translucent {
 .main-title {
   margin-left: clamp(1rem, 4vw, 1.25rem);
   font-weight: 500;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-lg); 
   flex-grow: 1;
   text-align: left;
   color: #FFF;
@@ -365,7 +375,7 @@ body.light-mode .main-title {
 }
 
 .role-title {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-lg); 
   margin: clamp(2rem, 5vh, 2.5rem) 0 clamp(1rem, 2.5vh, 1.5rem);
   color: var(--md-sys-color-on-surface-variant);
   text-align: left;
@@ -373,8 +383,8 @@ body.light-mode .main-title {
 }
 
 .menu-toggle {
-  width: 26px;
-  height: 15px;
+  width: clamp(1.5rem, 6vw, 1.8rem); 
+  height: clamp(0.9rem, 3vw, 1rem); 
   margin-left: clamp(1rem, 4vw, 1.25rem);
   cursor: pointer;
   position: relative;
@@ -386,7 +396,7 @@ body.light-mode .main-title {
 }
 
 .menu-toggle span {
-  height: 2px;
+  height: 2px; 
   background: var(--md-sys-color-on-surface-variant);
   transition: transform 0.25s ease-out, opacity 0.25s ease-out;
 }
@@ -401,7 +411,8 @@ body.amoled-dark-mode .menu-toggle span {
 }
 
 .menu-toggle.open span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
+
+  transform: translateY(clamp(0.4rem, 1.8vw, 0.5rem)) rotate(45deg); 
 }
 
 .menu-toggle.open span:nth-child(2) {
@@ -410,7 +421,7 @@ body.amoled-dark-mode .menu-toggle span {
 }
 
 .menu-toggle.open span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
+  transform: translateY(clamp(-0.4rem, -1.8vw, -0.5rem)) rotate(-45deg);
 }
 
 .side-menu {
@@ -420,7 +431,8 @@ body.amoled-dark-mode .menu-toggle span {
   width: min(80vw, 300px);
   height: 100vh;
   background-color: var(--md-sys-color-surface);
-  padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.25rem);
+
+  padding: clamp(4rem, 10vh, 5rem) clamp(1rem, 5vw, 1.25rem); 
   box-sizing: border-box;
   z-index: 1001;
   clip-path: inset(0% 100% 0% 0%);
@@ -449,7 +461,7 @@ body.amoled-dark-mode .side-menu {
 }
 
 .side-menu li {
-  margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
+  margin-bottom: clamp(1rem, 2.5vh, 1.5rem); 
   opacity: 1;
   transform: translateX(0);
 }
@@ -457,8 +469,7 @@ body.amoled-dark-mode .side-menu {
 .side-menu a {
   text-decoration: none;
   color: var(--md-sys-color-on-surface-variant);
-  font-size: var(--font-size-md);
-  font-weight: 400;
+  font-size: var(--font-size-md); 
   display: block;
   padding: clamp(0.75rem, 1.5vh, 1rem) clamp(1rem, 2.5vw, 1.25rem);
   border-radius: 10px;
@@ -524,7 +535,7 @@ body.amoled-dark-mode .side-menu a:active:not(.current-page) {
 }
 
 .side-menu-settings {
-  position: ;
+  position: ; 
   bottom: calc(1rem + env(safe-area-inset-bottom));
   right: calc(1rem + env(safe-area-inset-right));
 }
@@ -533,6 +544,7 @@ body.amoled-dark-mode .side-menu a:active:not(.current-page) {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 48px;
   height: 48px;
   padding: 0;
@@ -555,6 +567,7 @@ body.dark-mode .md-icon-button:hover {
 
 md-icon {
   color: var(--md-sys-color-on-surface);
+
 }
 
 body.dark-mode md-icon {
@@ -563,8 +576,8 @@ body.dark-mode md-icon {
 
 .button-intro-text {
   text-align: left;
-  margin: clamp(1.25rem, 3vh, 1.5rem) 0 0;
-  font-size: 0.85rem;
+  margin: clamp(1.25rem, 3vh, 1.5rem) 0 0; 
+  font-size: var(--font-size-xs); 
   color: var(--md-sys-color-on-surface-variant);
   font-weight: 400;
 }
@@ -572,7 +585,7 @@ body.dark-mode md-icon {
 .footer {
   width: 100%;
   padding: clamp(1rem, 3vh, 1.25rem) 0;
-  font-size: 16px;
+  font-size: var(--font-size-sm); 
   color: var(--md-sys-color-on-surface-variant);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: clamp(1.25rem, 3vh, 1.5rem);
@@ -592,14 +605,14 @@ body.dark-mode .footer {
 .social-footer {
   display: flex;
   justify-content: center;
-  margin-top: clamp(0.5rem, 1.5vh, 0.75rem);
+  margin-top: clamp(0.5rem, 1.5vh, 0.75rem); 
   gap: clamp(0.75rem, 2vw, 1rem);
 }
 
 .footer-social-button {
   background: rgba(0, 0, 0, 0.04);
   border-radius: 50%;
-  padding: clamp(0.75rem, 2vw, 1rem);
+  padding: clamp(0.75rem, 2vw, 1rem); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -620,7 +633,7 @@ body.dark-mode .footer-social-button:hover {
 }
 
 .footer-social-button svg {
-  width: clamp(1.2rem, 4.5vw, 1.6rem);
+  width: clamp(1.2rem, 4.5vw, 1.6rem); 
   height: clamp(1.2rem, 4.5vw, 1.6rem);
   fill: var(--md-sys-color-on-surface-variant);
 }
@@ -633,19 +646,19 @@ body.dark-mode .footer-social-button svg {
 .download-button-wrapper {
   display: flex;
   justify-content: center;
-  padding: clamp(0.1rem, 0.5vh, 0.2rem) 0;
+  padding: clamp(0.1rem, 0.5vh, 0.2rem) 0; 
   box-sizing: border-box;
 }
 
 .download-button-wrapper {
-  padding-top: clamp(0.75rem, 2vh, 1rem);
+  padding-top: clamp(0.75rem, 2vh, 1rem); 
 }
 
 .download-button,
 .button-2 {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-lg); 
   font-weight: 500;
-  padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2rem);
+  padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2rem); 
   border: none;
   box-shadow: none;
   border-radius: 50px;
@@ -686,7 +699,7 @@ body.dark-mode .button-2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(0.75rem, 2vh, 1rem);
+  gap: clamp(0.75rem, 2vh, 1rem); 
   margin-top: clamp(0.75rem, 2vh, 1rem);
   width: 100%;
   max-width: 400px;
@@ -712,26 +725,26 @@ body.dark-mode .button-2 {
 
   .download-button,
   .button-2 {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-md); 
     padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(1.2rem, 4vw, 1.8rem);
     margin-top: 0;
     width: auto;
     flex-grow: 0;
     flex-shrink: 1;
-    max-width: 200px;
+    max-width: 200px; 
   }
 }
 
 @media (orientation: landscape) and (max-width: 767px) {
   .container {
-    padding-top: clamp(40px, 7vh, 48px);
+    padding-top: clamp(2.5rem, 7vh, 3rem); 
     padding-left: clamp(0.5rem, 2vw, 0.75rem);
     padding-right: clamp(0.5rem, 2vw, 0.75rem);
     max-width: 100%;
   }
 
   .header {
-    height: 48px;
+    height: clamp(2.5rem, 7vh, 3rem); 
   }
 
   .main-title {
@@ -742,20 +755,20 @@ body.dark-mode .button-2 {
 
   .menu-toggle {
     margin-left: clamp(0.6rem, 2.2vw, 0.9rem);
-    width: 25px;
-    height: 16px;
+    width: clamp(1.2rem, 5vw, 1.5rem); 
+    height: clamp(0.75rem, 2.5vw, 1rem); 
   }
 
   .menu-toggle span {
-    height: 2px;
+    height: 1.5px; 
   }
 
   .menu-toggle.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(clamp(0.35rem, 1.5vw, 0.45rem)) rotate(45deg); 
   }
 
   .menu-toggle.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(clamp(-0.35rem, -1.5vw, -0.45rem)) rotate(-45deg);
   }
 
   .role-title {
@@ -765,14 +778,14 @@ body.dark-mode .button-2 {
   }
 
   .button-intro-text {
-    font-size: 0.7rem;
+    font-size: var(--font-size-xs); 
     margin: clamp(0.5rem, 1.2vh, 0.7rem) 0 0;
     text-align: left;
   }
 
   .footer {
     padding: clamp(0.5rem, 1.2vh, 0.7rem) 0;
-    font-size: 12px;
+    font-size: var(--font-size-xs); 
     margin-top: clamp(0.6rem, 1.5vh, 0.9rem);
   }
 
@@ -820,7 +833,7 @@ body.dark-mode .button-2 {
   }
 
   .menu-toggle {
-    margin-left: clamp(1.8rem, 3vw, 1rem);
+    margin-left: clamp(0.8rem, 3vw, 1rem); 
   }
 
   .container {
@@ -844,14 +857,14 @@ body.dark-mode .button-2 {
   .download-button,
   .button-2 {
     font-size: var(--font-size-md);
-    padding: clamp(1rem, 2.2vw, 0.9rem) clamp(1.1rem, 4vw, 1.8rem);
+    padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2rem); 
     margin-top: 0;
-    width: 90%;
+    width: 90%; 
     max-width: 400px;
   }
 
   .footer {
-    font-size: 14px;
+    font-size: var(--font-size-sm); 
     padding: clamp(0.8rem, 2.5vh, 1rem) 0;
   }
 
@@ -871,17 +884,17 @@ body.dark-mode .button-2 {
 
 @media screen and (min-width: 992px) {
   .container {
-    max-width: 1200px;
-    padding-left: 2.5rem;
+    max-width: 1200px; 
+    padding-left: 2.5rem; 
     padding-right: 2.5rem;
   }
 
   .header {
-    height: 70px;
+    height: clamp(4rem, 8vh, 4.5rem); 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 0.9375rem 2.5rem; 
   }
 
   .main-title {
@@ -914,13 +927,16 @@ body.dark-mode .button-2 {
     justify-content: flex-end;
     align-items: center;
     margin-left: auto;
+    clip-path: none; 
+    opacity: 1;
+    visibility: visible;
   }
 
   .side-menu ul {
     display: flex;
     align-items: center;
     margin-top: 0;
-    margin-right: 20px;
+    margin-right: 1.25rem; 
     width: auto;
   }
 
@@ -932,7 +948,7 @@ body.dark-mode .button-2 {
 
   .side-menu a {
     font-size: var(--font-size-lg);
-    padding: 0 15px;
+    padding: 0 0.9375rem; 
     border-radius: 0;
   }
 
@@ -961,11 +977,13 @@ body.dark-mode .button-2 {
   }
 
   .side-menu-settings {
+
     padding: 0;
     border-top: none;
     margin-top: 0;
     right: auto;
     bottom: auto;
+    position: relative; 
   }
 
   .button-intro-text {
@@ -976,7 +994,7 @@ body.dark-mode .button-2 {
 
   .footer {
     padding: 2rem 0;
-    font-size: 18px;
+    font-size: var(--font-size-md); 
     margin-top: 3rem;
   }
 
@@ -1038,7 +1056,8 @@ body.dark-mode .button-2 {
   will-change: transform, border-radius;
   cursor: grab;
   user-select: none;
-  max-width: none;
+  max-width: 90vw; 
+  max-height: 90vh; 
   transition: all 0.25s cubic-bezier(0.33, 1, 0.68, 1);
   touch-action: none;
 }
@@ -1068,8 +1087,8 @@ body.dark-mode .button-2 {
 }
 
 .credits-section {
-  margin-bottom: 20px;
-  border-radius: 16px;
+  margin-bottom: clamp(1rem, 3vh, 1.25rem); 
+  border-radius: 1rem; 
   overflow: hidden;
   background-color: transparent;
 }
@@ -1077,13 +1096,13 @@ body.dark-mode .button-2 {
 .credits-dropdown-header {
   background-color: var(--md-sys-color-surface-container);
   border: 1px solid var(--md-sys-color-outline-variant);
-  border-radius: 16px;
-  padding: 16px 20px;
+  border-radius: 1rem; 
+  padding: clamp(0.75rem, 2vh, 1rem) clamp(1rem, 4vw, 1.25rem); 
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.1em;
+  font-size: var(--font-size-md); 
   font-weight: 500;
   color: var(--md-sys-color-on-surface);
   transition: background-color var(--transition-duration) var(--transition-ease), border-radius 0.5s var(--transition-ease), transform var(--transition-duration) var(--transition-ease);
@@ -1100,7 +1119,7 @@ body.dark-mode .button-2 {
 
 .credits-dropdown-header h3 {
   color: var(--md-sys-color-on-surface);
-  font-size: 1.1rem;
+  font-size: var(--font-size-md); 
   font-weight: 500;
   margin: 0;
   display: flex;
@@ -1109,7 +1128,7 @@ body.dark-mode .button-2 {
 
 .dropdown-arrow {
   color: var(--md-sys-color-on-surface-variant);
-  font-size: 24px;
+  font-size: clamp(1.2rem, 5vw, 1.5rem); 
   transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
@@ -1122,16 +1141,16 @@ body.dark-mode .button-2 {
   overflow: hidden;
   transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), border 0.2s ease;
   background-color: var(--md-sys-color-surface-container);
-  padding: 0 16px;
+  padding: 0 clamp(0.75rem, 3vw, 1rem); 
   border: 1px solid transparent;
   border-top: none;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 1rem; 
+  border-bottom-right-radius: 1rem;
 }
 
 .credits-dropdown-content.open {
-  max-height: 1000px;
-  padding: 16px;
+  max-height: 1000px; 
+  padding: clamp(0.75rem, 3vw, 1rem); 
   border: 1px solid var(--md-sys-color-outline-variant);
   border-top: none;
 }
@@ -1143,10 +1162,10 @@ body.dark-mode .button-2 {
 .card {
   display: flex;
   align-items: center;
-  margin-top: 5px;
-  padding: 14px 18px;
+  margin-top: 0.3125rem; 
+  padding: clamp(0.7rem, 2.5vw, 0.9rem) clamp(0.9rem, 3vw, 1.125rem); 
   background-color: var(--md-sys-color-surface-container-highest);
-  border-radius: 15px;
+  border-radius: 0.9375rem; 
   text-decoration: none;
   color: inherit;
   transition: background-color var(--transition-duration) var(--transition-ease), transform var(--transition-duration) var(--transition-ease);
@@ -1155,7 +1174,7 @@ body.dark-mode .button-2 {
 }
 
 .credits-dropdown-content .card+.card {
-  margin-top: 10px;
+  margin-top: 0.625rem; 
 }
 
 .card:active {
@@ -1164,33 +1183,33 @@ body.dark-mode .button-2 {
 }
 
 .profile-pic {
-  width: 50px;
-  height: 50px;
+  width: clamp(2.5rem, 7vw, 3.5rem); 
+  height: clamp(2.5rem, 7vw, 3.5rem);
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 14px;
+  margin-right: 0.875rem; 
   flex-shrink: 0;
 }
 
 .card .text-content h1 {
-  font-size: 1em;
-  margin: 0 0 2px 0;
+  font-size: var(--font-size-base); 
+  margin: 0 0 0.125rem 0; 
   color: var(--md-sys-color-on-surface);
   font-weight: 500;
 }
 
 .card .text-content p {
-  font-size: 0.8em;
+  font-size: var(--font-size-xs); 
   color: var(--md-sys-color-on-surface-variant);
   margin: 0;
   line-height: 1.4;
 }
 
 .contribution-box {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  padding: 32px;
-  border-radius: 20px;
+  margin-top: clamp(2rem, 5vh, 2.5rem); 
+  margin-bottom: clamp(2rem, 5vh, 2.5rem); 
+  padding: clamp(1.5rem, 6vw, 2rem); 
+  border-radius: 1.25rem; 
   background-color: var(--md-sys-color-surface-container);
   color: var(--md-sys-color-on-surface);
   text-align: center;
@@ -1198,17 +1217,17 @@ body.dark-mode .button-2 {
 }
 
 .contribution-box h2 {
-  font-size: 1.8em;
+  font-size: var(--font-size-xl); 
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 1rem; 
   color: var(--md-sys-color-primary);
   font-weight: 600;
 }
 
 .contribution-box p {
-  font-size: 1.1em;
+  font-size: var(--font-size-md); 
   line-height: 1.6;
-  margin-bottom: 32px;
+  margin-bottom: 2rem; 
   color: var(--md-sys-color-on-surface-variant);
 }
 
@@ -1216,13 +1235,13 @@ body.dark-mode .button-2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
-  border-radius: 30px;
+  padding: clamp(0.75rem, 2.5vw, 0.9rem) clamp(1.5rem, 5vw, 1.75rem); 
+  border-radius: 1.875rem; 
   background-color: var(--md-sys-color-primary);
   color: var(--md-sys-color-on-primary);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.05em;
+  font-size: var(--font-size-base); 
   transition: background-color var(--transition-duration) var(--transition-ease), color var(--transition-duration) var(--transition-ease), transform 0.2s ease-in-out;
 }
 
