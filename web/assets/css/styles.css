@@ -86,7 +86,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
   overflow-x: hidden;
   font-family: var(--font-family-base, sans-serif);
   background-color: var(--md-sys-color-background);
@@ -524,7 +524,7 @@ body.amoled-dark-mode .side-menu a:active:not(.current-page) {
 }
 
 .side-menu-settings {
-  position: absolute;
+  position: ;
   bottom: calc(1rem + env(safe-area-inset-bottom));
   right: calc(1rem + env(safe-area-inset-right));
 }
@@ -961,7 +961,6 @@ body.dark-mode .button-2 {
   }
 
   .side-menu-settings {
-    position: static;
     padding: 0;
     border-top: none;
     margin-top: 0;
