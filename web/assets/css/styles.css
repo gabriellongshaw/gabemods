@@ -318,9 +318,9 @@ body.amoled-dark-mode .header.no-translucent {
 }
 
 .role-title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 2.2rem 0 1.2rem;
-  color: var(--md-sys-color-on-surface-variant);
+  color: var(--md-sys-color-on-surface);
   text-align: left;
   font-weight: 500;
 }
@@ -768,7 +768,7 @@ body.dark-mode .button-2 {
   }
   .role-title {
     font-size: 1rem;
-    margin: 1.8rem 0 0.9rem;
+    margin: 1.8rem 0 0.3rem;
   }
   .button-group-wrapper {
     flex-direction: column;

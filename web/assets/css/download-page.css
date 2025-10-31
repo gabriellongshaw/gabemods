@@ -1,19 +1,7 @@
 :root {
-
   --transition-duration: 0.2s;
   --transition-ease: ease;
-
   --md-icon-font: Material Symbols Rounded;
-
-  --font-size-base: 16px; 
-
-  --font-size-xs: clamp(0.75rem, 2vw, 0.9rem); 
-  --font-size-sm: clamp(0.875rem, 2.5vw, 1rem); 
-  --font-size-md: clamp(1rem, 3vw, 1.15rem); 
-  --font-size-lg: clamp(1.125rem, 3.5vw, 1.35rem); 
-  --font-size-xl: clamp(1.375rem, 4.5vw, 1.8rem); 
-  --font-size-xxl: clamp(1.75rem, 5.5vw, 2.2rem); 
-
   --md-sys-color-primary: #A9D3FB;
   --md-sys-color-on-primary: #000000;
   --md-sys-color-primary-container: #CFE5FF;
@@ -47,7 +35,6 @@
   --md-sys-color-outline-variant: #C3C7CF;
   --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
   --fade-overlay-color: #FFFFFF;
-
   --dark-md-sys-color-primary: #A9D3FB;
   --dark-md-sys-color-on-primary: rgba(0, 0, 0, 0.8);
   --dark-md-sys-color-primary-container: #2C3644;
@@ -83,7 +70,6 @@
   --dark-md-sys-color-surface-tint: #D0BCFF;
   --dark-md-sys-color-outline-variant: #383E4D;
   --dark-md-sys-color-scrim: rgba(0, 0, 0, 0.4);
-
   --amoled-background: #000000;
   --amoled-header-bg: #000000;
   --amoled-header-translucent-bg: rgba(0, 0, 0, 0.8);
@@ -100,7 +86,7 @@ html {
   color: var(--md-sys-color-on-background);
   font-weight: 400;
   transition: background-color var(--transition-duration) var(--transition-ease);
-  font-size: var(--font-size-base);
+  font-size: 16px;
 }
 
 body.font-system {
@@ -362,7 +348,7 @@ body.amoled-dark-mode .header.no-translucent {
 .main-title {
   margin-left: clamp(1rem, 4vw, 1.25rem);
   font-weight: 500;
-  font-size: var(--font-size-lg);
+  font-size: 1.2rem;
   flex-grow: 1;
   text-align: left;
   color: #FFF;
@@ -373,7 +359,7 @@ body.light-mode .main-title {
 }
 
 .role-title {
-  font-size: var(--font-size-lg);
+  font-size: 1.2rem;
   margin: clamp(2rem, 5vh, 2.5rem) 0 clamp(1rem, 2.5vh, 1.5rem);
   color: var(--md-sys-color-on-surface-variant);
   text-align: left;
@@ -465,7 +451,7 @@ body.amoled-dark-mode .side-menu {
 .side-menu a {
   text-decoration: none;
   color: var(--md-sys-color-on-surface-variant);
-  font-size: var(--font-size-md);
+  font-size: 1rem;
   display: block;
   padding: clamp(0.75rem, 1.5vh, 1rem) clamp(1rem, 2.5vw, 1.25rem);
   border-radius: 10px;
@@ -571,7 +557,7 @@ body.dark-mode md-icon {
 .button-intro-text {
   text-align: left;
   margin: clamp(1.25rem, 3vh, 1.5rem) 0 0;
-  font-size: var(--font-size-xs);
+  font-size: 1rem;
   color: var(--md-sys-color-on-surface-variant);
   font-weight: 400;
 }
@@ -579,7 +565,7 @@ body.dark-mode md-icon {
 .footer {
   width: 100%;
   padding: clamp(1rem, 3vh, 1.25rem) 0;
-  font-size: var(--font-size-sm);
+  font-size: 0.9rem;
   color: var(--md-sys-color-on-surface-variant);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: clamp(1.25rem, 3vh, 1.5rem);
@@ -650,7 +636,7 @@ body.dark-mode .footer-social-button svg {
 
 .download-button,
 .button-2 {
-  font-size: var(--font-size-lg);
+  font-size: 1rem;
   font-weight: 500;
   padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2rem);
   border: none;
@@ -719,7 +705,7 @@ body.dark-mode .button-2 {
 
   .download-button,
   .button-2 {
-    font-size: var(--font-size-md);
+    font-size: 1rem;
     padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(1.2rem, 4vw, 1.8rem);
     margin-top: 0;
     width: auto;
@@ -742,7 +728,7 @@ body.dark-mode .button-2 {
   }
 
   .main-title {
-    font-size: var(--font-size-sm); 
+    font-size: 1rem; 
     margin-left: clamp(0.8rem, 3vw, 1rem); 
   }
 
@@ -765,20 +751,20 @@ body.dark-mode .button-2 {
   }
 
   .role-title {
-    font-size: var(--font-size-md);
+    font-size: 1rem;
     margin: clamp(0.8rem, 2vh, 1.2rem) 0 clamp(0.4rem, 1vh, 0.7rem);
     text-align: left;
   }
 
   .button-intro-text {
-    font-size: var(--font-size-xs);
+    font-size: 1rem;
     margin: clamp(0.5rem, 1.2vh, 0.7rem) 0 0;
     text-align: left;
   }
 
   .footer {
     padding: clamp(0.5rem, 1.2vh, 0.7rem) 0;
-    font-size: var(--font-size-xs);
+    font-size: 0.9rem;
     margin-top: clamp(0.6rem, 1.5vh, 0.9rem);
   }
 
@@ -808,7 +794,7 @@ body.dark-mode .button-2 {
 
   .download-button,
   .button-2 {
-    font-size: var(--font-size-sm);
+    font-size: 1rem;
     padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.8rem, 3vw, 1.2rem);
     border-radius: 30px;
     max-width: 180px;
@@ -821,7 +807,7 @@ body.dark-mode .button-2 {
 
 @media (max-width: 480px) {
   .main-title {
-    font-size: var(--font-size-lg);
+    font-size: 1rem;
     margin-left: clamp(0.8rem, 3vw, 1rem);
   }
 
@@ -835,7 +821,7 @@ body.dark-mode .button-2 {
   }
 
   .role-title {
-    font-size: var(--font-size-lg);
+    font-size: 1rem;
     margin: clamp(1.5rem, 3.5vh, 2rem) 0 clamp(0.75rem, 1.5vh, 1rem);
   }
 
@@ -849,7 +835,7 @@ body.dark-mode .button-2 {
 
   .download-button,
   .button-2 {
-    font-size: var(--font-size-md);
+    font-size: 1rem;
     padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2rem);
     margin-top: 0;
     width: 90%;
@@ -857,7 +843,7 @@ body.dark-mode .button-2 {
   }
 
   .footer {
-    font-size: var(--font-size-sm);
+    font-size: 0.8rem;
     padding: clamp(0.8rem, 2.5vh, 1rem) 0;
   }
 
@@ -891,13 +877,13 @@ body.dark-mode .button-2 {
   }
 
   .main-title {
-    font-size: var(--font-size-xxl);
+    font-size: 1.2rem;
     margin-left: 2rem;
     text-align: left;
   }
 
   .role-title {
-    font-size: var(--font-size-xl);
+    font-size: 1rem;
     margin: 4rem 0 2rem;
     text-align: left;
   }
@@ -942,7 +928,7 @@ body.dark-mode .button-2 {
   .side-menu a {
     text-decoration: none;
     color: var(--md-sys-color-on-surface-variant);
-    font-size: var(--font-size-lg);
+    font-size: 1rem;
     padding: 0 0.9375rem;
     border-radius: 0;
   }
@@ -982,13 +968,13 @@ body.dark-mode .button-2 {
 
   .button-intro-text {
     margin: 2rem 0 0;
-    font-size: var(--font-size-md);
+    font-size: 1rem;
     text-align: left;
   }
 
   .footer {
     padding: 2rem 0;
-    font-size: var(--font-size-md);
+    font-size: 0.9rem;
     margin-top: 3rem;
   }
 
@@ -1018,7 +1004,7 @@ body.dark-mode .button-2 {
 
   .download-button,
   .button-2 {
-    font-size: var(--font-size-xl);
+    font-size: 1rem;
     padding: 1.2rem 2.5rem;
     max-width: 250px;
     margin-top: 0;
@@ -1096,7 +1082,7 @@ body.dark-mode .button-2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--font-size-md);
+  font-size: 1rem;
   font-weight: 500;
   color: var(--md-sys-color-on-surface);
   transition: background-color var(--transition-duration) var(--transition-ease), border-radius 0.5s var(--transition-ease), transform var(--transition-duration) var(--transition-ease);
@@ -1113,7 +1099,7 @@ body.dark-mode .button-2 {
 
 .credits-dropdown-header h3 {
   color: var(--md-sys-color-on-surface);
-  font-size: var(--font-size-md);
+  font-size: 1rem;
   font-weight: 500;
   margin: 0;
   display: flex;
@@ -1186,14 +1172,14 @@ body.dark-mode .button-2 {
 }
 
 .card .text-content h1 {
-  font-size: var(--font-size-base);
+  font-size: 0.9rem;
   margin: 0 0 0.125rem 0;
   color: var(--md-sys-color-on-surface);
   font-weight: 500;
 }
 
 .card .text-content p {
-  font-size: var(--font-size-xs);
+  font-size: 0.8rem;
   color: var(--md-sys-color-on-surface-variant);
   margin: 0;
   line-height: 1.4;
@@ -1211,7 +1197,7 @@ body.dark-mode .button-2 {
 }
 
 .contribution-box h2 {
-  font-size: var(--font-size-xl);
+  font-size: 1.2rem;
   margin-top: 0;
   margin-bottom: 1rem;
   color: var(--md-sys-color-primary);
@@ -1219,7 +1205,7 @@ body.dark-mode .button-2 {
 }
 
 .contribution-box p {
-  font-size: var(--font-size-md);
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
   color: var(--md-sys-color-on-surface-variant);
@@ -1235,7 +1221,7 @@ body.dark-mode .button-2 {
   color: var(--md-sys-color-on-primary);
   text-decoration: none;
   font-weight: 600;
-  font-size: var(--font-size-base);
+  font-size: 1rem;
   transition: background-color var(--transition-duration) var(--transition-ease), color var(--transition-duration) var(--transition-ease), transform 0.2s ease-in-out;
 }
 
@@ -1249,7 +1235,7 @@ body.dark-mode .button-2 {
 }
 
 .section-title {
-  font-size: var(--font-size-lg);
+  font-size: 1rem;
   margin: clamp(2rem, 5vh, 2.5rem) 0 clamp(1rem, 2.5vh, 1.5rem);
   color: var(--md-sys-color-on-background);
   text-align: left;
@@ -1259,7 +1245,7 @@ body.dark-mode .button-2 {
 .section-description {
   text-align: left;
   margin: clamp(0.75rem, 2vh, 1rem) 0 clamp(1.5rem, 3vh, 2rem);
-  font-size: var(--font-size-sm);
+  font-size: 0.9rem;
   color: var(--md-sys-color-on-surface-variant);
   font-weight: 400;
   line-height: 1.5;
@@ -1291,21 +1277,21 @@ body.dark-mode .button-2 {
 }
 
 .download-card h3 {
-  font-size: var(--font-size-xl);
+  font-size: 1rem;
   margin: 0 0 clamp(0.5rem, 1.5vh, 0.75rem);
   font-weight: 500;
   color: var(--md-sys-color-on-surface);
 }
 
 .download-card p {
-  font-size: var(--font-size-md);
+  font-size: 0.9rem;
   color: var(--md-sys-color-on-surface-variant);
   margin: 0 0 clamp(0.2rem, 0.7vh, 0.4rem);
 }
 
 .download-card .version-info,
 .download-card .update-info {
-  font-size: var(--font-size-sm);
+  font-size: 0.9rem;
   color: var(--md-sys-color-on-surface-variant);
   margin-bottom: clamp(0.5rem, 1.2vh, 0.75rem);
 }
@@ -1315,7 +1301,7 @@ body.dark-mode .button-2 {
   align-items: center;
   justify-content: center;
   font-family: "Roboto", sans-serif;
-  font-size: var(--font-size-lg);
+  font-size: 1rem;
   font-weight: 500;
   padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2rem);
   border: none;
@@ -1335,7 +1321,7 @@ body.dark-mode .button-2 {
 
 .download-main-button .material-symbols-rounded {
   margin-left: 0.5rem;
-  font-size: var(--font-size-xl);
+  font-size: 1.5rem;
 }
 
 .download-main-button:not(.disabled):hover {
@@ -1362,7 +1348,7 @@ body.dark-mode .button-2 {
 }
 
 .installation-guide h4 {
-  font-size: var(--font-size-md);
+  font-size: 1rem;
   margin: 0 0 clamp(0.4rem, 1vh, 0.6rem);
   color: var(--md-sys-color-primary);
   font-weight: 500;
@@ -1373,7 +1359,7 @@ body.dark-mode .button-2 {
   padding-left: clamp(1.25rem, 4vw, 1.5rem);
   margin: 0;
   color: var(--md-sys-color-on-surface-variant);
-  font-size: var(--font-size-sm);
+  font-size: 1rem;
 }
 
 .installation-guide ol li {
@@ -1620,37 +1606,37 @@ body.amoled-dark-mode {
     margin: 0;
   }
   .download-card h3 {
-    font-size: var(--font-size-lg);
+    font-size: 1rem;
   }
   .download-card p {
-    font-size: var(--font-size-sm);
+    font-size: 0.9rem;
   }
   .download-main-button {
-    font-size: var(--font-size-md);
+    font-size: 1rem;
     padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(1.2rem, 4vw, 1.8rem);
     max-width: 250px;
   }
   .download-main-button .material-symbols-rounded {
-    font-size: var(--font-size-lg);
+    font-size: 1.5rem;
   }
   .installation-guide {
     padding: clamp(0.6rem, 1.8vw, 0.9rem) clamp(0.8rem, 2.5vw, 1.1rem);
   }
   .installation-guide h4 {
-    font-size: var(--font-size-sm);
+    font-size: 1rem;
   }
   .installation-guide ol {
-    font-size: var(--font-size-xs);
+    font-size: 0.9rem;
   }
 }
 
 @media (orientation: landscape) and (max-width: 767px) {
   .section-title {
-    font-size: var(--font-size-md);
+    font-size: 1rem;
     margin: clamp(0.8rem, 2vh, 1.2rem) 0 clamp(0.4rem, 1vh, 0.7rem);
   }
   .section-description {
-    font-size: var(--font-size-xs); 
+    font-size: 0.9rem; 
     margin: clamp(0.4rem, 1vh, 0.6rem) 0 clamp(0.8rem, 2vh, 1rem);
   }
   .download-cards-wrapper {
@@ -1679,40 +1665,40 @@ body.amoled-dark-mode {
     padding: clamp(0.75rem, 2.5vw, 1rem);
   }
   .download-card h3 {
-    font-size: var(--font-size-md);
+    font-size: 1rem;
   }
   .download-card p {
-    font-size: var(--font-size-xs);
+    font-size: 0.8rem;
   }
   .download-main-button {
-    font-size: var(--font-size-sm);
+    font-size: 1rem;
     padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.8rem, 3vw, 1.2rem);
     max-width: 180px;
     margin-top: clamp(0.7rem, 1.7vh, 1rem);
   }
   .download-main-button .material-symbols-rounded {
-    font-size: var(--font-size-md);
+    font-size: 1.5rem;
   }
   .installation-guide {
     padding: clamp(0.4rem, 1.2vw, 0.6rem) clamp(0.5rem, 1.5vw, 0.75rem);
     margin-top: clamp(0.8rem, 2vh, 1rem);
   }
   .installation-guide h4 {
-    font-size: var(--font-size-xs);
+    font-size: 1rem;
   }
   .installation-guide ol {
-    font-size: var(--font-size-xs); 
+    font-size: 1rem; 
     padding-left: clamp(1rem, 3vw, 1.2rem);
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: var(--font-size-lg);
+    font-size: 1rem;
     margin: clamp(1.5rem, 3.5vh, 2rem) 0 clamp(0.75rem, 1.5vh, 1rem);
   }
   .section-description {
-    font-size: var(--font-size-sm);
+    font-size: 0.9rem;
     margin: clamp(0.6rem, 1.5vh, 0.8rem) 0 clamp(1rem, 2.5vh, 1.2rem);
   }
   .download-card {
@@ -1721,38 +1707,38 @@ body.amoled-dark-mode {
     max-width: 400px;
   }
   .download-card h3 {
-    font-size: var(--font-size-lg);
+    font-size: 1rem;
   }
   .download-card p {
-    font-size: var(--font-size-sm);
+    font-size: 0.9rem;
   }
   .download-main-button {
-    font-size: var(--font-size-md);
+    font-size: 1rem;
     padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(1.2rem, 4vw, 1.8rem);
     max-width: 300px;
   }
   .download-main-button .material-symbols-rounded {
-    font-size: var(--font-size-lg);
+    font-size: 1.5rem;
   }
   .installation-guide {
     padding: clamp(0.7rem, 2.2vw, 0.9rem) clamp(0.9rem, 2.8vw, 1.2rem);
     width: calc(100% - clamp(1.8rem, 5vw, 2.2rem));
   }
   .installation-guide h4 {
-    font-size: var(--font-size-sm);
+    font-size: 1rem;
   }
   .installation-guide ol {
-    font-size: var(--font-size-xs);
+    font-size: 0.8rem;
   }
 }
 
 @media screen and (min-width: 992px) {
   .section-title {
-    font-size: var(--font-size-xl);
+    font-size: 1rem;
     margin: 4rem 0 2rem;
   }
   .section-description {
-    font-size: var(--font-size-md);
+    font-size: 0.9rem;
     margin: 1rem 0 2.5rem;
   }
   .download-cards-wrapper {
@@ -1781,19 +1767,19 @@ body.amoled-dark-mode {
     width: 100%;
   }
   .download-card h3 {
-    font-size: var(--font-size-xxl);
+    font-size: 1rem;
   }
   .download-card p {
-    font-size: var(--font-size-lg);
+    font-size: 0.9rem;
   }
   .download-main-button {
-    font-size: var(--font-size-xl);
+    font-size: 1rem;
     padding: 1.2rem 2.5rem;
     max-width: 350px;
     margin-top: 2rem;
   }
   .download-main-button .material-symbols-rounded {
-    font-size: var(--font-size-xl);
+    font-size: 1.5rem;
   }
   .installation-guide {
     padding: 1.25rem 1.5rem;
@@ -1801,9 +1787,9 @@ body.amoled-dark-mode {
     width: calc(100% - 3rem);
   }
   .installation-guide h4 {
-    font-size: var(--font-size-md);
+    font-size: 1rem;
   }
   .installation-guide ol {
-    font-size: var(--font-size-sm);
+    font-size: 1rem;
   }
 }

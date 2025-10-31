@@ -1,25 +1,22 @@
 .section-title {
-  font-size: var(--font-size-lg);
-
-  margin: 2rem 0 1rem;
-  color: var(--md-sys-color-on-background);
+  font-size: 1rem;
+  margin: 2rem 0.5rem 1rem;
+  color: var(--md-sys-color-on-primary);
   text-align: left;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .section-description {
   text-align: left;
-
-  margin: 0.75rem 0 1.5rem;
-  font-size: var(--font-size-sm);
-  color: var(--md-sys-color-on-surface-variant);
+  margin: 0.7rem 0 1.5rem;
+  font-size: 0.9rem;
+  color: var(--md-sys-color-on-primary);
   font-weight: 400;
   line-height: 1.5;
 }
 
 .mods-section-grid {
     display: grid;
-
     grid-template-columns: 1fr;
     gap: 1rem;
     padding-bottom: 2rem;
@@ -31,7 +28,6 @@
 .mod-card {
     background: var(--md-sys-color-surface-container-low);
     border-radius: 20px;
-
     padding: 0.8rem;
     box-sizing: border-box;
     border: 1px solid var(--md-sys-color-outline-variant);
@@ -44,12 +40,10 @@
 }
 
 .mod-card:hover {
-    background: var(--md-sys-color-surface-container);
-    transform: translateY(-3px);
+    opacity: 0.8;
 }
 
 .mod-card .mod-icon {
-
     width: 60px;
     height: 60px;
     border-radius: 15%;
@@ -61,14 +55,12 @@
 .mod-card .mod-info {
     flex-grow: 1;
     width: 100%;
-
     margin-bottom: 0.8rem;
     text-align: center;
 }
 
 .mod-card h3 {
-    font-size: var(--font-size-lg);
-
+    font-size: 1.2rem;
     margin: 0 0 0.3rem;
     font-weight: 600;
     color: var(--md-sys-color-on-surface);
@@ -76,15 +68,13 @@
 
 .mod-card .mod-version,
 .mod-card .mod-game {
-    font-size: var(--font-size-xs);
-
+    font-size: 0.9rem;
     margin: 0 0 0.1rem;
 }
 
 .mod-card .mod-description {
-    font-size: var(--font-size-sm);
+    font-size: 0.8rem;
     color: var(--md-sys-color-on-surface);
-
     margin: 0.5rem 0;
     line-height: 1.4;
     overflow: hidden;
@@ -98,9 +88,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     gap: 0.4rem;
-    font-size: var(--font-size-xxs);
+    font-size: 0.8rem;
     color: var(--md-sys-color-on-surface-variant);
     margin-top: 0.4rem;
 }
@@ -112,7 +101,7 @@
 }
 
 .mod-card .mod-meta .material-symbols-rounded {
-    font-size: var(--font-size-xs);
+    font-size: 1rem;
     color: inherit;
     vertical-align: middle;
 }
@@ -120,7 +109,6 @@
 .mod-card .mod-actions {
     display: flex;
     flex-direction: column;
-
     gap: 0.6rem;
     width: 100%;
     max-width: 200px;
@@ -131,31 +119,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    place-self: center;
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-
-    padding: 0.6rem 1rem;
+    padding: 0.7rem 1.5rem;
     border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
-    font-size: var(--font-size-sm);
+    font-size: 1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
     width: 100%;
+    min-width: 250px;
     box-sizing: border-box;
 }
 
 .download-main-button:hover {
-    background-color: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
-}
-
-.download-main-button:active {
-    transform: scale(1.03);
+    opacity: 0.8;
 }
 
 .download-main-button .material-symbols-rounded {
     margin-right: 0.5em;
-    font-size: var(--font-size-md);
+    font-size: 1.5rem;
 }
 
 body.dark-mode {
@@ -173,15 +157,6 @@ body.dark-mode {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid var(--dark-md-sys-color-outline-variant);
-    }
-
-    .mod-card:hover {
-        background: var(--dark-md-sys-color-surface-container);
-        transform: translateY(-5px);
-    }
-
-    .mod-card .mod-icon {
-        border: 2px solid var(--dark-md-sys-color-outline);
     }
 
     .mod-card h3 {
@@ -204,14 +179,6 @@ body.dark-mode {
     .download-main-button {
         background-color: var(--dark-md-sys-color-primary);
         color: var(--dark-md-sys-color-on-primary);
-    }
-
-    .download-main-button:hover {
-        background-color: var(--dark-md-sys-color-primary-container);
-    }
-
-    .download-main-button:active {
-        transform: scale(1.05);
     }
 }
 
@@ -232,15 +199,6 @@ body.amoled-dark-mode {
         border: 1px solid var(--dark-md-sys-color-outline-variant);
     }
 
-    .mod-card:hover {
-        background: rgba(255, 255, 255, 0.05);
-        transform: translateY(-5px);
-    }
-
-    .mod-card .mod-icon {
-        border: 2px solid var(--dark-md-sys-color-outline);
-    }
-
     .mod-card h3 {
         color: var(--dark-md-sys-color-on-surface);
     }
@@ -264,11 +222,7 @@ body.amoled-dark-mode {
     }
 
     .download-main-button:hover {
-        background-color: var(--dark-md-sys-color-primary-container);
-    }
-
-    .download-main-button:active {
-        transform: scale(1.05);
+        opacity: 0.8;
     }
 }
 
@@ -367,7 +321,7 @@ body.amoled-dark-mode {
     }
     .download-main-button {
         padding: 1rem 2rem; 
-        font-size: var(--font-size-sm);
+        font-size: 0.9rem;
     }
 }
 
@@ -447,7 +401,7 @@ body.amoled-dark-mode {
         margin-bottom: 1.2rem;
     }
     .mod-card h3 {
-        font-size: var(--font-size-xl);
+        font-size: 1rem;
         margin: 0 0 0.5rem;
     }
     .mod-card .mod-description {
