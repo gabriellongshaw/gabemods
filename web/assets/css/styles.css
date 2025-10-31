@@ -3,6 +3,7 @@
   --transition-ease: ease;
   --md-icon-font: Material Symbols Rounded;
   --font-size-base: 16px;
+  /* Font Sizes - Fixed REM values (defaulting to a mid-size screen) */
   --font-size-xs: 0.8rem;
   --font-size-sm: 0.9rem;
   --font-size-md: 1rem;
@@ -10,6 +11,7 @@
   --font-size-xl: 1.5rem;
   --font-size-xxl: 1.9rem;
 
+  /* --- LIGHT MODE (Default) --- */
   --md-sys-color-primary: #A9D3FB;
   --md-sys-color-on-primary: #000000;
   --md-sys-color-primary-container: #CFE5FF;
@@ -42,8 +44,9 @@
   --md-sys-color-surface-tint: #A9D3FB;
   --md-sys-color-outline-variant: #C3C7CF;
   --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
-  --fade-overlay-color: #FFFFFF; 
+  --fade-overlay-color: #FFFFFF; /* Light mode fade color */
 
+  /* --- DARK MODE Variables (Prefix used to define the dark palette) --- */
   --dark-md-sys-color-primary: #A9D3FB;
   --dark-md-sys-color-on-primary: rgba(0, 0, 0, 0.8);
   --dark-md-sys-color-primary-container: #2C3644;
@@ -63,7 +66,7 @@
   --dark-md-sys-color-background: #121215;
   --dark-md-sys-color-on-background: #EAE5EB;
   --dark-md-sys-color-surface: #121215;
-  --dark-md-sys-color-on-surface: #A9D3FB;
+  --dark-sys-color-on-surface: #A9D3FB;
   --dark-md-sys-color-surface-container-lowest: #1B1A1E;
   --dark-md-sys-color-surface-container-low: #201F23;
   --dark-md-sys-color-surface-container: #1A191F;
@@ -79,6 +82,8 @@
   --dark-md-sys-color-surface-tint: #D0BCFF;
   --dark-md-sys-color-outline-variant: #383E4D;
   --dark-md-sys-color-scrim: rgba(0, 0, 0, 0.4);
+
+  /* --- AMOLED Variables --- */
   --amoled-background: #000000;
   --amoled-header-bg: #000000;
   --amoled-header-translucent-bg: rgba(0, 0, 0, 0.8);
@@ -97,6 +102,8 @@ html {
   transition: background-color var(--transition-duration) var(--transition-ease);
   font-size: var(--font-size-base);
 }
+
+/* --- Font Families --- */
 
 body.font-system {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -142,6 +149,8 @@ body.font-Open-Sans {
   font-display: swap;
 }
 
+/* --- Keyframes --- */
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -176,12 +185,15 @@ body.font-Open-Sans {
   }
 }
 
+/* --- Theme Overrides (Consolidated) --- */
+
 body.light-mode {
-  --md-sys-color-background: #FDFBFF; 
+  --md-sys-color-background: #FDFBFF;
   --fade-overlay-color: #FFFFFF;
 }
 
 body.dark-mode {
+  /* Maps all primary variables to their dark counterparts */
   --md-sys-color-primary: var(--dark-md-sys-color-primary);
   --md-sys-color-on-primary: var(--dark-md-sys-color-on-primary);
   --md-sys-color-primary-container: var(--dark-md-sys-color-primary-container);
@@ -217,11 +229,11 @@ body.dark-mode {
   --md-sys-color-surface-tint: var(--dark-md-sys-color-surface-tint);
   --md-sys-color-outline-variant: var(--dark-md-sys-color-outline-variant);
   --md-sys-color-scrim: var(--dark-md-sys-color-scrim);
-  --fade-overlay-color: #000000; 
+  --fade-overlay-color: #000000;
 }
 
 body.amoled-dark-mode {
-
+  /* AMOLED overrides, mapping key surfaces to black and others to dark counterparts */
   --md-sys-color-background: var(--amoled-background);
   --md-sys-color-on-background: var(--dark-md-sys-color-on-background);
   --md-sys-color-surface: var(--amoled-background);
@@ -231,7 +243,7 @@ body.amoled-dark-mode {
   --md-sys-color-surface-container: var(--amoled-background);
   --md-sys-color-surface-container-high: var(--amoled-background);
   --md-sys-color-surface-container-highest: var(--amoled-background);
-
+  /* Other colors still link to the dark palette */
   --md-sys-color-primary: var(--dark-md-sys-color-primary);
   --md-sys-color-on-primary: var(--dark-md-sys-color-on-primary);
   --md-sys-color-primary-container: var(--dark-md-sys-color-primary-container);
@@ -260,6 +272,8 @@ body.amoled-dark-mode {
   --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
   --fade-overlay-color: #000000;
 }
+
+/* --- Layout and Structural Components --- */
 
 .container {
   animation: fadeUp 0.8s ease forwards;
@@ -296,11 +310,11 @@ body.amoled-dark-mode {
 }
 
 body.dark-mode .header {
-  background-color: var(--md-sys-color-surface-container-high); 
+  background-color: var(--md-sys-color-surface-container-high);
 }
 
 body.dark-mode .header.translucent {
-  background-color: rgba(28, 28, 36, 0.8); 
+  background-color: rgba(28, 28, 36, 0.8);
 }
 
 body.dark-mode .header.no-translucent {
@@ -325,7 +339,7 @@ body.amoled-dark-mode .header.no-translucent {
   font-size: var(--font-size-lg);
   flex-grow: 1;
   text-align: left;
-  color: #FFF; 
+  color: #FFF;
 }
 
 body.light-mode .main-title {
@@ -365,7 +379,7 @@ body.light-mode .menu-toggle span {
 
 body.dark-mode .menu-toggle span,
 body.amoled-dark-mode .menu-toggle span {
-  background: var(--dark-md-sys-color-on-surface-variant); 
+  background: var(--dark-md-sys-color-on-surface-variant);
 }
 
 .menu-toggle.open span:nth-child(1) {
@@ -387,7 +401,7 @@ body.amoled-dark-mode .menu-toggle span {
   left: 0;
   width: min(80vw, 300px);
   height: 100vh;
-  background-color: var(--md-sys-color-surface); 
+  background-color: var(--md-sys-color-surface);
   padding: 4.5rem 1.1rem;
   box-sizing: border-box;
   z-index: 1001;
@@ -592,8 +606,8 @@ body.dark-mode .footer-social-button:hover {
 }
 
 .footer-social-button svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   fill: var(--md-sys-color-on-surface-variant);
 }
 
@@ -622,6 +636,7 @@ body.dark-mode .footer-social-button svg {
   box-shadow: none;
   border-radius: 50px;
   text-decoration: none;
+  /* Default large width for centering */
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -661,8 +676,11 @@ body.dark-mode .button-2 {
   margin-right: auto;
 }
 
-@media screen and (min-width: 600px) and (max-width: 991px) {
+/* --- Media Queries (Refactored) --- */
 
+/* Medium Devices (Tablets, 600px - 991px) */
+@media screen and (min-width: 600px) and (max-width: 991px) {
+  /* Font Sizes scaled up for tablets */
   :root {
     --font-size-xs: 0.8rem;
     --font-size-sm: 0.95rem;
@@ -705,6 +723,7 @@ body.dark-mode .button-2 {
   }
 }
 
+/* Landscape orientation on small devices (max-width: 767px) */
 @media (orientation: landscape) and (max-width: 767px) {
   .container {
     padding-top: 2.8rem;
@@ -783,7 +802,6 @@ body.dark-mode .button-2 {
 }
 
 @media (max-width: 480px) {
-
   :root {
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
@@ -813,14 +831,16 @@ body.dark-mode .button-2 {
     gap: 0.9rem;
     margin-left: auto;
     margin-right: auto;
+    width: calc(100% - 1.8rem);
+    max-width: 400px;
   }
   .download-button,
   .button-2 {
     font-size: var(--font-size-md);
-    padding: 0.9rem 1.75rem;
+    padding: 0.9rem 1.7rem;
     margin-top: 0;
-    width: 90%;
-    max-width: 400px;
+    width: 85%;
+    max-width: 90%;
   }
   .footer {
     font-size: var(--font-size-sm);
@@ -830,16 +850,17 @@ body.dark-mode .button-2 {
     gap: 0.8rem;
   }
   .footer-social-button {
-    padding: 0.8rem;
+    padding: 0.7rem;
   }
   .footer-social-button svg {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
 
+/* Large Devices (Desktops, >= 992px) - explicitly setting largest values */
 @media screen and (min-width: 992px) {
-
+  /* Largest Font Sizes (Upper bound of original clamps) */
   :root {
     --font-size-xs: 0.9rem;
     --font-size-sm: 1rem;
@@ -979,6 +1000,7 @@ body.dark-mode .button-2 {
     flex-shrink: 1;
   }
 
+  /* Desktop Nav Display Logic for >= 992px */
   .desktop-nav {
     display: flex;
     align-items: center;
@@ -993,6 +1015,7 @@ body.dark-mode .button-2 {
   }
 }
 
+/* Mobile Nav Display Logic for <= 991px */
 @media screen and (max-width: 991px) {
   .desktop-nav {
     display: none;
@@ -1005,6 +1028,8 @@ body.dark-mode .button-2 {
     text-align: left;
   }
 }
+
+/* --- Remaining Unchanged Sections --- */
 
 #img-popup-overlay {
   position: fixed;
