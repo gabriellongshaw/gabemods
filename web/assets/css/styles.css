@@ -1110,6 +1110,7 @@ input:checked + .slider:before {
   .button-group-wrapper {
     flex-direction: row;
     gap: 0.5rem;
+    padding: 0 2rem;
     width: auto; 
     max-width: none; 
     justify-content: left;
@@ -1153,12 +1154,8 @@ input:checked + .slider:before {
     justify-content: space-between;
     align-items: center;
   }
-  .header {
-    height: 70px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  }
   .header .main-title {
-    margin-left: 20px;
+    margin-left: 20rem;
   }
   .container {
       padding-top: calc(70px + 2rem);
@@ -1174,10 +1171,10 @@ input:checked + .slider:before {
   }
   .intro-text {
       font-size: 2.5rem;
-      padding: 0 0 0.5rem;
+      padding: 0 2rem 0.5rem;
   }
   .button-intro-text {
-      padding: 1rem 0 0.5rem;
+      padding: 0 2rem 0.5rem;
   }
   .download-cards-wrapper {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1237,9 +1234,6 @@ input:checked + .slider:before {
   }
   .footer-section {
       flex: 1 1 auto;
-  }
-  .footer-bottom {
-      text-align: left;
   }
 }
 
