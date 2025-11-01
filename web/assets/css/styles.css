@@ -555,16 +555,6 @@ footer {
   vertical-align: middle;
 }
 
-.button-2-wrapper,
-.download-button-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 0.15rem 0;
-  box-sizing: border-box;
-  width: 100%; 
-  margin: 0 auto; 
-}
-
 .download-button-wrapper {
   padding-top: 0.9rem;
 }
@@ -621,6 +611,14 @@ footer {
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
+}
+.button-2-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0.15rem 0;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .desktop-nav {
@@ -1108,7 +1106,37 @@ input:checked + .slider:before {
   background-color: var(--switch-thumb-checked-bg);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
+  .button-group-wrapper {
+    flex-direction: row;
+    gap: 0.5rem;
+    width: auto; 
+    max-width: none; 
+    justify-content: left;
+  }
+  .download-button-wrapper,
+  .button-2-wrapper {
+    padding: 0;
+    width: auto; 
+    flex-grow: 0; 
+  }
+  .download-button,
+  .button-2 {
+    width: auto;
+    margin: 0;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem; 
+  }
+  .desktop-nav {
+      display: none;
+  }
+  .menu-toggle,
+  .side-menu {
+      display: flex;
+  }
+}
+
+@media (min-width: 900px) {
   .menu-toggle,
   .side-menu {
     display: none;
@@ -1133,84 +1161,190 @@ input:checked + .slider:before {
     margin-left: 20px;
   }
   .container {
-      padding-top: calc(70px + 1.5rem); 
+      padding-top: calc(70px + 2rem);
+      max-width: 1100px;
+  }
+  .section-title {
+      font-size: 1.8rem;
+      margin: 3rem 0 1rem 0;
+  }
+  .section-description {
+      font-size: 1rem;
+      margin: 0 0 2.5rem 0;
+  }
+  .intro-text {
+      font-size: 2.5rem;
+      padding: 0 0 0.5rem;
+  }
+  .button-intro-text {
+      padding: 1rem 0 0.5rem;
+  }
+  .download-cards-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .download-card {
+    max-width: none;
+    width: 100%;
+    padding: 30px;
+    align-items: stretch;
+    text-align: left;
+  }
+  .download-card h3 {
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+  }
+  .download-card p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    flex-grow: 1;
+  }
+  .download-card .version-info,
+  .download-card .update-info {
+    font-size: 0.9rem;
+  }
+  .download-main-button {
+    max-width: 250px;
+    width: auto;
+    padding: 0.8rem 2rem;
+    margin-top: 0.5rem;
+  }
+  .mods-section-grid {
+      gap: 30px;
+      margin: 2rem 0 4rem;
+  }
+  .mod-card {
+      padding: 25px;
+      margin: 0;
+      text-align: left;
+      align-items: flex-start;
+  }
+  .mod-info {
+      text-align: left;
+  }
+  .mod-meta {
+      align-items: flex-start;
+  }
+  .footer-top {
+      margin: 2rem auto 2rem;
+  }
+  .footer-container {
+      justify-content: space-between;
+      gap: 2rem;
+  }
+  .footer-section {
+      flex: 1 1 auto;
+  }
+  .footer-bottom {
+      text-align: left;
   }
 }
 
 .download-cards-wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1.5rem, 3.5vh, 2rem);
+  gap: 24px;
   width: 100%;
   justify-items: center;
   align-items: stretch;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .download-card {
   background: var(--card-bg);
-  border-radius: 20px;
-  padding: clamp(1.25rem, 4vw, 1.75rem);
-  width: calc(100% - clamp(1.5rem, 4vw, 2rem));
-  max-width: 500px;
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 450px;
   box-sizing: border-box;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--border);
-  color: var(--text);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--outline-variant);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-card:hover:not(.disabled-card) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); 
 }
 
 .download-card h3 {
-  font-size: 1rem;
-  margin: 1rem;
-  font-weight: 500;
-  color: var(--text);
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: var(--on-surface);
 }
 
 .download-card p {
   font-size: 0.9rem;
-  color: var(--text);
-  margin: 0.5rem;
+  color: var(--on-surface-variant);
+  margin: 0.5rem 0;
 }
 
 .download-card .version-info,
 .download-card .update-info {
-  font-size: 0.9rem;
-  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.8rem;
+  color: var(--on-surface-variant);
   margin-bottom: 0.5rem;
 }
 
 .download-main-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2rem);
-  border: none;
+  gap: 8px;
+  height: auto;
+  width: auto;
+  max-width: 300px; 
+  padding: 0.7rem 1.5rem;
+  margin-top: 0.5rem;
   border-radius: 50px;
-  text-decoration: none;
-  background-color: var(--surface);
-  color: var(--text);
-  max-width: 300px;
   text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  margin-top: clamp(1rem, 2.5vh, 1.5rem);
-  margin-left: auto;
-  margin-right: auto;
+  transition: opacity 0.2s ease-in-out; 
 }
 
-.download-main-button .material-symbols-rounded {
-  margin-left: 0.5rem;
-  font-size: 1.5rem;
+.download-main-button:hover:not(.disabled) {
+  opacity: 0.8; 
 }
 
-.download-main-button:not(.disabled):hover {
-  opacity: 0.8;
+.download-main-button:active:not(.disabled) {
+  opacity: 0.9;
+}
+
+.download-main-button.disabled {
+    cursor: not-allowed;
+    background-color: var(--surface-container-high);
+    color: var(--on-surface-variant);
+    opacity: 0.7;
+}
+
+.disabled-card {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: var(--surface-container);
+  box-shadow: none;
+  transform: none;
+}
+
+.coming-soon {
+    border: 1px dashed var(--outline-variant);
+    opacity: 0.8;
 }
 
 .installation-guide {
@@ -1219,14 +1353,18 @@ input:checked + .slider:before {
   padding: 1rem;
   margin-top: 1rem;
   width: 90%;
+  max-width: 450px; 
+  box-sizing: border-box;
   text-align: left;
   color: var(--text);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .installation-guide h4 {
   font-size: 0.9rem;
-  margin: 0 0 clamp(0.4rem, 1vh, 0.6rem);
-  color: var(--text);
+  margin: 0 0 0.6rem;
+  color: var(--on-surface);
   font-weight: 500;
 }
 
@@ -1234,51 +1372,27 @@ input:checked + .slider:before {
   list-style-type: decimal;
   padding-left: 2rem;
   margin: 0;
-  color: var(--text);
+  color: var(--on-surface-variant);
   font-size: 0.8rem;
 }
 
 .installation-guide ol li {
-  margin-bottom: clamp(0.2rem, 0.5vh, 0.3rem);
+  margin-bottom: 0.3rem;
   line-height: 1.4;
-}
-
-.download-card.disabled-card {
-  opacity: 0.7;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  box-shadow: none;
-}
-
-.download-card.disabled-card h3 {
-  color: var(--text);
-}
-
-.download-card.disabled-card p {
-  color: var(--text);
-}
-
-.download-main-button.disabled {
-  background-color: var(--surface);
-  color: var(--text);
-  cursor: not-allowed;
-  opacity: 0.8;
-  transform: none;
-  box-shadow: none;
 }
 
 .mods-section-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    margin-top: 1.5rem 0 3rem;
+    margin: 1.5rem 1rem 3rem;
 }
 
 .mod-card {
     background-color: var(--card-bg);
     border-radius: 16px;
     padding: 20px;
-    margin: 0 1rem;
+    margin: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
@@ -1289,8 +1403,8 @@ input:checked + .slider:before {
 }
 
 .mod-card:hover {
-    transform: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
 }
 
 .mod-icon {
@@ -1341,8 +1455,7 @@ input:checked + .slider:before {
     gap: 5px;
     font-size: 0.75rem;
     color: var(--on-surface-variant);
-    margin-top: 5px;
-    margin-bottom: 15px;
+    margin:0;
     width: 100%; 
 }
 
