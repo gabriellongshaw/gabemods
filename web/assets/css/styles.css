@@ -4,10 +4,10 @@
   --md-icon-font: Material Symbols Rounded;
   --bg: #fefefe;
   --text: #000;
-  --primary: #1976D2; 
+  --primary: #7FC6FF; 
   --on-primary: #fff; 
-  --primary-container: #BBDEFB; 
-  --on-primary-container: #1A237E; 
+  --primary-container: #D6EBFC; 
+  --on-primary-container: #ebf4ff; 
   --highlight-color: #42A5F5; 
   --header-bg: #fafafa;
   --header-bg-translucent: rgba(255, 255, 255, 0.8);
@@ -24,8 +24,10 @@
   --border: var(--outline-variant); 
   --hover-overlay: rgba(0, 0, 0, 0.05);
   --active-overlay: rgba(0, 0, 0, 0.1);
-  --nav-current-a: var(--on-primary-container);
-  --nav-current-a-bg: var(--primary-container);
+  --nav-current-a: #2C3544;
+  --nav-current-a-bg: #E9EEF5;
+  --nav-a-hover: #2C3644;
+  --nav-a-bg-hover: #D8E0EA;
   --fade-overlay-color: #fff;
   --modal-bg: var(--surface);
   --modal-header-color: var(--on-surface);
@@ -43,8 +45,8 @@ body.dark {
   --text: #fff;
   --primary: #90CAF9;
   --on-primary: #000;
-  --primary-container: #0D47A1;
-  --on-primary-container: #fff;
+  --primary-container: #A9D3FB;
+  --on-primary-container: #ebf4ff;
   --highlight-color: #64B5F6;
   --header-bg: #222;
   --header-bg-translucent: rgba(20, 20, 20, 0.8);
@@ -61,8 +63,10 @@ body.dark {
   --border: var(--outline-variant);
   --hover-overlay: rgba(255, 255, 255, 0.1);
   --active-overlay: rgba(255, 255, 255, 0.2);
-  --nav-current-a: var(--on-primary-container);
-  --nav-current-a-bg: var(--primary-container);
+  --nav-current-a: #A1C9EF;
+  --nav-current-a-bg: #2C3544;
+  --nav-a-hover: #b0c0d0;
+  --nav-a-bg-hover: #2C3644;
   --fade-overlay-color: #000;
   --modal-bg: var(--surface);
   --modal-header-color: var(--on-surface);
@@ -86,7 +90,7 @@ body.amoled-dark-mode {
   --header-bg: #101010;
   --header-bg-translucent: rgba(0, 0, 0, 0.8);
   --card-bg: #151515;
-  --footer-bg: #1e1e1e;
+  --footer-bg: #101010;
   --surface: #000;
   --surface-container: #101010;
   --surface-container-low: #151515;
@@ -98,8 +102,6 @@ body.amoled-dark-mode {
   --border: var(--outline-variant);
   --hover-overlay: rgba(255, 255, 255, 0.1);
   --active-overlay: rgba(255, 255, 255, 0.2);
-  --nav-current-a: var(--on-primary-container);
-  --nav-current-a-bg: var(--primary-container);
   --fade-overlay-color: #000;
   --modal-bg: var(--surface);
   --modal-header-color: var(--on-surface);
@@ -207,9 +209,6 @@ body.font-Open-Sans {
 .container {
   animation: fadeUp 0.8s ease forwards;
   padding-top: calc(60px + 1.5rem); 
-  padding-bottom: 2rem; 
-  padding-left: 1rem;
-  padding-right: 1rem;
   max-width: 900px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -262,9 +261,9 @@ body.amoled-dark-mode .header.translucent {
 }
 
 .main-title {
-  margin-left: 1.1rem;
+  margin-left: 1rem;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1rem;
   flex-grow: 1;
   text-align: left;
   color: var(--text);
@@ -272,7 +271,7 @@ body.amoled-dark-mode .header.translucent {
 
 .role-title {
   font-size: 1.2rem;
-  margin: 2.2rem 0 1.2rem;
+  margin: 2rem 1rem 0.5rem;
   color: var(--text);
   text-align: left;
   font-weight: 500;
@@ -362,12 +361,8 @@ body.amoled-dark-mode .header.translucent {
 }
 
 .side-menu a:hover:not(.current-page) {
-  background-color: var(--hover-overlay);
-}
-
-.side-menu a:active:not(.current-page) {
-  background-color: var(--active-overlay);
-  transition: background 0.1s ease;
+  background-color: var(--nav-a-bg-hover);
+  color: var(--nav-a-hover);
 }
 
 #overlay,
@@ -424,7 +419,7 @@ md-icon {
   font-size: 1.8rem;
   font-weight: 700;
   margin: 0 auto;
-  padding: 0 0 0.5rem; 
+  padding: 0 1.5rem 0.5rem; 
 }
 
 .intro-text .highlight {
@@ -434,7 +429,7 @@ md-icon {
 .button-intro-text {
   text-align: left;
   margin: 0 auto;
-  padding: 1rem 0 0.5rem; 
+  padding: 1rem 1.5rem 0.5rem; 
   font-size: 0.9rem;
   color: var(--on-surface-variant);
   font-weight: 400;
@@ -465,7 +460,7 @@ footer {
 }
 
 .footer-top {
-  margin: 1rem auto 2rem;
+  margin: 1rem auto 1rem;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -486,6 +481,7 @@ footer {
   opacity: 0.9;
   color: var(--text);
   text-align: left;
+  margin: 0;
 }
 
 .footer-container {
@@ -578,6 +574,7 @@ footer {
   font-size: 1rem;
   font-weight: 500;
   padding: 0.9rem 1.75rem;
+  margin: 0 auto;
   border: none;
   box-shadow: none;
   border-radius: 50px;
@@ -620,7 +617,7 @@ footer {
   align-items: center;
   gap: 0.9rem;
   margin-top: 0.9rem;
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
@@ -728,6 +725,7 @@ footer {
 
 .credits-section {
   margin-bottom: 1.1rem;
+  padding: 0 1rem;
   border-radius: 1rem;
   overflow: hidden;
   background-color: transparent;
@@ -849,11 +847,18 @@ body.amoled-dark-mode .card {
   line-height: 1.4;
 }
 
+.contribution-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+
 .contribution-box {
-  margin-top: 2.2rem;
-  margin-bottom: 2.2rem;
+  margin: 2.2rem 1rem;
   padding: 1.8rem;
-  border-radius: 1.25rem;
+  margin: 0 auto;
+  border-radius: 16px;
+  width: 85%;
   background-color: var(--surface-container);
   color: var(--on-surface);
   text-align: center;
@@ -865,7 +870,7 @@ body.amoled-dark-mode .card {
   margin-top: 0;
   margin-bottom: 0.5rem;
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .contribution-box p {

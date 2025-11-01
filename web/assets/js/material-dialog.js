@@ -1,4 +1,6 @@
-const settingsButton = document.getElementById('settings-button');
+document.getElementById('settings-button');
+const settingsButtonDesktop = document.getElementById('settings-button-desktop');
+const settingsButtonMenu = document.getElementById('settings-button-menu');
 const settingsModal = document.getElementById('settings-modal');
 const closeButton = settingsModal ? settingsModal.querySelector('#close-settings') : null;
 const resetButton = settingsModal ? settingsModal.querySelector('#reset-settings-button') : null;
@@ -71,10 +73,16 @@ export function closeDialogAsync() {
   });
 }
 
-if (settingsButton) {
-  settingsButton.addEventListener('click', _openDialogInternal);
+if (settingsButtonDesktop) {
+  settingsButtonDesktop.addEventListener('click', _openDialogInternal);
 } else {
-  console.warn("settingsButton element not found in material-dialog.js. Dialog may not be openable.");
+  console.warn("settingsButtonDesktop element not found. Dialog may not be openable.");
+}
+
+if (settingsButtonMenu) {
+  settingsButtonMenu.addEventListener('click', _openDialogInternal);
+} else {
+  console.warn("settingsButtonMenu element not found. Dialog may not be openable.");
 }
 
 if (closeButton) {
