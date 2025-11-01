@@ -38,6 +38,7 @@
   --switch-thumb-bg: var(--surface-container-highest);
   --switch-track-checked-bg: var(--primary-container);
   --switch-thumb-checked-bg: var(--primary);
+  --content-max-width: 1100px;
 }
 
 body.dark {
@@ -625,6 +626,10 @@ footer {
   display: none;
 }
 
+.desktop-nav-group {
+    display: none;
+}
+
 .desktop-nav ul {
   list-style: none;
   padding: 0;
@@ -1131,6 +1136,9 @@ input:checked + .slider:before {
   .desktop-nav {
       display: none;
   }
+  .desktop-nav-group {
+      display: none;
+  }
   .menu-toggle,
   .side-menu {
       display: flex;
@@ -1144,22 +1152,31 @@ input:checked + .slider:before {
   }
   .desktop-nav {
     display: block;
-    margin-right: 1.1rem;
+  }
+  .desktop-nav-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    white-space: nowrap;
   }
   .header .container {
-    padding: 0;
+    padding: 0 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--content-max-width);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .header .main-title {
-    margin-left: 20rem;
+    margin-left: 2rem;
+    flex-grow: 1;
   }
   .container {
-      padding-top: calc(70px + 2rem);
-      max-width: 1100px;
+      padding-top: calc(60px + 2rem);
+      max-width: var(--content-max-width);
+      padding-left: 2rem;
+      padding-right: 2rem;
+      margin: 0 auto;
   }
   .section-title {
       font-size: 1.8rem;
@@ -1171,16 +1188,20 @@ input:checked + .slider:before {
   }
   .intro-text {
       font-size: 2.5rem;
-      padding: 0 2rem 0.5rem;
+      padding: 0 0 0.5rem;
   }
   .button-intro-text {
-      padding: 0 2rem 0.5rem;
+      padding: 1rem 0 0.5rem;
+  }
+  .button-group-wrapper {
+      padding: 0;
   }
   .download-cards-wrapper {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
     justify-content: center;
     margin: 2rem 0;
+    padding: 0;
   }
   
   .download-card {
@@ -1208,6 +1229,13 @@ input:checked + .slider:before {
     width: auto;
     padding: 0.8rem 2rem;
     margin-top: 0.5rem;
+  }
+  .footer-top,
+  .footer-container,
+  .footer-bottom {
+    max-width: var(--content-max-width);
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   .mods-section-grid {
       gap: 30px;
