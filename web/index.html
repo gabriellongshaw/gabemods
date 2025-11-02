@@ -48,17 +48,24 @@
 <body>
   <div class="overlay" id="overlay"></div>
 
-<header class="header">
-  <div class="menu-toggle" id="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <span class="main-title">Gabe Mods</span>
-  <nav class="nav" id="desktop-nav">
-        <a class="current-page" href="./">Home</a>
-        <a href="mods/">Mods</a>
-        <a href="download/">Download</a>
+  <header class="header">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <a href="./" class="main-title">
+        <img src="assets/images/gabemods.png" alt="Gabe Mods Logo" class="header-logo">
+    </a>
+    
+    <nav class="nav" id="desktop-nav">
+      <ul>
+        <li><a class="current-page" href="./">Home</a></li>
+        <li><a href="mods/">Mods</a></li>
+        <li><a href="download/">Download</a></li>
+      </ul>
+    </nav>
+    
     <div class="desktop-nav-settings">
       <div class="settings-button-wrapper-desktop">
         <md-icon-button id="settings-button-desktop" aria-label="Settings">
@@ -66,24 +73,22 @@
         </md-icon-button>
       </div>
     </div>
-  </nav>
- </header>
+  </header>
 
-<nav class="side-menu" id="side-menu">
-  <ul>
-    <li class="current-page"><a href="./">Home</a></li>
-    <li><a href="mods/">Mods</a></li>
-    <li><a href="download/">Download</a></li>
-  </ul>
-  <div class="side-menu-settings">
-    <div class="settings-button-wrapper-menu">
-      <md-icon-button id="settings-button-menu" aria-label="Settings">
-        <md-icon>settings</md-icon>
-      </md-icon-button>
+  <nav class="side-menu" id="side-menu">
+    <ul>
+      <li class="current-page"><a href="./">Home</a></li>
+      <li><a href="mods/">Mods</a></li>
+      <li><a href="download/">Download</a></li>
+    </ul>
+    <div class="side-menu-settings">
+      <div class="settings-button-wrapper-menu">
+        <md-icon-button id="settings-button-menu" aria-label="Settings">
+          <md-icon>settings</md-icon>
+        </md-icon-button>
+      </div>
     </div>
-  </div>
-</nav>
-
+  </nav>
   <div class="container">
     <div class="hero-content">
         <div class="hero-text-block">
@@ -95,61 +100,65 @@
           </div>
         </div>
         
-        <div class="hero-image-placeholder"><img src="assets/images/gabemods.png">
+        <div class="hero-image-placeholder"><img src="assets/images/gabemods.png" alt="Gabe Mods Placeholder">
             </div>
     </div>
 
-  <h2 class="role-title">Credits</h2>
+  <h2 class="section-title">Credits</h2>
 
-  <div class="credits-section">
-    <div class="credits-dropdown-header" id="app-credits-toggle">
-      <h3>App Developers</h3>
-      <md-icon class="dropdown-arrow">expand_more</md-icon>
-    </div>
-    
-    <div class="credits-dropdown-content" id="app-credits-content">
-      <a href="https://bocajthomas.github.io" target="_blank" class="card">
-        <img class="profile-pic" src="assets/images/bocajthomas.jpeg" alt="bocajthomas" />
-        <div class="text-content">
-          <h1>bocajthomas</h1>
-          <p>Web | Software Developer</p>
+  <div class="two-column-layout">
+    <div class="credits-column">
+      <div class="credits-section">
+        <div class="credits-dropdown-header" id="app-credits-toggle">
+          <h3>App Developers</h3>
+          <md-icon class="dropdown-arrow">expand_more</md-icon>
         </div>
-      </a>
+        
+        <div class="credits-dropdown-content" id="app-credits-content">
+          <a href="https://bocajthomas.github.io" target="_blank" class="card">
+            <img class="profile-pic" src="assets/images/bocajthomas.jpeg" alt="bocajthomas" />
+            <div class="text-content">
+              <h1>bocajthomas</h1>
+              <p>Web | Software Developer</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <div class="credits-section">
+        <div class="credits-dropdown-header" id="website-credits-toggle">
+          <h3>Website Developers</h3>
+          <md-icon class="dropdown-arrow">expand_more</md-icon>
+        </div>
+
+        <div class="credits-dropdown-content" id="website-credits-content">
+          <a href="https://www.gabriellongshaw.co.uk" target="_blank" class="card">
+            <img class="profile-pic" src="assets/images/logo.png" alt="Gabriel Longshaw" />
+            <div class="text-content">
+              <h1>Gabriel Longshaw</h1>
+              <p>Founder, Owner and Main Creator.</p>
+            </div>
+          </a>
+
+          <a href="https://bocajthomas.github.io" target="_blank" class="card">
+            <img class="profile-pic" src="assets/images/bocajthomas.jpeg" alt="bocajthomas" />
+            <div class="text-content">
+              <h1>bocajthomas</h1>
+              <p>Web | Software Developer</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contribution-box-container">
+      <div class="contribution-box">
+        <h2>Want to appear here?</h2>
+        <p>You can contribute to the website and app on GitHub!</p>
+        <a href="https://github.com/gabriellongshaw/gabemods" target="_blank" class="md-button">Contribute on GitHub</a>
+      </div>
     </div>
   </div>
-  
-  <div class="credits-section">
-    <div class="credits-dropdown-header" id="website-credits-toggle">
-      <h3>Website Developers</h3>
-      <md-icon class="dropdown-arrow">expand_more</md-icon>
-    </div>
-
-    <div class="credits-dropdown-content" id="website-credits-content">
-      <a href="https://www.gabriellongshaw.co.uk" target="_blank" class="card">
-        <img class="profile-pic" src="assets/images/logo.png" alt="Gabriel Longshaw" />
-        <div class="text-content">
-          <h1>Gabriel Longshaw</h1>
-          <p>Founder, Owner and Main Creator.</p>
-        </div>
-      </a>
-
-      <a href="https://bocajthomas.github.io" target="_blank" class="card">
-        <img class="profile-pic" src="assets/images/bocajthomas.jpeg" alt="bocajthomas" />
-        <div class="text-content">
-          <h1>bocajthomas</h1>
-          <p>Web | Software Developer</p>
-        </div>
-      </a>
-    </div>
-  </div>
-
- <div class="contribution-box-container">
-  <div class="contribution-box">
-    <h2>Want to appear here?</h2>
-    <p>You can contribute to the website and app on GitHub!</p>
-    <a href="https://github.com/gabriellongshaw/gabemods" target="_blank" class="md-button">Contribute on GitHub</a>
-  </div>
- </div>
   
   <dialog id="settings-modal" class="settings-dialog">
     <div class="modal-header">
