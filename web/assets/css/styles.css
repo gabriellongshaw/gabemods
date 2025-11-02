@@ -3,13 +3,14 @@
   --transition-ease: ease;
   --md-icon-font: Material Symbols Rounded;
   --bg: #fefefe;
+  --amoled-bg: #000;
   --text: #000;
   --primary: #7FC6FF; 
   --on-primary: #fff; 
   --primary-container: #D6EBFC; 
   --on-primary-container: #ebf4ff; 
   --highlight-color: #42A5F5; 
-  --header-bg: #fafafa;
+  --header-bg: #f7f7f7;
   --header-bg-translucent: rgba(255, 255, 255, 0.8);
   --card-bg: #fff; 
   --footer-bg: #f8f8f8;
@@ -28,7 +29,7 @@
   --nav-current-a-bg: #E9EEF5;
   --nav-a-hover: #2C3644;
   --nav-a-bg-hover: #D8E0EA;
-  --md-icon: #49454f; /* Updated for better visibility in light mode */
+  --md-icon: #49454f;
   --md-icon-bg: var(--surface-container);
   --fade-overlay-color: #fff;
   --content-max-width: 1100px;
@@ -42,7 +43,7 @@ body.dark {
   --primary-container: #A9D3FB;
   --on-primary-container: #ebf4ff;
   --highlight-color: #64B5F6;
-  --header-bg: #222;
+  --header-bg: #1c1b1f;
   --header-bg-translucent: rgba(20, 20, 20, 0.8);
   --card-bg: #2a2a2a;
   --footer-bg: #1e1e1e;
@@ -74,7 +75,7 @@ body.dark {
 }
 
 body.amoled-dark-mode {
-  --bg: #000;
+  --bg: #000000;
   --text: #fff;
   --primary: #42A5F5;
   --on-primary: #000;
@@ -96,10 +97,10 @@ body.amoled-dark-mode {
   --border: var(--outline-variant);
   --hover-overlay: rgba(255, 255, 255, 0.1);
   --active-overlay: rgba(255, 255, 255, 0.2);
-  --nav-current-a: #A1C9EF; /* Same as body.dark */
-  --nav-current-a-bg: #2C3544; /* Same as body.dark */
-  --nav-a-hover: #b0c0d0; /* Same as body.dark */
-  --nav-a-bg-hover: #2C3644; /* Same as body.dark */
+  --nav-current-a: #A1C9EF;
+  --nav-current-a-bg: #2C3544;
+  --nav-a-hover: #b0c0d0;
+  --nav-a-bg-hover: #2C3644;
   --md-icon: #b0c0d0;
   --md-icon-bg: var(--surface-container);
   --fade-overlay-color: #000;
@@ -236,8 +237,8 @@ body.font-Open-Sans {
 }
 
 .hero-image-placeholder img {
-    max-width: 50%; 
-    max-height: 50%;
+    max-width: 35%; 
+    max-height: 35%;
     border-radius: 15%;
     object-fit: contain;
     display: block;
@@ -379,7 +380,7 @@ body.amoled-dark-mode .header.translucent {
   display: block;
   padding: 0.9rem 1.1rem;
   border-radius: 10px;
-  transition: background var(--transition-duration) var(--transition-ease);
+  transition: background var(--transition-duration) var(--transition-ease), color var(--transition-duration) var(--transition-ease);
 }
 
 .side-menu li.current-page a {
@@ -390,9 +391,10 @@ body.amoled-dark-mode .header.translucent {
   pointer-events: none;
 }
 
-.side-menu a:hover:not(.current-page) {
+.side-menu a:hover:not(.current-page),
+.side-menu a:focus-visible:not(.current-page) {
   background-color: var(--nav-a-bg-hover);
-  color: var(--nav-a-hover);
+  color: var(--primary);
 }
 
 #overlay,
@@ -440,7 +442,7 @@ body.amoled-dark-mode .header.translucent {
 }
 
 md-icon {
-  background: none;
+  background: none !important;
   color: var(--md-icon);
 }
 
@@ -449,20 +451,22 @@ md-icon:hover {
 }
 
 .settings-button-wrapper-desktop {
-  background: none;
+  background: none !important;
   padding: 8px; 
   border-radius: 16px;
   width: 2.5rem;
-  border-radius: 16px;
   transition: background 0.2s ease;
 }
 
-.settings-button-wrapper-desktop {
-  background: var(--card-bg);
+.settings-button-wrapper-desktop:hover {
+  background: var(--hover-overlay); 
+}
+.settings-button-wrapper-desktop:active {
+  background: var(--active-overlay);
 }
 
 .side-menu-settings .settings-button-wrapper-menu {
-  background: none;
+  background: none !important;
   padding: 5px; 
   width: 2.5rem;
   border-radius: 16px;
@@ -470,7 +474,10 @@ md-icon:hover {
 }
 
 .side-menu-settings .settings-button-wrapper-menu:hover {
-  background: var(--card-bg);
+  background: var(--hover-overlay);
+}
+.side-menu-settings .settings-button-wrapper-menu:active {
+  background: var(--active-overlay);
 }
 
 .intro-text {
@@ -708,13 +715,15 @@ footer {
   font-size: 1rem;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  transition: background-color var(--transition-duration) var(--transition-ease);
+  transition: background-color var(--transition-duration) var(--transition-ease), color var(--transition-duration) var(--transition-ease);
   font-weight: 500;
   margin-right: 1.25rem; 
 }
 
-.nav a:hover:not(.current-page) {
+.nav a:hover:not(.current-page),
+.nav a:focus-visible:not(.current-page) {
   background-color: var(--hover-overlay);
+  color: var(--primary);
 }
 
 .nav a:active:not(.current-page) {
@@ -971,6 +980,13 @@ body.amoled-dark-mode .card {
   background-color: var(--primary);
 }
 
+.two-column-layout {
+    display: flex;
+    flex-direction: column; 
+    margin: 2rem 0; 
+    gap: 2rem;
+}
+
 @media (min-width: 600px) {
   .button-group-wrapper {
     flex-direction: row;
@@ -1020,7 +1036,7 @@ body.amoled-dark-mode .card {
   }
   .header-content-wrapper {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       width: 100%;
       max-width: var(--content-max-width); 
@@ -1042,10 +1058,11 @@ body.amoled-dark-mode .card {
   }
   .header > .nav {
       order: 2;
-      margin-right: 1.5rem;
       max-width: none;
       flex-grow: 0;
       justify-content: flex-start;
+      margin-left: 1.5rem;
+      margin-right: 0;
   }
   .header > .main-title {
     order: 1;
@@ -1089,32 +1106,24 @@ body.amoled-dark-mode .card {
   }
   .hero-text-block {
       flex: 1 1 50%;
-      max-width: 50%;
+      max-width: 100%;
   }
   .hero-image-placeholder {
-      display: flex;
-      flex: 1 1 50%;
-      max-width: 50%;
-      height: 400px;
-      min-height: 400px;
+      display: none; 
       margin: 0;
   }
-
   .intro-text {
       font-size: 2.5rem;
       padding: 0 0 0.25rem 0;
   }
-  
   .button-intro-text {
       padding: 0.25rem 0 0.5rem 0;
       font-size: 1.1rem; 
   }
-  
   .button-group-wrapper {
       padding: 0;
       justify-content: flex-start;
   }
-  
   .section-title {
       font-size: 1.8rem;
       margin: 3rem 0 1rem 0;
@@ -1130,7 +1139,6 @@ body.amoled-dark-mode .card {
     margin: 2rem 0;
     padding: 0;
   }
-  
   .download-card {
     max-width: none;
     width: 100%;
@@ -1156,6 +1164,23 @@ body.amoled-dark-mode .card {
     width: auto;
     padding: 0.8rem 2rem;
     margin-top: 0.5rem;
+  }
+  .two-column-layout {
+      flex-direction: row;
+      align-items: flex-start;
+  }
+  .credits-section {
+      flex: 1; 
+      margin-bottom: 0;
+      padding: 0;
+  }
+  .contribution-box-container {
+      flex: 1;
+      margin: 0;
+  }
+  .contribution-box {
+      width: 100%;
+      margin: 0;
   }
   .footer-top,
   .footer-container,
@@ -1190,6 +1215,24 @@ body.amoled-dark-mode .card {
   .footer-section {
       flex: 1 1 auto;
   }
+}
+
+@media (min-width: 1200px) {
+    .hero-content {
+        gap: 4rem; 
+    }
+    .hero-text-block {
+        flex: 1 1 50%;
+        max-width: 50%;
+    }
+    .hero-image-placeholder {
+        display: flex;
+        flex: 1 1 50%;
+        max-width: 35%; 
+        height: 600px;
+        min-height: 400px;
+        margin: 0;
+    }
 }
 
 .download-cards-wrapper {

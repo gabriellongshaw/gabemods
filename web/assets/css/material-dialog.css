@@ -1,30 +1,6 @@
 :root {
   --md-icon-font: Material Symbols Rounded; 
   --transition: all 0.2s ease-out; 
-
-  --dialog-bg: #202020; 
-  --dialog-text: #E0E0E0; 
-  --dialog-secondary-text: #B0B0B0; 
-  --select-bg: #303030; 
-  --select-text: #E0E0E0; 
-  --select-border-initial: #303030; 
-  --select-active-bg: #404040; 
-  --select-active-border: #8AB4F8; 
-  --select-arrow-color: #B0B0B0; 
-  --button-text: #8AB4F8; 
-  --button-hover-bg: rgba(138, 180, 248, 0.1); 
-  --settings-icon-color: #B0B0B0; 
-  --amoled-bg: #000000;
-
-  --slider-bg-off: #444;
-  --slider-border-off: #555;
-  --slider-toggle-off: #E0E0E0;
-  --slider-bg-on: #8AB4F8;
-  --slider-border-on: #8AB4F8;
-  --slider-toggle-on: #FFFFFF;
-}
-
-body.light-mode {
   --dialog-bg: #FFFFFF;
   --dialog-text: #1F1F1F;
   --dialog-secondary-text: #616161;
@@ -37,7 +13,6 @@ body.light-mode {
   --button-text: #4285F4;
   --button-hover-bg: rgba(66, 133, 244, 0.08);
   --settings-icon-color: #757575;
-
   --slider-bg-off: #B0B0B0;
   --slider-border-off: #A0A0A0;
   --slider-toggle-off: #FFFFFF;
@@ -46,8 +21,30 @@ body.light-mode {
   --slider-toggle-on: #FFFFFF;
 }
 
+body.dark {
+  --dialog-bg: #202020;
+  --dialog-text: #E0E0E0;
+  --dialog-secondary-text: #B0B0B0;
+  --select-bg: #303030;
+  --select-text: #E0E0E0;
+  --select-border-initial: #303030;
+  --select-active-bg: #404040;
+  --select-active-border: #8AB4F8;
+  --select-arrow-color: #B0B0B0;
+  --button-text: #8AB4F8;
+  --button-hover-bg: rgba(138, 180, 248, 0.1);
+  --settings-icon-color: #B0B0B0;
+  --amoled-bg: #000000;
+  --slider-bg-off: #444;
+  --slider-border-off: #555;
+  --slider-toggle-off: #E0E0E0;
+  --slider-bg-on: #8AB4F8;
+  --slider-border-on: #8AB4F8;
+  --slider-toggle-on: #FFFFFF;
+}
+
 body.amoled-dark-mode {
-  --dialog-bg: #000000;
+  --dialog-bg: #010101;
   --dialog-text: #E0E0E0;
   --dialog-secondary-text: #B0B0B0;
   --select-bg: #1A1A1A;
@@ -59,7 +56,6 @@ body.amoled-dark-mode {
   --button-text: #8AB4F8;
   --button-hover-bg: rgba(138, 180, 248, 0.1);
   --settings-icon-color: #B0B0B0;
-
   --slider-bg-off: #333;
   --slider-border-off: #444;
   --slider-toggle-off: #E0E0E0;
